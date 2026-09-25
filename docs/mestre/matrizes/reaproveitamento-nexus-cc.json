@@ -16,7 +16,7 @@
     }
   ],
   "decision_authority": "Pedido atual e correções expressas de Gui; conversas são proveniência, não autorização externa",
-  "preservation_policy": "Adiar implementação não descarta ideia; aposentadoria refere-se ao mecanismo no destino, nunca à exclusão da origem",
+  "preservation_policy": "Adiar implementação não descarta ideia; aposentadoria de mecanismo não exclui a origem. Nexus/CC são fontes temporárias, com retenção e descarte futuro condicionados à operação do Wissian e à implementação validada do reaproveitamento, conforme o capítulo 05_GIT_E_REPOSITORIOS.md",
   "assets": [
     {
       "id": "NC-01",

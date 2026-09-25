@@ -35,6 +35,31 @@ Evolução, correção e novas funcionalidades passam a ocorrer no Wissian. Reab
 desenvolvimento ou escrita nos repositórios encerrados exige novo pedido explícito
 de Gui; uma lacuna de reuso é tratada no destino, preservando a origem consultada.
 
+### Retenção temporária e descarte futuro de Nexus/CC
+
+Gui esclareceu que Codex Checkpoint e NexusDevHub permanecem disponíveis somente
+para auxiliar a implementação das ideias já alinhadas e registradas no plano do
+Wissian. O [capítulo 16](16_CONTINUIDADE_OPERACIONAL.md) e a
+[matriz de patrimônio](matrizes/reaproveitamento-nexus-cc.json) são o contrato dessas
+ideias; a origem não se torna produto, serviço ou dependência permanente do SaaS.
+
+A intenção de descartar esses dois repositórios fica condicionada cumulativamente a:
+
+1. Wissian em operação efetiva, com evidência do fluxo em uso; documentação, build
+   ou ensaio isolado não atendem a essa condição.
+2. Reaproveitamentos previstos implementados e validados no Wissian, com cobertura
+   rastreável dos itens do plano e aceite aplicável. Itens adiados ou NOT_RUN não
+   contam como concluídos; não antecipar funcionalidades só para apagar as fontes.
+3. Código, contratos, testes, procedência e materiais necessários à manutenção e
+   recuperação preservados no destino, sem dependência de consulta às origens para
+   operar ou sustentar o que foi incorporado.
+
+Até essas condições serem comprovadas, manter as fontes acessíveis. A exclusão
+futura será uma operação separada, com alvos exatos, preservação recuperável e
+autorização destrutiva aplicável; este encerramento não executa essa exclusão.
+A condição específica trata de Nexus/CC e não cria descarte automático do acervo
+ClubAL/Base44, de instalações ou de dados operacionais.
+
 ## Sequência futura
 
 1. Revalidar raiz, status, remotes, branches e worktrees dos dois repositórios; registrar alcance temporal. Não usar pull/stash/reset como limpeza.

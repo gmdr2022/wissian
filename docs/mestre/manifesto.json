@@ -453,8 +453,8 @@
     },
     {
       "path": "docs/mestre/05_GIT_E_REPOSITORIOS.md",
-      "bytes": 6901,
-      "sha256": "cabbf1516cabe668095bebdec03770c02caf4657a94bef3e2e4a0d20bbe001f9"
+      "bytes": 8463,
+      "sha256": "deeecbe440b32637685d98760f9dc502ecb9ba6d09e70bb8c30ae4ba73e83d75"
     },
     {
       "path": "docs/mestre/06_DADOS_MIGRACOES_COMPATIBILIDADE.md",
@@ -508,8 +508,8 @@
     },
     {
       "path": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md",
-      "bytes": 34043,
-      "sha256": "cd0043f15f2c1260feb89c44f4ef6102452d4012f03f205c19cbb918b0404bb6"
+      "bytes": 34210,
+      "sha256": "59f3cc987440be7501bb99c838ed97a4e9ac3cbd0ccdc35fe67cd73c6660b1d6"
     },
     {
       "path": "docs/mestre/17_BASE_ADMINISTRATIVA_E_TRANSICAO.md",
@@ -663,8 +663,8 @@
     },
     {
       "path": "docs/mestre/matrizes/reaproveitamento-nexus-cc.json",
-      "bytes": 25633,
-      "sha256": "a08fe649363565d4d7c51d8275d9ad2c21053f5819c964c0aeadda99631bcbdc"
+      "bytes": 25808,
+      "sha256": "cb3343f20b5c872628474afa95a09dcb2fe3a7b4bf9b98e49b063f06978be5ac"
     },
     {
       "path": "docs/mestre/matrizes/requisitos-frentes-origem.json",
