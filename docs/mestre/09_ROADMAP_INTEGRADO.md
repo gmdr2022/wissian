@@ -9,8 +9,9 @@ na [ADR-M03](adrs/ADR-M03_STACK_E_REUSO.md),
 seguem os estados de suas evidências específicas. Esse recorte não equivale a auditoria de todo o legado.
 
 **Avanço executável:** a [fundação M1](contratos/M1_FUNDACAO.md) foi verificada no
-recorte técnico. [M2-S1](contratos/M2_ADMINISTRACAO.md) entrega contrapartes com
-evidência própria; documentos e os demais critérios de M2 permanecem pendentes.
+recorte técnico. [M2-S1 e S2A](contratos/M2_ADMINISTRACAO.md) entregam contrapartes e
+API documental com evidências próprias. Interface documental, vínculos e E1
+completo em navegador permanecem pendentes na S2B; M2 ainda não está concluído.
 
 ## Avanço autônomo autorizado
 

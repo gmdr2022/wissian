@@ -62,11 +62,19 @@
           "Wissian.Core": "[1.0.0, )"
         }
       },
+      "wissian.documents": {
+        "type": "Project",
+        "dependencies": {
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "[10.0.3, )",
+          "Wissian.Core": "[1.0.0, )"
+        }
+      },
       "wissian.host": {
         "type": "Project",
         "dependencies": {
           "Wissian.Core": "[1.0.0, )",
           "Wissian.Counterparties": "[1.0.0, )",
+          "Wissian.Documents": "[1.0.0, )",
           "Wissian.Persistence": "[1.0.0, )"
         }
       },

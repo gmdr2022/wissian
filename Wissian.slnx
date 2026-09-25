@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/src/">
+    <Project Path="src/Wissian.Documents/Wissian.Documents.csproj" />
     <Project Path="src/Wissian.Counterparties/Wissian.Counterparties.csproj" />
     <Project Path="src/Wissian.Core/Wissian.Core.csproj" />
     <Project Path="src/Wissian.Host/Wissian.Host.csproj" />

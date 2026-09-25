@@ -13,8 +13,10 @@ using Wissian.Persistence;
 using static Wissian.Api.Tests.ApiLab;
 using static Wissian.Api.Tests.LabClient;
 
+if (args is ["--native-inspector"]) return await NativeInspectorTests.RunAsync();
 await using var lab = new ApiLab();
-await lab.StartAsync(args is ["--counterparties"] or ["--counterparties-browser"]);
+await lab.StartAsync(args is ["--counterparties"] or ["--counterparties-browser"], args is ["--documents"]);
+if (args is ["--documents"]) return await DocumentTests.RunAsync(lab);
 if (args is ["--counterparties"]) return await CounterpartyTests.RunAsync(lab);
 if (args is ["--counterparties-browser"]) return await BrowserTests.RunAsync(lab, administration: true);
 if (args is ["--browser"]) return await BrowserTests.RunAsync(lab);

@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "slice": "M2-S2A",
+  "status": "VERIFIED_LOCALLY",
+  "baseline_commit": "745356d5449941be80a37ab819b182208d8db9d2",
+  "capability": "documents",
+  "contract": "docs/mestre/contratos/M2_ADMINISTRACAO.md",
+  "sources": [
+    {
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "comparison_ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+      "path": "src/backend/ClubAL.Domain/Knowledge/KnowledgeArticle.cs",
+      "blob": "d828b39a0c02f70849cb52869133f4a07a721642",
+      "decision": "ADAPT_PATTERN",
+      "scope": "IDs e versao esperada; nao transportar dominio normativo por unidade"
+    },
+    {
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "comparison_ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+      "path": "src/backend/ClubAL.Infrastructure/Knowledge/KnowledgeService.cs",
+      "blob": "681425eced23ffacd87889044b1c013d634d8972",
+      "decision": "ADAPT_PATTERN",
+      "scope": "Busca filtrada antes da contagem, paginacao e recibo/hash de idempotencia; backend igual entre os dois refs"
+    }
+  ],
+  "gap": "Conhecimento normativo por unidade nao e repositorio administrativo de arquivos privados. Adaptar versionamento/hash/classificacao/filtro ja caracterizados; novo armazenamento e fronteira de inspecao necessarios. Reutilizar autoridade transacional, composicao, RLS e recibos existentes do Wissian; nao portar produto legado nem repetir auditoria M0.",
+  "verification": {
+    "documents_api": [
+      {
+        "case": "M2-S2A-01 original, versions, metadata, archive and restore persist",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S2A-02 restricted data disappears from counts, details, versions and download",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S2A-03 quarantine blocks downloads until new inspection and expires in 24h",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S2A-04 blocked new content creates no original, receipt or document",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S2A-05 bounded allowlist rejects paths, mismatches, invalid UTF8 and archive",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S2A-06 replay acknowledges one immutable effect and changed bytes conflict",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S2A-07 anonymous, missing context, CSRF and foreign organization denied",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S2A-08 concurrent versions, stale sessions and invalid commands preserve data",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S2A-09 read never grants upload, revocation blocks existing links and receipts",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S2A-10 database RLS scopes original bytes as well as metadata",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S2A-11 runtime cannot delete originals, rewrite bytes or move ownership",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S2A-12 audit failure rolls back metadata, bytes and receipt together",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S2A-13 revocation during scanner wait wins without database locks",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S2A-14 quota includes all classifications and archived originals",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S2A-15 malformed multipart cannot persist partial originals",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S2A-16 new host and repeated migration retain originals without counterparties",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S2A-17 inspector treats errors, unknown risk and policy blocks as unavailable",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S2A-18 composite references and original hashes are database invariants",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S2A-19 concurrent sessions cannot consume the same remaining quota",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S2A-20 slow inspections have two transfer slots and reject excess",
+        "result": "PASS"
+      }
+    ],
+    "suite_environment": "HTTPS Kestrel e PostgreSQL 18.6 locais com duas organizacoes sinteticas. Inspetor de teste injetado apenas pela composicao compilada de testes.",
+    "native_inspector": {
+      "result": "PASS",
+      "benign": "accepted",
+      "harmless_eicar": "blocked",
+      "scope": "Adaptador Windows real nesta maquina; amostras apenas em memoria. Nao prova ambiente alvo nem cobertura universal de malware."
+    },
+    "foundation": {
+      "result": "PASS",
+      "cases": 25
+    },
+    "locked_restore": "PASS",
+    "model_migration_drift": "NONE",
+    "archive_reinspection_regression": "M2-S2A-03 repetido apos permitir reinspecao de arquivados: PASS"
+  },
+  "boundaries": {
+    "core_changed": false,
+    "module_dependencies": [
+      "core"
+    ],
+    "storage": "PostgreSQL bytea privado; tabela de originais separada dos metadados",
+    "file_limit_bytes": 10485760,
+    "organization_limit_bytes": 104857600,
+    "document_limit": 1000,
+    "revision_limit": 100,
+    "ui": "NOT_IMPLEMENTED",
+    "counterparty_link": "NOT_IMPLEMENTED",
+    "backup_restore": "NOT_RUN",
+    "human_acceptance": "PENDING",
+    "production": "NOT_ACTIVATED",
+    "real_data": "NOT_USED",
+    "target_antivirus_readiness": "NOT_RUN; validar provedor ativo, assinaturas, politica e teste nativo no ambiente de implantacao"
+  },
+  "code_hashes": [
+    {
+      "path": ".github/workflows/dotnet.yml",
+      "sha256": "a96c3b74d2e7cb9c88d7e09860318336818f003662045be14f2209cb30dd94e3"
+    },
+    {
+      "path": "Wissian.slnx",
+      "sha256": "cb1c3ec5e65c27975587884d3d98ba237a39256eab65fb5989a4e2745828f034"
+    },
+    {
+      "path": "scripts/Test-Postgres.ps1",
+      "sha256": "12539714c045026bc30605b384e8d4755145eb7c3856e7830950e47239bdfb78"
+    },
+    {
+      "path": "src/Wissian.Documents/AttachmentPolicy.cs",
+      "sha256": "f1ab2fb2af9c3ebf4f8c12f5afb68b1aa88505dc741c91cb0ca4025356bf2a22"
+    },
+    {
+      "path": "src/Wissian.Documents/Document.cs",
+      "sha256": "b8e3dbb444f2149f3cbbbe8d72fb19747d7e885f249925ae88cb71bfe6381cc2"
+    },
+    {
+      "path": "src/Wissian.Documents/DocumentStore.cs",
+      "sha256": "3a177ad71f3a8ca8fc58d53863620fc7751067c3556727efc73b5f84e507393d"
+    },
+    {
+      "path": "src/Wissian.Documents/DocumentsDbContext.cs",
+      "sha256": "656f15818aa7b251e93fecb1694533334991fa0fbacc1825d09719f0c8d2f1f4"
+    },
+    {
+      "path": "src/Wissian.Documents/Migrations/20260925190011_Documents.Designer.cs",
+      "sha256": "d5a77c089ab90126d2fd7750ab490445ba26e23f103cafd6d020a833a21ac744"
+    },
+    {
+      "path": "src/Wissian.Documents/Migrations/20260925190011_Documents.cs",
+      "sha256": "85416a798d9c614b53138b1d4f9a8931349caf8789c87ec6b64b927a0fd149f6"
+    },
+    {
+      "path": "src/Wissian.Documents/Migrations/DocumentsDbContextModelSnapshot.cs",
+      "sha256": "64bdaeeb17958ba4c0937972a8c1b3820d5c57ee0b42338eb8948f2f6f11c935"
+    },
+    {
+      "path": "src/Wissian.Documents/Migrations/DocumentsSecurity.cs",
+      "sha256": "22ba449a7102dae3d53b609448e378964697774041a3392bd6c701e311bf3881"
+    },
+    {
+      "path": "src/Wissian.Documents/Wissian.Documents.csproj",
+      "sha256": "08912768a9b223d90f0b4cbde31ca3330d25896d25ec71cb9da57554b36995a3"
+    },
+    {
+      "path": "src/Wissian.Documents/packages.lock.json",
+      "sha256": "778e4b5cbb51da126dd6d16c602782394c202e7f7e2885c601bbb88a6a293eb2"
+    },
+    {
+      "path": "src/Wissian.Host/Modules/DocumentUpload.cs",
+      "sha256": "93b9e6c91013da4ef9c9beeb7fda63bc4397d01209110dd443b5063f43b80cac"
+    },
+    {
+      "path": "src/Wissian.Host/Modules/DocumentsEndpoints.cs",
+      "sha256": "c98b1300e1a0d59134dc53855ca33e1159947591cb976a0f54db3ecc557b7064"
+    },
+    {
+      "path": "src/Wissian.Host/Modules/WindowsAttachmentInspector.cs",
+      "sha256": "eb4351277a579f69865d90521af7624aefb40cd5ddd2872e9338541b5a119d8c"
+    },
+    {
+      "path": "src/Wissian.Host/Program.cs",
+      "sha256": "97d5965cc09a2ca045459d4e465ca4e9a873ed129e90d79bc81767128ad611ec"
+    },
+    {
+      "path": "src/Wissian.Host/Wissian.Host.csproj",
+      "sha256": "bd02336c852f8448cad6db29f9841810b29eb32c811f3ac1dc7dda32014feb74"
+    },
+    {
+      "path": "src/Wissian.Host/packages.lock.json",
+      "sha256": "94097cfb19f3027343c103f3263836bace287fa506b268edd02351703c7e5da1"
+    },
+    {
+      "path": "src/Wissian.Operator/packages.lock.json",
+      "sha256": "774712fa1f31c8da692ff41c228affccf2c73f4f68de758aa3f18552aef9099b"
+    },
+    {
+      "path": "tests/Wissian.Api.Tests/ApiLab.cs",
+      "sha256": "62e3f70808ca122e71493390108f87309605b457253e80bb4cf116e91ddb685e"
+    },
+    {
+      "path": "tests/Wissian.Api.Tests/DocumentTests.cs",
+      "sha256": "8ed33142d3a6e2b38e326bcc0b861a3120d24530bfe3c2aa3cc199dbe79c9ebf"
+    },
+    {
+      "path": "tests/Wissian.Api.Tests/NativeInspectorTests.cs",
+      "sha256": "3c4df1c72a3b555e8fb614df66d487f1b788162bd4db8c2fcb9c97c5bea7f79a"
+    },
+    {
+      "path": "tests/Wissian.Api.Tests/Program.cs",
+      "sha256": "26c0c7689e091de84ffc7cbfc530270e4d275b3cddcf6fbd5be5475008a71cf1"
+    },
+    {
+      "path": "tests/Wissian.Api.Tests/packages.lock.json",
+      "sha256": "19af40d6a28bd085836b752a327070444dc0497761df0bcd4255c9aef5fb573f"
+    },
+    {
+      "path": "tests/Wissian.Foundation.Tests/packages.lock.json",
+      "sha256": "ab4703ea8ed752c357cb30be4c8b22914b11a5cca71f819729edeec55c55e184"
+    },
+    {
+      "path": "tests/Wissian.TestExtension/packages.lock.json",
+      "sha256": "774712fa1f31c8da692ff41c228affccf2c73f4f68de758aa3f18552aef9099b"
+    }
+  ]
+}

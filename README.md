@@ -1,10 +1,10 @@
 # Wissian
 
-Plataforma B2B da Fultuma Tech Ltda, com Core mínimo, administração por módulos e especialidades separadas. **Estado: desenvolvimento M1 iniciado; o piloto ainda não está disponível.** Stack decidida por evidência na [ADR-M03](docs/mestre/adrs/ADR-M03_STACK_E_REUSO.md): .NET/ASP.NET Core, EF/PostgreSQL e React/TypeScript/Vite. O código existente será fragmentado e adaptado conforme o [contrato de absorção](docs/mestre/04_ABSORCAO_CODEX_BASE44.md), preservando a identidade própria do Wissian.
+Plataforma B2B da Fultuma Tech Ltda, com Core mínimo, administração por módulos e especialidades separadas. **Estado: fundação M1 verificada tecnicamente e administração M2 em desenvolvimento; o piloto ainda não está disponível.** Stack decidida por evidência na [ADR-M03](docs/mestre/adrs/ADR-M03_STACK_E_REUSO.md): .NET/ASP.NET Core, EF/PostgreSQL e React/TypeScript/Vite. O código existente será fragmentado e adaptado conforme o [contrato de absorção](docs/mestre/04_ABSORCAO_CODEX_BASE44.md), preservando a identidade própria do Wissian.
 
 O ensaio em `experiments/m0-reuso/README.md` passou 16 casos sintéticos. A
 [evidência da fatia](docs/mestre/evidencias/m0-primeira-fatia.json) delimita o que foi
-inspecionado e executado. Frente ativa: [fundação M1](docs/mestre/contratos/M1_FUNDACAO.md).
+inspecionado e executado. Frente ativa: [administração M2](docs/mestre/contratos/M2_ADMINISTRACAO.md).
 Módulos/addons continuam [planejados](docs/mestre/03_ARQUITETURA_E_MODULARIDADE.md),
 sem disponibilidade comercial presumida.
 
@@ -101,7 +101,7 @@ quando estiver elegível/habilitado e tiver grants explícitos de leitura/escrit
 nenhum usuário ou organização real é criado automaticamente. Cadastro, busca,
 edição com versão, arquivamento e restauração têm API, UI e auditoria. Ver
 [contrato M2](docs/mestre/contratos/M2_ADMINISTRACAO.md) para limites e instalação.
-Documentos/anexos e os marcos M3/M4 ainda não estão disponíveis.
+A API documental está descrita abaixo; M3/M4 ainda não estão disponíveis.
 
 ```powershell
 dotnet ef migrations has-pending-model-changes --project src/Wissian.Counterparties --no-build
@@ -113,6 +113,30 @@ A suíte de navegador requer os builds web abaixo e Edge instalado. Os laborató
 instalam migrations da fundação e do módulo, em schemas próprios, antes do host.
 Compartilham somente a transação de cada operação autorizada. A composição neutra
 de testes continua sem registrar endpoints ou migrations administrativas.
+
+### Documentos privados — M2-S2A
+
+O Host também compõe `documents`, com schema e permissões próprios. Sua API
+preserva originais, versões, classificação e quarentena; interface e vínculo com
+contrapartes seguem na S2B. Consultar o [contrato M2](docs/mestre/contratos/M2_ADMINISTRACAO.md)
+para tipos, cotas, reinspeção, respostas e limitações de implantação. Aplicar a
+migration de documentos depois da fundação e antes de iniciar esse Host.
+
+```powershell
+dotnet ef migrations has-pending-model-changes --project src/Wissian.Documents --no-build
+./scripts/Test-Postgres.ps1 -PostgresBin /caminho/para/pgsql/bin -Suite Documents
+```
+
+A suíte usa inspetor sintético, sem configurar o antivírus da máquina. Para
+verificar separadamente o adaptador real no Windows, com seu antivírus ativo:
+
+```powershell
+dotnet run --project tests/Wissian.Api.Tests --no-build --no-restore -- --native-inspector
+```
+
+O teste nativo usa texto benigno e o padrão inofensivo EICAR somente em memória;
+pode gerar um aviso de detecção esperado. Não altera proteção, executa conteúdo ou
+grava a amostra. Falha desse teste bloqueia a aprovação de inspeção no ambiente alvo.
 
 ### Interface e jornadas em navegador
 

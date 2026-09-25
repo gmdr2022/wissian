@@ -93,7 +93,11 @@ fixado pelo projeto, restore com lockfiles, build, suíte executável do Core,
 verificação de migrations e suítes de persistência/API em PostgreSQL 18.6 sintético.
 O CI também verifica tipos/build React, dependências do lockfile e jornadas em
 Edge sobre a API real. O consumidor sintético de UI tem build separado e não entra
-na interface de produção. Contrapartes acrescenta a verificação do modelo/migrations
+na interface de produção. Documentos acrescenta verificação de modelo/migrations e
+suíte HTTPS/PostgreSQL de originais, versões, classificação, quarentena e cotas,
+com inspetor sintético explícito. O teste nativo de antivírus é separado e deve ser
+executado no ambiente alvo; CI não equivale a essa validação operacional.
+Contrapartes acrescenta a verificação do modelo/migrations
 próprios, casos de API/concorrência e jornadas administrativas no navegador.
 O runner Windows respeita DPAPI e ACLs. O download do banco
 tem SHA-256 fixado; cada suíte cria e encerra seu cluster isolado. `dotnet test` não

@@ -41,7 +41,7 @@ jobs:
           fi
 
   foundation:
-    name: Fundacao, contrapartes e isolamento
+    name: Fundacao, administracao e isolamento
     needs: contracts
     if: needs.contracts.outputs.runtime == 'true'
     # DPAPI, ACLs e o laboratorio PostgreSQL atual sao contratos Windows.
@@ -85,6 +85,8 @@ jobs:
         run: dotnet ef migrations has-pending-model-changes --project src/Wissian.Persistence --no-build
       - name: Verificar migrations do modulo de contrapartes
         run: dotnet ef migrations has-pending-model-changes --project src/Wissian.Counterparties --no-build
+      - name: Verificar migrations do modulo de documentos
+        run: dotnet ef migrations has-pending-model-changes --project src/Wissian.Documents --no-build
       - name: Preparar PostgreSQL 18.6 isolado e verificado
         run: |
           $archive = Join-Path $env:RUNNER_TEMP 'postgresql-18.6-4.zip'
@@ -106,3 +108,5 @@ jobs:
         run: ./scripts/Test-Postgres.ps1 -PostgresBin $env:WISSIAN_CI_POSTGRES_BIN -Suite Counterparties
       - name: Executar jornadas administrativas reais em Edge
         run: ./scripts/Test-Postgres.ps1 -PostgresBin $env:WISSIAN_CI_POSTGRES_BIN -Suite CounterpartiesBrowser
+      - name: Executar documentos, originais, quarentena e isolamento com inspetor sintetico
+        run: ./scripts/Test-Postgres.ps1 -PostgresBin $env:WISSIAN_CI_POSTGRES_BIN -Suite Documents

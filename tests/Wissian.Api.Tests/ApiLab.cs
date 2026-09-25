@@ -27,6 +27,7 @@ using Wissian.Host.Identity;
 using Wissian.Persistence;
 using Wissian.TestExtension;
 using Wissian.Counterparties;
+using Wissian.Documents;
 using Wissian.Host.Modules;
 
 namespace Wissian.Api.Tests;
@@ -43,6 +44,11 @@ public sealed class LabClock : TimeProvider
 public sealed class ApiLab : IAsyncDisposable
 {
     private bool administration;
+    private bool documents;
+    public TestAttachmentInspector Inspector { get; } = new();
+    public DocumentsDbContext DocumentsDb(bool runtime = false) => new(new DbContextOptionsBuilder<DocumentsDbContext>()
+        .UseNpgsql(Connection(runtime ? "wissian_runtime" : "wissian_migrator"), p => p.SetPostgresVersion(18, 6)
+            .MigrationsHistoryTable("schema_history", "wissian_documents")).Options);
     public CounterpartiesDbContext CounterpartiesDb(bool runtime = false) => new(new DbContextOptionsBuilder<CounterpartiesDbContext>()
         .UseNpgsql(Connection(runtime ? "wissian_runtime" : "wissian_migrator"), p => p.SetPostgresVersion(18, 6)
             .MigrationsHistoryTable("schema_history", "wissian_counterparties")).Options);
@@ -86,9 +92,10 @@ public sealed class ApiLab : IAsyncDisposable
         .UseNpgsql(Connection("wissian_migrator"), p => p.SetPostgresVersion(18, 6)
             .MigrationsHistoryTable("schema_history", "wissian")).Options);
 
-    public async Task StartAsync(bool includeAdministration = false)
+    public async Task StartAsync(bool includeAdministration = false, bool includeDocuments = false)
     {
         administration = includeAdministration;
+        documents = includeDocuments;
         await using var admin = new NpgsqlConnection(adminConnection);
         await admin.OpenAsync();
         foreach (var sql in new[]
@@ -105,6 +112,7 @@ public sealed class ApiLab : IAsyncDisposable
         }
         await using (var db = OwnerDb()) await db.Database.MigrateAsync();
         if (administration) await using (var db = CounterpartiesDb()) await db.Database.MigrateAsync();
+        if (documents) await using (var db = DocumentsDb()) await db.Database.MigrateAsync();
         App = Build();
         await App.StartAsync();
         Address = new(App.Services.GetRequiredService<IServer>().Features.Get<IServerAddressesFeature>()!.Addresses.Single());
@@ -114,9 +122,9 @@ public sealed class ApiLab : IAsyncDisposable
         string database = "wissian_api_synthetic", bool persistentKeys = false, string? webRoot = null) => HostApplication.Build(
         ["--environment", "Testing", "--Logging:LogLevel:Default", "Critical",
          "--Wissian:Database", Connection(ownerCredential ? "wissian_migrator" : "wissian_runtime", database),
-         "--Wissian:KeyDirectory", KeyDirectory], administration
-            ? [FoundationProbe.SecuredRegistration, CounterpartiesEndpoints.Registration] : [FoundationProbe.SecuredRegistration], builder =>
+         "--Wissian:KeyDirectory", KeyDirectory], Registrations(), builder =>
         {
+            if (documents) builder.Services.AddSingleton<IAttachmentInspector>(Inspector);
             if (webRoot is not null) builder.Configuration["Wissian:WebRoot"] = webRoot;
             builder.WebHost.ConfigureKestrel(server => server.Listen(IPAddress.Loopback, 0, endpoint => endpoint.UseHttps(certificate)));
             builder.Services.AddSingleton<TimeProvider>(Clock);
@@ -134,6 +142,14 @@ public sealed class ApiLab : IAsyncDisposable
                 });
             }
         });
+
+    private ModuleRegistration[] Registrations()
+    {
+        var modules = new List<ModuleRegistration> { FoundationProbe.SecuredRegistration };
+        if (administration) modules.Add(CounterpartiesEndpoints.Registration);
+        if (documents) modules.Add(DocumentsEndpoints.Registration);
+        return modules.ToArray();
+    }
 
     public async Task CreateOldSchemaAsync()
     {

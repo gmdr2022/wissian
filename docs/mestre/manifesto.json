@@ -38,8 +38,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 17035,
-      "sha256": "f844128774ababeb7f0988ab82054a79e7ce1de6368d4069b23ea99e8e3ee0cf"
+      "bytes": 18289,
+      "sha256": "97e618d796e7d0a5ace6d7d63e18c428f65127b0f70f5511fe557c963c931b2a"
     },
     {
       "path": "WISSIAN_CODEX_REGRA_MESTRA.md",
@@ -453,8 +453,8 @@
     },
     {
       "path": "docs/mestre/05_GIT_E_REPOSITORIOS.md",
-      "bytes": 10029,
-      "sha256": "75eca715fe52fabf96c5936922e6fc7f94f0a94014c38ac28191337e4899c2c7"
+      "bytes": 10338,
+      "sha256": "e4d65f352755a50c6e48b9587ef0148d12b71b6a3ec0bb2c7401643122aa07e5"
     },
     {
       "path": "docs/mestre/06_DADOS_MIGRACOES_COMPATIBILIDADE.md",
@@ -473,8 +473,8 @@
     },
     {
       "path": "docs/mestre/09_ROADMAP_INTEGRADO.md",
-      "bytes": 12653,
-      "sha256": "cbefafc23438b5c51dc8c01d42268f0031308a3ebbe0b28fe16d8187e0722f60"
+      "bytes": 12737,
+      "sha256": "c1984738699ce3e89961200f0a1d90d597eb15d89c079ef074334dc175262ce8"
     },
     {
       "path": "docs/mestre/10_TESTES_E_ACEITE.md",
@@ -568,8 +568,8 @@
     },
     {
       "path": "docs/mestre/contratos/M2_ADMINISTRACAO.md",
-      "bytes": 5011,
-      "sha256": "3150f5dadf87e3de1cfe49c09ff85aa5f999ed18526ff67b5f50dbf74321b963"
+      "bytes": 10994,
+      "sha256": "a523322b7997216b008a0bed25c8c218c4fa547a2154b4aa0feaba1d9d8dfc17"
     },
     {
       "path": "docs/mestre/contratos/README.md",
@@ -630,6 +630,11 @@
       "path": "docs/mestre/evidencias/m2-contrapartes-s1.json",
       "bytes": 12469,
       "sha256": "ce8d1ca75dff282b535dffe70c5399b55c4ead171327dee7dad818d0512061e9"
+    },
+    {
+      "path": "docs/mestre/evidencias/m2-documentos-s2a.json",
+      "bytes": 10008,
+      "sha256": "031d9035bcf28972734f561a05fae160d4d5da2b47fcd9aa43b9dbc33943526b"
     },
     {
       "path": "docs/mestre/evidencias/repositorios-inspecionados.json",
