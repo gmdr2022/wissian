@@ -2,7 +2,7 @@
 
 ## Topologia decidida
 
-**Wissian:** repositório próprio, independente, com `main` própria. **ClubAL:** repositório de origem/produto preservado, branches históricas e integrações conservadas. **Base44:** ref/export de origem a comparar, não ramo a sobrescrever. Produtos futuros podem consumir contratos/pacotes do Wissian; repositório separado por vertical só se houver benefício concreto. Nenhuma branch permanente por cliente.
+**Wissian:** repositório próprio, independente, com `main` própria e único foco de desenvolvimento. **ClubAL, Codex Checkpoint e NexusDevHub:** produtos independentes descontinuados, preservados como fontes de absorção seletiva, com branches históricas e integrações conservadas. **Base44:** ref/export de origem a comparar, não ramo a sobrescrever. Produtos futuros podem consumir contratos/pacotes do Wissian; repositório separado por vertical só se houver benefício concreto. Nenhuma branch permanente por cliente.
 
 Em 25/09/2026, Gui autorizou criar e sincronizar o repositório privado
 [gmdr2022/wissian](https://github.com/gmdr2022/wissian). Sua existência, privacidade e
@@ -10,6 +10,30 @@ remote `origin` foram verificados. O Git local preexistente é preservado; o bas
 inicial inclui contratos, fontes documentais preservadas e ensaio M0 revisados, sem
 histórico ou remote do ClubAL. Consultar Git para hash/estado atual, não snapshots.
 Branches curtas com prefixo `codex/` passam a ser possíveis após esse baseline.
+
+## Encerramento autorizado das origens — 25/09/2026
+
+Gui concordou com a descontinuação dos três repositórios e esclareceu que não
+trabalhará mais no ClubAL: o foco é apenas o novo SaaS Wissian. O cuidado solicitado
+com a Base44 significa preservar e considerar os aprimoramentos de interface já
+produzidos, sem manter o ClubAL como frente ativa.
+
+O encerramento é limitado a aviso no README/instruções, descrição do GitHub,
+fechamento dos PRs automáticos de atualização e arquivamento privado para leitura.
+Preservar código, histórico, branches, tags e alterações locais existentes. Não
+mesclar branches nem atualizações de dependências para concluir o encerramento;
+não excluir arquivos, reescrever história, mudar visibilidade ou promover release.
+Usar checkout isolado para os avisos e verificar as refs no servidor antes/depois.
+
+As duas referências Base44 obrigatórias e o critério de cobertura visual pertencem
+ao [capítulo 04](04_ABSORCAO_CODEX_BASE44.md). Arquivar não comprova absorção,
+equivalência funcional, aceite visual nem substituição de instalações existentes.
+Instalações, dados operacionais e serviços externos não são alterados por esta
+decisão. O estado remoto efetivo é conferido no GitHub, não inferido deste texto.
+
+Evolução, correção e novas funcionalidades passam a ocorrer no Wissian. Reabrir
+desenvolvimento ou escrita nos repositórios encerrados exige novo pedido explícito
+de Gui; uma lacuna de reuso é tratada no destino, preservando a origem consultada.
 
 ## Sequência futura
 
@@ -50,4 +74,4 @@ Status antes/depois, diff e não rastreados inspecionados; origem intacta; mudan
 
 ## Referências Nexus/CC
 
-NexusDevHub e codex-checkpoint são ancestrais conceituais preservados. Nenhum merge, remote, fetch, commit, arquivamento ou alteração nesses repositórios é necessário a este adendo. Referenciar commit/caminho/hash ao caracterizar futuramente um caso específico. A decisão de não desenvolver produtos independentes não é autorização para removê-los ou mudar seus estados remotos. Cópia documental e instalação ativa permanecem coerentes; backups e ZIPs originais não são substituídos.
+NexusDevHub e codex-checkpoint são ancestrais conceituais preservados. Referenciar commit/caminho/hash ao caracterizar futuramente um caso específico. O adendo original não autorizava alterações remotas; a decisão específica de encerramento de 25/09/2026, registrada acima, autoriza os avisos e o arquivamento, sem autorizar remoção. Cópia documental e instalação ativa permanecem separadas; backups e ZIPs originais não são substituídos.

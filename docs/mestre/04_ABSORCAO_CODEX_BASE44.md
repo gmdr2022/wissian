@@ -40,6 +40,36 @@ Migrar capacidade e contrato observável, não branch inteira. Data, número de 
 
 ## Comparação Base44 × Codex
 
+### Referências preservadas e cobertura de interface
+
+Gui confirmou em 25/09/2026 o foco exclusivo no Wissian. As melhorias já produzidas
+na Base44 continuam sendo patrimônio a examinar; isso não mantém uma frente de
+desenvolvimento no ClubAL. O encerramento dos repositórios segue o
+[capítulo 05](05_GIT_E_REPOSITORIOS.md).
+
+| Referência de origem | Commit verificado no GitHub em 25/09/2026 | Papel na absorção |
+|---|---|---|
+| `base44/setup-32dcb42e` | [`46370e599c021c52ee9734249b438f4a664ab33b`](https://github.com/gmdr2022/clubal/tree/46370e599c021c52ee9734249b438f4a664ab33b) | Fonte Base44 a comparar por tela, componente e fluxo |
+| `integration/base44-main` | [`3380fa923bd6e3b05610642da0d283fb81514c7b`](https://github.com/gmdr2022/clubal/tree/3380fa923bd6e3b05610642da0d283fb81514c7b) | Evolução integrada a comparar; não presume que toda melhoria Base44 foi incorporada |
+
+Ambas devem continuar recuperáveis com seu histórico. A `main` isolada não é
+inventário suficiente do patrimônio. Diferença de commits/arquivos não comprova
+qualidade, autoria de cada melhoria ou equivalência de UX. A caracterização M0
+anterior não validou visualmente estas interfaces.
+
+Antes de implementar uma fatia de interface no Wissian, a ficha correspondente deve
+identificar os arquivos e comportamentos pertinentes nas duas referências, a
+evidência visual/sintética disponível e o destino de cada melhoria relevante:
+ADAPT/ADOPT/KEEP/DEFER/REJECT, com motivo. Cobrir navegação, hierarquia, densidade,
+tokens/temas, responsividade, teclado e estados vazio/erro/espera/permissão quando
+tocados. Preservar interação e resultado útil, adaptando identidade e autorização
+ao Wissian. Ausência de prova fica explícita; não tratar captura visual, build ou
+arquivamento como aceite ou absorção concluída.
+
+Essa conferência acompanha apenas a fatia atual, sem reabrir auditoria integral ou
+manutenção dos produtos encerrados. Aperfeiçoamentos e correções passam a ocorrer
+no Wissian, com procedência e testes próprios, sem sincronização bidirecional.
+
 | Dimensão | Pergunta de comparação | Tratamento |
 |---|---|---|
 | Mapa de alojamentos | Alterou geometria, relações, confirmação, estados, legenda, navegação ou apenas aparência? | Preservar intenção completa na vertical; testar revisão, concorrência, leitura em lista e planejamento separado da ocupação confirmada |
@@ -68,7 +98,7 @@ Uma melhoria da origem encontrada depois da extração pode gerar uma nova entra
 
 As fichas ABS-041…048 na matriz acrescentam catálogo/contexto, saúde/resolução, recuperação, fila/stable keys, dependências, passagens, decisão humana e integração defensiva. A decisão de **aproveitar princípios** está aprovada na [ADR-M08](adrs/ADR-M08_CONTINUIDADE_OPERACIONAL.md); o estado técnico PENDING_AUDIT continua correto, pois nenhum código foi incorporado ou testado no destino.
 
-O [mapa do capítulo 16](16_CONTINUIDADE_OPERACIONAL.md) distingue preservar/generalizar/aposentar. Referências privadas: `gmdr2022/NexusDevHub` e `gmdr2022/codex-checkpoint`. Quando necessário, ler somente trecho/caso pertinente e registrar SHA/licença/procedência. Não portar WPF, launcher, shell, JSON/mutex/journal, associação `.ccard` ou integrações específicas do Codex. Não arquivar/excluir/modificar origem; dados reais e fixtures sensíveis não atravessam. A absorção será concluída por comportamento de negócio e provas no SaaS, não pela quantidade de código recuperado.
+O [mapa do capítulo 16](16_CONTINUIDADE_OPERACIONAL.md) distingue preservar/generalizar/aposentar. Referências privadas: `gmdr2022/NexusDevHub` e `gmdr2022/codex-checkpoint`. Quando necessário, ler somente trecho/caso pertinente e registrar SHA/licença/procedência. Não portar WPF, launcher, shell, JSON/mutex/journal, associação `.ccard` ou integrações específicas do Codex. A absorção não altera nem exclui origem; o encerramento documental e arquivamento autorizados seguem exclusivamente o [capítulo 05](05_GIT_E_REPOSITORIOS.md). Dados reais e fixtures sensíveis não atravessam. A absorção será concluída por comportamento de negócio e provas no SaaS, não pela quantidade de código recuperado.
 
 ## Diretriz reforçada por Gui — fragmentar e reutilizar
 

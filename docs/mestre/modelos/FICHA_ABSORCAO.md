@@ -8,6 +8,7 @@
 | Procedência | Repositório, ref+commit, caminho/símbolo, hash da leitura, licença/asset e grau de inspeção |
 | Origem Codex | Comportamento, regra, persistência, interface, testes e limitação reais |
 | Origem Base44 | Mesmo cenário; estrutura, chamadas/SDK, modelo de dados, UX, assets, permissões e dependências |
+| Cobertura de UX Base44 | Comparar as duas referências preservadas no [capítulo 04](../04_ABSORCAO_CODEX_BASE44.md); registrar tela/fluxo, evidência disponível, melhorias mantidas/adaptadas/adiadas/rejeitadas e motivo; arquivamento não equivale a absorção |
 | Evoluções TEM/OWM/GRA | Requisitos/ADRs pertinentes e estado local; não transferir aprovação |
 | Comparação | Baseline comum, divergências, screenshot/evidência sintética quando necessário; motivo para cada escolha |
 | Decisão | Adotar, adaptar, manter na origem, adiar ou rejeitar; alternativa e custo/risco |
