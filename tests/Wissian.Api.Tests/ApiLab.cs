@@ -103,11 +103,12 @@ public sealed class ApiLab : IAsyncDisposable
     }
 
     public WebApplication Build(bool realRateLimit = false, bool ownerCredential = false,
-        string database = "wissian_api_synthetic", bool persistentKeys = false) => HostApplication.Build(
+        string database = "wissian_api_synthetic", bool persistentKeys = false, string? webRoot = null) => HostApplication.Build(
         ["--environment", "Testing", "--Logging:LogLevel:Default", "Critical",
          "--Wissian:Database", Connection(ownerCredential ? "wissian_migrator" : "wissian_runtime", database),
          "--Wissian:KeyDirectory", KeyDirectory], [FoundationProbe.SecuredRegistration], builder =>
         {
+            if (webRoot is not null) builder.Configuration["Wissian:WebRoot"] = webRoot;
             builder.WebHost.ConfigureKestrel(server => server.Listen(IPAddress.Loopback, 0, endpoint => endpoint.UseHttps(certificate)));
             builder.Services.AddSingleton<TimeProvider>(Clock);
             if (!persistentKeys) builder.Services.AddSingleton<IDataProtectionProvider>(new EphemeralDataProtectionProvider());
@@ -149,7 +150,8 @@ public sealed class ApiLab : IAsyncDisposable
 
     public LabClient Client(Uri? address = null) => new(address ?? Address, certificate.RawData);
 
-    public async Task<SyntheticPerson> PersonAsync(bool membership = true, bool confirmed = true, bool pending = false)
+    public async Task<SyntheticPerson> PersonAsync(bool membership = true, bool confirmed = true, bool pending = false,
+        string organizationName = "Organização sintética")
     {
         var id = Guid.NewGuid();
         var email = id.ToString("N") + "@example.invalid";
@@ -162,7 +164,7 @@ public sealed class ApiLab : IAsyncDisposable
             IsActive = !pending, DisplayName = "Pessoa sintética", CreatedAtUtc = Clock.GetUtcNow()
         };
         Ensure((pending ? await users.CreateAsync(user) : await users.CreateAsync(user, password)).Succeeded, "Fixture de identidade inválida.");
-        var organization = new Organization(Guid.NewGuid(), "example-" + id.ToString("N"), "Organização sintética", Clock.GetUtcNow());
+        var organization = new Organization(Guid.NewGuid(), "example-" + id.ToString("N"), organizationName, Clock.GetUtcNow());
         var member = new Membership(Guid.NewGuid(), id, organization.Id, Clock.GetUtcNow());
         if (membership)
         {

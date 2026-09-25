@@ -58,6 +58,12 @@ public sealed class IdentityFlow(UserManager<WissianUser> users, SignInManager<W
         return await CompleteAsync(user, context, "mfa");
     }
 
+    public async Task<IResult> CancelAuthenticatorAsync(HttpContext context)
+    {
+        await context.SignOutAsync(IdentityConstants.TwoFactorUserIdScheme);
+        return Results.NoContent();
+    }
+
     private async Task<IResult> CompleteAsync(WissianUser user, HttpContext context, string method)
     {
         // The framework's preliminary ticket has no session_id and is rejected by our cookie validator.

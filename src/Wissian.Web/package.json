@@ -1,0 +1,23 @@
+{
+  "name": "wissian-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": { "node": ">=24.16.0 <25" },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && vite build",
+    "build:fixture": "vite build --config e2e/vite.fixture.config.ts",
+    "test:browser": "node e2e/browser.mjs"
+  },
+  "dependencies": { "react": "19.2.7", "react-dom": "19.2.7" },
+  "devDependencies": {
+    "@playwright/test": "1.62.0",
+    "@types/node": "24.13.2",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.3",
+    "typescript": "6.0.2",
+    "vite": "8.1.1"
+  }
+}

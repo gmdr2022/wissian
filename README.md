@@ -63,7 +63,7 @@ dotnet run --project tests/Wissian.Foundation.Tests --no-restore --disable-build
 
 Os 25 testes da fundação incluem a composição neutra em HTTP/loopback. A extensão
 técnica existe somente nos testes; não faz parte do host executável. O host real
-agora oferece identidade e sessão; o shell UI ainda está pendente.
+oferece identidade, sessão e o shell React próprio descrito abaixo.
 
 Para os 16 testes de persistência, fornecer os binários PostgreSQL **18.6**:
 
@@ -94,6 +94,50 @@ migration já aplicada; `Down` destrutivo é recusado. Instalação, repetição
 transacional e retomada em outro banco sintético são exercitadas pela suíte.
 O runtime não executa migrations nem recebe a credencial do migrador.
 
+### Interface e jornadas em navegador
+
+A interface usa Node **24 LTS** (CI fixado em `.node-version`; mínimo 24.16.0),
+React 19.2.7, TypeScript 6.0.2 e Vite 8.1.1,
+com versões/lockfile próprios. O build de produção é servido pelo mesmo host HTTPS
+da API; não há CORS amplo, serviço externo, token de sessão em JavaScript nem SDK
+de origem. Instalar dependências sem scripts de terceiros:
+
+```powershell
+npm --prefix src/Wissian.Web ci --ignore-scripts --no-fund
+npm --prefix src/Wissian.Web run build
+dotnet build Wissian.slnx --no-restore --disable-build-servers -m:1
+```
+
+O build .NET copia a interface para `wwwroot` junto do executável/publicação.
+`Wissian__WebRoot` pode apontar para um build em caminho absoluto; configuração
+explícita inválida impede a inicialização. Sem build/configuração, a composição
+somente API continua disponível. `/`, `/access` e `/m/...` servem o shell; rotas
+desconhecidas de `/api` continuam `404`. CSP, `no-store`, `no-referrer` e HTTPS
+protegem o fluxo. Chaves, banco e certificado seguem as exigências de operação.
+
+A entrada permite login, MFA, cancelamento do desafio, escolha de organização,
+saída confirmada, orientação de acesso assistido e consumo de link de ativação ou
+recuperação. Trocar organização desmonta o conteúdo anterior; outras abas recebem
+apenas um aviso para revalidar no servidor. Ao perder sessão/permissão ou conexão
+durante a revalidação, o conteúdo é fechado. Nenhum módulo de negócio é anunciado
+antes de existir: views entram por composição compilada e capacidades devolvidas
+pelo servidor, que continua autorizando cada chamada.
+
+O laboratório de navegador exige Edge instalado e usa apenas dados sintéticos:
+
+```powershell
+npm --prefix src/Wissian.Web run build:fixture
+./scripts/Test-Postgres.ps1 -PostgresBin /caminho/para/pgsql/bin -Suite Browser
+```
+
+A fixture de UI fica em `.local/web-fixture`, separada do produto. O runner usa a
+API/Kestrel, PostgreSQL real e Playwright/Edge, sem instalar confiança no certificado
+ou criar endpoint administrativo de teste. Credenciais sintéticas passam somente
+ao processo filho controlado. Screenshots ficam em `.local/browser-tests`; bancos,
+chaves, links e screenshots não são publicados pelo CI. Ver
+[evidência S4](docs/mestre/evidencias/m1-fundacao-s4.json) para cobertura e limites.
+Aceite de Gui e uso com tecnologia assistiva permanecem separados dos testes.
+
 ### Configuração e contrato HTTP atual
 
 O host exige `Wissian__Database` com o papel `wissian_runtime` e
@@ -115,6 +159,7 @@ reinício com as mesmas chaves e rejeição de cookie emitido por outro conjunto
 | `POST /api/identity/mfa` | Código do autenticador; desafio válido por cinco minutos e vinculado à versão da credencial |
 | `GET /api/identity/session` | Contexto e organizações atuais; capacidades calculadas no servidor |
 | `POST /api/identity/context` | Organização, vínculo, versão esperada e `commandId` (UUID); recibo idempotente ou `409` em conflito |
+| `POST /api/identity/cancel-mfa` | Encerra apenas o desafio MFA pendente; exige CSRF |
 | `POST /api/identity/logout` | Revoga a sessão persistida e elimina o cookie |
 | `GET /api/identity/access-help` | Explica o fluxo assistido, sem afirmar envio de e-mail |
 | `POST /api/identity/activate` | `userId`, `token`, `newPassword`; ativa apenas identidade previamente provisionada, sem conceder vínculo |
@@ -164,7 +209,10 @@ no stdout. O arquivo é uma credencial temporária: somente o destinatário deve
 recebê-lo por canal aprovado, após conferência de identidade. Não há endpoint
 público de emissão, envio de e-mail ou emissão para contas reais neste estágio.
 Provisionamento operacional, canal real de entrega e recuperação de MFA perdido
-permanecem gates de operação; a UI dos fluxos sintéticos entra na próxima fatia.
+permanecem gates de operação. O JSON inclui `relativeUrl`, que deve ser resolvido
+somente contra a origem HTTPS confiável do Wissian. O token segue no fragmento de
+`/access`, é consumido pela UI e removido da URL, sem query, armazenamento local ou
+envio automático a terceiros. Fechar/recarregar a tela exige reabrir o link.
 
 Python é ferramenta documental. Os comandos do ensaio M0 estão em seu README.
 Testes de pacote e caracterização isolada não comprovam funcionamento do SaaS.

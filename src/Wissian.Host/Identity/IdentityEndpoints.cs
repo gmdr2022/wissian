@@ -25,6 +25,7 @@ public static class IdentityEndpoints
             .RequireRateLimiting("identity");
         commands.MapPost("/mfa", (AuthenticatorLogin request, HttpContext context, IdentityFlow flow) => flow.AuthenticatorAsync(request, context))
             .RequireRateLimiting("identity");
+        commands.MapPost("/cancel-mfa", (HttpContext context, IdentityFlow flow) => flow.CancelAuthenticatorAsync(context));
         commands.MapPost("/context", (ContextSelection request, HttpContext context, IdentityFlow flow) => flow.SelectAsync(request, context))
             .RequireAuthorization();
         commands.MapPost("/logout", (HttpContext context, IdentityFlow flow) => flow.LogoutAsync(context)).RequireAuthorization();

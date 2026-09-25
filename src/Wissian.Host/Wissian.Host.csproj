@@ -10,5 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="../Wissian.Core/Wissian.Core.csproj" />
     <ProjectReference Include="../Wissian.Persistence/Wissian.Persistence.csproj" />
+    <Content Include="../Wissian.Web/dist/**" Link="wwwroot/%(RecursiveDir)%(Filename)%(Extension)"
+             CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>

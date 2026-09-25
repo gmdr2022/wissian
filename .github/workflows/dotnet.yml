@@ -61,6 +61,18 @@ jobs:
       - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
         with:
           global-json-file: global.json
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: src/Wissian.Web/.node-version
+          package-manager-cache: false
+      - name: Restaurar dependencias web fixadas sem scripts de instalacao
+        run: npm --prefix src/Wissian.Web ci --ignore-scripts --no-audit --no-fund
+      - name: Verificar dependencias web
+        run: npm --prefix src/Wissian.Web audit --audit-level=high
+      - name: Verificar tipos e compilar interface de producao
+        run: npm --prefix src/Wissian.Web run build
+      - name: Compilar consumidor sintetico de UI separado do produto
+        run: npm --prefix src/Wissian.Web run build:fixture
       - name: Restaurar dependencias fixadas
         run: dotnet restore Wissian.slnx --locked-mode --disable-parallel
       - name: Compilar com avisos tratados como erros
@@ -86,3 +98,5 @@ jobs:
         run: ./scripts/Test-Postgres.ps1 -PostgresBin $env:WISSIAN_CI_POSTGRES_BIN -Suite Persistence
       - name: Executar API, identidade e concorrencia em HTTPS
         run: ./scripts/Test-Postgres.ps1 -PostgresBin $env:WISSIAN_CI_POSTGRES_BIN -Suite Api
+      - name: Executar jornadas reais de navegador em Edge e banco sintetico
+        run: ./scripts/Test-Postgres.ps1 -PostgresBin $env:WISSIAN_CI_POSTGRES_BIN -Suite Browser

@@ -38,8 +38,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 13076,
-      "sha256": "f7e6975bea59f814f02a23c53a9f842df6b1c41bda42bc43c9f46be016e4f88f"
+      "bytes": 15848,
+      "sha256": "2f4fe6eaafcea9a61915273f242927ea356bb833c64edde36b9fb9b2b35c4d1f"
     },
     {
       "path": "WISSIAN_CODEX_REGRA_MESTRA.md",
@@ -453,8 +453,8 @@
     },
     {
       "path": "docs/mestre/05_GIT_E_REPOSITORIOS.md",
-      "bytes": 9718,
-      "sha256": "6f1cab1f39398e9f54ddee79dd5cca318c2fa92e4e5f5e931a744f0094ec0ade"
+      "bytes": 9889,
+      "sha256": "bee405f21f1e8a3dd68ce8fabf08a700b52a56307197f5fa77a7508860980730"
     },
     {
       "path": "docs/mestre/06_DADOS_MIGRACOES_COMPATIBILIDADE.md",
@@ -563,8 +563,8 @@
     },
     {
       "path": "docs/mestre/contratos/M1_FUNDACAO.md",
-      "bytes": 6909,
-      "sha256": "11a7a40ebd7eb182506d03d51ecbe42fe9016ab1c31507f86d59ec8f0e60ee1d"
+      "bytes": 7235,
+      "sha256": "92b8870d12426c4addd563ad27fe3417db742f4f92ffe64c86df04727c20e479"
     },
     {
       "path": "docs/mestre/contratos/README.md",
@@ -615,6 +615,11 @@
       "path": "docs/mestre/evidencias/m1-fundacao-s3b.json",
       "bytes": 11536,
       "sha256": "8ab4ad059ae3fd3eed6b8bce664258f2cb5293df78e836f57312d8f1c821e00d"
+    },
+    {
+      "path": "docs/mestre/evidencias/m1-fundacao-s4.json",
+      "bytes": 13595,
+      "sha256": "aba7530c7b96f0a80378034fe4d3c50b61fe0c00cb269bc7ecba0d31ebf5fef4"
     },
     {
       "path": "docs/mestre/evidencias/repositorios-inspecionados.json",

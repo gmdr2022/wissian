@@ -1,0 +1,316 @@
+{
+  "schema_version": 1,
+  "slice": "M1-S4",
+  "status": "VERIFIED_LOCALLY",
+  "scope": "Shell React de identidade, organizacao e modulos autorizados; dados exclusivamente sinteticos",
+  "sources": [
+    {
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/web/operador/src/IdentityGate.tsx",
+      "blob": "bfe40a52ce6c190fc4b8efebfc4c25c7512c52e7",
+      "symbols": "IdentityGate/loadSession/handleContextSelection/handleSignOut",
+      "decision": "ADAPT",
+      "preserved": "Estados explicitos, foco, cancelamento, escolhas retornadas pelo servidor, saida confirmada",
+      "changed": "Contratos Wissian, versao e commandId, remocao de unidades/localidades e plataforma legadas; invalidacao entre abas"
+    },
+    {
+      "ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+      "path": "src/web/operador/src/IdentityGate.tsx",
+      "blob": "21026ba162735d5ab03f9e960fafe6a7a9769601",
+      "decision": "COMPARE",
+      "disposition": "Base44 tinha setup MFA/QR nesta tela; a versao integrada separa isso. Preservado desafio MFA, sem copiar exposicao de segredo/setup ao login. Provisionamento real e recuperacao de autenticador permanecem gates operacionais, nao capacidades removidas silenciosamente."
+    },
+    {
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/web/operador/src/api/identity.ts",
+      "blob": "67c3d2fa06b908e4f539978046fdf03b06d468b1",
+      "decision": "ADAPT",
+      "preserved": "Cookies same-origin, token CSRF antes de mutacoes e erro estruturado",
+      "changed": "Sem adapter de release legado; timeout, redirect recusado e endpoint proprio"
+    },
+    {
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/web/operador/src/OperatorPortal.tsx",
+      "blob": "6a13f5077ca6137325022ef87fbfd383b315462d",
+      "decision": "ADAPT",
+      "preserved": "Skip link, areas de trabalho, menu responsivo e organizacao ativa",
+      "changed": "Sem menus de dominios ou assets legados; views apenas por composicao compilada e capacidades do servidor"
+    },
+    {
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/web/operador/src/appearance/appearance.css",
+      "blob": "3b8668b75ceedcee1888965e8b1de40e7bcd8be2",
+      "decision": "ADAPT",
+      "preserved": "Tokens semanticos, superficie selecionada, foco e movimento reduzido",
+      "changed": "Paletas minimas clara/escura/sistema e chave de preferencia propria; catalogo amplo e assets ficam para consumidores pertinentes"
+    },
+    {
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/web/operador/src/router/usePathname.ts",
+      "blob": "7dae632713abaa4a922e71376e84974d9101c2f3",
+      "decision": "ADAPT",
+      "preserved": "useSyncExternalStore/popstate",
+      "changed": "Navegacao limitada a rotas proprias"
+    }
+  ],
+  "source_preservation": "Somente git show/diff/rev-parse; nenhuma alteracao nas origens. Comparacao e limitada ao fluxo M1, nao equivale a absorcao integral de UX Base44.",
+  "dependency_basis": "Versoes de React/TypeScript/Vite/Playwright da origem verificadas no registry oficial; dependencias exatas e lockfile proprio. npm audit inicial 0 vulnerabilidades. Nenhum SDK Base44, backend legado ou asset de marca importado.",
+  "verification": {
+    "typecheck_and_vite_build": "PASS",
+    "dotnet_build": "PASS_0_WARNINGS_0_ERRORS",
+    "api_regression": {
+      "passed": 42,
+      "failed": 0
+    },
+    "foundation_regression": {
+      "passed": 25,
+      "failed": 0
+    },
+    "browser": {
+      "passed": 18,
+      "failed": 0,
+      "engine": "Microsoft Edge headless",
+      "transport": "HTTPS/Kestrel, PostgreSQL18.6, cookies/CSRF reais",
+      "cases": [
+        {
+          "id": "M1-S4-01",
+          "oracle": "production shell has no test module or speculative menu",
+          "result": "PASS"
+        },
+        {
+          "id": "M1-S4-02",
+          "oracle": "keyboard login, two contexts and confirmed logout",
+          "result": "PASS"
+        },
+        {
+          "id": "M1-S4-03",
+          "oracle": "no membership has an honest empty state",
+          "result": "PASS"
+        },
+        {
+          "id": "M1-S4-04",
+          "oracle": "invalid credentials retain identifier but clear password",
+          "result": "PASS"
+        },
+        {
+          "id": "M1-S4-05",
+          "oracle": "MFA survives focus and completes with an authenticator",
+          "result": "PASS"
+        },
+        {
+          "id": "M1-S4-06",
+          "oracle": "cancel MFA invalidates challenge and requires CSRF",
+          "result": "PASS"
+        },
+        {
+          "id": "M1-S4-07",
+          "oracle": "lost selection response retries same command without duplicate receipt",
+          "result": "PASS"
+        },
+        {
+          "id": "M1-S4-08",
+          "oracle": "disabled module disappears; direct route and server request denied",
+          "result": "PASS"
+        },
+        {
+          "id": "M1-S4-09",
+          "oracle": "revoked membership clears content on revalidation",
+          "result": "PASS"
+        },
+        {
+          "id": "M1-S4-10",
+          "oracle": "session revoked with open tab returns to login",
+          "result": "PASS"
+        },
+        {
+          "id": "M1-S4-11",
+          "oracle": "context changes in a second tab revalidate the first",
+          "result": "PASS"
+        },
+        {
+          "id": "M1-S4-12",
+          "oracle": "unavailable service does not pretend successful logout",
+          "result": "PASS"
+        },
+        {
+          "id": "M1-S4-13",
+          "oracle": "recovery uses fragment, rejects weak password and consumes link once",
+          "result": "PASS"
+        },
+        {
+          "id": "M1-S4-14",
+          "oracle": "activation validates confirmation and grants no organization",
+          "result": "PASS"
+        },
+        {
+          "id": "M1-S4-15",
+          "oracle": "assisted help never claims to send an email",
+          "result": "PASS"
+        },
+        {
+          "id": "M1-S4-16",
+          "oracle": "narrow layout, menu keyboard and appearance persist",
+          "result": "PASS"
+        },
+        {
+          "id": "M1-S4-17",
+          "oracle": "already authenticated response reconciles the real session",
+          "result": "PASS"
+        },
+        {
+          "id": "M1-S4-18",
+          "oracle": "account action waits for logout and handles a revoked current session",
+          "result": "PASS"
+        }
+      ]
+    },
+    "npm_audit": "0 vulnerabilities",
+    "ci": "Resultado por commit consultavel no workflow Wissian CI do GitHub; nao duplicado neste snapshot local",
+    "local_node": "24.16.0",
+    "ci_node": "24.21.0 LTS, versao atual conferida no indice oficial; nenhum runtime global substituido",
+    "targeted_after_review": [
+      "M1-S4-16: PASS apos restauracao de foco no conteudo",
+      "M1-S4-01: PASS; arquivos adjacentes ao index nao sao publicados, somente assets e rotas explicitas"
+    ]
+  },
+  "human_acceptance": "PENDING",
+  "production": "NOT_DEPLOYED",
+  "baseline_commit": "4b4e80129dd7b9cd5b3d2e3a27152ab0a4c3a041",
+  "review": {
+    "source_comparison": "Fluxos/semantica e diffs Base44/integracao examinados; nenhuma alegacao de comparacao visual integral do aplicativo arquivado.",
+    "screenshots": "Desktop1280x900, mobile390x844; inspecao visual do shell, login escuro e extensao sintetica. Reflow automatizado320px. PNGs locais nao publicados.",
+    "accessibility": "Teclado/foco/labels/landmarks/menu de disclosure verificados; leitura por tecnologia assistiva e aceite de Gui PENDING.",
+    "corrections": "Foco apos erro ocorre depois da reabilitacao do formulario; troca de janela preserva credenciais digitadas e desafio MFA; navegacao em modulo move foco para conteudo; saida confirmada aguardada pelo teste; conta revogada durante acao assistida tratada explicitamente."
+  },
+  "boundaries": [
+    "Nenhum modulo de negocio liberado por esta fatia; consumidor de UI sintetico fica fora do build de producao.",
+    "UI nunca concede autoridade. Views compiladas sao filtradas por capabilities; URL direta continua validada pelo servidor.",
+    "Nenhuma alteracao de schema, migrations ou Core. Cancelar MFA remove apenas o desafio pendente e exige CSRF.",
+    "Tokens de acao em fragmento consumido/removido; nunca query ou localStorage. Preferencia de tema e a unica persistencia da UI.",
+    "Controles de testes por stdin/stdout de processo filho controlado, sem endpoint admin; apenas dados sinteticos.",
+    "Sem deploy, dados reais, email, aceite humano ou importacao de backend/SDK/credenciais/identidade legada."
+  ],
+  "next_slice": "M2: documentos e contrapartes, com absorcao dirigida e fluxo administrativo minimo; M1 visual/tecnologia assistiva pendentes ate aceite.",
+  "destination_hashes": [
+    {
+      "path": ".github/workflows/dotnet.yml",
+      "sha256": "abaf8c32ebc8aed402d7d0778d8c5c52017895695590341f2261fd0b3d0621b4"
+    },
+    {
+      "path": "scripts/Test-Postgres.ps1",
+      "sha256": "84d81657c871918f32e08cb4f5be75245c5588936a7d9295d9827689b967eb7d"
+    },
+    {
+      "path": "src/Wissian.Host/HostApplication.cs",
+      "sha256": "5b699f0f13a6e3dee252014266b547b3cd7c1c105c11c6e3e9a88a0a5f435bab"
+    },
+    {
+      "path": "src/Wissian.Host/Identity/AccountActions.cs",
+      "sha256": "3f74a6d78fe2e927dd341e92435e86e894e2b75fd71b3ec6c61db8123fcec73f"
+    },
+    {
+      "path": "src/Wissian.Host/Identity/IdentityEndpoints.cs",
+      "sha256": "95681efb8bf4bf0f6f7dbf8858159d141076611ee3586a52656a05bd50cfb3e4"
+    },
+    {
+      "path": "src/Wissian.Host/Identity/IdentityFlow.cs",
+      "sha256": "17e41bdc45b29bfe73808fa2bd549c054501deb55281fb0c76a9928c4b33e3ed"
+    },
+    {
+      "path": "src/Wissian.Host/Web/Frontend.cs",
+      "sha256": "228ebc6b4df82df448c67357a8b7068f816f7983d680b125c1cf55f467b87f3b"
+    },
+    {
+      "path": "src/Wissian.Host/Wissian.Host.csproj",
+      "sha256": "307c3117cd73dba1d0d6953170f7725d009d5a792e1f1715410fa02fcbb68b94"
+    },
+    {
+      "path": "src/Wissian.Web/.node-version",
+      "sha256": "73fb1b615e2043a933be1c0895cde4358036acc28d785692509b822aa53c761f"
+    },
+    {
+      "path": "src/Wissian.Web/e2e/browser.mjs",
+      "sha256": "67f8acac02182e52649ef3f0dc7c67eb09d010516fbad5930bf1d747a17ece8c"
+    },
+    {
+      "path": "src/Wissian.Web/e2e/fixture/index.html",
+      "sha256": "fc38533e85dcb854e57cefa26b120fb79ca0e9eef748837252a6f4e74b6568d5"
+    },
+    {
+      "path": "src/Wissian.Web/e2e/fixture/main.tsx",
+      "sha256": "6033f5003ec1cd4e65e94659cdd77a48442571218cc358bc52d0a26a0ebfb732"
+    },
+    {
+      "path": "src/Wissian.Web/e2e/vite.fixture.config.ts",
+      "sha256": "4818aae6966fb3d912f2314946efe7f4dadf5141746ae597435f877952a30935"
+    },
+    {
+      "path": "src/Wissian.Web/index.html",
+      "sha256": "2292e8bd224de54dc16c5563a0da5f74bfa05af4bd927d9a37541d340fdd9933"
+    },
+    {
+      "path": "src/Wissian.Web/package-lock.json",
+      "sha256": "fd6f2b371ab2f475e0e94391e956227723a62fc51b72c50497f6b8d2a1fcde6c"
+    },
+    {
+      "path": "src/Wissian.Web/package.json",
+      "sha256": "e30831dcf5f8c12a69e086920315beabdde6c84945b8c5758e4f1ba80955c1b3"
+    },
+    {
+      "path": "src/Wissian.Web/src/AccessFrame.tsx",
+      "sha256": "31d6831029344c14a7ff7eab595c59780609a7fecad4c4901e78d06335a7f19b"
+    },
+    {
+      "path": "src/Wissian.Web/src/AccountAccess.tsx",
+      "sha256": "4a9680050e6300d613b49a82df9442d23001cbcbf80dd123405794ad5fffb68d"
+    },
+    {
+      "path": "src/Wissian.Web/src/App.tsx",
+      "sha256": "d0ff7bbc19c245d1b1f1561d3dc234ba79ed260bde92ae2df48f5488497361a9"
+    },
+    {
+      "path": "src/Wissian.Web/src/Appearance.tsx",
+      "sha256": "a3d09a9cffe130bc89f2271110e3af0bfdff70ab1bc31cf6d8c533a9a6c65c1f"
+    },
+    {
+      "path": "src/Wissian.Web/src/IdentityGate.tsx",
+      "sha256": "9f9688bc79802edd67c2e4426422b6c1e049d326478ad67603c331c7a65d221b"
+    },
+    {
+      "path": "src/Wissian.Web/src/api.ts",
+      "sha256": "cdf6823e5756e2d4bed18ed31ab2380e79678f5bdfb3f5da4a4fbae70999d82f"
+    },
+    {
+      "path": "src/Wissian.Web/src/main.tsx",
+      "sha256": "ac82b3781d2c018f396263f433b8b3e86c023e4f41f6f26b7d65b368ebf19e76"
+    },
+    {
+      "path": "src/Wissian.Web/src/navigation.ts",
+      "sha256": "740ebe68e40296fade237bab71d874143e682d488516628a43ca63153fce6c2b"
+    },
+    {
+      "path": "src/Wissian.Web/src/styles.css",
+      "sha256": "ecdf2c257877acfcadec5530ad5ebc3a8a59bea358552f8316a6586881e73176"
+    },
+    {
+      "path": "src/Wissian.Web/tsconfig.json",
+      "sha256": "f41ce049dbe823aa5318924d595daf7f8b72e0c8b56e8e77eec8ccba0f1e5d14"
+    },
+    {
+      "path": "src/Wissian.Web/vite.config.ts",
+      "sha256": "1db8924ba3f4e9a0db91381973e7eb7795e19ea1141cb67edc6b721a8e173747"
+    },
+    {
+      "path": "tests/Wissian.Api.Tests/ApiLab.cs",
+      "sha256": "e785637fe698f2f256cd8ae684945b0b0709dafccb9282d25103d4e90c2fe41d"
+    },
+    {
+      "path": "tests/Wissian.Api.Tests/BrowserTests.cs",
+      "sha256": "41450446b1d469f2137eb5f8516dda0b0e1ad889b7f67be5c91248ac9da1fcd4"
+    },
+    {
+      "path": "tests/Wissian.Api.Tests/Program.cs",
+      "sha256": "728b8e73f53ffb68583463e7882642733a7530084f00d6d2e0e9cdc36ba2e256"
+    }
+  ]
+}

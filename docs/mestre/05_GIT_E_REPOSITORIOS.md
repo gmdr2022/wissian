@@ -91,7 +91,9 @@ parcial da aplicação falha em vez de simular sucesso.
 Quando `global.json` e `Wissian.slnx` estão presentes, a segunda etapa usa o SDK
 fixado pelo projeto, restore com lockfiles, build, suíte executável do Core,
 verificação de migrations e suítes de persistência/API em PostgreSQL 18.6 sintético.
-O runner Windows respeita os contratos atuais de DPAPI e ACLs. O download do banco
+O CI também verifica tipos/build React, dependências do lockfile e jornadas em
+Edge sobre a API real. O consumidor sintético de UI tem build separado e não entra
+na interface de produção. O runner Windows respeita DPAPI e ACLs. O download do banco
 tem SHA-256 fixado; cada suíte cria e encerra seu cluster isolado. `dotnet test` não
 substitui esses executáveis. Actions têm commits fixados, permissão de leitura,
 limite de duração e cancelamento de execuções superadas na mesma branch.

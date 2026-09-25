@@ -2,7 +2,7 @@
 param(
     [Parameter(Mandatory)][string]$PostgresBin,
     [string]$Dotnet = 'dotnet',
-    [ValidateSet('Persistence', 'Api')][string]$Suite = 'Persistence'
+    [ValidateSet('Persistence', 'Api', 'Browser')][string]$Suite = 'Persistence'
 )
 
 $ErrorActionPreference = 'Stop'
@@ -56,7 +56,9 @@ try {
     Invoke-PgControl 'start'
     $started = $true
     $env:WISSIAN_TEST_ADMIN_CONNECTION = "Host=127.0.0.1;Port=$port;Database=postgres;Username=wissian_test_admin;Password=$password;Pooling=false;Timeout=10"
-    & $Dotnet run --project (Join-Path $repoRoot ('tests/Wissian.' + $Suite + '.Tests')) --no-restore --disable-build-servers -p:BuildInParallel=false -p:UseSharedCompilation=false
+    $targetSuite = if ($Suite -eq 'Browser') { 'Api' } else { $Suite }
+    $suiteArguments = if ($Suite -eq 'Browser') { @('--', '--browser') } else { @() }
+    & $Dotnet run --project (Join-Path $repoRoot ('tests/Wissian.' + $targetSuite + '.Tests')) --no-restore --disable-build-servers -p:BuildInParallel=false -p:UseSharedCompilation=false @suiteArguments
     if ($LASTEXITCODE -ne 0) { throw "Testes $Suite falharam." }
 } finally {
     $env:WISSIAN_TEST_ADMIN_CONNECTION = $priorAdminConnection

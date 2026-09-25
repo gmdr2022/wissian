@@ -7,7 +7,11 @@ using Wissian.Persistence;
 namespace Wissian.Host.Identity;
 
 public sealed record CompleteAccountAction(Guid UserId, string Token, string NewPassword);
-public sealed record AccountActionLink(string Purpose, Guid UserId, string Token, DateTimeOffset ExpiresAtUtc);
+public sealed record AccountActionLink(string Purpose, Guid UserId, string Token, DateTimeOffset ExpiresAtUtc)
+{
+    // No bearer token in the request target, server access log, or Referer header.
+    public string RelativeUrl => $"/access#purpose={Uri.EscapeDataString(Purpose)}&userId={UserId:D}&token={Uri.EscapeDataString(Token)}";
+}
 
 public static class AccountLinks
 {

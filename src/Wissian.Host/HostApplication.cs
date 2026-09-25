@@ -1,5 +1,6 @@
 using Wissian.Core.Modularity;
 using Wissian.Host.Identity;
+using Wissian.Host.Web;
 
 namespace Wissian.Host;
 
@@ -28,7 +29,11 @@ public static class HostApplication
         var app = builder.Build();
         app.UseExceptionHandler();
         if (!app.Environment.IsDevelopment()) app.UseHsts();
-        if (identity) app.UseWissianIdentity();
+        if (identity)
+        {
+            app.UseWissianIdentity();
+            app.MapWissianFrontend();
+        }
         app.MapGet("/health/live", () => Results.Ok(new { status = "alive" }));
         foreach (var registration in registrations) registration.MapEndpoints(app);
         return app;

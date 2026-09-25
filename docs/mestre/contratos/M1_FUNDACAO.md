@@ -1,16 +1,19 @@
 # M1 — fundação demonstrável do Wissian
 
-**Estado:** implementação iniciada. A [fatia S1](../evidencias/m1-fundacao-s1.json)
+**Estado:** fundação técnica verificada; aceite visual pendente. A [fatia S1](../evidencias/m1-fundacao-s1.json)
 prova Core independente, políticas de domínio e composição HTTP neutra/extensão.
-M1-01 passou; M1-02 está parcial. A [fatia S2](../evidencias/m1-fundacao-s2.json)
+M1-01 passou; M1-02 foi complementado pela S3A. A [fatia S2](../evidencias/m1-fundacao-s2.json)
 prova os casos de banco M1-08/10 e a concorrência de M1-09. A
 [fatia S3A](../evidencias/m1-fundacao-s3a.json) prova login, MFA, sessão, CSRF e
 revalidação HTTP: M1-02/03/04/05/07 passaram no recorte de fundação, M1-06 passou
 na API (menu depende da UI). A [fatia S3B](../evidencias/m1-fundacao-s3b.json)
 prova M1-09 e M1-11 no laboratório: recibo idempotente, recuperação de senha e
 ativação assistida de identidade previamente provisionada, sem serviço externo.
-UI e aceite visual permanecem pendentes; emissão real/provisionamento operacional
-e recuperação de autenticador perdido continuam gates de operação.
+A [fatia S4](../evidencias/m1-fundacao-s4.json) conecta a interface React à API real
+e comprova M1-06 no menu/URL/servidor e M1-12 no recorte automatizado de navegador:
+teclado, foco, tela estreita, temas e recuperação de falhas. Aceite visual de Gui
+e uso com tecnologia assistiva permanecem pendentes; emissão real/provisionamento
+operacional e recuperação de autenticador perdido continuam gates de operação.
 As matrizes históricas continuam como plano, sem promoção em bloco.
 **Consumidor:** duas organizações sintéticas, Fultuma Exemplo e Empresa Exemplo,
 entram na mesma aplicação, veem apenas contextos autorizados e usam uma extensão
@@ -28,7 +31,7 @@ opcionais. A [evidência M0](../evidencias/m0-primeira-fatia.json) e o
    contratos neutros mínimos estão no Core, sem assembly vazio adicional. Adapters
    de persistência EF/PostgreSQL existem na S2; autenticação HTTP existe na S3A;
    recuperação/ativação assistida e idempotência existem na S3B;
-   o shell permanece a próxima fatia. Core não
+   o shell React e as jornadas de acesso existem na S4. Core não
    referencia administrativos, verticais, host ou ensaio M0.
 2. Organização e associação vigentes por usuário; unidade/localidade só quando um
    domínio as exigir. `HumanSession.SelectContext` isolado não autoriza associação:
