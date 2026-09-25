@@ -81,6 +81,26 @@ proteção configurada no GitHub. Estado dessa proteção deve ser consultado, n
 presumido pela privacidade do repositório. Com mantenedor único, autorrevisão não se
 chama revisão independente. Não contratar plano pago implicitamente.
 
+## Validação contínua no GitHub
+
+O workflow `.github/workflows/dotnet.yml` valida os contratos e a integridade das
+fontes em pushes para `main`/`codex/**`, PRs para `main` e execuções manuais. Uma ref
+somente documental registra explicitamente testes de produto `NOT_RUN`; a presença
+parcial da aplicação falha em vez de simular sucesso.
+
+Quando `global.json` e `Wissian.slnx` estão presentes, a segunda etapa usa o SDK
+fixado pelo projeto, restore com lockfiles, build, suíte executável do Core,
+verificação de migrations e suítes de persistência/API em PostgreSQL 18.6 sintético.
+O runner Windows respeita os contratos atuais de DPAPI e ACLs. O download do banco
+tem SHA-256 fixado; cada suíte cria e encerra seu cluster isolado. `dotnet test` não
+substitui esses executáveis. Actions têm commits fixados, permissão de leitura,
+limite de duração e cancelamento de execuções superadas na mesma branch.
+
+O CI não publica o produto nem utiliza segredos/dados reais. Logs de testes não
+devem conter credenciais; bancos, keyrings e arquivos de acesso não são enviados
+como artefatos. Resultado verde significa somente que as verificações daquela ref
+passaram, sem equivaler a aceite humano, merge ou prontidão de produção.
+
 ## Versionamento e fronteira de dados
 
 Separar versão documental (este pacote), versão da aplicação, contrato de API/eventos, módulo, banco e artefatos de dispositivos. Sem tags/releases vazias. Contratos suportados são pares explícitos testados; “N/N-1” universal exige prova que ainda não existe.
