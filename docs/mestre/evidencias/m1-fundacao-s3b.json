@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "milestone": "M1",
+  "slice": "S3B",
+  "date": "2026-09-25",
+  "status": "PASS_BOUNDED_SLICE",
+  "scope": "Recuperação/ativação assistida e idempotência HTTP com laboratório sintético; UI e operação real continuam pendentes.",
+  "source_records": [
+    {
+      "repository": "ClubAL/clubal",
+      "commit": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/backend/ClubAL.Infrastructure/FirstVertical/FirstVerticalService.cs",
+      "git_blob": "2f94a637299a36f08f389d8913a5ea3980431a82",
+      "symbols": [
+        "PublishRoutineAsync",
+        "TryPublishAsync"
+      ],
+      "decision": "ADAPTAR chave/fingerprint, conflito explícito e transação; não portar publicação, unidade ou domínio socioeducativo."
+    },
+    {
+      "repository": "ClubAL/clubal",
+      "commit": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/backend/ClubAL.Infrastructure/IdentityAccess/DevelopmentIdentitySeeder.cs",
+      "git_blob": "9dabf96623b1706a6f84783640b7623fcf67b754",
+      "decision": "ADAPTAR uso de GeneratePasswordResetTokenAsync/ResetPasswordAsync. Não copiar senhas, usuários, seed institucional, reativação automática ou capabilities."
+    },
+    {
+      "reference": "S3A HumanIdentityService provenance",
+      "evidence": "docs/mestre/evidencias/m1-fundacao-s3a.json",
+      "decision": "Preservar invalidação por stamp e revogação de sessão, mantendo todos os efeitos do reset na mesma transação."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dotnet/aspnetcore/v10.0.12/src/Identity/Core/src/DataProtectorTokenProvider.cs",
+      "decision": "Usar provider oficial; propósito próprio, duração de uma hora, binding de usuário/stamp e rejeição criptográfica. Não criar formato de token de produção."
+    }
+  ],
+  "proven_gaps": [
+    "A busca dirigida em IdentityAccess encontrou o reset no seeder, sem recuperação pública pronta que atendesse o contrato Wissian. Endpoint consumidor e emissão local limitada foram adicionados.",
+    "Snapshots de publicação não equivalem à seleção de organização. Foi criado somente ContextSelectionReceipt, sem workflow, WorkItem, fila, broker ou carregador remoto.",
+    "Recibos e sessão precisam de FK composta, RLS, versão e efeito/auditoria atômicos. Migration própria aditiva ContextSelectionReceipts cobre a fronteira; três migrations anteriores preservadas."
+  ],
+  "implementation": [
+    "Seleção exige commandId UUID e versão esperada. Lock somente na sessão serializa tentativas; requestHash inclui organização/vínculo/versão em formato invariante. Autoridade atual precede consulta de recibo.",
+    "Recibo não é reescrito; hash diferente ou contexto superado produz 409. Sessão e auditoria são salvas antes do recibo dentro da mesma transação, para RLS verificar o estado persistido. Conflito de chave desfaz a transação inteira.",
+    "Reset/ativação bloqueiam a linha da identidade durante consumo do token. Nova credencial, stamp, revogação de sessões e auditoria são atômicos. Não há login automático após o consumo.",
+    "Ativação só aceita identidade previamente provisionada, inativa, não confirmada e sem senha. Não cria vínculo ou permissão. Reset exige conta ativa/confirmada; não remove MFA nem reativa suspensa.",
+    "Wissian.Operator aceita somente --synthetic, Windows, host127.0.0.1, role wissian_runtime e banco wissian_*_synthetic. Não inicia HTTP, não emite para conta real, não provisiona identidade/organização e não envia e-mail.",
+    "Artefato de link fica em diretório novo ignorado pelo Git com ACL restrita ao usuário Windows. Token não é passado em argumentos ou stdout; chaves DataProtection/DPAPI são próprias e iguais às do host."
+  ],
+  "verification": {
+    "api": {
+      "passed": 42,
+      "failed": 0,
+      "includes": "26 casos S3A e 16 novos S3B. Não corresponde aos 42 casos históricos planejados.",
+      "command": "./scripts/Test-Postgres.ps1 -PostgresBin <pgsql18.6-bin> -Dotnet <dotnet10.0.401> -Suite Api",
+      "cases": [
+        {
+          "id": "M1-S3B-01",
+          "status": "PASS",
+          "oracle": "Same command returns equivalent receipt without another effect"
+        },
+        {
+          "id": "M1-S3B-02",
+          "status": "PASS",
+          "oracle": "Concurrent replay returns one persisted receipt twice"
+        },
+        {
+          "id": "M1-S3B-03",
+          "status": "PASS",
+          "oracle": "Changed payload or organization with same key rolls back all effects"
+        },
+        {
+          "id": "M1-S3B-04",
+          "status": "PASS",
+          "oracle": "Replay after revoked membership, organization or session is denied"
+        },
+        {
+          "id": "M1-S3B-05",
+          "status": "PASS",
+          "oracle": "Receipt from an older selection cannot restore obsolete context"
+        },
+        {
+          "id": "M1-S3B-06",
+          "status": "PASS",
+          "oracle": "Receipt RLS, append-only runtime privileges and cross-user FK"
+        },
+        {
+          "id": "M1-S3B-07",
+          "status": "PASS",
+          "oracle": "Password recovery changes credential and revokes all current sessions"
+        },
+        {
+          "id": "M1-S3B-08",
+          "status": "PASS",
+          "oracle": "Wrong user/purpose, expired and tampered tokens are rejected"
+        },
+        {
+          "id": "M1-S3B-09",
+          "status": "PASS",
+          "oracle": "Weak password leaves no partial change and token remains usable"
+        },
+        {
+          "id": "M1-S3B-10",
+          "status": "PASS",
+          "oracle": "Concurrent token use has one successful effect"
+        },
+        {
+          "id": "M1-S3B-11",
+          "status": "PASS",
+          "oracle": "Activation is one-use and grants no organization membership"
+        },
+        {
+          "id": "M1-S3B-12",
+          "status": "PASS",
+          "oracle": "Links cannot reactivate a suspended existing identity"
+        },
+        {
+          "id": "M1-S3B-13",
+          "status": "PASS",
+          "oracle": "Help describes assisted flow and issuance has no public endpoint"
+        },
+        {
+          "id": "M1-S3B-14",
+          "status": "PASS",
+          "oracle": "Separate local operator process writes private consumable artifact and rejects non-synthetic DB"
+        },
+        {
+          "id": "M1-S3B-15",
+          "status": "PASS",
+          "oracle": "Forced audit write failure rolls back password/stamp/session changes; retry succeeds"
+        },
+        {
+          "id": "M1-S3B-16",
+          "status": "PASS",
+          "oracle": "Password recovery preserves MFA and revokes unfinished challenge"
+        }
+      ]
+    },
+    "foundation": {
+      "passed": 25,
+      "failed": 0
+    },
+    "persistence": {
+      "passed": 16,
+      "failed": 0
+    },
+    "environment": {
+      "sdk": "10.0.401",
+      "runtime": "10.0.12",
+      "postgres": "18.6",
+      "data": "Synthetic only; fresh loopback clusters; separate runtime/migrator credentials."
+    },
+    "locked_restore": "PASS; eight projects; no additional external package versions",
+    "ef_model_drift": "None",
+    "build": "Warnings-as-errors; no warnings/errors",
+    "shutdown": "Final API and persistence runs exited0; last laboratory reports server stopped and has no postmaster.pid."
+  },
+  "review": {
+    "status": "No unresolved blocker in this bounded slice",
+    "checks": [
+      "Current authorization before receipt access",
+      "Negative cross-user/organization database and HTTP cases",
+      "Same-key concurrency and no partial writes",
+      "Token purpose/user/time/stamp binding and single consumption",
+      "MFA retained through recovery",
+      "Filesystem credential exposure and non-synthetic refusal"
+    ],
+    "expiry_fixture": "Test reissued only an old creation timestamp using laboratory DataProtection keys and the verified provider format; production validation/provider/lifetime were unchanged.",
+    "fault_fixture": "Temporarily revoked audit INSERT grant in the synthetic database; restored in finally. Failed reset returned500 and left old password, stamp and sessions intact. Same valid token then succeeded.",
+    "limits": [
+      "Assisted real-person identity verification and delivery channel are not automated or enabled",
+      "Lost-authenticator support remains an operation gate; password recovery does not bypass MFA",
+      "Activation must begin with a correctly pre-provisioned identity; no open registration route",
+      "Commands for future business modules must authorize and mutate in one scoped transaction"
+    ]
+  },
+  "milestone_cases": {
+    "M1-09": "PASS in context-selection consumer, including replay/revocation/concurrency",
+    "M1-11": "PASS in synthetic API/assisted activation/password recovery; UI pending",
+    "M1-06": "API PASS; menu pending UI",
+    "M1-12": "NOT_RUN"
+  },
+  "next_slice": "S4: React/TypeScript/Vite shell for login, MFA, assisted activation/recovery, context and module navigation. Compare Base44/source refs per flow; prove keyboard/narrow-screen/error/loading and two-organization smoke. Human acceptance separate.",
+  "destination_hashes": [
+    {
+      "path": "src/Wissian.Core/Identity/ContextSelectionReceipt.cs",
+      "sha256": "bf7eb61073357ea83afd4b415af62441293a2a0447ac240822ba89a539056e8a"
+    },
+    {
+      "path": "src/Wissian.Persistence/WissianDbContext.cs",
+      "sha256": "de4f6a20d8727bbfaa68576d0cf491c8309c123ce13e246c4703741d75b523e2"
+    },
+    {
+      "path": "src/Wissian.Persistence/Migrations/20260925163932_ContextSelectionReceipts.cs",
+      "sha256": "786e1b14e304d743aea9213ff65fbf1621e5fcbeb414c1702d1e9cf374050632"
+    },
+    {
+      "path": "src/Wissian.Persistence/Migrations/20260925163932_ContextSelectionReceipts.Designer.cs",
+      "sha256": "d67c11e4bcead7507d4e45fa02366afe6099418f2656595ff24bbc28e46e0a12"
+    },
+    {
+      "path": "src/Wissian.Persistence/Migrations/WissianDbContextModelSnapshot.cs",
+      "sha256": "d51a0701fba078707acba57b224df4a0843421d862041101b893181db687851b"
+    },
+    {
+      "path": "src/Wissian.Host/Identity/IdentityFlow.cs",
+      "sha256": "744cc236864e488752a87b0b514117e942e3cc702925a60518d630d76297c51f"
+    },
+    {
+      "path": "src/Wissian.Host/Identity/IdentityEndpoints.cs",
+      "sha256": "cebfd176380923820ae917437273c721d2543a87d51c94581db89596b4060b9c"
+    },
+    {
+      "path": "src/Wissian.Host/Identity/IdentitySetup.cs",
+      "sha256": "d63943912cb265652854c978c81eecbbacab1c68f631997cf1ea01ca7f56cad8"
+    },
+    {
+      "path": "src/Wissian.Host/Identity/AccountActions.cs",
+      "sha256": "02e11faaf50ca22b965ab660764ba767a79fa3b46eb4e187d72d1849ad624b60"
+    },
+    {
+      "path": "src/Wissian.Operator/Program.cs",
+      "sha256": "fdfd2ef8b011cc028c1ee0f26297e0888ec6f9941d0b5367b83f97af48d6ccc9"
+    },
+    {
+      "path": "src/Wissian.Operator/Wissian.Operator.csproj",
+      "sha256": "3d0af8a6e03ee32dc7ec7b58d9745541c9aa03b3940004d9889e0765de2bda4a"
+    },
+    {
+      "path": "tests/Wissian.Api.Tests/AccountAndReplayTests.cs",
+      "sha256": "996937546b5db9a19a0cda6f5c816a0dd022de038c3c509bef24be2bd046344d"
+    },
+    {
+      "path": "tests/Wissian.Api.Tests/ApiLab.cs",
+      "sha256": "0d111eafcab78224756bcedc1e8148e4fb8beedfc3911aa6b486ace86548eee9"
+    },
+    {
+      "path": "tests/Wissian.Api.Tests/Program.cs",
+      "sha256": "e399aff66b3b353965f3d03dc9c64d8e6be3a690a144e106569f5422509356e2"
+    }
+  ]
+}

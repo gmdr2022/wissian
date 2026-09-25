@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Wissian.Core/Wissian.Core.csproj" />
+    <Project Path="src/Wissian.Host/Wissian.Host.csproj" />
+    <Project Path="src/Wissian.Persistence/Wissian.Persistence.csproj" />
+    <Project Path="src/Wissian.Operator/Wissian.Operator.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Wissian.Api.Tests/Wissian.Api.Tests.csproj" />
+    <Project Path="tests/Wissian.Foundation.Tests/Wissian.Foundation.Tests.csproj" />
+    <Project Path="tests/Wissian.Persistence.Tests/Wissian.Persistence.Tests.csproj" />
+    <Project Path="tests/Wissian.TestExtension/Wissian.TestExtension.csproj" />
+  </Folder>
+</Solution>

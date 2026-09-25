@@ -1,6 +1,6 @@
 # Segurança, privacidade e isolamento
 
-**Contrato alvo; nenhum controle de aplicação foi implementado ou testado nesta preparação.** Deriva do guia fundador §§22–25, plano da operação §§7/10/11 e [segurança v1.1](../fontes/reestruturacao-v1.1/08_SEGURANCA_PRIVACIDADE.md). Não certifica conformidade regulatória.
+**Contrato alvo; implementação e evidências por caso estão na [fundação M1](contratos/M1_FUNDACAO.md).** O estado documental não promove controles ainda pendentes. Deriva do guia fundador §§22–25, plano da operação §§7/10/11 e [segurança v1.1](../fontes/reestruturacao-v1.1/08_SEGURANCA_PRIVACIDADE.md). Não certifica conformidade regulatória.
 
 ## Fronteiras e ameaças
 

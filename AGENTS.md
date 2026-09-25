@@ -2,7 +2,7 @@
 
 ## Entrada e autoridade
 
-Este repositório pertence ao Wissian, plataforma da Fultuma Tech Ltda. Começar por [README.md](README.md), selecionar a rota do pedido e consultar C7 projeto `wissian`, nota `continuity`, pelo protocolo vigente. A fase é pré-desenvolvimento; só um pedido de implementação autoriza avançar no marco que declarar.
+Este repositório pertence ao Wissian, plataforma da Fultuma Tech Ltda. Começar por [README.md](README.md), selecionar a rota do pedido e consultar C7 projeto `wissian`, nota `continuity`, pelo protocolo vigente. O desenvolvimento M1 está iniciado; a autorização de avanço autônomo de Gui em 25/09/2026 está delimitada no [roadmap](docs/mestre/09_ROADMAP_INTEGRADO.md#avanço-autônomo-autorizado).
 
 ### Regra operacional persistente do Codex
 

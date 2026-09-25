@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "milestone": "M1",
+  "slice": "S1",
+  "date": "2026-09-25",
+  "status": "PASS_BOUNDED_SLICE",
+  "scope": "Core neutro, política de domínio e host HTTP por composição; não é fundação M1 completa.",
+  "environment": {
+    "sdk": "10.0.401",
+    "runtime": "10.0.12",
+    "os": "Windows 10 x64",
+    "external_nuget_packages": 0,
+    "data": "synthetic in-memory domain fixtures",
+    "http": "Kestrel on loopback ephemeral ports",
+    "sdk_source": "https://dotnetcli.blob.core.windows.net/dotnet/release-metadata/10.0/releases.json",
+    "sdk_archive_sha512": "24b670ad3d923bfcf47df6c3b034152398b42f6dbc388e10d783aee1cfb5e5817d399fc0ae2a12cfa822a55e61d34830ccb15c50ef6efee437ab874bb7c79430",
+    "license": "SDK bundled license permits design/develop/test. No third-party NuGet packages. Original same-owner private source had no explicit repository LICENSE; no public grant inferred."
+  },
+  "absorption": [
+    {
+      "classification": "ADAPT",
+      "source_repository": "ClubAL/clubal",
+      "source_commit": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "source_path": "src/backend/ClubAL.Domain/DomainText.cs",
+      "source_sha256": "741dd16820a2ba2a30070a3638c8332f43744bce91a7d262eaba39c5fafc64eb",
+      "destination": "src/Wissian.Core/DomainText.cs",
+      "destination_sha256": "8daa7780d837fa05d797c9e0a2b75e855fe40aff5da438e1198bb509b0e6f2bf",
+      "adaptation": "Normalização preservada; namespace próprio."
+    },
+    {
+      "classification": "ADAPT",
+      "source_repository": "ClubAL/clubal",
+      "source_commit": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "source_path": "src/backend/ClubAL.Domain/Tenancy/Tenant.cs",
+      "source_sha256": "d9390ed740863805648771d559c07661dc3949a9972dcf2c080186117a4eeb11",
+      "destination": "src/Wissian.Core/Organizations/Organization.cs",
+      "destination_sha256": "1006e38883fc71b221d3e6872a60cd737d6d08842ea2ca29464a3ed37eae454c",
+      "adaptation": "Organização neutra; sem unidade, localidade ou ambiente de negócio obrigatório; UTC e slug restrito."
+    },
+    {
+      "classification": "ADAPT",
+      "source_repository": "ClubAL/clubal",
+      "source_commit": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "source_path": "src/backend/ClubAL.Domain/IdentityAccess/Membership.cs",
+      "source_sha256": "a8911a8989fbe2a07d0ceac92ae58b413da5c52ac07df85d98fc2dff5d6e422a",
+      "destination": "src/Wissian.Core/Identity/Membership.cs",
+      "destination_sha256": "2b7c4ce1c4a3a75dae3dfd5cf3c518261dd8c039d708dfb1d077bb2569e1f404",
+      "adaptation": "Somente vínculo organizacional; revogação idempotente e versão; sem MembershipUnit ou roles legados."
+    },
+    {
+      "classification": "ADAPT",
+      "source_repository": "ClubAL/clubal",
+      "source_commit": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "source_path": "src/backend/ClubAL.Domain/IdentityAccess/HumanSession.cs",
+      "source_sha256": "6c11b77c47629f17cdfc329339c11fd784e046b40c07356d163bf7f2b5940555",
+      "destination": "src/Wissian.Core/Identity/HumanSession.cs",
+      "destination_sha256": "b2916fd6fe4a929f0c6448bf26f3a5ba2c669f7936567a10c0b6203350222167",
+      "adaptation": "Expiração, contexto e revogação; seleção exige vínculo/organização coerentes. Sem janela administrativa; suporte não implementado."
+    },
+    {
+      "classification": "ADAPT",
+      "source_repository": "ClubAL/clubal",
+      "source_commit": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "source_path": "src/backend/ClubAL.Domain/Audit/AuditEvent.cs",
+      "source_sha256": "e0d0ea787e33b7c6428bb1b24c7769d326082b3bc505c995b611994b1cb6d02b",
+      "destination": "src/Wissian.Core/Audit/AuditEvent.cs",
+      "destination_sha256": "77b874c643c13a55ff5690b43c0b6249942188bf054eb9c852d3f413edb262ac",
+      "adaptation": "Evento neutro com organização, ator, correlação, versão de autoridade; sem unidade e sem dados do recurso."
+    },
+    {
+      "classification": "ADAPT_POLICY",
+      "source_repository": "ClubAL/clubal",
+      "source_commit": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "source_path": "src/backend/ClubAL.Infrastructure/IdentityAccess/PlatformAccessService.cs",
+      "source_sha256": "a5c7554e84933acc53d206912cec11e1411de782aee8ef249837a459a7dd7606",
+      "symbols": "AuthorizeAsync/ResolveSelectedContextAsync/FindAvailableContextAsync",
+      "destination": "src/Wissian.Core/Identity/OrganizationAccess.cs",
+      "adaptation": "Preserva conjunção sessão/vínculo/capacidade/permissão. Remove joins obrigatórios de unidade; o adapter persistente ainda precisa carregar fatos atuais e autorizar recursos."
+    }
+  ],
+  "demonstrated_gaps": [
+    "AccessCatalog da origem fixa capacidades, permissões e feature gates de domínios legados. ModuleManifest/ModuleCatalog novos substituem esse registro por contratos neutros imutáveis, dependências e versões exatas; sem loader remoto.",
+    "Host mínimo novo compõe somente registros compilados; DI e DbContext legados não importados.",
+    "TestExtension separada é fixture exigida por M1-02; não é módulo comercial."
+  ],
+  "verification": {
+    "test_project": "tests/Wissian.Foundation.Tests",
+    "result": "PASS",
+    "cases": 25,
+    "failures": 0,
+    "case_range": "M1-S1-01..M1-S1-25",
+    "commands": [
+      "dotnet restore Wissian.slnx --locked-mode --disable-parallel",
+      "dotnet run --project tests/Wissian.Foundation.Tests --no-restore --disable-build-servers -p:BuildInParallel=false -p:UseSharedCompilation=false",
+      "dotnet publish src/Wissian.Host --no-restore --no-self-contained -c Debug -o .local/publish-neutral --disable-build-servers -p:BuildInParallel=false -p:UseSharedCompilation=false"
+    ],
+    "neutral_publish": "PASS: assemblies de testes ausentes; Core sem ProjectReference/PackageReference e referências compiladas somente System.*; probe HTTP ausente na composição neutra."
+  },
+  "contract_cases": {
+    "M1-01": "PASS_S1",
+    "M1-02": "PARTIAL: neutral/extension HTTP and missing/cycle/version rejection passed; schema/route/job ownership not yet applicable or proven",
+    "M1-03..M1-12": "NOT_RUN_INTEGRATED: domain policy tests do not prove real API/database/UI behavior"
+  },
+  "limitations": [
+    "Sem adapter Identity, cookie, CSRF, recuperação ou login.",
+    "Sem PostgreSQL, RLS, migrations, grants reais, concorrência persistente, recibos ou dados reais.",
+    "Sem shell React e aceite visual; não há funcionalidade disponível a clientes.",
+    "Catálogo proposto e matrizes históricas permanecem planejados; nenhum avanço em bloco."
+  ],
+  "next_slice": "S2: persistência PostgreSQL sintética, schema próprio, papel de runtime limitado e provas de escopo/pool/constraints/migração.",
+  "rollback": "Remover os novos consumidores ou reverter esta fatia; ainda não existe schema nem dado de produto para desfazer."
+}

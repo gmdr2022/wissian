@@ -6,7 +6,26 @@ Este documento define a ordem dos marcos do produto. **Nenhuma etapa de aplicaç
 na [ADR-M03](adrs/ADR-M03_STACK_E_REUSO.md),
 [procedência e 16 casos de domínio](evidencias/m0-primeira-fatia.json) e
 [contrato de saída M1](contratos/M1_FUNDACAO.md). Os demais marcos e testes de produto
-permanecem não executados. Esse recorte não equivale a auditoria de todo o legado.
+seguem os estados de suas evidências específicas. Esse recorte não equivale a auditoria de todo o legado.
+
+## Avanço autônomo autorizado
+
+Gui autorizou em 25/09/2026 a retomada do desenvolvimento e uma meta persistente:
+ao concluir e verificar uma fatia, iniciar a próxima sem esperar novo pedido.
+A sequência prioritária é M1 → M2 → M3 → M4, com preparação de operação/recuperação
+M7 conforme necessária ao piloto. M5, M6 e M8 não são pré-condições do primeiro ciclo.
+
+Manter WIP = 1. Para passar de marco, exigir seu contrato de saída e evidência de
+runtime pertinente; testes de domínio, documentos ou uma tela pronta não promovem
+isolamento, integração ou aceite. Ao fechar cada fatia, revisar o diff, persistir
+resultado e próximo passo no C7 e continuar o próximo trabalho seguro autorizado.
+O aceite humano do piloto e ações externas sujeitas a aprovação continuam explícitos.
+Esta autorização não amplia por si só permissões para commit/push, publicação,
+produção, dados reais, custos, exclusão ou retomada de desenvolvimento nas origens.
+
+A meta nativa desta tarefa está ativa. Continuidade entre retomadas usa o C7 e o
+estado real do repositório; não depende de uma promessa de execução enquanto o
+ambiente estiver indisponível. Cada entrega registra o que efetivamente passou.
 
 As fontes usam nomes que colidem: R00–R09 pertencem à reestruturação v1.1; E0–E7 ao plano da operação; “Marco M1/M2” naquele plano significa primeiro ciclo/cobertura completa. Aqui, M0–M8 são marcos mestre. Referir sempre o namespace: `mestre:M1` ≠ `operacao:Marco-M1`.
 

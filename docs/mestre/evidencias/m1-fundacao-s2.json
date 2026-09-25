@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "milestone": "M1",
+  "slice": "S2",
+  "date": "2026-09-25",
+  "status": "PASS_BOUNDED_SLICE",
+  "scope": "Core persistido em PostgreSQL real com papel de runtime limitado; não comprova login/autorização HTTP nem piloto.",
+  "source_records": [
+    {
+      "repository": "ClubAL/clubal",
+      "commit": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/backend/ClubAL.Infrastructure/Persistence/PlatformModelConfiguration.cs",
+      "git_blob": "cf0acabc509259f2cbd08fec3e16d5f3b6c32a86"
+    },
+    {
+      "repository": "ClubAL/clubal",
+      "commit": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/backend/ClubAL.Infrastructure/IdentityAccess/PlatformUser.cs",
+      "git_blob": "6d0125508d05d53995222fc24f0c40104479f323"
+    },
+    {
+      "repository": "ClubAL/clubal",
+      "commit": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/backend/ClubAL.Domain/IdentityAccess/CapabilityAssignment.cs",
+      "git_blob": "381d258eefc4daeaaf10d8a9e9c9a3bf87f64399"
+    },
+    {
+      "repository": "ClubAL/clubal",
+      "commit": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/backend/ClubAL.Domain/IdentityAccess/AccessRole.cs",
+      "git_blob": "099787f7f263a4632490314d7da50fc47dd6edfa"
+    },
+    {
+      "repository": "ClubAL/clubal",
+      "commit": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "scripts/owm/Initialize-OwmPostgres.ps1",
+      "git_blob": "c8f7959c4197b87e16e9fb24f28af26774bd9b5f"
+    }
+  ],
+  "adaptations": [
+    "ConfigureTenancy/ConfigureAccess: IDs, índices, FKs escopadas e concurrency token preservados; novo schema wissian sem unidade/localidade e sem cadeia de migrations antiga.",
+    "PlatformUser: adapter Identity próprio WissianUser, mínimo de autenticação global; sem dados, cookies ou credenciais de origem.",
+    "TenantCapability/RolePermission: disponibilidade por organização e grants explícitos por vínculo; catálogo legado e MFA/roles de administração não importados. Regras de acesso continuam no Core e precisam de adapter HTTP em S3.",
+    "Bootstrap PostgreSQL: mantém laboratório explícito, loopback e credencial sintética; script mínimo próprio com ciclo de processo delimitado. Corrigida espera de pg_ctl no Windows usando processo oculto e espera só do controlador."
+  ],
+  "added_for_proven_gap": [
+    "RLS transacional com contexto de ator/organização e default-deny; não havia schema Wissian nem fronteira independente para absorver migrations.",
+    "Sessão selecionada tem FK organização/vínculo/usuário e CHECK para contexto inteiro; banco impede associação cruzada e contexto parcial.",
+    "Runtime não administra schema, não recebe grants do migrador, não emite permissões e não reescreve auditoria. Identity global permanece separado de autorização por organização."
+  ],
+  "environment": {
+    "sdk": "10.0.401",
+    "runtime": "10.0.12",
+    "postgres": "18.6",
+    "postgres_distribution": "EDB 18.6-4 Windows x64 portable",
+    "postgres_url": "https://get.enterprisedb.com/postgresql/postgresql-18.6-4-windows-x64-binaries.zip",
+    "postgres_archive_sha256": "1df55002afe95b945d934c078b13e82c1603fa546731e511d068aa983b4ead28",
+    "provenance_limit": "Distribuição obtida por HTTPS via link oficial PostgreSQL/EDB. postgres.exe não traz assinatura Authenticode; SHA256 registrado para reprodução, não como assinatura do fornecedor.",
+    "data": "synthetic only; new loopback cluster each run; distinct random bootstrap/migrator/runtime credentials",
+    "server_shutdown": "verified: pg_ctl exit 0, server stopped, postmaster.pid absent in successful run"
+  },
+  "verification": {
+    "cases": 16,
+    "failures": 0,
+    "result": "PASS",
+    "case_range": "M1-S2-01..M1-S2-16",
+    "regression": "M1 S1: 25/25 PASS after S2 Core additions",
+    "commands": [
+      "dotnet restore Wissian.slnx --locked-mode --disable-parallel",
+      "scripts/Test-Postgres.ps1 -PostgresBin <PostgreSQL18.6/bin> -Dotnet <dotnet10.0.401>",
+      "dotnet run --project tests/Wissian.Foundation.Tests --no-restore --disable-build-servers -p:BuildInParallel=false -p:UseSharedCompilation=false",
+      "dotnet ef migrations has-pending-model-changes --project src/Wissian.Persistence --no-build",
+      "dotnet list src/Wissian.Persistence package --vulnerable --include-transitive --format json --no-restore"
+    ],
+    "oracles": [
+      "Mesma conexão física (pg_backend_pid) atende A, B e sem escopo; sem linhas residuais.",
+      "Ator sem vínculo e ator de plataforma sem concessão não veem organização/módulos/permissões alheios.",
+      "Runtime nega schema/RLS/SET ROLE; sua senha não autentica como migrador (28P01).",
+      "FK cruzada 23503, sessão alheia/RLS 42501, grant próprio negado, auditoria cross-scope e DELETE negados.",
+      "Snapshots concorrentes de sessão resultam em DbUpdateConcurrencyException.",
+      "Revogação de vínculo restringe consulta seguinte; unicidade 23505 e contexto incompleto 23514.",
+      "Migração nova/repetida passa; falha injetada real durante criação causa rollback sem tabelas parciais; reaplicação passa em banco separado.",
+      "Caso adversarial de auditoria com contexto de banco forjado e coerente reproduziu falha antes da correção; migration aditiva AuditMembershipBoundary exige vínculo/organização ativos, e o negativo passou.",
+      "Upgrade Foundation → AuditMembershipBoundary com organização/vínculo/auditoria pré-existentes preserva os dados e o acesso legítimo.",
+      "Auditoria global de autenticação funciona com organização nula, sem conceder acesso a tenant."
+    ],
+    "pending_model_changes": "none",
+    "vulnerabilities": "nenhuma conhecida reportada pelo feed NuGet na consulta; não substitui revisão de segurança",
+    "licenses": "45 pacotes diretos/transitivos com nuspec verificado: 43 MIT e 2 PostgreSQL; versões/hashes nos lockfiles. Pacotes Design são PrivateAssets."
+  },
+  "contract_cases": {
+    "M1-08": "PASS_S2_CORE_DATABASE: pool/constraints/RLS with runtime role; business resources validated by their future modules",
+    "M1-10": "PASS_S2: new/repeat/failure/resume and migration privilege separation",
+    "M1-09": "PARTIAL: persisted concurrency passes; command idempotency and protected receipt pending HTTP consumer",
+    "M1-03..07,11..12": "NOT_RUN_INTEGRATED: no Identity/cookie/API/UI end-to-end flow yet"
+  },
+  "limitations": [
+    "Sem autenticação HTTP ou dados reais; host neutro ainda não referencia o adapter de persistência.",
+    "RLS usa fatos de contexto definidos pelo servidor; acesso à credencial runtime é uma fronteira privilegiada, não identidade de usuário final.",
+    "Identity é metadado global de autenticação e não usa RLS por organização; API deve restringir operações desse owner.",
+    "Restauração de conteúdo/banco/anexos para operação do piloto pertence a M4/M7; S2 prova apenas recuperação de migration abortada.",
+    "Configuração/mudança de grants em produção, lifecycle de módulo, suporte e MFA não estão implementados por esta fixture."
+  ],
+  "next_slice": "S3: Identity e cookie próprios, anti-CSRF, expiração/revogação, seleção de contexto e revalidação persistida por chamada; casos negativos com dois tenants via HTTP.",
+  "rollback": "Migrations Foundation e AuditMembershipBoundary aplicadas em laboratório são imutáveis. Corrigir aditivamente; Down destrutivo bloqueado. Clusters sintéticos encerrados e preservados fora do Git; origens intocadas.",
+  "review": {
+    "finding": "Audit policy accepted a matching database scope without verifying active membership",
+    "reproduced": "M1-S2-14 failed against initial policy",
+    "correction": "Additive migration 20260925154639_AuditMembershipBoundary; initial applied migration preserved",
+    "validation": "M1-S2-01..16 PASS; no unresolved finding in the delivered S2 boundary; HTTP/authentication remains unimplemented"
+  }
+}

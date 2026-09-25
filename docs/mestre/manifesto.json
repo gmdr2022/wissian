@@ -8,13 +8,13 @@
   "files": [
     {
       "path": ".editorconfig",
-      "bytes": 222,
-      "sha256": "93e397513db49150b55cd7ff6fd4a573a70751b6aae8ff7ae6a4a6cb6782dfbd"
+      "bytes": 246,
+      "sha256": "d2e59021e25275eb38333a39139e1643c7719203d831de7f81734112ea2bd446"
     },
     {
       "path": ".gitattributes",
-      "bytes": 376,
-      "sha256": "312db36a7110d2c2b3589390ed841304421cc03f608b131dd8682d9012fbb16e"
+      "bytes": 631,
+      "sha256": "559fcce622cb4114b9e2ac483ce4f9f452be90203c3b3af5b374c26192409a42"
     },
     {
       "path": ".gitignore",
@@ -33,13 +33,13 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 6201,
-      "sha256": "e9e42aa3b16ac7c6ea8e40fec9784e32643310d3718d81f8ce6fe9be82d11c0d"
+      "bytes": 6287,
+      "sha256": "c89bb312651f6111380318ba1393a1053aae96f1e0e1ffff7f92b5dc89baaf33"
     },
     {
       "path": "README.md",
-      "bytes": 5455,
-      "sha256": "2258945eeef851b789ed1da3b3792d7f20cacd576fb44be86adc23bb39562d90"
+      "bytes": 13076,
+      "sha256": "f7e6975bea59f814f02a23c53a9f842df6b1c41bda42bc43c9f46be016e4f88f"
     },
     {
       "path": "WISSIAN_CODEX_REGRA_MESTRA.md",
@@ -463,8 +463,8 @@
     },
     {
       "path": "docs/mestre/07_SEGURANCA_E_ISOLAMENTO.md",
-      "bytes": 7743,
-      "sha256": "c9752445d952321eef1ecd321b2ac3b5a54b1c20d5b9c9a6996a884ef2026d2b"
+      "bytes": 7816,
+      "sha256": "2eb44e411b319b9931a82c5849c594318ba014707b2155e1a989bc9b191b9b09"
     },
     {
       "path": "docs/mestre/08_UX_MARCA_E_QUALIDADE.md",
@@ -473,8 +473,8 @@
     },
     {
       "path": "docs/mestre/09_ROADMAP_INTEGRADO.md",
-      "bytes": 11141,
-      "sha256": "561ec9d643267f03e768009685f58a56a844b9f7a4f9c6b5592e2f968a102461"
+      "bytes": 12400,
+      "sha256": "9f37f38b9b3277d8952e41215097759fb2ded5c18f434cfff358a07502035edd"
     },
     {
       "path": "docs/mestre/10_TESTES_E_ACEITE.md",
@@ -563,8 +563,8 @@
     },
     {
       "path": "docs/mestre/contratos/M1_FUNDACAO.md",
-      "bytes": 5774,
-      "sha256": "f5a81261ec41bae7d5b7b1f10cccf9c30aed8c57e87789c5b5e4a701431c0450"
+      "bytes": 6909,
+      "sha256": "11a7a40ebd7eb182506d03d51ecbe42fe9016ab1c31507f86d59ec8f0e60ee1d"
     },
     {
       "path": "docs/mestre/contratos/README.md",
@@ -595,6 +595,26 @@
       "path": "docs/mestre/evidencias/m0-primeira-fatia.json",
       "bytes": 13485,
       "sha256": "3a09c66ff1761b9a7dccea56bb7bb2242b23cd399048344f962ea7f2831d8cef"
+    },
+    {
+      "path": "docs/mestre/evidencias/m1-fundacao-s1.json",
+      "bytes": 7028,
+      "sha256": "d1417feb3e360df4172f87281242a783a3061babe57101176bc5e4b23e50406b"
+    },
+    {
+      "path": "docs/mestre/evidencias/m1-fundacao-s2.json",
+      "bytes": 8130,
+      "sha256": "9050292c7ac108f9c66859bc743e8be268252de6b79d53e2a9e17dda5a2602ff"
+    },
+    {
+      "path": "docs/mestre/evidencias/m1-fundacao-s3a.json",
+      "bytes": 14480,
+      "sha256": "49897985611930ea2c69ef78d0433fac97cf7d9935c6893d6bcad661cd70a871"
+    },
+    {
+      "path": "docs/mestre/evidencias/m1-fundacao-s3b.json",
+      "bytes": 11536,
+      "sha256": "8ab4ad059ae3fd3eed6b8bce664258f2cb5293df78e836f57312d8f1c821e00d"
     },
     {
       "path": "docs/mestre/evidencias/repositorios-inspecionados.json",

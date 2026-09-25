@@ -1,0 +1,325 @@
+{
+  "schema_version": 1,
+  "milestone": "M1",
+  "slice": "S3A",
+  "date": "2026-09-25",
+  "status": "PASS_BOUNDED_SLICE",
+  "scope": "Autenticação e autorização HTTP em HTTPS/loopback com PostgreSQL sintético. M1 ainda incompleto; não comprova recuperação, convite, idempotência por chave, UI ou piloto.",
+  "source_records": [
+    {
+      "repository": "ClubAL/clubal",
+      "commit": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/backend/ClubAL.Infrastructure/IdentityAccess/HumanIdentityService.cs",
+      "git_blob": "37fd308f8228bea7f57f0003b8bb23b771c91a23",
+      "symbols": [
+        "SignInWithPasswordAsync",
+        "SignInWithAuthenticatorAsync",
+        "CompleteSignInAsync",
+        "RevokeAllSessionsAndSignOutAsync"
+      ]
+    },
+    {
+      "repository": "ClubAL/clubal",
+      "commit": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/backend/ClubAL.Infrastructure/IdentityAccess/PlatformAccessService.cs",
+      "git_blob": "43a9ac196087a927152f6f4d039595448c3c0a30",
+      "role": "Fonte da revalidação de sessão, vínculo e permissões; recorte registrado no M0."
+    },
+    {
+      "repository": "ClubAL/clubal",
+      "commit": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/backend/ClubAL.Infrastructure/ServiceCollectionExtensions.cs",
+      "git_blob": "535de321606d5746459cdc458f173464a09112c8",
+      "role": "Identity com confirmação de e-mail, senha, lockout e cookies."
+    },
+    {
+      "repository": "ClubAL/clubal",
+      "commit": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/backend/ClubAL.Api/Program.cs",
+      "git_blob": "762b17cfafd067a016aa9c0f15ee58a7a8df0656",
+      "role": "Antiforgery e limitação de tentativas, adaptados à composição própria."
+    }
+  ],
+  "adaptations": [
+    "Fluxo Identity preserva senha/MFA, lockout cinco tentativas/15 minutos, confirmação de e-mail e sessão absoluta de oito horas; callbacks e sessão persistida pertencem ao Wissian.",
+    "Cookies __Host-Wissian, DataProtection purpose Wissian, CSRF e keyring próprios; nenhuma credencial, claim de tenant autoritativa ou janela de administrador herdada.",
+    "Revalidação servidor usa as políticas Core de S1 e o escopo RLS de S2. Catálogo confiável, vínculo/versão, organização ativa, disponibilidade, ativação e permissão são conferidos a cada leitura.",
+    "Falhas anônimas usam log com correlação sem credencial/identificador submetido. Transições identificadas têm auditoria persistida.",
+    "Unknown-user password check usa um hash descartável por processo em vez de calcular hash novo por tentativa."
+  ],
+  "added_for_proven_gap": [
+    "Gate antes do tráfego: papel runtime sem ownership/bypass/migrador e lista exata de migrations aplicadas; host nunca aplica migrations. Migration aditiva RuntimeSchemaRead concede somente SELECT no histórico.",
+    "API de seleção tem versão esperada, valida organização/vínculo no servidor e expõe conflito 409 sem efeito duplicado em concorrência. Recibo idempotente por chave permanece pendente.",
+    "Desafio MFA guarda security stamp no ticket protegido e o confere a cada uso. Transições rastreadas reais de IsActive rotacionam stamps; reativação não ressuscita tickets.",
+    "HTTPS real no laboratório, confiança restrita ao certificado sintético exato, chaves DPAPI testadas após reinício. Nenhuma autoridade certificadora ou certificado foi instalado como confiável."
+  ],
+  "environment": {
+    "sdk": "10.0.401",
+    "runtime": "10.0.12",
+    "postgres": "18.6",
+    "operating_system": "Windows",
+    "data": "Synthetic only; separate random migrator/runtime credentials; fresh loopback cluster.",
+    "server_shutdown": "Verified exit 0, server stopped, postmaster.pid absent after final 26-case run.",
+    "dependencies": "Same EF/Identity/Npgsql versions as S2; no new external package version or product service."
+  },
+  "verification": {
+    "api": {
+      "command": "./scripts/Test-Postgres.ps1 -PostgresBin <pgsql18.6-bin> -Dotnet <dotnet10.0.401> -Suite Api",
+      "passed": 26,
+      "failed": 0,
+      "cases": [
+        {
+          "id": "M1-S3A-01",
+          "status": "PASS",
+          "oracle": "Unauthenticated API and cleartext transport denied"
+        },
+        {
+          "id": "M1-S3A-02",
+          "status": "PASS",
+          "oracle": "CSRF, own secure cookies and token rotation after login"
+        },
+        {
+          "id": "M1-S3A-03",
+          "status": "PASS",
+          "oracle": "Two organizations, context resolved on server, foreign/nonexistent denial equivalent"
+        },
+        {
+          "id": "M1-S3A-04",
+          "status": "PASS",
+          "oracle": "Platform label without membership grants no authority"
+        },
+        {
+          "id": "M1-S3A-05",
+          "status": "PASS",
+          "oracle": "Permission revocation on next HTTP call"
+        },
+        {
+          "id": "M1-S3A-06",
+          "status": "PASS",
+          "oracle": "Disabled module removes capability and denies direct URL"
+        },
+        {
+          "id": "M1-S3A-07",
+          "status": "PASS",
+          "oracle": "Revoked membership removes context"
+        },
+        {
+          "id": "M1-S3A-08",
+          "status": "PASS",
+          "oracle": "Revoked session rejects original/copied ticket"
+        },
+        {
+          "id": "M1-S3A-09",
+          "status": "PASS",
+          "oracle": "Observed inactive user revokes session"
+        },
+        {
+          "id": "M1-S3A-10",
+          "status": "PASS",
+          "oracle": "Security stamp invalidates cookie immediately"
+        },
+        {
+          "id": "M1-S3A-11",
+          "status": "PASS",
+          "oracle": "Logout requires CSRF and invalidates copied cookie"
+        },
+        {
+          "id": "M1-S3A-12",
+          "status": "PASS",
+          "oracle": "Absolute eight-hour expiry, no sliding renewal"
+        },
+        {
+          "id": "M1-S3A-13",
+          "status": "PASS",
+          "oracle": "MFA requires current challenge and valid authenticator; retry after wrong code succeeds"
+        },
+        {
+          "id": "M1-S3A-14",
+          "status": "PASS",
+          "oracle": "Lockout after five failures and generic inactive/unconfirmed/unknown rejection"
+        },
+        {
+          "id": "M1-S3A-15",
+          "status": "PASS",
+          "oracle": "Owner/migrator credential rejected before traffic"
+        },
+        {
+          "id": "M1-S3A-16",
+          "status": "PASS",
+          "oracle": "Mandatory runtime configuration"
+        },
+        {
+          "id": "M1-S3A-17",
+          "status": "PASS",
+          "oracle": "Real limiter rejects ninth authentication attempt per IP/minute"
+        },
+        {
+          "id": "M1-S3A-18",
+          "status": "PASS",
+          "oracle": "Concurrent context selection yields 200/409 and one audit effect"
+        },
+        {
+          "id": "M1-S3A-19",
+          "status": "PASS",
+          "oracle": "Unexpected JSON properties and crossed membership pairing rejected"
+        },
+        {
+          "id": "M1-S3A-20",
+          "status": "PASS",
+          "oracle": "Old schema rejected without host migration"
+        },
+        {
+          "id": "M1-S3A-21",
+          "status": "PASS",
+          "oracle": "DPAPI-protected persisted keyring survives restart; distinct keys reject ticket"
+        },
+        {
+          "id": "M1-S3A-22",
+          "status": "PASS",
+          "oracle": "Suspended organization removes context and access"
+        },
+        {
+          "id": "M1-S3A-23",
+          "status": "PASS",
+          "oracle": "Tampered ticket and request larger than 32 KiB rejected"
+        },
+        {
+          "id": "M1-S3A-24",
+          "status": "PASS",
+          "oracle": "Credential revocation invalidates pending MFA"
+        },
+        {
+          "id": "M1-S3A-25",
+          "status": "PASS",
+          "oracle": "MFA challenge expires after five minutes"
+        },
+        {
+          "id": "M1-S3A-26",
+          "status": "PASS",
+          "oracle": "Suspend/reactivate without intervening request cannot revive session or MFA"
+        }
+      ]
+    },
+    "foundation_regression": {
+      "passed": 25,
+      "failed": 0,
+      "command": "dotnet run --project tests/Wissian.Foundation.Tests --no-restore --disable-build-servers -p:BuildInParallel=false -p:UseSharedCompilation=false"
+    },
+    "persistence_regression": {
+      "passed": 16,
+      "failed": 0,
+      "command": "./scripts/Test-Postgres.ps1 -PostgresBin <pgsql18.6-bin> -Suite Persistence",
+      "note": "New/repeated/failing/recovered/upgrade migration paths include RuntimeSchemaRead. Final added user-activation stamp invariant is covered by API cases 09/13/24/26."
+    },
+    "locked_restore": "PASS; seven-project solution",
+    "ef_model_drift": "None; has-pending-model-changes passed",
+    "build": "API project and affected dependencies built with warnings-as-errors; no warnings/errors",
+    "git_diff_check": "PASS"
+  },
+  "review": {
+    "method": "Focused review of authentication, cookie/CSRF, scoped authority, schema privileges and negative HTTP tests.",
+    "resolved": [
+      "Windows SChannel rejected ephemeral CNG keys before reaching API. Synthetic certificate imported to a temporary default key container, disposed after the suite; no TLS checks disabled in runtime.",
+      "Review found pending MFA must be invalidated by changed credentials; stamp-bound challenge added and verified in case24.",
+      "New activation guard initially treated Identity's mark-all-fields update as a real activation transition, invalidating a challenge after one incorrect code. Case13 failed (25/26); comparison with tracked original value fixed the cause. Final 26/26 passed.",
+      "Reactivation without intermediate request must not revive old tickets; tracked activation transitions rotate security/concurrency stamps and case26 passed."
+    ],
+    "residual": "Identity lifecycle commands must load the current user and use tracked changes/Identity APIs; detached/bulk/direct SQL changes are not a supported activation path. Commands of future modules must keep current authority and effect in one transaction."
+  },
+  "milestone_cases": {
+    "M1-02": "PASS foundation composition/schema credential gate",
+    "M1-03": "PASS synthetic HTTP login and authorized context",
+    "M1-04": "PASS cross-organization negative HTTP cases",
+    "M1-05": "PASS HTTP membership/session/user revocation",
+    "M1-06": "PARTIAL: API capability absence and direct URL denied; UI menu pending",
+    "M1-07": "PASS no implicit platform-administrator access",
+    "M1-09": "PARTIAL: concurrency passed; idempotent receipt pending",
+    "M1-11": "PARTIAL: logout/expiry/CSRF/MFA passed; recovery and assisted activation pending",
+    "M1-12": "NOT_RUN"
+  },
+  "not_proven": [
+    "Account recovery or assisted invitation/activation flow",
+    "Idempotent context-command receipt after replay/revocation",
+    "React UI or human visual acceptance",
+    "Real data, production operation, deploy or external identity/e-mail service"
+  ],
+  "next_slice": "S3B: recuperação/ativação assistida com tokens Identity, revogação de sessões e recibo idempotente do comando de contexto, mantendo escopo sintético e testando replay/concorrência/revogação. Depois S4 UI, com comparação Base44 por fluxo.",
+  "destination_hashes": [
+    {
+      "path": "src/Wissian.Host/HostApplication.cs",
+      "sha256": "78252167cbc31beefea6fcc4433ceec10fb8ed1d215d3063858efab61fc3bcd3"
+    },
+    {
+      "path": "src/Wissian.Host/Wissian.Host.csproj",
+      "sha256": "7f027aadabd03d29d44378f925d3d6a6e13be58ac4d4875e80622507d8cba08d"
+    },
+    {
+      "path": "src/Wissian.Persistence/WissianDbContext.cs",
+      "sha256": "d4b9f4e9930601b230f1619d49118cdfc08dfdc0c376e97fab5848cedc150cd2"
+    },
+    {
+      "path": "src/Wissian.Persistence/ScopedTransaction.cs",
+      "sha256": "c77c50116e0088fecd5b0ac05e6e4119ad0ba0e6ed3c23652d357d4675d7a01d"
+    },
+    {
+      "path": "src/Wissian.Persistence/Migrations/20260925161025_RuntimeSchemaRead.cs",
+      "sha256": "5d4bcf03576ca93ac64a70103a454945648030e51228cee25117d006396a7387"
+    },
+    {
+      "path": "src/Wissian.Persistence/Migrations/20260925161025_RuntimeSchemaRead.Designer.cs",
+      "sha256": "bad2039572fa87cbb884aa2e22fc0835bca2f06155fa3ef59c4d6fe44f1b24a1"
+    },
+    {
+      "path": "tests/Wissian.TestExtension/FoundationProbe.cs",
+      "sha256": "f68ddfce73623a516e03afde2cfad9094fd6c64bb822be0668e4acc154db004b"
+    },
+    {
+      "path": "tests/Wissian.Api.Tests/ApiLab.cs",
+      "sha256": "2bdc1a8e9a070b8ddf6f82d37ed00f906a64f44e3325bc22434f98174a2e2764"
+    },
+    {
+      "path": "tests/Wissian.Api.Tests/Program.cs",
+      "sha256": "9b49bc8e5104df9449c58e2218e30e33b2ce5fcda97549019a1822f6e4bb5694"
+    },
+    {
+      "path": "tests/Wissian.Api.Tests/Wissian.Api.Tests.csproj",
+      "sha256": "c0aeaa7cc8e70b58d541153b811312a18984de63716410eb6e59a7a191f36e0e"
+    },
+    {
+      "path": "scripts/Test-Postgres.ps1",
+      "sha256": "00ba7c761cee565b4fec0e9a7ce1129a0c3c71df322a27305566a64e860729ed"
+    },
+    {
+      "path": "src/Wissian.Host/Identity/IdentityEndpoints.cs",
+      "sha256": "638b55858e66704c6a3ef6517c30822900899b67bc084123ddbbb5a487a58c31"
+    },
+    {
+      "path": "src/Wissian.Host/Identity/IdentityFlow.cs",
+      "sha256": "d9b34780c811f712273dbb76bee3f9de9e6be395d18cdccdf781f3de092d1dca"
+    },
+    {
+      "path": "src/Wissian.Host/Identity/IdentitySetup.cs",
+      "sha256": "b0f5d7381aadfbad007d6da190aa9707bc3441385d9ebf0a0d74fe0b20ddfdb4"
+    },
+    {
+      "path": "src/Wissian.Host/Identity/MfaCookieEvents.cs",
+      "sha256": "1520f8cbe3732c266996ee9fe92d8c44e4f726356a1ae3cb354ae6e4a92dae9e"
+    },
+    {
+      "path": "src/Wissian.Host/Identity/RuntimeSchemaCheck.cs",
+      "sha256": "86c66b6a02016a6d9c83cbc4bd94c63011bcb5c98a5ad6950d3db4bf121e1d00"
+    },
+    {
+      "path": "src/Wissian.Host/Identity/SessionAuthority.cs",
+      "sha256": "df7409e1db002fe36dfb8e4afb703afbca78566ab99c943f0959aad7e9ec76e7"
+    },
+    {
+      "path": "src/Wissian.Host/Identity/SessionCookieEvents.cs",
+      "sha256": "0652a3540e57caa244086a56c278c943b8d1397a846a052803918c6e5cea68e3"
+    },
+    {
+      "path": "src/Wissian.Host/Identity/UnknownPasswordCheck.cs",
+      "sha256": "a75b9b4c9ca972ad8e6d3f6668f2ce49db8c305a987e1ac5bbace8643f3c46f2"
+    }
+  ]
+}
