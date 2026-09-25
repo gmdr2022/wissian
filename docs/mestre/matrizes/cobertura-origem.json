@@ -1,0 +1,1721 @@
+{
+  "schema_version": 1,
+  "notice": "Criterios completos permanecem intactos nas fontes; os crosswalks adaptam precedencia sem executar testes.",
+  "legacy_requirements": [
+    {
+      "id": "REQ01",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Preservar baseline e trabalho ativo",
+      "original_phase": "R00",
+      "master_requirements": [
+        "WM-01"
+      ],
+      "treatment": "retain_contract",
+      "rule": "Manter garantia no destino, com evidencia nova e escopo do marco atual.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T001",
+        "T002"
+      ]
+    },
+    {
+      "id": "REQ02",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Reconciliar evolução Base44/Codex",
+      "original_phase": "R01",
+      "master_requirements": [
+        "WM-14"
+      ],
+      "treatment": "retain_contract",
+      "rule": "Manter garantia no destino, com evidencia nova e escopo do marco atual.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T002",
+        "T003"
+      ]
+    },
+    {
+      "id": "REQ03",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Atualizar direção sem enfraquecer contratos",
+      "original_phase": "R02",
+      "master_requirements": [
+        "WM-01",
+        "WM-02"
+      ],
+      "treatment": "adapt",
+      "rule": "Atualizar destino Wissian; nao editar ProductBoundary/AGENTS ClubAL nesta missao.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T004",
+        "T005"
+      ]
+    },
+    {
+      "id": "REQ04",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Core independente da vertical",
+      "original_phase": "R03",
+      "master_requirements": [
+        "WM-02"
+      ],
+      "treatment": "retain_contract",
+      "rule": "Manter garantia no destino, com evidencia nova e escopo do marco atual.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T006",
+        "T007"
+      ]
+    },
+    {
+      "id": "REQ05",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Composição tipada e falha segura",
+      "original_phase": "R04",
+      "master_requirements": [
+        "WM-03"
+      ],
+      "treatment": "retain_contract",
+      "rule": "Manter garantia no destino, com evidencia nova e escopo do marco atual.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T008",
+        "T009",
+        "T010"
+      ]
+    },
+    {
+      "id": "REQ06",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Ausência real de módulo",
+      "original_phase": "R04",
+      "master_requirements": [
+        "WM-02",
+        "WM-17"
+      ],
+      "treatment": "retain_contract",
+      "rule": "Manter garantia no destino, com evidencia nova e escopo do marco atual.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T011",
+        "T012",
+        "T013"
+      ]
+    },
+    {
+      "id": "REQ07",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Isolamento de organizações",
+      "original_phase": "R05",
+      "master_requirements": [
+        "WM-04"
+      ],
+      "treatment": "retain_contract",
+      "rule": "Manter garantia no destino, com evidencia nova e escopo do marco atual.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T014",
+        "T016"
+      ]
+    },
+    {
+      "id": "REQ08",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Isolamento de unidades e produtos",
+      "original_phase": "R05",
+      "master_requirements": [
+        "WM-04"
+      ],
+      "treatment": "retain_contract",
+      "rule": "Manter garantia no destino, com evidencia nova e escopo do marco atual.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T015",
+        "T016",
+        "T017"
+      ]
+    },
+    {
+      "id": "REQ09",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Autorização e JIT preservados",
+      "original_phase": "R05",
+      "master_requirements": [
+        "WM-05"
+      ],
+      "treatment": "retain_contract",
+      "rule": "Manter garantia no destino, com evidencia nova e escopo do marco atual.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T018",
+        "T019",
+        "T020",
+        "T021",
+        "T031"
+      ]
+    },
+    {
+      "id": "REQ10",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Migrações e histórico preservados",
+      "original_phase": "R06",
+      "master_requirements": [
+        "WM-15"
+      ],
+      "treatment": "retain_contract",
+      "rule": "Manter garantia no destino, com evidencia nova e escopo do marco atual.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T022",
+        "T023",
+        "T024"
+      ]
+    },
+    {
+      "id": "REQ11",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Recuperação verificável",
+      "original_phase": "R06",
+      "master_requirements": [
+        "WM-16"
+      ],
+      "treatment": "retain_contract",
+      "rule": "Manter garantia no destino, com evidencia nova e escopo do marco atual.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T024",
+        "T025"
+      ]
+    },
+    {
+      "id": "REQ12",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Identidades técnicas compatíveis",
+      "original_phase": "R06",
+      "master_requirements": [
+        "WM-15"
+      ],
+      "treatment": "adapt",
+      "rule": "Preservar identidade na origem; destino tem identidade propria. Compatibilidade so por consumidor/adapter comprovado.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T026",
+        "T027",
+        "T028"
+      ]
+    },
+    {
+      "id": "REQ13",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Fluxo socioeducativo preservado",
+      "original_phase": "R05",
+      "master_requirements": [
+        "WM-19"
+      ],
+      "treatment": "defer_vertical",
+      "rule": "Preservado para M6; nao condiciona o MVP administrativo.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T029",
+        "T030",
+        "T031"
+      ]
+    },
+    {
+      "id": "REQ14",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Múltiplos clientes sem forks",
+      "original_phase": "R05",
+      "master_requirements": [
+        "WM-04",
+        "WM-23"
+      ],
+      "treatment": "retain_contract",
+      "rule": "Manter garantia no destino, com evidencia nova e escopo do marco atual.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T032"
+      ]
+    },
+    {
+      "id": "REQ15",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "ClubAL futuro reservado",
+      "original_phase": "R05",
+      "master_requirements": [
+        "WM-19"
+      ],
+      "treatment": "adapt_defer",
+      "rule": "ClubAL permanece produto separado; nenhuma ativacao nova nesta missao.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T033"
+      ]
+    },
+    {
+      "id": "REQ16",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Marca/temas separados de autoridade",
+      "original_phase": "R07",
+      "master_requirements": [
+        "WM-13"
+      ],
+      "treatment": "retain_contract",
+      "rule": "Manter garantia no destino, com evidencia nova e escopo do marco atual.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T034",
+        "T035"
+      ]
+    },
+    {
+      "id": "REQ17",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Offline e minimização preservados",
+      "original_phase": "R05",
+      "master_requirements": [
+        "WM-19"
+      ],
+      "treatment": "defer_vertical",
+      "rule": "Offline/Consulta/Rotinas so entram no aceite da capacidade vertical absorvida.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T036",
+        "T037"
+      ]
+    },
+    {
+      "id": "REQ18",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Cobrança não concede permissão",
+      "original_phase": "R04",
+      "master_requirements": [
+        "WM-05",
+        "WM-17"
+      ],
+      "treatment": "retain_contract",
+      "rule": "Manter garantia no destino, com evidencia nova e escopo do marco atual.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T038"
+      ]
+    },
+    {
+      "id": "REQ19",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Sem custo ou ação externa não autorizada",
+      "original_phase": "R09",
+      "master_requirements": [
+        "WM-22"
+      ],
+      "treatment": "retain_contract",
+      "rule": "Manter garantia no destino, com evidencia nova e escopo do marco atual.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T039"
+      ]
+    },
+    {
+      "id": "REQ20",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Continuidade sem duplicação",
+      "original_phase": "R09",
+      "master_requirements": [
+        "WM-20"
+      ],
+      "treatment": "retain_contract",
+      "rule": "Manter garantia no destino, com evidencia nova e escopo do marco atual.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T040",
+        "T041"
+      ]
+    },
+    {
+      "id": "REQ21",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Testes verdadeiros e rastreáveis",
+      "original_phase": "R09",
+      "master_requirements": [
+        "WM-22"
+      ],
+      "treatment": "retain_contract",
+      "rule": "Manter garantia no destino, com evidencia nova e escopo do marco atual.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T042",
+        "T060"
+      ]
+    },
+    {
+      "id": "REQ22",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Versões/API/publicação compatíveis",
+      "original_phase": "R06",
+      "master_requirements": [
+        "WM-15"
+      ],
+      "treatment": "retain_contract",
+      "rule": "Manter garantia no destino, com evidencia nova e escopo do marco atual.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T043",
+        "T044"
+      ]
+    },
+    {
+      "id": "REQ23",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Artefatos sem dados/segredos indevidos",
+      "original_phase": "R08",
+      "master_requirements": [
+        "WM-21"
+      ],
+      "treatment": "retain_contract",
+      "rule": "Manter garantia no destino, com evidencia nova e escopo do marco atual.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T013",
+        "T045"
+      ]
+    },
+    {
+      "id": "REQ24",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Capacidades opcionais sem duplicação",
+      "original_phase": "R04",
+      "master_requirements": [
+        "WM-03"
+      ],
+      "treatment": "retain_contract",
+      "rule": "Manter garantia no destino, com evidencia nova e escopo do marco atual.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T046",
+        "T047"
+      ]
+    },
+    {
+      "id": "REQ25",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Preparação internacional sem promessa",
+      "original_phase": "R07",
+      "master_requirements": [
+        "WM-13"
+      ],
+      "treatment": "retain_contract",
+      "rule": "Manter garantia no destino, com evidencia nova e escopo do marco atual.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T048",
+        "T049"
+      ]
+    },
+    {
+      "id": "REQ26",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Legado/distribuição preservados",
+      "original_phase": "R09",
+      "master_requirements": [
+        "WM-19"
+      ],
+      "treatment": "defer_vertical",
+      "rule": "Distribuicao Windows/launchers/hardware somente onde houver consumidor selecionado.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T028",
+        "T050",
+        "T051"
+      ]
+    },
+    {
+      "id": "REQ27",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "UX acessível e sem vazamento de nicho",
+      "original_phase": "R07",
+      "master_requirements": [
+        "WM-13"
+      ],
+      "treatment": "retain_contract",
+      "rule": "Manter garantia no destino, com evidencia nova e escopo do marco atual.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T035",
+        "T052",
+        "T053"
+      ]
+    },
+    {
+      "id": "REQ28",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Reutilização comprovada",
+      "original_phase": "R08",
+      "master_requirements": [
+        "WM-23"
+      ],
+      "treatment": "retain_contract",
+      "rule": "Manter garantia no destino, com evidencia nova e escopo do marco atual.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T007",
+        "T054"
+      ]
+    },
+    {
+      "id": "REQ29",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Stack e manutenção controladas",
+      "original_phase": "R03",
+      "master_requirements": [
+        "WM-21"
+      ],
+      "treatment": "adapt",
+      "rule": "Stack Wissian sera decidida em M0; preservar fonte/lockfiles nao obriga copiar stack completa.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T055"
+      ]
+    },
+    {
+      "id": "REQ30",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Naming e titularidade não presumidos",
+      "original_phase": "R09",
+      "master_requirements": [
+        "WM-21"
+      ],
+      "treatment": "adapt",
+      "rule": "Wissian e nome adotado pelo pedido; disponibilidade juridica/titularidade nao presumidas.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T056"
+      ]
+    },
+    {
+      "id": "REQ31",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Integridade, replay e concorrência",
+      "original_phase": "R05",
+      "master_requirements": [
+        "WM-10"
+      ],
+      "treatment": "retain_contract",
+      "rule": "Manter garantia no destino, com evidencia nova e escopo do marco atual.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T021",
+        "T030",
+        "T044",
+        "T057",
+        "T058"
+      ]
+    },
+    {
+      "id": "REQ32",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "source_title": "Encerramento delimitado e íntegro",
+      "original_phase": "R09",
+      "master_requirements": [
+        "WM-22"
+      ],
+      "treatment": "retain_contract",
+      "rule": "Manter garantia no destino, com evidencia nova e escopo do marco atual.",
+      "status": "NOT_RUN",
+      "source_tests": [
+        "T059",
+        "T060"
+      ]
+    }
+  ],
+  "legacy_tests": [
+    {
+      "id": "T001",
+      "source_requirements": [
+        "REQ01"
+      ],
+      "master_requirements": [
+        "WM-01"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T002",
+      "source_requirements": [
+        "REQ01",
+        "REQ02"
+      ],
+      "master_requirements": [
+        "WM-01",
+        "WM-14"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T003",
+      "source_requirements": [
+        "REQ02"
+      ],
+      "master_requirements": [
+        "WM-14"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T004",
+      "source_requirements": [
+        "REQ03"
+      ],
+      "master_requirements": [
+        "WM-01",
+        "WM-02"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T005",
+      "source_requirements": [
+        "REQ03"
+      ],
+      "master_requirements": [
+        "WM-01",
+        "WM-02"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T006",
+      "source_requirements": [
+        "REQ04"
+      ],
+      "master_requirements": [
+        "WM-02"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T007",
+      "source_requirements": [
+        "REQ04",
+        "REQ28"
+      ],
+      "master_requirements": [
+        "WM-02",
+        "WM-23"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T008",
+      "source_requirements": [
+        "REQ05"
+      ],
+      "master_requirements": [
+        "WM-03"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T009",
+      "source_requirements": [
+        "REQ05"
+      ],
+      "master_requirements": [
+        "WM-03"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T010",
+      "source_requirements": [
+        "REQ05"
+      ],
+      "master_requirements": [
+        "WM-03"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T011",
+      "source_requirements": [
+        "REQ06"
+      ],
+      "master_requirements": [
+        "WM-02",
+        "WM-17"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T012",
+      "source_requirements": [
+        "REQ06"
+      ],
+      "master_requirements": [
+        "WM-02",
+        "WM-17"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T013",
+      "source_requirements": [
+        "REQ06",
+        "REQ23"
+      ],
+      "master_requirements": [
+        "WM-02",
+        "WM-17",
+        "WM-21"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T014",
+      "source_requirements": [
+        "REQ07"
+      ],
+      "master_requirements": [
+        "WM-04"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T015",
+      "source_requirements": [
+        "REQ08"
+      ],
+      "master_requirements": [
+        "WM-04"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T016",
+      "source_requirements": [
+        "REQ07",
+        "REQ08"
+      ],
+      "master_requirements": [
+        "WM-04"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T017",
+      "source_requirements": [
+        "REQ08"
+      ],
+      "master_requirements": [
+        "WM-04"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T018",
+      "source_requirements": [
+        "REQ09"
+      ],
+      "master_requirements": [
+        "WM-05"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T019",
+      "source_requirements": [
+        "REQ09"
+      ],
+      "master_requirements": [
+        "WM-05"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T020",
+      "source_requirements": [
+        "REQ09"
+      ],
+      "master_requirements": [
+        "WM-05"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T021",
+      "source_requirements": [
+        "REQ09",
+        "REQ31"
+      ],
+      "master_requirements": [
+        "WM-05",
+        "WM-10"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T022",
+      "source_requirements": [
+        "REQ10"
+      ],
+      "master_requirements": [
+        "WM-15"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T023",
+      "source_requirements": [
+        "REQ10"
+      ],
+      "master_requirements": [
+        "WM-15"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T024",
+      "source_requirements": [
+        "REQ10",
+        "REQ11"
+      ],
+      "master_requirements": [
+        "WM-15",
+        "WM-16"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T025",
+      "source_requirements": [
+        "REQ11"
+      ],
+      "master_requirements": [
+        "WM-16"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T026",
+      "source_requirements": [
+        "REQ12"
+      ],
+      "master_requirements": [
+        "WM-15"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T027",
+      "source_requirements": [
+        "REQ12"
+      ],
+      "master_requirements": [
+        "WM-15"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T028",
+      "source_requirements": [
+        "REQ12",
+        "REQ26"
+      ],
+      "master_requirements": [
+        "WM-15",
+        "WM-19"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T029",
+      "source_requirements": [
+        "REQ13"
+      ],
+      "master_requirements": [
+        "WM-19"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T030",
+      "source_requirements": [
+        "REQ13",
+        "REQ31"
+      ],
+      "master_requirements": [
+        "WM-10",
+        "WM-19"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T031",
+      "source_requirements": [
+        "REQ13",
+        "REQ09"
+      ],
+      "master_requirements": [
+        "WM-05",
+        "WM-19"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T032",
+      "source_requirements": [
+        "REQ14"
+      ],
+      "master_requirements": [
+        "WM-04",
+        "WM-23"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T033",
+      "source_requirements": [
+        "REQ15"
+      ],
+      "master_requirements": [
+        "WM-19"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T034",
+      "source_requirements": [
+        "REQ16"
+      ],
+      "master_requirements": [
+        "WM-13"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T035",
+      "source_requirements": [
+        "REQ16",
+        "REQ27"
+      ],
+      "master_requirements": [
+        "WM-13"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T036",
+      "source_requirements": [
+        "REQ17"
+      ],
+      "master_requirements": [
+        "WM-19"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T037",
+      "source_requirements": [
+        "REQ17"
+      ],
+      "master_requirements": [
+        "WM-19"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T038",
+      "source_requirements": [
+        "REQ18"
+      ],
+      "master_requirements": [
+        "WM-05",
+        "WM-17"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T039",
+      "source_requirements": [
+        "REQ19"
+      ],
+      "master_requirements": [
+        "WM-22"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T040",
+      "source_requirements": [
+        "REQ20"
+      ],
+      "master_requirements": [
+        "WM-20"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T041",
+      "source_requirements": [
+        "REQ20"
+      ],
+      "master_requirements": [
+        "WM-20"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T042",
+      "source_requirements": [
+        "REQ21"
+      ],
+      "master_requirements": [
+        "WM-22"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T043",
+      "source_requirements": [
+        "REQ22"
+      ],
+      "master_requirements": [
+        "WM-15"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T044",
+      "source_requirements": [
+        "REQ22",
+        "REQ31"
+      ],
+      "master_requirements": [
+        "WM-10",
+        "WM-15"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T045",
+      "source_requirements": [
+        "REQ23"
+      ],
+      "master_requirements": [
+        "WM-21"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T046",
+      "source_requirements": [
+        "REQ24"
+      ],
+      "master_requirements": [
+        "WM-03"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T047",
+      "source_requirements": [
+        "REQ24"
+      ],
+      "master_requirements": [
+        "WM-03"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T048",
+      "source_requirements": [
+        "REQ25"
+      ],
+      "master_requirements": [
+        "WM-13"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T049",
+      "source_requirements": [
+        "REQ25"
+      ],
+      "master_requirements": [
+        "WM-13"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T050",
+      "source_requirements": [
+        "REQ26"
+      ],
+      "master_requirements": [
+        "WM-19"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T051",
+      "source_requirements": [
+        "REQ26"
+      ],
+      "master_requirements": [
+        "WM-19"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T052",
+      "source_requirements": [
+        "REQ27"
+      ],
+      "master_requirements": [
+        "WM-13"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T053",
+      "source_requirements": [
+        "REQ27"
+      ],
+      "master_requirements": [
+        "WM-13"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T054",
+      "source_requirements": [
+        "REQ28"
+      ],
+      "master_requirements": [
+        "WM-23"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T055",
+      "source_requirements": [
+        "REQ29"
+      ],
+      "master_requirements": [
+        "WM-21"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T056",
+      "source_requirements": [
+        "REQ30"
+      ],
+      "master_requirements": [
+        "WM-21"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T057",
+      "source_requirements": [
+        "REQ31"
+      ],
+      "master_requirements": [
+        "WM-10"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T058",
+      "source_requirements": [
+        "REQ31"
+      ],
+      "master_requirements": [
+        "WM-10"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T059",
+      "source_requirements": [
+        "REQ32"
+      ],
+      "master_requirements": [
+        "WM-22"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    },
+    {
+      "id": "T060",
+      "source_requirements": [
+        "REQ32",
+        "REQ21"
+      ],
+      "master_requirements": [
+        "WM-22"
+      ],
+      "treatment": "apply_requirement_crosswalk_before_execution",
+      "status": "NOT_RUN",
+      "source": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json"
+    }
+  ],
+  "base_operation": [
+    {
+      "id": "WB-01",
+      "source": "docs/fontes/workspace-2026-09-24/PLANO_WISSIAN_OPERACAO_BASE.md",
+      "source_line": 147,
+      "source_sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "cells": [
+        "WB-01",
+        "`00_Governanca` e aba Abertura",
+        "Cadastro da organização, responsáveis, decisões, pendências e aprovações",
+        "E1/E5: cada pendência tem responsável e evidência; modelo não aparece como conclusão"
+      ],
+      "master_phase": "M2/M5b",
+      "master_requirements": [
+        "WM-18"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "WB-02",
+      "source": "docs/fontes/workspace-2026-09-24/PLANO_WISSIAN_OPERACAO_BASE.md",
+      "source_line": 148,
+      "source_sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "cells": [
+        "WB-02",
+        "`01_Societario`",
+        "Atos, participantes por referência, representação, deliberações e documentos vigentes",
+        "E5: distinguir minuta, assinado e registrado; participação não concede permissão no SaaS"
+      ],
+      "master_phase": "M5b",
+      "master_requirements": [
+        "WM-18"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "WB-03",
+      "source": "docs/fontes/workspace-2026-09-24/PLANO_WISSIAN_OPERACAO_BASE.md",
+      "source_line": 149,
+      "source_sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "cells": [
+        "WB-03",
+        "`02_Registro_e_Licencas`",
+        "Cadastros, protocolos, licenças, dispensas documentadas e renovações",
+        "E5: obrigação aplicável tem dono, fonte, prazo e prova; modelos locais são configuráveis"
+      ],
+      "master_phase": "M5b",
+      "master_requirements": [
+        "WM-18"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "WB-04",
+      "source": "docs/fontes/workspace-2026-09-24/PLANO_WISSIAN_OPERACAO_BASE.md",
+      "source_line": 150,
+      "source_sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "cells": [
+        "WB-04",
+        "`03_Fiscal_e_Contabil`",
+        "Notas emitidas/recebidas, competência, guias, recibos e pacote do mês",
+        "E2/E3: recuperar nota e seus arquivos; guia paga não equivale a declaração transmitida"
+      ],
+      "master_phase": "M3/M4",
+      "master_requirements": [
+        "WM-08",
+        "WM-12"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "WB-05",
+      "source": "docs/fontes/workspace-2026-09-24/PLANO_WISSIAN_OPERACAO_BASE.md",
+      "source_line": 151,
+      "source_sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "cells": [
+        "WB-05",
+        "`04_Financeiro` e aba Despesas",
+        "Contas a pagar/receber, parcelas, baixas, conciliação, caixa e centros de custo",
+        "E2/E3: pagamento parcial, estorno e conciliação produzem saldos corretos"
+      ],
+      "master_phase": "M3/M4",
+      "master_requirements": [
+        "WM-09",
+        "WM-12"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "WB-06",
+      "source": "docs/fontes/workspace-2026-09-24/PLANO_WISSIAN_OPERACAO_BASE.md",
+      "source_line": 152,
+      "source_sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "cells": [
+        "WB-06",
+        "`05_PI_Wissian` e aba PI",
+        "Ativos intelectuais, versões, autores/titulares por referência, licenças e instrumentos",
+        "E5: cadeia documental localizável; upload não comprova aquisição de direitos"
+      ],
+      "master_phase": "M5b",
+      "master_requirements": [
+        "WM-18"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "WB-07",
+      "source": "docs/fontes/workspace-2026-09-24/PLANO_WISSIAN_OPERACAO_BASE.md",
+      "source_line": 153,
+      "source_sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "cells": [
+        "WB-07",
+        "`06_Contratos` e aba Contratos",
+        "Minutas, revisões, assinados, aditivos, vigência, renovação e encerramento",
+        "E4: aditivo preserva o assinado anterior e atualiza obrigações sem apagar histórico"
+      ],
+      "master_phase": "M5a",
+      "master_requirements": [
+        "WM-18"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "WB-08",
+      "source": "docs/fontes/workspace-2026-09-24/PLANO_WISSIAN_OPERACAO_BASE.md",
+      "source_line": 154,
+      "source_sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "cells": [
+        "WB-08",
+        "`07_Privacidade_e_Seguranca` e aba Dados",
+        "Inventário de tratamentos, fornecedores, solicitações, incidentes e critérios de retenção",
+        "E6: casos sensíveis têm acesso restrito e trilha; cadastro não gera selo de conformidade"
+      ],
+      "master_phase": "M5c",
+      "master_requirements": [
+        "WM-18"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "WB-09",
+      "source": "docs/fontes/workspace-2026-09-24/PLANO_WISSIAN_OPERACAO_BASE.md",
+      "source_line": 155,
+      "source_sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "cells": [
+        "WB-09",
+        "`08_Pessoas_e_Prestadores`",
+        "Vínculos, entrada, mudança de função, saída, contratos e revisão de acessos",
+        "E6: saída revoga acessos internos; revogação externa exige confirmação própria"
+      ],
+      "master_phase": "M5c",
+      "master_requirements": [
+        "WM-18"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "WB-10",
+      "source": "docs/fontes/workspace-2026-09-24/PLANO_WISSIAN_OPERACAO_BASE.md",
+      "source_line": 156,
+      "source_sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "cells": [
+        "WB-10",
+        "`09_Marca_e_Comunicacao`",
+        "Materiais aprovados, licenças de uso, versões, marcas/domínios e respectivos prazos",
+        "E5: localizar material vigente e distinguir pedido de registro concedido"
+      ],
+      "master_phase": "M5b",
+      "master_requirements": [
+        "WM-18"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "WB-11",
+      "source": "docs/fontes/workspace-2026-09-24/PLANO_WISSIAN_OPERACAO_BASE.md",
+      "source_line": 157,
+      "source_sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "cells": [
+        "WB-11",
+        "`10_Operacoes_e_Fornecedores` e aba Acessos",
+        "Serviços contratados, custos, renovação, titularidade, responsáveis e saída",
+        "E6: vencimento gera ação; senhas e chaves ficam fora do cadastro"
+      ],
+      "master_phase": "M5c",
+      "master_requirements": [
+        "WM-18"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "WB-12",
+      "source": "docs/fontes/workspace-2026-09-24/PLANO_WISSIAN_OPERACAO_BASE.md",
+      "source_line": 158,
+      "source_sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "cells": [
+        "WB-12",
+        "`90_Arquivo`",
+        "Arquivamento lógico, versões anteriores, retenção e exportação",
+        "E1/E6: arquivar retira da rotina sem apagar evidências ou quebrar vínculos"
+      ],
+      "master_phase": "M2/M5c",
+      "master_requirements": [
+        "WM-06"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "WB-13",
+      "source": "docs/fontes/workspace-2026-09-24/PLANO_WISSIAN_OPERACAO_BASE.md",
+      "source_line": 159,
+      "source_sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "cells": [
+        "WB-13",
+        "`99_Restrito`",
+        "Classificação e acesso efetivo por recurso, com download e auditoria protegidos",
+        "E1: usuário sem permissão não vê nem baixa arquivo restrito, inclusive por URL direta"
+      ],
+      "master_phase": "M2",
+      "master_requirements": [
+        "WM-04",
+        "WM-06"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "WB-14",
+      "source": "docs/fontes/workspace-2026-09-24/PLANO_WISSIAN_OPERACAO_BASE.md",
+      "source_line": 160,
+      "source_sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "cells": [
+        "WB-14",
+        "Aba Agenda e rotinas mensais",
+        "Tarefas, recorrências, responsáveis, prazos e notificações internas",
+        "E3/E4: concluir uma ocorrência não encerra as futuras; avisos não se duplicam"
+      ],
+      "master_phase": "M4/M5a",
+      "master_requirements": [
+        "WM-12",
+        "WM-18"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "WB-15",
+      "source": "docs/fontes/workspace-2026-09-24/PLANO_WISSIAN_OPERACAO_BASE.md",
+      "source_line": 161,
+      "source_sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "cells": [
+        "WB-15",
+        "Lacuna transversal",
+        "Clientes/fornecedores e contatos compartilhados pelos fluxos",
+        "E1: uma contraparte pode ter ambos os papéis sem duplicar cadastro"
+      ],
+      "master_phase": "M2",
+      "master_requirements": [
+        "WM-07"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "WB-16",
+      "source": "docs/fontes/workspace-2026-09-24/PLANO_WISSIAN_OPERACAO_BASE.md",
+      "source_line": 162,
+      "source_sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "cells": [
+        "WB-16",
+        "Objetivo de produto",
+        "Mesma base para Fultuma e organizações clientes",
+        "E1–E6: segundo contexto sintético opera os mesmos fluxos sem regras da Fultuma"
+      ],
+      "master_phase": "M1-M5",
+      "master_requirements": [
+        "WM-04",
+        "WM-23"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "NF-01",
+      "source": "docs/fontes/workspace-2026-09-24/PLANO_WISSIAN_OPERACAO_BASE.md",
+      "source_line": 219,
+      "source_sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "cells": [
+        "NF-01",
+        "Cadastrar nota de R$ 1.000,00 para Cliente Exemplo, com documento de demonstração e duas parcelas de R$ 500,00",
+        "Nota localizável e saldo de R$ 1.000,00, sem indicação de emissão oficial pelo Wissian"
+      ],
+      "master_phase": "M3/M4",
+      "master_requirements": [
+        "WM-08",
+        "WM-09"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "NF-02",
+      "source": "docs/fontes/workspace-2026-09-24/PLANO_WISSIAN_OPERACAO_BASE.md",
+      "source_line": 220,
+      "source_sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "cells": [
+        "NF-02",
+        "Baixar R$ 300,00 da primeira parcela",
+        "Saldo da parcela R$ 200,00 e saldo total R$ 700,00; nenhuma alteração no valor fiscal"
+      ],
+      "master_phase": "M3/M4",
+      "master_requirements": [
+        "WM-09"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "NF-03",
+      "source": "docs/fontes/workspace-2026-09-24/PLANO_WISSIAN_OPERACAO_BASE.md",
+      "source_line": 221,
+      "source_sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "cells": [
+        "NF-03",
+        "Estornar essa baixa com justificativa",
+        "Saldos voltam a R$ 500,00 e R$ 1.000,00; baixa original permanece rastreável"
+      ],
+      "master_phase": "M3/M4",
+      "master_requirements": [
+        "WM-09"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "NF-04",
+      "source": "docs/fontes/workspace-2026-09-24/PLANO_WISSIAN_OPERACAO_BASE.md",
+      "source_line": 222,
+      "source_sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "cells": [
+        "NF-04",
+        "Registrar uma baixa novamente e depois informar cancelamento fiscal com evidência",
+        "Nota sai da visão fiscal ativa conforme filtro; entrada financeira permanece e exige tratamento explícito"
+      ],
+      "master_phase": "M3/M4",
+      "master_requirements": [
+        "WM-08"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "NF-05",
+      "source": "docs/fontes/workspace-2026-09-24/PLANO_WISSIAN_OPERACAO_BASE.md",
+      "source_line": 223,
+      "source_sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "cells": [
+        "NF-05",
+        "Reimportar a mesma nota ou reenviar a mesma requisição",
+        "Nenhuma segunda nota, parcela ou baixa gerada"
+      ],
+      "master_phase": "M3/M4",
+      "master_requirements": [
+        "WM-10"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "NF-06",
+      "source": "docs/fontes/workspace-2026-09-24/PLANO_WISSIAN_OPERACAO_BASE.md",
+      "source_line": 224,
+      "source_sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "cells": [
+        "NF-06",
+        "Nota de setembro com recebimento em outubro",
+        "Competência de setembro e caixa de outubro aparecem nos relatórios corretos"
+      ],
+      "master_phase": "M3/M4",
+      "master_requirements": [
+        "WM-12"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "NF-07",
+      "source": "docs/fontes/workspace-2026-09-24/PLANO_WISSIAN_OPERACAO_BASE.md",
+      "source_line": 225,
+      "source_sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "cells": [
+        "NF-07",
+        "Usuário de outra organização tenta abrir nota, buscar identificador e baixar anexo",
+        "Acesso negado, sem metadados ou contagens que revelem o registro"
+      ],
+      "master_phase": "M3/M4",
+      "master_requirements": [
+        "WM-04",
+        "WM-06"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "NF-08",
+      "source": "docs/fontes/workspace-2026-09-24/PLANO_WISSIAN_OPERACAO_BASE.md",
+      "source_line": 226,
+      "source_sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "cells": [
+        "NF-08",
+        "Preparar pacote de setembro com documento pendente",
+        "Pendência identificada; nenhum documento inventado e nenhum estado “enviado” automático"
+      ],
+      "master_phase": "M3/M4",
+      "master_requirements": [
+        "WM-12"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "NF-09",
+      "source": "docs/fontes/workspace-2026-09-24/PLANO_WISSIAN_OPERACAO_BASE.md",
+      "source_line": 227,
+      "source_sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "cells": [
+        "NF-09",
+        "Registrar nota recebida e pagamento parcial",
+        "Conta a pagar e saldo do fornecedor coerentes; sem duplicar uma despesa importada anteriormente"
+      ],
+      "master_phase": "M3/M4",
+      "master_requirements": [
+        "WM-09"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "NF-10",
+      "source": "docs/fontes/workspace-2026-09-24/PLANO_WISSIAN_OPERACAO_BASE.md",
+      "source_line": 228,
+      "source_sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "cells": [
+        "NF-10",
+        "Arquivo importado contém linha inválida, fórmula de planilha ou XML com entidade externa",
+        "Falha segura com diagnóstico por item; nenhuma execução de fórmula, rede inesperada ou carga parcial silenciosa"
+      ],
+      "master_phase": "M3/M4",
+      "master_requirements": [
+        "WM-11"
+      ],
+      "status": "NOT_RUN"
+    }
+  ]
+}

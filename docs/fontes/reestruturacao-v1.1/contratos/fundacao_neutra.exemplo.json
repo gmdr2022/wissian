@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "reference_only": true,
+  "kind": "product_descriptor_proposal_not_runtime_configuration",
+  "product_id": "foundation-demo",
+  "display_name": "Wissian — demonstração",
+  "module_ids": [
+    "core.tenancy",
+    "core.audit",
+    "core.identity",
+    "core.configuration",
+    "ui.shell"
+  ],
+  "environment_scope": "synthetic_test_only",
+  "runtime_activation": "not_configured_by_this_file",
+  "real_data_authorized": false,
+  "authorization_grants": []
+}

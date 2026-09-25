@@ -1,0 +1,252 @@
+{
+  "package": "Wissian — Reestruturação do ClubAL",
+  "version": "1.1.0",
+  "created_on": "2026-09-22",
+  "purpose": "Implementation direction; not an application release",
+  "application_tests_executed_here": false,
+  "manifest_excludes_itself": true,
+  "files": [
+    {
+      "path": "00_COMECE_AQUI_CODEX.md",
+      "bytes": 8725,
+      "sha256": "d767e93916173f16e76cb8a0a7cb6b5ead9069c8ce14c98950b7726325a380c9"
+    },
+    {
+      "path": "01_LEIA_PRIMEIRO.md",
+      "bytes": 4801,
+      "sha256": "cd82bf383983aa0c26f6b892f0777c39d1585bdbc523d2175208ea7de6666527"
+    },
+    {
+      "path": "02_DECISOES_E_LIMITES.md",
+      "bytes": 5137,
+      "sha256": "097194e03ecc978666ae92f130ec82f84ec7dd1832c194a45295a95df6deb5bc"
+    },
+    {
+      "path": "03_ESTADO_VERIFICADO_REPOSITORIO.md",
+      "bytes": 5918,
+      "sha256": "344f63ad62cbb94cb08102d2a04e313491219a80d23ae49563422449936ba554"
+    },
+    {
+      "path": "04_ARQUITETURA_ALVO.md",
+      "bytes": 6915,
+      "sha256": "08357bb50437e9200f9f5b1f5c1c2b6d36545eb937f01bab17a4336e2dd8642f"
+    },
+    {
+      "path": "05_MAPA_DE_EXTRACAO.md",
+      "bytes": 5626,
+      "sha256": "6e3b4b368c755fcb5aea091c3d552d2c5d17e5ead2bf4bedb89df2f5933b345a"
+    },
+    {
+      "path": "06_CONTRATOS_DE_MODULOS.md",
+      "bytes": 5537,
+      "sha256": "ed05d7e9cb47dacd03acf1b05932c9e664f6776dd9b4614ed378d4e2be8fca8c"
+    },
+    {
+      "path": "07_DADOS_MIGRACOES_COMPATIBILIDADE.md",
+      "bytes": 6444,
+      "sha256": "0bb721da0a6cb99ff38a9adaba91f597c7f4ffbc8558799d75a7da101ac7b226"
+    },
+    {
+      "path": "08_SEGURANCA_PRIVACIDADE.md",
+      "bytes": 6047,
+      "sha256": "93536c2157c98a9e394755c5e9ae1fd9ea81d643769834b9db1aea6a681ec3ba"
+    },
+    {
+      "path": "09_PRODUTO_SOCIOEDUCATIVO.md",
+      "bytes": 5064,
+      "sha256": "f15ae83fd70f27143121463c03ef45b0fc0211debb5c9103196e041331a1a48c"
+    },
+    {
+      "path": "10_CLUBAL_E_LEGADO.md",
+      "bytes": 3392,
+      "sha256": "fe12f9882f7127864f127ddafaa664ea87ca6ea77692cc1d6c690fa113e31b13"
+    },
+    {
+      "path": "11_UX_MARCA_I18N.md",
+      "bytes": 4582,
+      "sha256": "f0d2c50906b90ac3d4bce45c4cd18c6ab1bc9a3589b82f40a50ced8390cd7500"
+    },
+    {
+      "path": "12_ROADMAP_EXECUTAVEL.md",
+      "bytes": 12579,
+      "sha256": "357985f377d73d582a259d03a47822dee6537f9ece0131c132db2936bdba58c5"
+    },
+    {
+      "path": "13_TESTES_E_ACEITE.md",
+      "bytes": 6235,
+      "sha256": "49db38f82232256bafd15d0d909766f8713023a6880236d73a1cc6fdfda52230"
+    },
+    {
+      "path": "14_OPERACAO_IMPLANTACAO_CUSTOS.md",
+      "bytes": 3373,
+      "sha256": "af1a5feaae19b81970485351bb2bc3b3df9d2a5baa242835665a7e01f2d8b670"
+    },
+    {
+      "path": "15_RISCOS_E_ROLLBACK.md",
+      "bytes": 4596,
+      "sha256": "417ab965454d6b4251f1568944ca7dcd25bacb292a8736f808bb4fcdc4c09761"
+    },
+    {
+      "path": "16_PLAYBOOK_NOVO_PRODUTO.md",
+      "bytes": 2968,
+      "sha256": "cb3f9d05d893d4d6edf5aeea798d417753e0c03cf6bc3f0160d3ad53dfaec4bc"
+    },
+    {
+      "path": "17_CONTINUIDADE_E_RELATORIOS.md",
+      "bytes": 3612,
+      "sha256": "c9b0244fb789bfed41c57b56ccdb44bcacc1eff10f5eeac337db062273836641"
+    },
+    {
+      "path": "18_FONTES_E_REFERENCIAS.md",
+      "bytes": 6072,
+      "sha256": "042f4e010db7caf9777d1ee7ef9140b5c7631e9fee23238e04d2581711ba1f5c"
+    },
+    {
+      "path": "19_PROPRIEDADE_E_MARCA.md",
+      "bytes": 2300,
+      "sha256": "85ada82456d137d4156729a6ef294861f7ddd02858fc108a37051e36b018b7f5"
+    },
+    {
+      "path": "99_VALIDACAO_DO_PACOTE.md",
+      "bytes": 4620,
+      "sha256": "6aeb8d788b3ec3f3ce7801fd8edf9edb36df680093b98bc2617d3d81b1d05e05"
+    },
+    {
+      "path": "adrs/ADR-REEST-001_MONOREPO_E_COMPOSICAO.md",
+      "bytes": 1345,
+      "sha256": "dd7a9301ad5b490d1c879c6494ff50dfd44ca3523add04bbabd6513fb5595304"
+    },
+    {
+      "path": "adrs/ADR-REEST-002_SUPERSESSAO_DE_PRODUTO.md",
+      "bytes": 1215,
+      "sha256": "1e84b818d05fee71ee2815bf3464f967eb8cd738b2f5eef36f6b3fb68646c1bf"
+    },
+    {
+      "path": "adrs/ADR-REEST-003_IDENTIDADE_E_COMPATIBILIDADE.md",
+      "bytes": 1287,
+      "sha256": "c733af147bf8cb485045668fc3776620a3fc9af0215e1dc90e8282bbb833cc14"
+    },
+    {
+      "path": "adrs/ADR-REEST-004_PERSISTENCIA_SEM_DESTRUICAO.md",
+      "bytes": 1353,
+      "sha256": "6f8f22ebc4294376f8e37c062c8590b8a49fd351610e5f9ab1edafdcd2890bdf"
+    },
+    {
+      "path": "adrs/ADR-REEST-005_CONTINUIDADE_E_GATES.md",
+      "bytes": 1183,
+      "sha256": "cb4ca4df9f4b7830489fff02f949eda0c39620374f384597d46a8c42a0b527c0"
+    },
+    {
+      "path": "adrs/README.md",
+      "bytes": 885,
+      "sha256": "68fce5759f67005da83308383e37c5754c46760a53ac396b08733368096a1dea"
+    },
+    {
+      "path": "contratos/catalogo_modulos.exemplo.json",
+      "bytes": 2984,
+      "sha256": "c95d4124d9efc0b467dd821563d5e8d28d6f824166254d72f3f2db1bf30dae3e"
+    },
+    {
+      "path": "contratos/extensao_tecnica.exemplo.json",
+      "bytes": 508,
+      "sha256": "63bf2fb7393b22a9a7368fb50c38d24e7bd874abd6ff0e9389b69826b0aad7ff"
+    },
+    {
+      "path": "contratos/fundacao_neutra.exemplo.json",
+      "bytes": 489,
+      "sha256": "a29b1cc406238072ab093fab29815f554020bb3d4a67dbfbc4b029438ffaa0fe"
+    },
+    {
+      "path": "contratos/README.md",
+      "bytes": 2917,
+      "sha256": "6c8b624b3cf8b5af24d8fb311872b00829a56df491f8c65f643aad68f6ac4bbc"
+    },
+    {
+      "path": "contratos/socioeducativo.exemplo.json",
+      "bytes": 614,
+      "sha256": "c84792fa6e2ae290187632df65b2d9e5d0f0425bf8cab161338897380330d30d"
+    },
+    {
+      "path": "evidencias/fontes_publicas.json",
+      "bytes": 3094,
+      "sha256": "f7e4543a8a6713c4ca976ca3b45b8e3f5a412bf4fe64e6a28fca066e77b26a08"
+    },
+    {
+      "path": "evidencias/repositorio_observado.json",
+      "bytes": 3638,
+      "sha256": "f94b458e69e2c7728ef35810fd498ebec1162a2c9af5e5a8e376c858189b5c28"
+    },
+    {
+      "path": "ferramentas/README.md",
+      "bytes": 2206,
+      "sha256": "559716a6a9ecf906f34189af4459eef381828b3104c0e6d20dcf0e4219c7698f"
+    },
+    {
+      "path": "ferramentas/testar_validador.py",
+      "bytes": 7051,
+      "sha256": "a7fcc67060e881dac8cc58cc407618fac819169c6ef130eb541c5b664fe202da"
+    },
+    {
+      "path": "ferramentas/validar_pacote.py",
+      "bytes": 10748,
+      "sha256": "9ebdfaa523e0819ed851367eb6b17aee4748b29ac0edb11c4730b36d86013fbf"
+    },
+    {
+      "path": "matrizes/casos_de_teste.json",
+      "bytes": 32361,
+      "sha256": "c22c17fb861312822f444d5ce23c22cfe068ed10f78fb51f99f6c12b00af522c"
+    },
+    {
+      "path": "matrizes/inventario_inicial.json",
+      "bytes": 11532,
+      "sha256": "aa50fc75981c4b93fb6282327f53c9c11ea1753e77bb27e0256ee6f36f4b2499"
+    },
+    {
+      "path": "matrizes/README.md",
+      "bytes": 958,
+      "sha256": "c67d79913150992c725b9b50afa7c35d54a228eb16c5aa6b2bf1f450e2b0a291"
+    },
+    {
+      "path": "matrizes/requisitos.json",
+      "bytes": 8774,
+      "sha256": "ebc28f1646a022faf5fac5a38a22efcfc6ee2eb1ad98fa8b973d7a7e2142f8a3"
+    },
+    {
+      "path": "modelos/AGENTS_ADENDO_REFERENCIA.md",
+      "bytes": 1594,
+      "sha256": "d98d519b774ea54e2b6cebafc024b9e6b198106c2aeb0d6ee51446443d224770"
+    },
+    {
+      "path": "modelos/INVENTARIO.md",
+      "bytes": 879,
+      "sha256": "f9169e7f37a3bfd2d509a40ec81e1cfa438f9b28a3158898f70119c89e9d71cc"
+    },
+    {
+      "path": "modelos/MATRIZ_COMPATIBILIDADE.md",
+      "bytes": 656,
+      "sha256": "476a83c9c86fd7427c4090ee9ed87c79560cf632b6aa30e63a77daa9fab8612d"
+    },
+    {
+      "path": "modelos/RELATORIO_INCREMENTO.md",
+      "bytes": 1070,
+      "sha256": "c8d954f7d6b93bfbe911c551510e193eb6113f807e67543d8fd058c5234be42f"
+    },
+    {
+      "path": "Prompt.txt",
+      "bytes": 1084,
+      "sha256": "894e9db43821f7852d570d03c51104ebb1e4b04e7a19d535e658150a1c3a0845"
+    },
+    {
+      "path": "prompts/RETOMAR.md",
+      "bytes": 1856,
+      "sha256": "9fe3ddcf482dcab5b0fe845fd2c65f49c6fd11a81bb82f19db56acb055c28478"
+    },
+    {
+      "path": "prompts/REVISAO_INDEPENDENTE.md",
+      "bytes": 1509,
+      "sha256": "3811b4213be5105f0471cacbf0800161dd69d5af140e651ba096deb3158bfe3b"
+    }
+  ],
+  "revision_scope": "Wissian identity alignment and preparation for the dedicated project folder; no application changes",
+  "source_archive_sha256": "69e8953e7a94a2b31dc5127e50ce8c645d80f077cc4a706bc1d28af9c599894a"
+}

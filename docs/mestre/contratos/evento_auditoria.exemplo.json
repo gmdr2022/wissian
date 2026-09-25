@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "reference_only": true,
+  "grants_authority": false,
+  "runtime_activation": false,
+  "event": {
+    "id": "synthetic-event-001",
+    "tenant_id": "tenant-demo-a",
+    "actor_ref": "synthetic-actor",
+    "action": "finance.settlement.create",
+    "resource_ref": "synthetic-obligation-001",
+    "result": "denied",
+    "reason_code": "permission_missing",
+    "occurred_at": "2026-09-24T12:00:00Z",
+    "correlation_id": "synthetic-correlation-001",
+    "authority_revision": "synthetic-3"
+  },
+  "notice": "Estrutura proposta; sem PII/segredo/corpo do documento. Nao e evento executado."
+}

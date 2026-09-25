@@ -1,0 +1,1138 @@
+{
+  "notice": "Structured extraction of an existing roadmap; requirements are source statements, not new execution results or permission. Apply the master precedence.",
+  "source": "docs/programa-owm/00_COMECE_AQUI/programa_owm.json",
+  "source_sha256": "9f2928dbdf04815e1cfd39a7a9bf0b156b91e35321cf8d70c44caee15cec7dd2",
+  "source_commit": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+  "program": {
+    "program": "OWM",
+    "version": "2.2",
+    "date": "2026-08-10",
+    "active_package": "OWM-12",
+    "architecture": {
+      "frontend": "React + TypeScript + Vite",
+      "backend": "C# / ASP.NET Core em .NET 10 LTS",
+      "database": "PostgreSQL",
+      "realtime": "SignalR notification + API reconciliation"
+    },
+    "packages": [
+      {
+        "n": 1,
+        "id": "OWM-0+OWM-1",
+        "slug": "OWM-00_01_BOOTSTRAP_FUNDACAO",
+        "title": "Baseline, inventário, governança e fundação executável",
+        "phase": "Fundação",
+        "mandatory": true,
+        "prereq": "Nenhum pacote OWM anterior. Exige apenas repositório correto, instruções locais e workspace seguro.",
+        "goal": "Inventariar o legado e criar a fundação executável React/C#/.NET/PostgreSQL sem migrar capacidades grandes.",
+        "scope": [
+          "Git/worktree e baseline real",
+          "inventário de código, dados, documentos e infraestrutura",
+          "ADRs e roadmap canônico",
+          "estrutura inicial frontend/backend/tests",
+          "toolchain, lint, build, health e banco local",
+          "registro de riscos e matriz inicial de paridade"
+        ],
+        "gates": [
+          "baseline e falhas preexistentes registrados",
+          "frontend e backend iniciam localmente",
+          "migrations aplicam em base vazia",
+          "CI mínimo ou scripts reproduzíveis funcionam",
+          "nenhuma capacidade funcional grande foi antecipada"
+        ],
+        "refs": [
+          "01_GOVERNANCA_CANONICA/CLUBAL_DIRETRIZ_MESTRA_OWM_V2_2026-07-28.md"
+        ]
+      },
+      {
+        "n": 2,
+        "id": "OWM-2",
+        "slug": "OWM-02_IDENTIDADE_TENANCY_CAPABILITIES_AUDITORIA",
+        "title": "Identidade, tenancy, capabilities, autorização e auditoria-base",
+        "phase": "Fundação",
+        "mandatory": true,
+        "prereq": "OWM-0+OWM-1 integrado e validado.",
+        "goal": "Estabelecer a segurança e os contextos organizacionais que todas as capacidades web reutilizarão.",
+        "scope": [
+          "usuários humanos e sessões",
+          "tenant/cliente, unidade, localidade e ambiente",
+          "capabilities e policies",
+          "autorização server-side e matriz de acesso",
+          "auditoria-base e isolamento multi-tenant",
+          "testes de acesso cruzado"
+        ],
+        "gates": [
+          "tenant nunca é confiado ao frontend",
+          "policies são validadas no backend",
+          "outro tenant não lista nem infere recursos",
+          "auditoria registra ator, contexto e mudança",
+          "sessões e segredos seguem práticas seguras"
+        ],
+        "refs": [
+          "01_GOVERNANCA_CANONICA/CLUBAL_DIRETRIZ_MESTRA_OWM_V2_2026-07-28.md"
+        ]
+      },
+      {
+        "n": 3,
+        "id": "OWM-3",
+        "slug": "OWM-03_CARACTERIZACAO_LEGADO_ADAPTERS_MIGRADOR",
+        "title": "Caracterização do legado, anti-corruption layer e estratégia de migração",
+        "phase": "Migração",
+        "mandatory": true,
+        "prereq": "OWM-2 integrado e modelo organizacional estável.",
+        "goal": "Transformar comportamento e dados do Operador legado em contratos verificáveis, sem dual-write silencioso.",
+        "scope": [
+          "testes de caracterização",
+          "mapa origem→destino",
+          "adapters e anti-corruption layer",
+          "fonte autoritativa por domínio",
+          "migrador com dry-run, backup e idempotência",
+          "tratamento de valores legados como Operação PEMSE"
+        ],
+        "gates": [
+          "fontes de verdade documentadas por domínio",
+          "migrador não destrutivo e repetível",
+          "fixtures legadas representativas passam",
+          "divergências são detectáveis",
+          "rollback e reconciliação definidos"
+        ],
+        "refs": [
+          "01_GOVERNANCA_CANONICA/CLUBAL_DIRETRIZ_MESTRA_OWM_V2_2026-07-28.md",
+          "02_ESPECIFICACOES_CANONICAS/SPEC_OWM_06F_CONFIGURACOES_WEB_E_EDGE_V2.md"
+        ]
+      },
+      {
+        "n": 4,
+        "id": "OWM-4",
+        "slug": "OWM-04_PRIMEIRA_FATIA_VERTICAL_REAL",
+        "title": "Primeira fatia vertical real de ponta a ponta",
+        "phase": "Prova de arquitetura",
+        "mandatory": true,
+        "prereq": "OWM-3 integrado, adapters e fonte de verdade definidos.",
+        "goal": "Provar login→contexto→rotina→publicação→Player/simulador→confirmação com dados reais de teste.",
+        "scope": [
+          "uma capacidade mínima de Rotinas",
+          "API e persistência",
+          "UI React",
+          "publicação versionada",
+          "receiver/simulador",
+          "desired/reported ou confirmação equivalente",
+          "E2E e observabilidade"
+        ],
+        "gates": [
+          "fluxo completo executado sem endpoint manual",
+          "falha parcial é visível",
+          "autorização e tenancy testadas",
+          "rollback/feature flag disponível",
+          "arquitetura provada antes da expansão"
+        ],
+        "refs": [
+          "01_GOVERNANCA_CANONICA/CLUBAL_DIRETRIZ_MESTRA_OWM_V2_2026-07-28.md"
+        ]
+      },
+      {
+        "n": 5,
+        "id": "OWM-5",
+        "slug": "OWM-05_OPERADOR_MODULAR_AREAS_PERMISSOES",
+        "title": "App Shell e Operador modular por áreas, contexto e permissões",
+        "phase": "Experiência central",
+        "mandatory": true,
+        "prereq": "OWM-4 validado. Não reconstruir a navegação grande no Tkinter.",
+        "goal": "Criar a navegação definitiva do Operador Web, reutilizável por capacidades posteriores.",
+        "scope": [
+          "registro central de áreas",
+          "rotas protegidas",
+          "contexto tenant/unidade",
+          "dashboard e estados vazios",
+          "navegação responsiva",
+          "capabilities e permissões",
+          "acessibilidade e design system"
+        ],
+        "gates": [
+          "rota não autorizada é bloqueada no backend e UI",
+          "áreas não criam silos de dados",
+          "um papel não equivale rigidamente a uma aba",
+          "desktop e celular são utilizáveis",
+          "aliases OMA ficam apenas na rastreabilidade"
+        ],
+        "refs": [
+          "01_GOVERNANCA_CANONICA/CLUBAL_DIRETRIZ_MESTRA_OWM_V2_2026-07-28.md",
+          "02_ESPECIFICACOES_CANONICAS/SPEC_OWM_05_06B_09_OPERADOR_MODULAR_AGENDAS_MAPA_V2.md"
+        ]
+      },
+      {
+        "n": 6,
+        "id": "OWM-6F.1",
+        "slug": "OWM-06F_1_CONFIGURACOES_FUNDACAO_MIGRACAO",
+        "title": "Fundação de Configurações institucionais e migração dos valores locais",
+        "phase": "Capacidades centrais",
+        "mandatory": true,
+        "prereq": "OWM-5 integrado; modelo de OWM-2 e adapters de OWM-3 disponíveis.",
+        "goal": "Estabilizar cliente, unidade, localidade, capabilities, rascunho/aplicado e ownership antes das telas completas.",
+        "scope": [
+          "schemas centrais de configuração",
+          "migração compatível",
+          "estado aplicado versus rascunho",
+          "onboarding institucional-base",
+          "ownership Configurações×Device×Edge",
+          "API e testes"
+        ],
+        "gates": [
+          "navegador não vira device_id",
+          "PEMSE é tenant, não função",
+          "configuração legada carrega sem perda",
+          "rascunho não é tratado como ativo",
+          "responsabilidades locais são roteadas ao Edge/Player"
+        ],
+        "refs": [
+          "01_GOVERNANCA_CANONICA/CLUBAL_DIRETRIZ_MESTRA_OWM_V2_2026-07-28.md",
+          "02_ESPECIFICACOES_CANONICAS/SPEC_OWM_06F_CONFIGURACOES_WEB_E_EDGE_V2.md"
+        ]
+      },
+      {
+        "n": 7,
+        "id": "OWM-6A",
+        "slug": "OWM-06A_OPERACAO_AGORA_PLANTOES",
+        "title": "Operação agora, plantões, passagem e estado operacional",
+        "phase": "Capacidades centrais",
+        "mandatory": true,
+        "prereq": "OWM-6F.1 validado e contexto organizacional consistente.",
+        "goal": "Migrar o núcleo operacional imediato com histórico, autorização, concorrência e projeções controladas.",
+        "scope": [
+          "estado operacional atual",
+          "plantões e passagem",
+          "eventos e pendências",
+          "histórico de domínio",
+          "projeções autorizadas",
+          "testes de concorrência e auditoria"
+        ],
+        "gates": [
+          "estado atual é distinto de planejamento",
+          "mudanças concorrentes não se perdem",
+          "dados sensíveis respeitam policies",
+          "legado continua como fallback",
+          "paridade relevante registrada"
+        ],
+        "refs": [
+          "01_GOVERNANCA_CANONICA/CLUBAL_DIRETRIZ_MESTRA_OWM_V2_2026-07-28.md"
+        ]
+      },
+      {
+        "n": 8,
+        "id": "OWM-6B.1",
+        "slug": "OWM-06B_1_DOMINIO_AGENDAS_CONFLITOS",
+        "title": "Domínio compartilhado de agendas, recorrência, recursos e conflitos",
+        "phase": "Planejamento",
+        "mandatory": true,
+        "prereq": "OWM-6A integrado; modelos de pessoa/local/recurso identificados.",
+        "goal": "Criar uma única fonte de agenda que sustente timeline, grade e publicação.",
+        "scope": [
+          "SchedulePlan/Item/Resource/Exception/Finding/Publication",
+          "recorrência e exceções",
+          "conflitos de pessoa, local e recurso",
+          "estados do plano",
+          "serviços e testes sem UI final"
+        ],
+        "gates": [
+          "timeline e grade não duplicam domínio",
+          "conflitos são explicáveis",
+          "regras ajudam e humanos decidem",
+          "migrations são compatíveis",
+          "fixtures escola/clube/show/socioeducativo passam"
+        ],
+        "refs": [
+          "01_GOVERNANCA_CANONICA/CLUBAL_DIRETRIZ_MESTRA_OWM_V2_2026-07-28.md",
+          "02_ESPECIFICACOES_CANONICAS/SPEC_OWM_05_06B_09_OPERADOR_MODULAR_AGENDAS_MAPA_V2.md"
+        ]
+      },
+      {
+        "n": 9,
+        "id": "OWM-6B.2",
+        "slug": "OWM-06B_2_TIMELINE_PLANEJAMENTO",
+        "title": "Timeline de planejamento e cronograma",
+        "phase": "Planejamento",
+        "mandatory": true,
+        "prereq": "OWM-6B.1 validado.",
+        "goal": "Entregar a visualização e edição temporal do domínio de agenda no React.",
+        "scope": [
+          "visões por responsável, turma, local e recurso",
+          "edição segura",
+          "zoom/período/filtros",
+          "conflitos próximos da ação",
+          "teclado e responsividade",
+          "performance com volume representativo"
+        ],
+        "gates": [
+          "não depende de drag-and-drop",
+          "edição por teclado é possível",
+          "conflitos não dependem só de cor",
+          "estado e rascunho são claros",
+          "não cria segunda agenda"
+        ],
+        "refs": [
+          "02_ESPECIFICACOES_CANONICAS/SPEC_OWM_05_06B_09_OPERADOR_MODULAR_AGENDAS_MAPA_V2.md"
+        ]
+      },
+      {
+        "n": 10,
+        "id": "OWM-6B.3",
+        "slug": "OWM-06B_3_QUADRO_SEMANAL",
+        "title": "Quadro semanal de aulas e atividades",
+        "phase": "Planejamento",
+        "mandatory": true,
+        "prereq": "OWM-6B.1 e preferencialmente OWM-6B.2 integrados.",
+        "goal": "Entregar a grade semanal como segunda visualização do mesmo domínio.",
+        "scope": [
+          "grade por dia/período",
+          "modos turma/profissional/local",
+          "recorrência e exceções",
+          "conflitos e estados",
+          "exportação/print autorizados",
+          "responsividade"
+        ],
+        "gates": [
+          "mesmo item aparece coerentemente nas duas visões",
+          "alteração em uma visão reflete na outra",
+          "não há regra duplicada",
+          "layout funciona em resoluções-alvo",
+          "exportação respeita privacidade"
+        ],
+        "refs": [
+          "02_ESPECIFICACOES_CANONICAS/SPEC_OWM_05_06B_09_OPERADOR_MODULAR_AGENDAS_MAPA_V2.md"
+        ]
+      },
+      {
+        "n": 11,
+        "id": "OWM-6D+OWM-6B.4",
+        "slug": "OWM-06D_06B_4_PUBLICACAO_APROVACAO_RECEIVERS",
+        "title": "Revisão, aprovação, publicação versionada e receivers",
+        "phase": "Publicação",
+        "mandatory": true,
+        "prereq": "OWM-6B.1–3 validados e primeira fatia OWM-4 reaproveitável.",
+        "goal": "Consolidar o motor de publicação para agendas e demais capacidades, com resultado por destino.",
+        "scope": [
+          "revisão e aprovação",
+          "versões e idempotência",
+          "destinos Rotinas/Consulta/Player",
+          "last-known-good e rollback",
+          "falha parcial",
+          "histórico e observabilidade"
+        ],
+        "gates": [
+          "sucesso parcial não aparece como total",
+          "receivers são idempotentes",
+          "offline recebe estado mais recente ao reconectar",
+          "publicação concorrente é controlada",
+          "preview corresponde ao payload publicado"
+        ],
+        "refs": [
+          "01_GOVERNANCA_CANONICA/CLUBAL_DIRETRIZ_MESTRA_OWM_V2_2026-07-28.md",
+          "02_ESPECIFICACOES_CANONICAS/SPEC_OWM_05_06B_09_OPERADOR_MODULAR_AGENDAS_MAPA_V2.md",
+          "02_ESPECIFICACOES_CANONICAS/SPEC_OWM_06F_CONFIGURACOES_WEB_E_EDGE_V2.md"
+        ]
+      },
+      {
+        "n": 12,
+        "id": "OWM-6E",
+        "slug": "OWM-06E_CADASTROS_BRANDING_LOGOS",
+        "title": "Cadastros institucionais, branding e logos por tenant/unidade",
+        "phase": "Capacidades centrais",
+        "mandatory": true,
+        "prereq": "OWM-6D integrado; storage e políticas de upload definidos.",
+        "goal": "Centralizar cadastros e identidade visual sem arquivo manual como fonte de verdade.",
+        "scope": [
+          "logos e branding por tenant/unidade",
+          "fallback ClubAL",
+          "upload validado e objetos privados",
+          "versionamento/preview",
+          "cadastros compartilhados",
+          "projeção para Rotinas/Consulta/Player"
+        ],
+        "gates": [
+          "arquivo malicioso é rejeitado",
+          "tenant não acessa objeto alheio",
+          "fallback funciona",
+          "alteração propaga por versão",
+          "não há dependência de primeira imagem da pasta"
+        ],
+        "refs": [
+          "01_GOVERNANCA_CANONICA/CLUBAL_DIRETRIZ_MESTRA_OWM_V2_2026-07-28.md",
+          "02_ESPECIFICACOES_CANONICAS/SPEC_OWM_06F_CONFIGURACOES_WEB_E_EDGE_V2.md"
+        ]
+      },
+      {
+        "n": 13,
+        "id": "OWM-6F.2",
+        "slug": "OWM-06F_2_CONFIGURACOES_WEB_COMPLETAS",
+        "title": "Configurações Web completas, privacidade, integrações, suporte e demonstração",
+        "phase": "Capacidades centrais",
+        "mandatory": true,
+        "prereq": "OWM-6F.1, OWM-6D e OWM-6E integrados.",
+        "goal": "Entregar a experiência completa de Configurações Web já conectada aos domínios autoritativos.",
+        "scope": [
+          "Visão geral e próxima ação",
+          "organização/unidades/capabilities/localidade",
+          "publicação e branding por integração",
+          "privacidade/retenção",
+          "integrações",
+          "suporte e pacote técnico",
+          "demonstração isolada"
+        ],
+        "gates": [
+          "uma ação primária por bloco",
+          "aplicado e rascunho são inequívocos",
+          "ações sensíveis são autorizadas no backend",
+          "pacote técnico é sanitizado",
+          "demonstração não altera dados reais"
+        ],
+        "refs": [
+          "02_ESPECIFICACOES_CANONICAS/SPEC_OWM_06F_CONFIGURACOES_WEB_E_EDGE_V2.md"
+        ]
+      },
+      {
+        "n": 14,
+        "id": "OWM-7A",
+        "aliases": [
+          "DM-1"
+        ],
+        "slug": "OWM-07A_DEVICE_MANAGER_FUNDACAO_SEGURANCA",
+        "title": "Device Manager: domínio, matrícula, identidade e segurança",
+        "phase": "Telas e assistência remota",
+        "mandatory": true,
+        "prereq": "OWM-2, OWM-3, OWM-5, OWM-6D e OWM-6F.1 integrados.",
+        "goal": "Criar o protocolo seguro de dispositivos sobre a identidade e tenancy já existentes.",
+        "scope": [
+          "ADR e threat model",
+          "devices, enrollment, credentials, commands e events",
+          "pairing code/QR temporário",
+          "credencial própria de Player",
+          "heartbeat",
+          "desired/reported com revisão",
+          "simulador headless"
+        ],
+        "gates": [
+          "claim é atômico e de uso único",
+          "segredos não aparecem em logs/QR/URL",
+          "outro tenant não infere device",
+          "revogação bloqueia autenticação futura",
+          "simulador prova protocolo e reconciliação"
+        ],
+        "refs": [
+          "01_GOVERNANCA_CANONICA/CLUBAL_DIRETRIZ_MESTRA_OWM_V2_2026-07-28.md",
+          "02_ESPECIFICACOES_CANONICAS/SPEC_OWM_07_DEVICE_MANAGER_PLAYER_EDGE_V2.md"
+        ]
+      },
+      {
+        "n": 15,
+        "id": "OWM-7B",
+        "aliases": [
+          "DM-2"
+        ],
+        "slug": "OWM-07B_PLAYER_WEB_ROTINAS_CLIMA_OFFLINE",
+        "title": "Player Web, Rotinas, clima, reconexão e comportamento offline",
+        "phase": "Telas e assistência remota",
+        "mandatory": true,
+        "prereq": "OWM-7A revisado e integrado.",
+        "goal": "Transformar equipamento compatível em Tela ClubAL provisionável e controlável.",
+        "scope": [
+          "rota/aplicação Player",
+          "matrícula e persistência de sessão",
+          "standby e Rotinas",
+          "clima/timezone da unidade",
+          "SignalR e fetch/poll fallback",
+          "heartbeat e reported state",
+          "cache do último estado válido"
+        ],
+        "gates": [
+          "reload preserva identidade válida",
+          "clima falho não derruba Rotinas",
+          "revisão antiga é ignorada",
+          "duas instâncias isoladas funcionam",
+          "limites offline são testados e não superprometidos"
+        ],
+        "refs": [
+          "02_ESPECIFICACOES_CANONICAS/SPEC_OWM_07_DEVICE_MANAGER_PLAYER_EDGE_V2.md"
+        ]
+      },
+      {
+        "n": 16,
+        "id": "OWM-7C",
+        "aliases": [
+          "DM-3"
+        ],
+        "slug": "OWM-07C_CENTRAL_DISPOSITIVOS_E2E",
+        "title": "Central de Dispositivos, ações remotas, auditoria e E2E",
+        "phase": "Telas e assistência remota",
+        "mandatory": true,
+        "prereq": "OWM-7A e OWM-7B integrados.",
+        "goal": "Permitir que o operador autorizado execute todo o fluxo sem banco, terminal ou endpoint manual.",
+        "scope": [
+          "adicionar tela por código/QR",
+          "lista, filtros e detalhes",
+          "desired versus reported",
+          "abrir Rotinas/standby/reload",
+          "ação por local",
+          "revogação",
+          "auditoria e E2E multi-tenant"
+        ],
+        "gates": [
+          "ação em grupo retorna resultado por tela",
+          "revogação é confirmada e auditada",
+          "UI móvel e desktop funciona",
+          "status não depende só de cor",
+          "E2E com dois tenants e duas telas passa"
+        ],
+        "refs": [
+          "02_ESPECIFICACOES_CANONICAS/SPEC_OWM_07_DEVICE_MANAGER_PLAYER_EDGE_V2.md"
+        ]
+      },
+      {
+        "n": 17,
+        "id": "OWM-7D",
+        "slug": "OWM-07D_CLUBAL_EDGE_CONFIGURACOES_LOCAIS",
+        "title": "ClubAL Edge e configurações realmente locais",
+        "phase": "Telas e assistência remota",
+        "mandatory": false,
+        "prereq": "OWM-7B e OWM-7C estáveis; necessidade local comprovada.",
+        "goal": "Isolar integrações locais necessárias sem devolver responsabilidades ao navegador do Operador.",
+        "scope": [
+          "serviço/agent local quando necessário",
+          "arquivos, cache e fila local",
+          "autostart/quiosque",
+          "integrações Windows/hardware",
+          "diagnóstico sanitizado",
+          "capabilities reportadas",
+          "atualização/rollback conforme plataforma"
+        ],
+        "gates": [
+          "Edge não recebe credencial humana",
+          "comandos são allowlist",
+          "sem shell remoto arbitrário",
+          "segredos são protegidos",
+          "falha local não corrompe estado central",
+          "instalação e recuperação são documentadas"
+        ],
+        "refs": [
+          "01_GOVERNANCA_CANONICA/CLUBAL_DIRETRIZ_MESTRA_OWM_V2_2026-07-28.md",
+          "02_ESPECIFICACOES_CANONICAS/SPEC_OWM_06F_CONFIGURACOES_WEB_E_EDGE_V2.md",
+          "02_ESPECIFICACOES_CANONICAS/SPEC_OWM_07_DEVICE_MANAGER_PLAYER_EDGE_V2.md"
+        ]
+      },
+      {
+        "n": 18,
+        "id": "OWM-6C",
+        "slug": "OWM-06C_RELATORIOS_HISTORICO_AUDITORIA_FUNCIONAL",
+        "title": "Relatórios, histórico de domínio e auditoria funcional",
+        "phase": "Capacidades centrais",
+        "mandatory": true,
+        "prereq": "Domínios operacionais e publicação principais integrados.",
+        "goal": "Entregar consultas e relatórios úteis sem confundir histórico de domínio com trilha de segurança.",
+        "scope": [
+          "relatórios operacionais",
+          "histórico de domínio",
+          "auditoria consultável conforme permissão",
+          "filtros e exportações",
+          "retenção",
+          "performance e paginação"
+        ],
+        "gates": [
+          "exportações respeitam classificação",
+          "auditoria não é editável",
+          "dados são paginados",
+          "timezone é coerente",
+          "relatório é reproduzível a partir da fonte autoritativa"
+        ],
+        "refs": [
+          "01_GOVERNANCA_CANONICA/CLUBAL_DIRETRIZ_MESTRA_OWM_V2_2026-07-28.md",
+          "02_ESPECIFICACOES_CANONICAS/SPEC_OWM_05_06B_09_OPERADOR_MODULAR_AGENDAS_MAPA_V2.md"
+        ]
+      },
+      {
+        "n": 19,
+        "id": "OWM-6G",
+        "slug": "OWM-06G_CONSULTA_NORMATIVA_AJUDA",
+        "title": "Consulta normativa, ajuda e conhecimento operacional",
+        "phase": "Capacidades centrais",
+        "mandatory": true,
+        "prereq": "App Shell e autorização estáveis.",
+        "goal": "Disponibilizar ajuda contextual e conteúdos normativos versionados sem misturar dados operacionais.",
+        "scope": [
+          "conteúdo versionado",
+          "busca",
+          "permissões e publicação",
+          "links contextuais",
+          "offline/cache quando justificado",
+          "auditoria editorial"
+        ],
+        "gates": [
+          "conteúdo tem origem e versão",
+          "busca não vaza conteúdo restrito",
+          "UI é acessível",
+          "não duplica a Consulta operacional",
+          "atualização é rastreável"
+        ],
+        "refs": [
+          "01_GOVERNANCA_CANONICA/CLUBAL_DIRETRIZ_MESTRA_OWM_V2_2026-07-28.md"
+        ]
+      },
+      {
+        "n": 20,
+        "id": "OWM-6H",
+        "slug": "OWM-06H_MONITORAMENTO_CFTV_CONDICIONAL",
+        "title": "Monitoramento/CFTV — pacote condicional",
+        "phase": "Capacidades condicionais",
+        "mandatory": false,
+        "prereq": "Somente ativar com requisitos reais, base legal, threat model, hardware/protocolo e autorização explícita de Gui.",
+        "goal": "Implementar somente integrações de monitoramento justificadas, sem vigilância improvisada ou escopo presumido.",
+        "scope": [
+          "descoberta e ADR",
+          "requisitos de acesso e retenção",
+          "integração permitida",
+          "privacy by design",
+          "observabilidade e contingência"
+        ],
+        "gates": [
+          "ativação aprovada",
+          "base legal e finalidade documentadas",
+          "nenhuma credencial/stream exposto",
+          "retenção mínima",
+          "teste com ambiente não produtivo"
+        ],
+        "refs": [
+          "01_GOVERNANCA_CANONICA/CLUBAL_DIRETRIZ_MESTRA_OWM_V2_2026-07-28.md"
+        ]
+      },
+      {
+        "n": 21,
+        "id": "OWM-8",
+        "slug": "OWM-08_CONSULTA_WEB_PWA",
+        "title": "Consulta Web/PWA e projeções de leitura",
+        "phase": "Superfícies",
+        "mandatory": true,
+        "prereq": "Publicação, autorização, privacidade e projeções estáveis.",
+        "goal": "Migrar a Consulta para aplicação separada, mínima e segura, adequada a celular.",
+        "scope": [
+          "PWA responsiva",
+          "projeções de leitura",
+          "autorização e cache",
+          "offline controlado",
+          "privacidade e expiração",
+          "telemetria mínima"
+        ],
+        "gates": [
+          "Consulta não recebe acesso administrativo",
+          "cache respeita expiração e logout",
+          "dados sensíveis são minimizados",
+          "PWA funciona em viewport móvel",
+          "publicação/revogação propagam corretamente"
+        ],
+        "refs": [
+          "01_GOVERNANCA_CANONICA/CLUBAL_DIRETRIZ_MESTRA_OWM_V2_2026-07-28.md"
+        ]
+      },
+      {
+        "n": 22,
+        "id": "OWM-9A",
+        "aliases": [
+          "OCC-0"
+        ],
+        "slug": "OWM-09A_SOCIOEDUCATIVO_THREAT_MODEL_DOMINIO",
+        "title": "Vertical socioeducativa: threat model, domínio e política",
+        "phase": "Vertical restrita",
+        "mandatory": true,
+        "prereq": "OWM-2, OWM-6C, OWM-8 e controles de privacidade/auditoria estáveis.",
+        "goal": "Definir a base segura e ética do Mapa de Alojamentos antes de qualquer interface operacional.",
+        "scope": [
+          "capability socioeducativa",
+          "classificação dos dados",
+          "FacilityNode/Occupancy/Movement",
+          "políticas de acesso",
+          "concorrência e auditoria",
+          "RIPD/validação profissional quando aplicável"
+        ],
+        "gates": [
+          "vertical não aparece para tenants comuns",
+          "dados reais não entram em fixtures",
+          "estado atual e cenário planejado são separados",
+          "override exige justificativa",
+          "exportações restritas por padrão"
+        ],
+        "refs": [
+          "01_GOVERNANCA_CANONICA/CLUBAL_DIRETRIZ_MESTRA_OWM_V2_2026-07-28.md",
+          "02_ESPECIFICACOES_CANONICAS/SPEC_OWM_05_06B_09_OPERADOR_MODULAR_AGENDAS_MAPA_V2.md"
+        ]
+      },
+      {
+        "n": 23,
+        "id": "OWM-9B",
+        "aliases": [
+          "OCC-1"
+        ],
+        "slug": "OWM-09B_MAPA_ATUAL_SOMENTE_LEITURA",
+        "title": "Mapa atual de alojamentos — somente leitura",
+        "phase": "Vertical restrita",
+        "mandatory": true,
+        "prereq": "OWM-9A aprovado e fonte autoritativa definida.",
+        "goal": "Exibir ocupação atual confirmada com busca e contexto, sem permitir movimento ainda.",
+        "scope": [
+          "hierarquia física",
+          "ocupação atual",
+          "busca autorizada",
+          "estados vazios/erro",
+          "acessibilidade",
+          "performance e privacidade"
+        ],
+        "gates": [
+          "nenhum arraste altera estado",
+          "dados exibidos são mínimos",
+          "acesso é auditado quando exigido",
+          "concorrência não produz leitura enganosa",
+          "layout funciona sem mouse"
+        ],
+        "refs": [
+          "02_ESPECIFICACOES_CANONICAS/SPEC_OWM_05_06B_09_OPERADOR_MODULAR_AGENDAS_MAPA_V2.md"
+        ]
+      },
+      {
+        "n": 24,
+        "id": "OWM-9C",
+        "aliases": [
+          "OCC-2"
+        ],
+        "slug": "OWM-09C_CENARIO_PLANEJADO_COMPATIBILIDADE",
+        "title": "Cenário planejado, compatibilidade e validação",
+        "phase": "Vertical restrita",
+        "mandatory": true,
+        "prereq": "OWM-9B validado.",
+        "goal": "Permitir planejar movimentos sem alterar a ocupação física confirmada.",
+        "scope": [
+          "MovementScenario/Plan",
+          "motor de compatibilidade",
+          "severidades e explicações",
+          "planejamento em lote",
+          "override governado",
+          "revisão otimista"
+        ],
+        "gates": [
+          "rascunho não vira estado atual",
+          "bloqueios e alertas são explicáveis",
+          "override é autorizado e justificado",
+          "conflitos concorrentes são detectados",
+          "nenhuma decisão humana é automatizada indevidamente"
+        ],
+        "refs": [
+          "02_ESPECIFICACOES_CANONICAS/SPEC_OWM_05_06B_09_OPERADOR_MODULAR_AGENDAS_MAPA_V2.md"
+        ]
+      },
+      {
+        "n": 25,
+        "id": "OWM-9D",
+        "aliases": [
+          "OCC-3"
+        ],
+        "slug": "OWM-09D_APROVACAO_NOTIFICACOES_EXECUCAO",
+        "title": "Aprovação, notificações, execução física e emergência",
+        "phase": "Vertical restrita",
+        "mandatory": true,
+        "prereq": "OWM-9C validado e políticas de auditoria/notificação prontas.",
+        "goal": "Controlar o ciclo do plano até a confirmação física, inclusive contingência e registro posterior.",
+        "scope": [
+          "aprovação",
+          "destinatários e passagem de plantão",
+          "execução e confirmação física",
+          "cancelamento/correção",
+          "emergência/offline",
+          "histórico e auditoria"
+        ],
+        "gates": [
+          "aprovar não confirma movimento físico",
+          "notificação não expõe dados além do necessário",
+          "emergência é registrada posteriormente",
+          "correções preservam histórico",
+          "ações críticas exigem autorização"
+        ],
+        "refs": [
+          "02_ESPECIFICACOES_CANONICAS/SPEC_OWM_05_06B_09_OPERADOR_MODULAR_AGENDAS_MAPA_V2.md"
+        ]
+      },
+      {
+        "n": 26,
+        "id": "OWM-9E",
+        "aliases": [
+          "OCC-4"
+        ],
+        "slug": "OWM-09E_DRAG_DROP_CONDICIONAL",
+        "title": "Construtor espacial configurável e interação avançada",
+        "phase": "Vertical restrita",
+        "mandatory": true,
+        "prereq": "OWM-9D estável; direção de produto registrada em 2026-08-02; spike ainda prova acessibilidade, performance, segurança e manutenção.",
+        "goal": "Permitir que cada implantação configure e versione sua planta espacial sem layout fixo no código, preservando a separação entre geometria, ocupação, planejamento e execução.",
+        "scope": [
+          "modelo semântico e geométrico versionado",
+          "prédios, pavimentos, núcleos, alojamentos e áreas de apoio",
+          "paredes, barreiras, portas, corredores e rótulos",
+          "mover, redimensionar, rotacionar, alinhar, zoom, pan e camadas",
+          "rascunho, validação, aprovação, publicação e rollback de layout",
+          "spike React",
+          "drag preview",
+          "validação próxima da ação",
+          "teclado, formulário, árvore e selecionar→mover equivalentes",
+          "touch e performance"
+        ],
+        "gates": [
+          "duas plantas sintéticas materialmente diferentes não exigem alteração de código",
+          "layout é versionado, autorizado e auditável",
+          "editar layout não altera ocupação ou execução",
+          "paredes e alojamentos admitem rotação e redimensionamento",
+          "fluxo sem drag continua completo",
+          "arraste não confirma fisicamente",
+          "regras são revalidadas no servidor",
+          "teclado/touch são testados",
+          "spike justifica manutenção"
+        ],
+        "refs": [
+          "02_ESPECIFICACOES_CANONICAS/SPEC_OWM_05_06B_09_OPERADOR_MODULAR_AGENDAS_MAPA_V2.md",
+          "31_PEMSE_MAPA_ESPACIAL_E_RESTRICOES_OPERACIONAIS.md"
+        ]
+      },
+      {
+        "n": 27,
+        "id": "OWM-9F",
+        "aliases": [
+          "OCC-5",
+          "QA-1 parcial"
+        ],
+        "slug": "OWM-09F_HISTORICO_RELATORIOS_CONSULTA_RESTRITA",
+        "title": "Histórico, relatórios, Consulta restrita e elegibilidade operacional",
+        "phase": "Vertical restrita",
+        "mandatory": true,
+        "prereq": "OWM-9D concluído e OWM-9E ativado concluído.",
+        "goal": "Fechar a vertical com rastreabilidade, relatórios autorizados, projeções mínimas, assistência explicável de destino e movimentações de atividade protegidas por políticas e restrições temporárias.",
+        "scope": [
+          "movimentação coletiva de núcleo ou grupo para atividade",
+          "políticas versionadas de participação por atividade e período",
+          "restrições operacionais temporárias, corrigíveis e minimizadas",
+          "orientação ou intervenção pedagógica, relato de suposta infração, Comissão Disciplinar, sanção ou medida disciplinar e efeito operacional como registros distintos",
+          "consulta nominal diária restrita ao plantão, com estado atual separado do histórico",
+          "prévia explicável antes do encaminhamento para Agenda/Operação hoje",
+          "assistência individual de destino por mapa e lista com vacância, capacidade, modalidade ou regime, regras, restrições e histórico estruturado, sem score ou movimentação automática",
+          "consulta atribuída a gestores autorizados, separada de aprovação e ordem",
+          "ordem imediata ou agendada para plantão ou janela versionados, com ciência, revalidação e confirmação física posterior",
+          "registro posterior de movimentação já ocorrida com datas de ocorrência e lançamento distintas, sem backdating da auditoria",
+          "projeção automática e idempotente da ocupação a partir de admissão, transferência e desligamento confirmados, sem segundo lançamento manual no mapa",
+          "configuração versionada por vigência de prédios, pisos, núcleos e modalidades",
+          "histórico de movimentação",
+          "relatório de plantão",
+          "impressão e exportações protegidas em PDF, CSV e TXT, sem mensageria direta",
+          "Consulta restrita",
+          "biblioteca normativa aprovada por palavra-chave, título, tópico, tag e leitura integral",
+          "inventário classificado que separa fontes normativas de intakes históricos",
+          "retenção e redação",
+          "QA sistêmico"
+        ],
+        "gates": [
+          "nenhuma sanção, score ou inferência disciplinar é criada automaticamente",
+          "destinos compatíveis, de atenção e incompatíveis exibem critérios, dados e revisões sem recomendação única ou ranking comportamental",
+          "saída anterior não vira incompatibilidade sem resultado humano estruturado, corrigível, vigente e autorizado",
+          "decisão e exceção permanecem humanas e o fluxo funciona sem mapa ou drag",
+          "consulta permite concordar, discordar, abster-se ou solicitar ajuste sem transformar maioria em aprovação ou execução",
+          "ordem agendada gera pendência e notificação, mas nunca altera ocupação pelo relógio",
+          "registro posterior exige motivo, permissão reforçada, reconciliação e histórico causal imutável",
+          "admissão confirmada abre, transferência confirmada troca e desligamento confirmado encerra ocupação uma vez; rascunho, agenda, ordem ou início não simulam fato físico",
+          "falha ou conflito conserva o último mapa comprovado e cria uma pendência acionável sem adivinhar ou duplicar entrada",
+          "compatibilidade usa dados allowlist e minimizados e a configuração estrutural ou de modalidade é versionada, não hard-coded",
+          "políticas matutinas e vespertinas são configuráveis, não hard-coded",
+          "restrição temporal sintética é revalidada antes do encaminhamento e da execução",
+          "orientação pedagógica, relato de suposta infração, Comissão, sanção ou medida e efeito operacional não são colapsados em um único rótulo",
+          "orientação, relato ou Comissão em andamento não bloqueia atividade sem efeito operacional explícito, vigente e autorizado",
+          "consulta nominal não é publicada em Rotinas e respeita unidade e papel",
+          "listas impressas ou exportadas possuem finalidade, confidencialidade, validade temporal e auditoria",
+          "não existe envio direto por WhatsApp ou e-mail sem gate institucional e de privacidade",
+          "histórico não é sobrescrito",
+          "exportação exige finalidade e permissão",
+          "Consulta minimiza dados",
+          "cada fonte promovida tem proveniência, licença/publicação, vigência, aplicabilidade, classificação e responsável aprovados",
+          "intakes e direcionamentos históricos não aparecem como norma",
+          "retenção está definida",
+          "cenários de concorrência/emergência passam"
+        ],
+        "refs": [
+          "02_ESPECIFICACOES_CANONICAS/SPEC_OWM_05_06B_09_OPERADOR_MODULAR_AGENDAS_MAPA_V2.md",
+          "30_PEMSE_NORMATIVE_LIBRARY_REQUIREMENTS.md",
+          "31_PEMSE_MAPA_ESPACIAL_E_RESTRICOES_OPERACIONAIS.md"
+        ]
+      },
+      {
+        "n": 28,
+        "id": "OWM-10",
+        "slug": "OWM-10_INFRA_CLOUDFLARE_HOMOLOGACAO_CICD",
+        "title": "Prontidão cloud sem custo, homologação isolada e CI/CD",
+        "phase": "Preparação de distribuição",
+        "mandatory": true,
+        "prereq": "Capacidades prioritárias prontas para validação sintética e autorização limitada a recursos sem custo.",
+        "goal": "Deixar a plataforma reproduzível, recuperável e pronta para ativação futura sem contratar serviço, criar DNS ou depender de uma origem paga.",
+        "scope": [
+          "topologia cloud-ready e ADR",
+          "frontend estático isolado e proxy fail-closed",
+          "origem .NET e PostgreSQL reproduzíveis localmente",
+          "backup, restore, rollback e recuperação sintéticos",
+          "CI/CD local e workflow remoto manual preparado",
+          "templates de secrets, DNS, TLS, WAF, rate limit e monitor",
+          "matriz de custo, runbooks, carga e segurança"
+        ],
+        "gates": [
+          "build e serviço estático isolado são reproduzíveis sem custo",
+          "API e health externos falham fechados sem origem",
+          "rollback, backup e restore sintéticos foram testados",
+          "segredos e artefatos sensíveis permanecem fora do repositório",
+          "ativação paga tem runbook, estimativa e gate explícito",
+          "health/readiness e carga passam no laboratório sintético"
+        ],
+        "refs": [
+          "01_GOVERNANCA_CANONICA/CLUBAL_DIRETRIZ_MESTRA_OWM_V2_2026-07-28.md",
+          "../adr/ADR-OWM-029_PRONTIDAO_SEM_CUSTO_ATIVACAO_CONDICIONAL_E_CONSULTA_MOVEL.md"
+        ]
+      },
+      {
+        "n": 29,
+        "id": "OWM-11A",
+        "slug": "OWM-11A_CONSULTA_MOBILE_DISTRIBUIVEL",
+        "title": "Fundação da Consulta mobile",
+        "phase": "Produto móvel",
+        "mandatory": true,
+        "prereq": "OWM-10 integrado; contratos de Consulta, identidade, contexto e autorização estáveis em dados sintéticos.",
+        "goal": "Estabelecer a fundação mobile-first de Consulta no cliente compartilhado, com navegação própria, acesso efetivo vindo do servidor e estados seguros, sem criar um quarto módulo.",
+        "scope": [
+          "recuperação e classificação das intenções históricas do aplicativo",
+          "arquitetura de informação e design mobile-first próprios no cliente Consulta compartilhado",
+          "manifesto minimizado de superfícies efetivamente autorizadas pelo servidor",
+          "shell de navegação responsivo para início, agenda e capacidades já existentes",
+          "estados de carregamento, vazio, erro, offline, sessão expirada e acesso negado",
+          "fundação de acessibilidade, desempenho, segurança e privacidade para as próximas letras"
+        ],
+        "gates": [
+          "Consulta geral não ganha qualquer lançamento operacional",
+          "navegação não infere acesso por cargo ou rótulo e cada endpoint continua reautorizando a requisição",
+          "o manifesto de acesso não expõe IDs, nomes de permissões ou dados sensíveis",
+          "nenhum dado nominal ou restrito é introduzido em cache offline",
+          "fluxos-base passam em viewport móvel, teclado, zoom e verificações automatizadas de acessibilidade",
+          "aceite visual humano permanece checkpoint explícito"
+        ],
+        "refs": [
+          "01_GOVERNANCA_CANONICA/CLUBAL_DIRETRIZ_MESTRA_OWM_V2_2026-07-28.md",
+          "../adr/ADR-OWM-029_PRONTIDAO_SEM_CUSTO_ATIVACAO_CONDICIONAL_E_CONSULTA_MOVEL.md",
+          "../adr/ADR-OWM-030_CLIENTE_CONSULTA_COMPARTILHADO_E_SHELL_ANDROID_SEGURO.md",
+          "../32_OWM11A_MOBILE_PRODUCT_AND_ARCHITECTURE.md"
+        ]
+      },
+      {
+        "n": 30,
+        "id": "OWM-11B",
+        "slug": "OWM-11B_CONSULTAS_CONTEUDO_E_OFFLINE",
+        "title": "Consultas, conteúdo e resiliência móvel",
+        "phase": "Produto móvel",
+        "mandatory": true,
+        "prereq": "OWM-11A integrado e fundação mobile-first validada.",
+        "goal": "Entregar relatórios, histórico, avisos, biblioteca normativa e comportamento offline honesto em jornadas móveis de Consulta.",
+        "scope": [
+          "identidade global ClubAL Consulta, sem acoplamento visível ao cliente PEMSE",
+          "relatórios e histórico permitidos, somente leitura e online",
+          "central de avisos dentro do aplicativo",
+          "biblioteca normativa por palavra, título, tópico e tag, com leitura integral",
+          "projeções publicáveis com validade, origem e limpeza local",
+          "estados de conectividade instável e recuperação sem fila de escrita",
+          "acessibilidade e desempenho das jornadas de consulta"
+        ],
+        "gates": [
+          "cliente, vertical ou pacote específico não é tratado como identidade universal do aplicativo",
+          "relatórios, histórico e biblioteca autenticada usam no-store e não persistem no aparelho",
+          "offline contém somente projeção explicitamente publicável e ainda válida",
+          "fontes normativas reais não são promovidas sem gate editorial",
+          "Consulta não ganha exportação ou compartilhamento nominal móvel sem contrato aprovado",
+          "loading, vazio, erro, revogação e reconexão passam em testes móveis"
+        ],
+        "refs": [
+          "01_GOVERNANCA_CANONICA/CLUBAL_DIRETRIZ_MESTRA_OWM_V2_2026-07-28.md",
+          "../30_PEMSE_NORMATIVE_LIBRARY_REQUIREMENTS.md",
+          "../adr/ADR-OWM-030_CLIENTE_CONSULTA_COMPARTILHADO_E_SHELL_ANDROID_SEGURO.md",
+          "../adr/ADR-OWM-032_NUCLEO_GLOBAL_PACOTES_VERTICAIS_E_ADDONS_GOVERNADOS.md"
+        ]
+      },
+      {
+        "n": 31,
+        "id": "OWM-11C",
+        "slug": "OWM-11C_MAPA_MOBILE_AUTORIZADO",
+        "title": "Mapa mobile autorizado",
+        "phase": "Produto móvel",
+        "mandatory": true,
+        "prereq": "OWM-11B integrado; contratos OWM-9 estáveis e superfícies restritas validadas em dados sintéticos.",
+        "goal": "Adaptar o mapa socioeducativo e seus fluxos autorizados ao uso móvel como addon do pacote vertical aplicável, sem transformar Consulta em Operador paralelo.",
+        "scope": [
+          "composição do mapa como addon socioeducativo, ausente para contextos sem o pacote/capability",
+          "mapa atual e planta publicada com alternativa em lista",
+          "cenários, assistência explicável e planejamento autorizados",
+          "pareceres, ordens e confirmações conforme contratos OWM-9",
+          "mutações móveis com retorno vazio e releitura exclusiva da coordenação minimizada",
+          "MFA, maker-checker, revisão, idempotência e auditoria server-side",
+          "confirmação móvel agora pelo relógio do servidor e data/hora local interpretada no fuso da unidade",
+          "ordem vinculada a plantão operacional autoritativo do mesmo tenant, unidade, data local, código e revisão",
+          "perda de conexão, revogação e troca de contexto fail-closed",
+          "acessibilidade e desempenho do mapa em telas móveis"
+        ],
+        "gates": [
+          "um tenant comum recebe a experiência global sem qualquer rótulo, dado ou rota socioeducativa",
+          "mapa só aparece com capability efetiva e sessão online válida",
+          "nenhum dado nominal ou comando restrito entra em cache ou fila offline",
+          "workspace restrito completo não atravessa respostas de mutação do Consulta",
+          "toda ação continua reautorizada; efeitos aplicados e negações de autorização seguem a auditoria existente sem alegar evento para todo erro de validação",
+          "a decisão e a execução física permanecem humanas",
+          "fluxo equivalente sem mapa ou gesto permanece disponível",
+          "confirmação móvel agora não usa o relógio do aparelho e o retroativo explícito permanece fora do addon",
+          "data e plantão são validados no fuso e no owner operacionais, sem inventar cadastro futuro"
+        ],
+        "refs": [
+          "01_GOVERNANCA_CANONICA/CLUBAL_DIRETRIZ_MESTRA_OWM_V2_2026-07-28.md",
+          "31_PEMSE_MAPA_ESPACIAL_E_RESTRICOES_OPERACIONAIS.md",
+          "../adr/ADR-OWM-030_CLIENTE_CONSULTA_COMPARTILHADO_E_SHELL_ANDROID_SEGURO.md",
+          "../adr/ADR-OWM-032_NUCLEO_GLOBAL_PACOTES_VERTICAIS_E_ADDONS_GOVERNADOS.md",
+          "../adr/ADR-OWM-033_MAPA_MOBILE_MINIMIZADO_REVOGACAO_E_INTENCAO_IDEMPOTENTE.md"
+        ]
+      },
+      {
+        "n": 32,
+        "id": "OWM-11D",
+        "slug": "OWM-11D_ANDROID_DISTRIBUICAO_E_QUALIDADE",
+        "title": "Android, distribuição técnica e qualidade",
+        "phase": "Produto móvel",
+        "mandatory": true,
+        "prereq": "OWM-11C integrado e jornadas móveis web/PWA validadas.",
+        "goal": "Empacotar a Consulta em um shell Android seguro, reproduzível e pronto para futura distribuição, sem publicar em loja nem criar custo.",
+        "scope": [
+          "shell Android estreito para o cliente Consulta compartilhado",
+          "um único aplicativo global; bundles opcionais somente por release ClubAL confiável, versionado e íntegro",
+          "origem HTTPS allowlisted e falha fechada sem origem autorizada",
+          "APK/AAB reproduzíveis, versionamento, atualização e diagnóstico",
+          "assinatura e segredos externos ao Git",
+          "testes em emulador e dispositivo disponível",
+          "segurança, privacidade, acessibilidade, desempenho e tamanho do pacote",
+          "runbook de distribuição técnica e preparação de loja"
+        ],
+        "gates": [
+          "nenhum addon baixa ou executa código arbitrário nem concede autorização no cliente",
+          "manifesto e permissões Android são mínimos",
+          "WebView bloqueia arquivo, conteúdo, mixed content, navegação externa e erro TLS",
+          "APK/AAB reproduzem sem segredo e artefatos gerados ficam fora do Git",
+          "smoke em emulador e análises automatizadas passam",
+          "cadastro, taxa, identidade, canal e publicação em loja permanecem OWM-12"
+        ],
+        "refs": [
+          "01_GOVERNANCA_CANONICA/CLUBAL_DIRETRIZ_MESTRA_OWM_V2_2026-07-28.md",
+          "../adr/ADR-OWM-030_CLIENTE_CONSULTA_COMPARTILHADO_E_SHELL_ANDROID_SEGURO.md",
+          "../adr/ADR-OWM-032_NUCLEO_GLOBAL_PACOTES_VERTICAIS_E_ADDONS_GOVERNADOS.md"
+        ]
+      },
+      {
+        "n": 33,
+        "id": "OWM-11E",
+        "slug": "OWM-11E_ATIVACAO_ASSISTIDA_TELAS_TOTENS",
+        "title": "Ativação assistida de telas e totens",
+        "phase": "Produto móvel",
+        "mandatory": true,
+        "prereq": "OWM-11D integrado; matrícula, Player, Central de Dispositivos e shell Android tecnicamente validados em ambiente sintético.",
+        "goal": "Permitir que uma pessoa autorizada prepare e acompanhe pelo aplicativo a ativação de uma Tela ClubAL, com QR ou código manual, sem terminal, sem duplicar o Device Manager e sem depender do fornecedor do scanner.",
+        "scope": [
+          "reuso do protocolo OWM-7 de matrícula, claim, credencial de device, heartbeat e desired/reported",
+          "ordem de implantação versionada que referencia tenant, unidade, local e perfil existentes",
+          "revisão efetiva dos pacotes/capabilities referenciada pela ordem, sem configuração local divergente por módulo",
+          "permissão de implantação de menor privilégio e sessão privilegiada curta",
+          "área móvel Implantação separada da Consulta comum e vinculada à capability devices.management",
+          "scanner substituível com QR-only, leitor web/nativo e fallback manual sempre disponível",
+          "confirmação explícita antes do claim e estados distintos para claim, primeiro heartbeat e configuração aplicada",
+          "auditoria, idempotência, concorrência, expiração, revogação e recuperação",
+          "piloto Scandit somente por feature flag e decisão posterior baseada em evidência"
+        ],
+        "gates": [
+          "usuário comum de Consulta não vê nem acessa a área de implantação",
+          "dispositivo reporta a revisão aplicada sem decidir sozinho quais addons pertencem ao cliente",
+          "QR contém somente código temporário versionado ou handle opaco, nunca credencial permanente ou contexto institucional",
+          "backend deriva tenancy e escopo da sessão e da ordem autorizada, não de IDs livres do cliente",
+          "claim é atômico, de uso único, idempotente e não significa online ou sincronizado",
+          "código manual permanece disponível sem câmera, Play Services ou fornecedor",
+          "nenhuma chave ou licença de scanner entra no Git",
+          "Scandit não é dependência padrão sem ganho mensurável sobre a alternativa simples",
+          "hardware real, rede institucional e ativação externa permanecem OWM-12"
+        ],
+        "refs": [
+          "01_GOVERNANCA_CANONICA/CLUBAL_DIRETRIZ_MESTRA_OWM_V2_2026-07-28.md",
+          "../adr/ADR-OWM-015_DEVICE_MANAGER_IDENTIDADE_MATRICULA_E_PROTOCOLO_SEGURO.md",
+          "../adr/ADR-OWM-017_CENTRAL_DE_DISPOSITIVOS_ACOES_AUDITORIA_E_QR.md",
+          "../adr/ADR-OWM-031_ATIVACAO_ASSISTIDA_DE_TELAS_E_SCANNER_SUBSTITUIVEL.md",
+          "../adr/ADR-OWM-032_NUCLEO_GLOBAL_PACOTES_VERTICAIS_E_ADDONS_GOVERNADOS.md",
+          "../33_CLUBAL_AVALIACAO_ATIVACAO_ASSISTIDA_QR_SCANDIT.md"
+        ]
+      },
+      {
+        "n": 34,
+        "id": "OWM-12",
+        "slug": "OWM-12_ATIVACAO_CLOUD_PILOTO_LOJA_E_MIGRACAO_CONTROLADA",
+        "title": "Ativação cloud, loja, piloto e migração controlada",
+        "phase": "Ativação e transição",
+        "mandatory": false,
+        "prereq": "Somente ativar após OWM-11A–11E validados, com disponibilidade financeira, provedor/teto de custo, conta/canal de distribuição, usuários/piloto e ambiente real autorizados explicitamente.",
+        "goal": "Executar as ativações externas preparadas, publicar pelos canais aprovados e comparar legado e web/mobile em operação controlada antes do corte.",
+        "scope": [
+          "contratação e ativação dos recursos aprovados",
+          "origem .NET e PostgreSQL externos",
+          "DNS, TLS, WAF, rate limit, secrets e monitor/alerta",
+          "cadastro e verificação da conta de desenvolvedor Android",
+          "taxa, assinatura definitiva, canal de testes e publicação em loja autorizados",
+          "homologação ponta a ponta com dados sintéticos",
+          "piloto restrito, treinamento e suporte",
+          "shadow run, reconciliação e métricas",
+          "rollback operacional e correção de gaps de paridade"
+        ],
+        "gates": [
+          "custo, provedor, DNS, conta de loja e produção têm autorização explícita separada",
+          "identidade, termos, taxa e dados públicos da loja são confirmados por Gui",
+          "health/readiness públicos e entrega de alerta foram ensaiados",
+          "dados reconciliam dentro da tolerância definida",
+          "usuários reais autorizados concluem fluxos críticos",
+          "incidentes e rollback têm runbook ensaiado",
+          "go/no-go é registrado por Gui"
+        ],
+        "refs": [
+          "01_GOVERNANCA_CANONICA/CLUBAL_DIRETRIZ_MESTRA_OWM_V2_2026-07-28.md",
+          "../adr/ADR-OWM-029_PRONTIDAO_SEM_CUSTO_ATIVACAO_CONDICIONAL_E_CONSULTA_MOVEL.md",
+          "../adr/ADR-OWM-030_CLIENTE_CONSULTA_COMPARTILHADO_E_SHELL_ANDROID_SEGURO.md"
+        ]
+      },
+      {
+        "n": 35,
+        "id": "OWM-13",
+        "slug": "OWM-13_DESATIVACAO_OPERADOR_LEGADO",
+        "title": "Desativação segura do Operador legado",
+        "phase": "Encerramento",
+        "mandatory": true,
+        "prereq": "OWM-12 ativado e aprovado, paridade crítica comprovada, migração concluída, backup/rollback e autorização explícita de Gui.",
+        "goal": "Retirar o legado sem perder dados, capacidade operacional ou evidência histórica.",
+        "scope": [
+          "cutover final",
+          "freeze e migração",
+          "verificação pós-corte",
+          "arquivamento de código/dados/docs",
+          "remoção gradual de adapters",
+          "monitoramento reforçado"
+        ],
+        "gates": [
+          "nenhuma capacidade crítica depende do legado",
+          "dados e relatórios foram reconciliados",
+          "rollback temporal está disponível",
+          "documentação e suporte atualizados",
+          "desativação foi autorizada explicitamente"
+        ],
+        "refs": [
+          "01_GOVERNANCA_CANONICA/CLUBAL_DIRETRIZ_MESTRA_OWM_V2_2026-07-28.md"
+        ]
+      }
+    ]
+  }
+}

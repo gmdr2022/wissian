@@ -1,0 +1,59 @@
+# Segredos e configuracao local; somente exemplos sanitizados sao versionados.
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+secrets/
+credentials/
+
+# Dependencias, gerados e caches.
+node_modules/
+.pnpm-store/
+.next/
+next-env.d.ts
+.turbo/
+dist/
+build/
+out/
+coverage/
+playwright-report/
+test-results/
+*.tsbuildinfo
+*.log
+bin/
+obj/
+.cache/
+.local/
+tmp/
+
+# Dados locais e backups; migracoes SQL continuam versionadas.
+/database/local/
+/backups/
+*.dump
+*.backup
+*.db
+*.sqlite
+*.sqlite3
+
+# Estado de infraestrutura; lockfiles devem ser versionados.
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+
+# Preferencias pessoais e arquivos do sistema.
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Recibo local e ZIP de distribuicao (evitar copia recursiva no Git).
+/docs/mestre/entrega/

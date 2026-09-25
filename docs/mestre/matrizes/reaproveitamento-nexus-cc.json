@@ -1,0 +1,720 @@
+{
+  "schema_version": 1,
+  "reference_only": true,
+  "runtime_activation": false,
+  "repository_code_audited_here": false,
+  "sources": [
+    {
+      "id": "analysis",
+      "url": "https://chatgpt.com/share/6ab56aa2-7a48-83e9-aa78-9d85f0317d41",
+      "scope": "Proposta completa lida no navegador; conceitos, aplicações e aposentadorias; não auditoria atual do código"
+    },
+    {
+      "id": "consolidation",
+      "url": "https://chatgpt.com/s/cx_6ab56c1a0a6881919d4f9ad02006a5b6",
+      "scope": "Consolidar pacote mestre Wissian; pedido/entrega e pacote local integral; confirma base 2.0.0, não introduz motor adicional"
+    }
+  ],
+  "decision_authority": "Pedido atual e correções expressas de Gui; conversas são proveniência, não autorização externa",
+  "preservation_policy": "Adiar implementação não descarta ideia; aposentadoria refere-se ao mecanismo no destino, nunca à exclusão da origem",
+  "assets": [
+    {
+      "id": "NC-01",
+      "idea": "CC: stable keys",
+      "decision": "preservar",
+      "destination": "WorkItem e dedupe por escopo/condição",
+      "reason": "Evitar duplicação sem confundir condição, evento e comando",
+      "phase": "M1/M5-CO",
+      "migration_candidates": [
+        "ABS-044"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    },
+    {
+      "id": "NC-02",
+      "idea": "CC: instrução + resultado esperado + contexto",
+      "decision": "preservar",
+      "destination": "WorkItem contextual e evidência do owner",
+      "reason": "Pessoa sabe o que verificar e qual resultado confirma",
+      "phase": "M5-CO",
+      "migration_candidates": [
+        "ABS-044",
+        "ABS-047"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    },
+    {
+      "id": "NC-03",
+      "idea": "CC: prioridade e fila determinística",
+      "decision": "preservar",
+      "destination": "Agora, elegibilidade antes de ordenação total",
+      "reason": "Dar direção útil sem score opaco ou spam",
+      "phase": "M5-CO",
+      "migration_candidates": [
+        "ABS-044"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    },
+    {
+      "id": "NC-04",
+      "idea": "CC: flow e sequence",
+      "decision": "generalizar",
+      "destination": "Fluxo de negócio e sequência informativa",
+      "reason": "Conservar ordem sem substituir dependência ou autorização",
+      "phase": "M5-CO",
+      "migration_candidates": [
+        "ABS-045"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    },
+    {
+      "id": "NC-05",
+      "idea": "CC: depends_on e blocked_reason",
+      "decision": "preservar",
+      "destination": "Dependência escopada por episódio e dono do bloqueio",
+      "reason": "Impedir avanço indevido e fila sem saída",
+      "phase": "M5-CO",
+      "migration_candidates": [
+        "ABS-045"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    },
+    {
+      "id": "NC-06",
+      "idea": "CC: Pending/NeedsChanges/Deferred/Approved, feedback e reabertura",
+      "decision": "generalizar",
+      "destination": "Pendente/requer ajustes/adiado/concluído; confirmação humana separada",
+      "reason": "Vocabulário de negócio e revisão atual; concluído não presume aprovação humana",
+      "phase": "M5-CO",
+      "migration_candidates": [
+        "ABS-047"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    },
+    {
+      "id": "NC-07",
+      "idea": "CC: notas e histórico",
+      "decision": "preservar",
+      "destination": "WorkItemComment/Event e ActivityHistory por referência",
+      "reason": "Rastrear decisão sem copiar dado sensível ou reter tudo para sempre",
+      "phase": "M5-CO",
+      "migration_candidates": [
+        "ABS-046"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    },
+    {
+      "id": "NC-08",
+      "idea": "CC: autoridade humana",
+      "decision": "preservar",
+      "destination": "Verification e gate pertencente ao owner",
+      "reason": "Produtor/automação não aprova em nome da pessoa",
+      "phase": "M5-CO",
+      "migration_candidates": [
+        "ABS-047"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    },
+    {
+      "id": "NC-09",
+      "idea": "CC: merge idempotente",
+      "decision": "preservar_principio",
+      "destination": "Transação de merge com campos por autoridade",
+      "reason": "Replay não perde notas, feedback ou decisões",
+      "phase": "M5-CO",
+      "migration_candidates": [
+        "ABS-048"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    },
+    {
+      "id": "NC-10",
+      "idea": "CC: concorrência, fail-closed e escrita transacional",
+      "decision": "preservar_principio",
+      "destination": "Versão esperada, constraints e transação na stack existente",
+      "reason": "Falha explícita e recuperação em vez de last-write-wins",
+      "phase": "M1/M5-CO",
+      "migration_candidates": [
+        "ABS-048"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    },
+    {
+      "id": "NC-11",
+      "idea": "CC: schema, SHA-256, limites de tamanho e expansão ZIP",
+      "decision": "generalizar",
+      "destination": "Integração defensiva e integridade verificável",
+      "reason": "Hash detecta alteração; não prova autoria, permissão ou aprovação",
+      "phase": "M5-CO/M7",
+      "migration_candidates": [
+        "ABS-048"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    },
+    {
+      "id": "NC-12",
+      "idea": "CC: unidade de trabalho serializada com contexto e história",
+      "decision": "preservar_futuro",
+      "destination": "ContinuityEnvelope interoperável quando houver necessidade",
+      "reason": "Adiado, não descartado; distinto do envelope de evento do MVP",
+      "phase": "M6/M7",
+      "migration_candidates": [
+        "ABS-048"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    },
+    {
+      "id": "NC-13",
+      "idea": "CC: interfaces CLI e humana separadas",
+      "decision": "generalizar",
+      "destination": "API determinística e UX humana contextual",
+      "reason": "Máquina pode solicitar trabalho, sem fabricar decisão humana",
+      "phase": "M5-CO",
+      "migration_candidates": [
+        "ABS-048"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    },
+    {
+      "id": "NC-14",
+      "idea": "Nexus: catálogo orientado a dados",
+      "decision": "preservar",
+      "destination": "Catálogo de recursos por referência e metadados confiáveis",
+      "reason": "Evitar UI hardcoded e cadastro universal duplicado",
+      "phase": "M5-CO",
+      "migration_candidates": [
+        "ABS-041"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    },
+    {
+      "id": "NC-15",
+      "idea": "Nexus: cards, contexto e atalhos",
+      "decision": "generalizar",
+      "destination": "Contexto do recurso e ações no item de atenção",
+      "reason": "Resolver sem procurar em vários menus; permissão atual sempre",
+      "phase": "M5-CO/M6",
+      "migration_candidates": [
+        "ABS-041"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    },
+    {
+      "id": "NC-16",
+      "idea": "Nexus: disponibilidade, frescor e saúde",
+      "decision": "generalizar",
+      "destination": "ResourceHealth de recurso/processo, não apenas dispositivo",
+      "reason": "Confiabilidade visível; observação antiga não é saúde atual",
+      "phase": "M5-CO/M6",
+      "migration_candidates": [
+        "ABS-042"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    },
+    {
+      "id": "NC-17",
+      "idea": "Nexus: resolução segura e atenção na ambiguidade",
+      "decision": "generalizar",
+      "destination": "Referências canônicas validadas pelo owner e pelo escopo",
+      "reason": "Ambíguo/desconhecido não seleciona silenciosamente nem dispara ação",
+      "phase": "M5-CO/M6",
+      "migration_candidates": [
+        "ABS-042"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    },
+    {
+      "id": "NC-18",
+      "idea": "Nexus: validações",
+      "decision": "generalizar",
+      "destination": "Health checks tipados e resultado observável",
+      "reason": "Check automático não substitui verificação física/humana necessária",
+      "phase": "M5-CO/M6",
+      "migration_candidates": [
+        "ABS-042"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    },
+    {
+      "id": "NC-19",
+      "idea": "Nexus: persistência, escrita atômica, backup e recuperação",
+      "decision": "preservar_principio",
+      "destination": "Transação, recibos, reconciliação e restore",
+      "reason": "Conservar confiabilidade usando mecanismos já adequados ao SaaS",
+      "phase": "M1/M5-CO/M7",
+      "migration_candidates": [
+        "ABS-043"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    },
+    {
+      "id": "NC-20",
+      "idea": "CC/Nexus: testes de estado, fila, concorrência, importação, smoke e CI",
+      "decision": "preservar_principio",
+      "destination": "Casos de regressão caracterizados e smoke da composição real",
+      "reason": "Evidência antiga inspira testes; não transfere PASS nem cobertura",
+      "phase": "M0/M5-CO",
+      "migration_candidates": [
+        "ABS-043",
+        "ABS-048"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    },
+    {
+      "id": "NC-21",
+      "idea": "Nexus: ações contextuais; CC: efeito e retorno",
+      "decision": "generalizar",
+      "destination": "ActionDefinition/Execution com handlers tipados no servidor",
+      "reason": "Menor privilégio, idempotência, auditoria e resultado conhecido",
+      "phase": "M5-CO/M6",
+      "migration_candidates": [
+        "ABS-041",
+        "ABS-048"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    },
+    {
+      "id": "NC-22",
+      "idea": "Fusão: regras, roteamento, passagem e contexto operacional",
+      "decision": "generalizar",
+      "destination": "Rules mínimas registradas e Handoff, políticas no módulo dono",
+      "reason": "Coordenação comum sem segundo motor universal de negócios",
+      "phase": "M5-CO",
+      "migration_candidates": [
+        "ABS-045",
+        "ABS-046"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    },
+    {
+      "id": "NC-23",
+      "idea": "WPF/.NET Framework dos aplicativos",
+      "decision": "aposentar_no_destino",
+      "destination": "Nenhum aplicativo desktop transplantado",
+      "reason": "Fronteira SaaS e reutilização seletiva; não proíbe .NET moderno por ADR",
+      "phase": "NA",
+      "migration_candidates": [
+        "ABS-041",
+        "ABS-048"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    },
+    {
+      "id": "NC-24",
+      "idea": "Process.Start/PowerShell/BAT/EXE arbitrários",
+      "decision": "aposentar_no_destino",
+      "destination": "Ações fixas tipadas e autorizadas",
+      "reason": "Execução arbitrária do navegador/back-end não integra o produto",
+      "phase": "NA",
+      "migration_candidates": [
+        "ABS-041"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    },
+    {
+      "id": "NC-25",
+      "idea": "Integrações específicas Codex e launcher/identidades CC/Nexus",
+      "decision": "aposentar_no_destino",
+      "destination": "Mecanismos de negócio sem dependência de sessão/dev tool",
+      "reason": "Não criar produto independente ou ferramenta de desenvolvimento no SaaS",
+      "phase": "NA",
+      "migration_candidates": [
+        "ABS-046"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    },
+    {
+      "id": "NC-26",
+      "idea": "Descoberta de arquivos/caminhos locais do Nexus",
+      "decision": "aposentar_no_destino",
+      "destination": "Resolução de referência pelo módulo dono",
+      "reason": "Heurística Windows não escolhe recurso de negócio",
+      "phase": "NA",
+      "migration_candidates": [
+        "ABS-042"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    },
+    {
+      "id": "NC-27",
+      "idea": ".ccard, associação Windows e ZIP do CC como formato web",
+      "decision": "aposentar_no_destino",
+      "destination": "Preservar conceito de envelope, sem importar o formato legado",
+      "reason": "Portabilidade conceitual não exige parser/integrador CC",
+      "phase": "NA",
+      "migration_candidates": [
+        "ABS-048"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    },
+    {
+      "id": "NC-28",
+      "idea": "Mutex, armazenamento JSON e transaction journal desktop",
+      "decision": "aposentar_no_destino",
+      "destination": "Mecanismos transacionais adequados à stack caracterizada",
+      "reason": "Princípios sobrevivem; artefatos desktop não são persistência multi-tenant",
+      "phase": "NA",
+      "migration_candidates": [
+        "ABS-043",
+        "ABS-048"
+      ],
+      "implementation_status": "NOT_RUN",
+      "destination_document": "docs/mestre/16_CONTINUIDADE_OPERACIONAL.md"
+    }
+  ],
+  "use_cases": [
+    {
+      "id": "UC-NC-01",
+      "key": "agora",
+      "scenario": "Atenção contextual: vistoria de alojamento, programação de amanhã, TV recuperada, comunicado bloqueado e fechamento do plantão",
+      "owner": "Continuity + owner de cada processo",
+      "phase": "M5-CO/M6",
+      "preservation_rule": "Prioridade, instrução, resultado, dependência e ação; regras do alojamento/plantão na especialidade",
+      "assets": [
+        "NC-02",
+        "NC-03",
+        "NC-04",
+        "NC-05",
+        "NC-08"
+      ],
+      "core_business_rule": false,
+      "status": "PRESERVED_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "UC-NC-02",
+      "key": "passagens",
+      "scenario": "Plantão A→B; operador→supervisor; manutenção→operação; professor→coordenação; recepção→administrativo; diurno→noturno",
+      "owner": "Handoff comum; política e papéis no módulo/vertical",
+      "phase": "M5-CO/M6",
+      "preservation_rule": "Resolvido, requer atenção, bloqueado, requer confirmação; reconhecimento não aprova",
+      "assets": [
+        "NC-05",
+        "NC-07",
+        "NC-08",
+        "NC-22"
+      ],
+      "core_business_rule": false,
+      "status": "PRESERVED_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "UC-NC-03",
+      "key": "verificacao_dispositivo",
+      "scenario": "Dispositivo volta a comunicar; confirmar imagem em tela cheia sem erro/atraso",
+      "owner": "Devices/Displays + Verification",
+      "phase": "M6",
+      "preservation_rule": "Telemetria online não confirma imagem ou contenção física",
+      "assets": [
+        "NC-08",
+        "NC-16",
+        "NC-18"
+      ],
+      "core_business_rule": false,
+      "status": "PRESERVED_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "UC-NC-04",
+      "key": "verificacao_agenda",
+      "scenario": "Horários importados; conferir programação antes da publicação; ScheduleReadyForApproval",
+      "owner": "Agenda + Verification",
+      "phase": "M5a/M6",
+      "preservation_rule": "Publicação vinculada à revisão; não duplicar scheduler",
+      "assets": [
+        "NC-06",
+        "NC-08",
+        "NC-13"
+      ],
+      "core_business_rule": false,
+      "status": "PRESERVED_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "UC-NC-05",
+      "key": "verificacao_comunicado",
+      "scenario": "Aviso preparado para várias telas; coordenação confirma publicação",
+      "owner": "Módulo de comunicação/Displays + Verification",
+      "phase": "M6",
+      "preservation_rule": "notice.request_approval solicita, não concede autorização",
+      "assets": [
+        "NC-08",
+        "NC-21"
+      ],
+      "core_business_rule": false,
+      "status": "PRESERVED_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "UC-NC-06",
+      "key": "verificacao_local",
+      "scenario": "Correção informada concluída; responsável verifica no local; vistoria",
+      "owner": "Manutenção/operação/especialidade + Verification",
+      "phase": "M6/M8",
+      "preservation_rule": "Resultado esperado e evidência de campo; sem aprovar automaticamente",
+      "assets": [
+        "NC-02",
+        "NC-08",
+        "NC-18"
+      ],
+      "core_business_rule": false,
+      "status": "PRESERVED_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "UC-NC-07",
+      "key": "contexto_recursos",
+      "scenario": "Documento, dispositivo, rotina ou função relacionada; local, conteúdo, última comunicação e configuração",
+      "owner": "Cards e referências do owner, integrados à Continuity",
+      "phase": "M5-CO/M6",
+      "preservation_rule": "Ver recurso, reenviar conteúdo, abrir programação, diagnóstico e problema apenas por ações autorizadas",
+      "assets": [
+        "NC-14",
+        "NC-15",
+        "NC-17",
+        "NC-21"
+      ],
+      "core_business_rule": false,
+      "status": "PRESERVED_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "UC-NC-08",
+      "key": "saude_operacional",
+      "scenario": "Saudável, desatualizado, indisponível, não configurado, aguardando sincronização, degradado, requer verificação humana",
+      "owner": "Observação do owner + ResourceHealth",
+      "phase": "M5-CO/M6",
+      "preservation_rule": "Frescor/estado/necessidade de confirmação não devem se mascarar; desconhecido explícito",
+      "assets": [
+        "NC-16",
+        "NC-17",
+        "NC-18"
+      ],
+      "core_business_rule": false,
+      "status": "PRESERVED_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "UC-NC-09",
+      "key": "documentos_vencendo",
+      "scenario": "Uma pendência por documento/ocorrência de validade, atualizada por novos avisos",
+      "owner": "Documents/contratos + projeção Continuity",
+      "phase": "M5a/M5-CO",
+      "preservation_rule": "Validade e recorrência pertencem ao domínio; sem prazo inventado",
+      "assets": [
+        "NC-01",
+        "NC-09",
+        "NC-14"
+      ],
+      "core_business_rule": false,
+      "status": "PRESERVED_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "UC-NC-10",
+      "key": "integracao_sincronizacao",
+      "scenario": "Uma condição de falha de integração ou sincronização, recuperação e eventual conferência",
+      "owner": "Adapter dono + saúde/atenção compartilhadas",
+      "phase": "M6/M7",
+      "preservation_rule": "Sem tempestade de alertas; conexão externa depende de necessidade e autorização",
+      "assets": [
+        "NC-01",
+        "NC-09",
+        "NC-11",
+        "NC-16"
+      ],
+      "core_business_rule": false,
+      "status": "PRESERVED_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "UC-NC-11",
+      "key": "rotina_manutencao_regras",
+      "scenario": "Rotinas, manutenção, verificações, alertas e regras automáticas geram condições estáveis",
+      "owner": "Módulos operacionais/especializados + Rules mínimas",
+      "phase": "M5a/M6/M8",
+      "preservation_rule": "Dedupe por ocorrência, severidade e relevância; não agenda/regra universal no Core",
+      "assets": [
+        "NC-01",
+        "NC-03",
+        "NC-05",
+        "NC-22"
+      ],
+      "core_business_rule": false,
+      "status": "PRESERVED_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "UC-NC-12",
+      "key": "pendencias_bloqueios",
+      "scenario": "Material não entregue; equipamento aguardando peça; coordenação ainda não aprovou",
+      "owner": "WorkItem + motivo/dono do impedimento",
+      "phase": "M5-CO/M6/M8",
+      "preservation_rule": "Bloqueio visível, dependência válida e encaminhamento autorizado; sem encerramento fictício",
+      "assets": [
+        "NC-05",
+        "NC-06",
+        "NC-22"
+      ],
+      "core_business_rule": false,
+      "status": "PRESERVED_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "UC-NC-13",
+      "key": "historico",
+      "scenario": "Quem fez, decidiu, devolveu, recebeu ou confirmou, sobre qual revisão",
+      "owner": "ActivityHistory + auditoria existente",
+      "phase": "M5-CO",
+      "preservation_rule": "Append-only onde adequado, autorização e retenção minimizada",
+      "assets": [
+        "NC-07",
+        "NC-08",
+        "NC-19"
+      ],
+      "core_business_rule": false,
+      "status": "PRESERVED_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "UC-NC-14",
+      "key": "depois",
+      "scenario": "Relatório mensal previsto para outra data; nenhuma ação necessária agora",
+      "owner": "Superfície informativa da origem, fora de Agora",
+      "phase": "M5-CO/M5a",
+      "preservation_rule": "Separar informação futura de ação atual, sem notificar por disponibilidade irrelevante",
+      "assets": [
+        "NC-03",
+        "NC-14"
+      ],
+      "core_business_rule": false,
+      "status": "PRESERVED_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "UC-NC-15",
+      "key": "envelope_offline_movel_edge",
+      "scenario": "Sincronização offline, app móvel e edge devices",
+      "owner": "ContinuityEnvelope/adapter quando existir consumidor real",
+      "phase": "M6/M7",
+      "preservation_rule": "Contexto e história serializáveis; snapshot offline não concede permissão nem aprovação atual",
+      "assets": [
+        "NC-11",
+        "NC-12",
+        "NC-13"
+      ],
+      "core_business_rule": false,
+      "status": "PRESERVED_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "UC-NC-16",
+      "key": "envelope_filas_integracoes_api",
+      "scenario": "Filas de eventos, integrações, importação segura e APIs",
+      "owner": "Contratos versionados e adapter existente",
+      "phase": "M5-CO/M7",
+      "preservation_rule": "Envelope de evento mínimo agora; transferência completa futura; schema, limites, integridade, merge e replay",
+      "assets": [
+        "NC-09",
+        "NC-10",
+        "NC-11",
+        "NC-12",
+        "NC-13"
+      ],
+      "core_business_rule": false,
+      "status": "PRESERVED_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "UC-NC-17",
+      "key": "envelope_migracao_recuperacao",
+      "scenario": "Migrar ou recuperar trabalho sem perder contexto/história",
+      "owner": "Processo de migração/restore com mapeamento e prévia",
+      "phase": "M6/M7",
+      "preservation_rule": "Não transportar autoridade; conflitos escopados, procedência e rollback; sem parser CC automático",
+      "assets": [
+        "NC-07",
+        "NC-09",
+        "NC-11",
+        "NC-12",
+        "NC-19"
+      ],
+      "core_business_rule": false,
+      "status": "PRESERVED_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "UC-NC-18",
+      "key": "pacote_mensal",
+      "scenario": "Revisão e passagem do pacote mensal administrativo já previsto em M4",
+      "owner": "monthly-close + trio Continuity",
+      "phase": "M5-CO",
+      "preservation_rule": "Adaptação desta tarefa ao roadmap existente, não exemplo alegado da conversa original",
+      "assets": [
+        "NC-01",
+        "NC-02",
+        "NC-06",
+        "NC-07",
+        "NC-08",
+        "NC-22"
+      ],
+      "core_business_rule": false,
+      "status": "PRESERVED_NOT_IMPLEMENTED"
+    }
+  ],
+  "applicable_contexts": [
+    "socioeducativo",
+    "escolas",
+    "clubes",
+    "empresas",
+    "facilities",
+    "eventos",
+    "educação",
+    "dispositivos/telas",
+    "futuros produtos"
+  ],
+  "health_labels": [
+    "saudável",
+    "desatualizado",
+    "indisponível",
+    "não configurado",
+    "aguardando sincronização",
+    "degradado",
+    "requer verificação humana"
+  ],
+  "future_envelope_uses": [
+    "offline",
+    "app móvel",
+    "filas de eventos",
+    "integrações",
+    "importação segura",
+    "migração",
+    "edge devices",
+    "recuperação",
+    "APIs"
+  ],
+  "future_actions": [
+    "device.run_diagnostic",
+    "display.republish",
+    "schedule.open",
+    "notice.request_approval",
+    "inspection.start",
+    "report.generate",
+    "incident.acknowledge"
+  ],
+  "future_events": [
+    "DeviceOfflineDetected",
+    "ScheduleReadyForApproval",
+    "ShiftClosing"
+  ]
+}

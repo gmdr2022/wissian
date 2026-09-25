@@ -1,0 +1,3 @@
+# Somente busca: o acervo continua versionavel e e validado por hash.
+# Consulta deliberada: rg --no-ignore no arquivo/colecao especifica.
+/docs/fontes/

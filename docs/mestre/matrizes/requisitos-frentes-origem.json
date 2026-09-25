@@ -1,0 +1,1563 @@
+{
+  "notice": "Extraction of requirement tables, without asserting implementation or approval; original cell order retained.",
+  "source_commit": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+  "rows": [
+    {
+      "id": "TEM-R01",
+      "source_path": "docs/evolucao-progressiva/01_TEMAS_WEB.md",
+      "source_line": 35,
+      "source_sha256": "1a44c61842fdf8d4e5f201e4aa7fcacbd1fc568ab8f9f6ddd69bb0041fd35e41",
+      "cells": [
+        "TEM-R01",
+        "Preservar os quinze IDs e propostas do catálogo; disponibilizar nome, intenção, uso sugerido, mudanças visuais e limite de evidência.",
+        "`ADMIN_THEME_CATALOG` e `ADMIN_THEME_RATIONALES`",
+        "TEM-0/1/3"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "TEM-R02",
+      "source_path": "docs/evolucao-progressiva/01_TEMAS_WEB.md",
+      "source_line": 36,
+      "source_sha256": "1a44c61842fdf8d4e5f201e4aa7fcacbd1fc568ab8f9f6ddd69bb0041fd35e41",
+      "cells": [
+        "TEM-R02",
+        "Coordenar todos os 29 papéis cromáticos com os estados e componentes web; nenhuma leitura pode depender de um token ausente.",
+        "`_palette`; matriz da seção 8",
+        "TEM-1/3"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "TEM-R03",
+      "source_path": "docs/evolucao-progressiva/01_TEMAS_WEB.md",
+      "source_line": 37,
+      "source_sha256": "1a44c61842fdf8d4e5f201e4aa7fcacbd1fc568ab8f9f6ddd69bb0041fd35e41",
+      "cells": [
+        "TEM-R03",
+        "Adaptar os cinco perfis de densidade e tipografia com reflow, toque e teclado; uma preferência compacta não reduz a área interativa abaixo do contrato acessível.",
+        "`ADMIN_THEME_UI_PROFILES`",
+        "TEM-1/3/4"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "TEM-R04",
+      "source_path": "docs/evolucao-progressiva/01_TEMAS_WEB.md",
+      "source_line": 38,
+      "source_sha256": "1a44c61842fdf8d4e5f201e4aa7fcacbd1fc568ab8f9f6ddd69bb0041fd35e41",
+      "cells": [
+        "TEM-R04",
+        "Oferecer escalas 90%, 100%, 115%, 130% e fontes sistema/alta legibilidade; preservar zoom do navegador e leitura até 200% sem perda de conteúdo ou ação.",
+        "`ADMIN_FONT_*`; base de evidências, “Critérios de interface”",
+        "TEM-1/2/4"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "TEM-R05",
+      "source_path": "docs/evolucao-progressiva/01_TEMAS_WEB.md",
+      "source_line": 39,
+      "source_sha256": "1a44c61842fdf8d4e5f201e4aa7fcacbd1fc568ab8f9f6ddd69bb0041fd35e41",
+      "cells": [
+        "TEM-R05",
+        "Oferecer alto contraste independente do tema, foco reforçado, redução de efeitos e controle dos sons adicionais do ClubAL.",
+        "`AdminExperiencePreferences`",
+        "TEM-1/2/4"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "TEM-R06",
+      "source_path": "docs/evolucao-progressiva/01_TEMAS_WEB.md",
+      "source_line": 40,
+      "source_sha256": "1a44c61842fdf8d4e5f201e4aa7fcacbd1fc568ab8f9f6ddd69bb0041fd35e41",
+      "cells": [
+        "TEM-R06",
+        "Selecionar, visualizar previamente, restaurar a prévia, aplicar/salvar e descartar alterações sem modificar dados de trabalho.",
+        "Experiência e persistência desktop",
+        "TEM-2"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "TEM-R07",
+      "source_path": "docs/evolucao-progressiva/01_TEMAS_WEB.md",
+      "source_line": 41,
+      "source_sha256": "1a44c61842fdf8d4e5f201e4aa7fcacbd1fc568ab8f9f6ddd69bb0041fd35e41",
+      "cells": [
+        "TEM-R07",
+        "Isolar preferências pelo contexto autenticado; mudança de identidade/contexto remove a preferência anterior antes de renderizar o novo contexto.",
+        "`IdentityGate`; `api/identity.ts`",
+        "TEM-0/2/4"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "TEM-R08",
+      "source_path": "docs/evolucao-progressiva/01_TEMAS_WEB.md",
+      "source_line": 42,
+      "source_sha256": "1a44c61842fdf8d4e5f201e4aa7fcacbd1fc568ab8f9f6ddd69bb0041fd35e41",
+      "cells": [
+        "TEM-R08",
+        "Ausência de preferência usa o padrão sem escrita automática; schema inválido/futuro, storage bloqueado e quota não interrompem a operação nem apagam dados silenciosamente.",
+        "Persistência desktop; contrato de storage do frontend",
+        "TEM-0/2/4"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "TEM-R09",
+      "source_path": "docs/evolucao-progressiva/01_TEMAS_WEB.md",
+      "source_line": 43,
+      "source_sha256": "1a44c61842fdf8d4e5f201e4aa7fcacbd1fc568ab8f9f6ddd69bb0041fd35e41",
+      "cells": [
+        "TEM-R09",
+        "Reutilizar/derivar os sete fundos de modo local, otimizado, responsivo e sem informação operacional; oito temas têm fundo, os demais conservam proposta sem imagem.",
+        "`backdrop_asset`, `backdrop_anchor`, `backdrop_overlay`",
+        "TEM-1/3/4"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "TEM-R10",
+      "source_path": "docs/evolucao-progressiva/01_TEMAS_WEB.md",
+      "source_line": 44,
+      "source_sha256": "1a44c61842fdf8d4e5f201e4aa7fcacbd1fc568ab8f9f6ddd69bb0041fd35e41",
+      "cells": [
+        "TEM-R10",
+        "Interpretar eclipse dourado, composição orbital verde e horizonte verde como referências de composição; protótipos demonstram a adaptação sem importar navegação fictícia.",
+        "Três imagens externas, seção 7",
+        "TEM-0/3"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "TEM-R11",
+      "source_path": "docs/evolucao-progressiva/01_TEMAS_WEB.md",
+      "source_line": 45,
+      "source_sha256": "1a44c61842fdf8d4e5f201e4aa7fcacbd1fc568ab8f9f6ddd69bb0041fd35e41",
+      "cells": [
+        "TEM-R11",
+        "Aplicar a linguagem visual proporcionalmente a todas as áreas, incluindo mapas/SVG, quadros, diálogos, erros e controles desabilitados.",
+        "Base de evidências; matriz da seção 8",
+        "TEM-3/4"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "TEM-R12",
+      "source_path": "docs/evolucao-progressiva/01_TEMAS_WEB.md",
+      "source_line": 46,
+      "source_sha256": "1a44c61842fdf8d4e5f201e4aa7fcacbd1fc568ab8f9f6ddd69bb0041fd35e41",
+      "cells": [
+        "TEM-R12",
+        "Preservar significado de erro, alerta, sucesso, pendência, aprovação, movimento, publicação e permissão, sempre com texto/forma além de cor.",
+        "Contratos OWM e base de evidências",
+        "TEM-1/3/4"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "TEM-R13",
+      "source_path": "docs/evolucao-progressiva/01_TEMAS_WEB.md",
+      "source_line": 47,
+      "source_sha256": "1a44c61842fdf8d4e5f201e4aa7fcacbd1fc568ab8f9f6ddd69bb0041fd35e41",
+      "cells": [
+        "TEM-R13",
+        "Demonstrar contraste, foco, teclado, leitor de tela, zoom, reflow, touch e preferências de movimento/cores forçadas em todas as famílias visuais.",
+        "Base de evidências; critério web ampliado por esta adaptação",
+        "TEM-4"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "TEM-R14",
+      "source_path": "docs/evolucao-progressiva/01_TEMAS_WEB.md",
+      "source_line": 48,
+      "source_sha256": "1a44c61842fdf8d4e5f201e4aa7fcacbd1fc568ab8f9f6ddd69bb0041fd35e41",
+      "cells": [
+        "TEM-R14",
+        "Preferência pessoal não altera branding, preview institucional, documentos, exportações, publicação, receiver ou configuração de tela.",
+        "Contrato institucional; separação de módulos",
+        "TEM-0/2/4"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "TEM-R15",
+      "source_path": "docs/evolucao-progressiva/01_TEMAS_WEB.md",
+      "source_line": 49,
+      "source_sha256": "1a44c61842fdf8d4e5f201e4aa7fcacbd1fc568ab8f9f6ddd69bb0041fd35e41",
+      "cells": [
+        "TEM-R15",
+        "Medir custo de carregamento, renderização, troca de tema e imagens; efeitos só permanecem se couberem no orçamento definido a partir da baseline.",
+        "Adaptação web e [roadmap de desempenho](../22_PERFORMANCE_STABILITY_ROADMAP.md)",
+        "TEM-0/1/4"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "TEM-R16",
+      "source_path": "docs/evolucao-progressiva/01_TEMAS_WEB.md",
+      "source_line": 50,
+      "source_sha256": "1a44c61842fdf8d4e5f201e4aa7fcacbd1fc568ab8f9f6ddd69bb0041fd35e41",
+      "cells": [
+        "TEM-R16",
+        "Descrever conforto e intenção sem promessa médica, de humor, produtividade, vigilância ou redução de fadiga.",
+        "Base de evidências; `evidence_limit` por tema",
+        "TEM-0/2/3/4"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "TEM-R17",
+      "source_path": "docs/evolucao-progressiva/01_TEMAS_WEB.md",
+      "source_line": 51,
+      "source_sha256": "1a44c61842fdf8d4e5f201e4aa7fcacbd1fc568ab8f9f6ddd69bb0041fd35e41",
+      "cells": [
+        "TEM-R17",
+        "Preservar preferências, formulário em andamento, seleção, foco e posição útil durante troca; rollback reverte apresentação sem desfazer ação de negócio.",
+        "Experiência desktop; integração web",
+        "TEM-2/3/4"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "TEM-R18",
+      "source_path": "docs/evolucao-progressiva/01_TEMAS_WEB.md",
+      "source_line": 52,
+      "source_sha256": "1a44c61842fdf8d4e5f201e4aa7fcacbd1fc568ab8f9f6ddd69bb0041fd35e41",
+      "cells": [
+        "TEM-R18",
+        "Evoluir Consulta/Player apenas por configuração e projeção autorizadas, revisionadas e compatíveis, com política institucional separada.",
+        "Contratos local-first, desired/reported, branding",
+        "TEM-5"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "TEM-R19",
+      "source_path": "docs/evolucao-progressiva/01_TEMAS_WEB.md",
+      "source_line": 53,
+      "source_sha256": "1a44c61842fdf8d4e5f201e4aa7fcacbd1fc568ab8f9f6ddd69bb0041fd35e41",
+      "cells": [
+        "TEM-R19",
+        "Manter evidência por requisito e tema, retomada por slice e aceite humano prático; screenshot isolada não encerra fluxo.",
+        "Direção de Gui e protocolo integrado",
+        "TEM-0 a TEM-5"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "QR-R01",
+      "source_path": "docs/evolucao-progressiva/02_ATIVACAO_TELAS.md",
+      "source_line": 43,
+      "source_sha256": "883832ed9d68d7ffddac92c822a4c1a8453e14f84f1a17adfe1c5c3f9575668c",
+      "cells": [
+        "QR-R01",
+        "Reutilizar cadastro/contexto/dispositivo existentes, sem quarto módulo, novo backend ou novo roadmap OWM.",
+        "§§1–5, 27–28, 32",
+        "Todos"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "QR-R02",
+      "source_path": "docs/evolucao-progressiva/02_ATIVACAO_TELAS.md",
+      "source_line": 44,
+      "source_sha256": "883832ed9d68d7ffddac92c822a4c1a8453e14f84f1a17adfe1c5c3f9575668c",
+      "cells": [
+        "QR-R02",
+        "Reconstruir e classificar estado com símbolos, contratos, testes e limites; qualificar doc. 33 como histórico onde necessário.",
+        "§§5–7, 29–31",
+        "QR-C1"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "QR-R03",
+      "source_path": "docs/evolucao-progressiva/02_ATIVACAO_TELAS.md",
+      "source_line": 45,
+      "source_sha256": "883832ed9d68d7ffddac92c822a4c1a8453e14f84f1a17adfe1c5c3f9575668c",
+      "cells": [
+        "QR-R03",
+        "QR/código temporários, opacos, imprevisíveis, uso único e sem dados/credenciais permanentes; preservar payload versionado atual.",
+        "§§8, 10, 17–18",
+        "Existente + QR-C1/C2"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "QR-R04",
+      "source_path": "docs/evolucao-progressiva/02_ATIVACAO_TELAS.md",
+      "source_line": 46,
+      "source_sha256": "883832ed9d68d7ffddac92c822a4c1a8453e14f84f1a17adfe1c5c3f9575668c",
+      "cells": [
+        "QR-R04",
+        "Backend deriva contexto de sessão/vínculo/ordem autorizados; papel visual ou IDs arbitrários não concedem acesso.",
+        "§§3, 8–10, 17",
+        "Existente + QR-C2"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "QR-R05",
+      "source_path": "docs/evolucao-progressiva/02_ATIVACAO_TELAS.md",
+      "source_line": 47,
+      "source_sha256": "883832ed9d68d7ffddac92c822a4c1a8453e14f84f1a17adfe1c5c3f9575668c",
+      "cells": [
+        "QR-R05",
+        "Ordem preparada referencia contexto existente e congela perfil/revisão; campos adicionais recebem disposição explícita sem duplicar cadastros.",
+        "§9, §21",
+        "QR-C1/C2"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "QR-R06",
+      "source_path": "docs/evolucao-progressiva/02_ATIVACAO_TELAS.md",
+      "source_line": 48,
+      "source_sha256": "883832ed9d68d7ffddac92c822a4c1a8453e14f84f1a17adfe1c5c3f9575668c",
+      "cells": [
+        "QR-R06",
+        "Comparar preparação prévia e assistência local; impedir erro de cliente/unidade com confirmação contextual e cancelamento seguro.",
+        "§§9.1–9.2, 15, 23",
+        "QR-C2/C3"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "QR-R07",
+      "source_path": "docs/evolucao-progressiva/02_ATIVACAO_TELAS.md",
+      "source_line": 49,
+      "source_sha256": "883832ed9d68d7ffddac92c822a4c1a8453e14f84f1a17adfe1c5c3f9575668c",
+      "cells": [
+        "QR-R07",
+        "Claim atômico/idempotente e concorrência com um vencedor; resposta perdida não duplica efeito nem troca intenção.",
+        "§§7, 10, 17, 19, 24",
+        "Existente + QR-C1/C2"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "QR-R08",
+      "source_path": "docs/evolucao-progressiva/02_ATIVACAO_TELAS.md",
+      "source_line": 50,
+      "source_sha256": "883832ed9d68d7ffddac92c822a4c1a8453e14f84f1a17adfe1c5c3f9575668c",
+      "cells": [
+        "QR-R08",
+        "Credencial própria do Player, bootstrap de uso único, rotação/revogação; celular nunca recebe token permanente do device.",
+        "§§7, 10, 17, 21",
+        "Existente + QR-C2"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "QR-R09",
+      "source_path": "docs/evolucao-progressiva/02_ATIVACAO_TELAS.md",
+      "source_line": 51,
+      "source_sha256": "883832ed9d68d7ffddac92c822a4c1a8453e14f84f1a17adfe1c5c3f9575668c",
+      "cells": [
+        "QR-R09",
+        "Estados de matrícula, conectividade e convergência independentes; primeiro contato/configuração aplicada têm evidência e horário históricos corretos.",
+        "§§10, 16, 20, 22–23",
+        "QR-C1"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "QR-R10",
+      "source_path": "docs/evolucao-progressiva/02_ATIVACAO_TELAS.md",
+      "source_line": 52,
+      "source_sha256": "883832ed9d68d7ffddac92c822a4c1a8453e14f84f1a17adfe1c5c3f9575668c",
+      "cells": [
+        "QR-R10",
+        "Scanner substituível QR-only com código manual permanente; falha de câmera/SDK/licença não bloqueia matrícula manual.",
+        "§§11–14, 24, 27",
+        "Existente + QR-C2/C3/C4"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "QR-R11",
+      "source_path": "docs/evolucao-progressiva/02_ATIVACAO_TELAS.md",
+      "source_line": 53,
+      "source_sha256": "883832ed9d68d7ffddac92c822a4c1a8453e14f84f1a17adfe1c5c3f9575668c",
+      "cells": [
+        "QR-R11",
+        "Comparar seis alternativas e todas as dimensões de custo, UX, segurança, compatibilidade, observabilidade e reversibilidade.",
+        "§§12–14, 26",
+        "QR-C3/C4"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "QR-R12",
+      "source_path": "docs/evolucao-progressiva/02_ATIVACAO_TELAS.md",
+      "source_line": 54,
+      "source_sha256": "883832ed9d68d7ffddac92c822a4c1a8453e14f84f1a17adfe1c5c3f9575668c",
+      "cells": [
+        "QR-R12",
+        "Sessão privilegiada curta/recente, MFA ou step-up efetivamente aplicável; avaliar biometria/passkey/dupla aprovação/implantador temporário segundo risco real.",
+        "§§3, 10, 17",
+        "QR-C2; alteração de política requer decisão própria"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "QR-R13",
+      "source_path": "docs/evolucao-progressiva/02_ATIVACAO_TELAS.md",
+      "source_line": 55,
+      "source_sha256": "883832ed9d68d7ffddac92c822a4c1a8453e14f84f1a17adfe1c5c3f9575668c",
+      "cells": [
+        "QR-R13",
+        "UX por etapas, foco, rótulos, leitor de tela, zoom/reflow, fonte ampliada, mensagens acionáveis e sinal além de cor.",
+        "§15, §24.6",
+        "QR-C2/C3; coordenação com TEM"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "QR-R14",
+      "source_path": "docs/evolucao-progressiva/02_ATIVACAO_TELAS.md",
+      "source_line": 56,
+      "source_sha256": "883832ed9d68d7ffddac92c822a4c1a8453e14f84f1a17adfe1c5c3f9575668c",
+      "cells": [
+        "QR-R14",
+        "Falha antes/depois do claim, timeout, reinício, perda de bootstrap, aplicação parcial e expiração têm recuperação segura e idempotente.",
+        "§§16, 19",
+        "QR-C2/C3"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "QR-R15",
+      "source_path": "docs/evolucao-progressiva/02_ATIVACAO_TELAS.md",
+      "source_line": 57,
+      "source_sha256": "883832ed9d68d7ffddac92c822a4c1a8453e14f84f1a17adfe1c5c3f9575668c",
+      "cells": [
+        "QR-R15",
+        "Central mostra contexto permitido, versão, último contato, revisão desejada/aplicada, erro, histórico e ações realmente autorizadas.",
+        "§20",
+        "QR-C1/C2"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "QR-R16",
+      "source_path": "docs/evolucao-progressiva/02_ATIVACAO_TELAS.md",
+      "source_line": 58,
+      "source_sha256": "883832ed9d68d7ffddac92c822a4c1a8453e14f84f1a17adfe1c5c3f9575668c",
+      "cells": [
+        "QR-R16",
+        "Cada entidade/conceito tem owner, ciclo de vida, unicidade, TTL, sensibilidade, compatibilidade e necessidade de migration explícitos.",
+        "§21",
+        "QR-C1/C2"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "QR-R17",
+      "source_path": "docs/evolucao-progressiva/02_ATIVACAO_TELAS.md",
+      "source_line": 59,
+      "source_sha256": "883832ed9d68d7ffddac92c822a4c1a8453e14f84f1a17adfe1c5c3f9575668c",
+      "cells": [
+        "QR-R17",
+        "Correlação, eventos e erros normalizados diagnosticam última etapa sem câmera/imagem, QR bruto, segredo ou dado pessoal desnecessário.",
+        "§§18, 22",
+        "QR-C2"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "QR-R18",
+      "source_path": "docs/evolucao-progressiva/02_ATIVACAO_TELAS.md",
+      "source_line": 60,
+      "source_sha256": "883832ed9d68d7ffddac92c822a4c1a8453e14f84f1a17adfe1c5c3f9575668c",
+      "cells": [
+        "QR-R18",
+        "Medir tempos, primeira tentativa, falhas, fallback, abandono, erro de contexto, suporte, reprovisionamento e impacto de SDK sem metas inventadas.",
+        "§23",
+        "QR-C2/C3/C4"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "QR-R19",
+      "source_path": "docs/evolucao-progressiva/02_ATIVACAO_TELAS.md",
+      "source_line": 61,
+      "source_sha256": "883832ed9d68d7ffddac92c822a4c1a8453e14f84f1a17adfe1c5c3f9575668c",
+      "cells": [
+        "QR-R19",
+        "Cada um dos 70 cenários funcionais/negativos e gates técnicos tem resultado real ou inaplicabilidade fundamentada.",
+        "§24",
+        "QR-C1/C2/C3/C4"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "QR-R20",
+      "source_path": "docs/evolucao-progressiva/02_ATIVACAO_TELAS.md",
+      "source_line": 62,
+      "source_sha256": "883832ed9d68d7ffddac92c822a4c1a8453e14f84f1a17adfe1c5c3f9575668c",
+      "cells": [
+        "QR-R20",
+        "Cobrir vinte causas de fracasso com sinal, prevenção, recuperação, rollback e responsável.",
+        "§25",
+        "Seção 10; todos"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "QR-R21",
+      "source_path": "docs/evolucao-progressiva/02_ATIVACAO_TELAS.md",
+      "source_line": 63,
+      "source_sha256": "883832ed9d68d7ffddac92c822a4c1a8453e14f84f1a17adfe1c5c3f9575668c",
+      "cells": [
+        "QR-R21",
+        "Deep/app link externo só com origem/integridade/autenticação comprovadas; rota nativa interna existente não autoriza link público novo.",
+        "§§8, 13-F, 17, 24",
+        "QR-C2/C4 conforme decisão"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "QR-R22",
+      "source_path": "docs/evolucao-progressiva/02_ATIVACAO_TELAS.md",
+      "source_line": 64,
+      "source_sha256": "883832ed9d68d7ffddac92c822a4c1a8453e14f84f1a17adfe1c5c3f9575668c",
+      "cells": [
+        "QR-R22",
+        "Dispositivo deve abrir Rotinas no contexto/perfil aprovado, respeitando conteúdo, clima, timezone e offline local.",
+        "§§1–2, 7, 9–10",
+        "QR-C2/C3"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "QR-R23",
+      "source_path": "docs/evolucao-progressiva/02_ATIVACAO_TELAS.md",
+      "source_line": 65,
+      "source_sha256": "883832ed9d68d7ffddac92c822a4c1a8453e14f84f1a17adfe1c5c3f9575668c",
+      "cells": [
+        "QR-R23",
+        "Decisão única, confiança, trade-offs, gatilhos, piloto e esforço relativo; sem contratar/incluir SDK automaticamente.",
+        "§§12–14, 26–28",
+        "Seções 7 e 12; QR-C4"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "QR-R24",
+      "source_path": "docs/evolucao-progressiva/02_ATIVACAO_TELAS.md",
+      "source_line": 66,
+      "source_sha256": "883832ed9d68d7ffddac92c822a4c1a8453e14f84f1a17adfe1c5c3f9575668c",
+      "cells": [
+        "QR-R24",
+        "Preservar fronteiras de autorização, escopo e evidência; análise/roadmap não é licença para produção, credenciais reais ou instalar dependência sem decisão.",
+        "§§4, 29–32",
+        "Todos; protocolo integrado"
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R01",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 201,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R01",
+        "G §0, §4, §23",
+        "Reconciliar slice OWM, Git, ADRs, superfícies e capacidades reais antes de implementar; preservar trabalho concorrente.",
+        "GRA-0: inventário, lacunas, ADRs e backlog; inspeção não vale como teste."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R02",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 202,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R02",
+        "G §1–2",
+        "Visão global de tenant/unidades/vertical, módulos ativos, versões, implantação, saúde, tickets e métricas mínimas; sem conteúdo sensível por padrão.",
+        "GRA-1/2/5: metadados globais separados de acesso operacional."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R03",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 203,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R03",
+        "G §2.3, §3",
+        "Site consome versão publicada; releases nascem de CI. Separar software, conteúdo/configuração e operação assistida sobre dados.",
+        "GRA-0/2/6: fluxos distintos e ligação rastreável entre seus fatos."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R04",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 204,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R04",
+        "G §5",
+        "Deny-by-default, menor privilégio, ator real, autorização a cada requisição, tenant derivado no servidor, local-first, transparência e auditoria protegida.",
+        "Todos: testes negativos, inspeção de segredo/PII e recuperação."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R05",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 205,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R05",
+        "G §6",
+        "Mapear owner/admin/support globais e manager/operator/auditor de tenant ao catálogo vigente; break-glass separado e bloqueado. Nenhum e-mail hardcoded ou conta compartilhada.",
+        "GRA-0/1/5: matriz papel × recurso × ação × grant; owner sem grant é negado."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R06",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 206,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R06",
+        "G §7",
+        "Capacidades no backend existente; conexões de saída do dispositivo, API autoritativa, reconciliação após reconnect, mesma API de domínio para escrita assistida.",
+        "GRA-0/3/5/6: ownership sem duplicação de auth, audit, outbox, storage, notificações ou Device Manager."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R07",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 207,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R07",
+        "G §8.1–8.4",
+        "Release imutável com componente, versão, build, commit/pipeline, ambiente/canal, data do servidor, notas/risco, compatibilidade, artefatos/hash/assinatura, proveniência disponível, criador/aprovador, estado e rollback recomendado.",
+        "GRA-2: contrato persistido, transições autorizadas e bloqueio de salto built→stable."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R08",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 208,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R08",
+        "G §8.5, §17.5",
+        "Tamanho/hash/assinatura/expiração, chave pública confiável, rotação/revogação, proteção contra downgrade, HTTPS e storage controlado. Correção cria nova versão.",
+        "GRA-2/3/7: adulteração, chave revogada, replay e recuperação ensaiados."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R09",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 209,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R09",
+        "G §8.6",
+        "Assets versionados, manifesto sem cache duradouro, build diagnosticável, detecção na abertura/foco/período, banner, trabalho não salvo preservado; update obrigatório só por política crítica/incompatibilidade.",
+        "GRA-2: recorrente com cache antigo, formulário aberto, deep link e rollback."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R10",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 210,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R10",
+        "G §8.6, §8.8",
+        "PWA gerencia install/waiting/activate, caches obsoletos, versão ativa/disponível e compatibilidade; sem skipWaiting indiscriminado nem retenção indevida de projeção privada.",
+        "GRA-2/4: cache anterior, logout, troca de usuário e offline autorizado."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R11",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 211,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R11",
+        "G §8.7",
+        "Player baixa temporariamente, valida antes de instalar, preserva identidade/configuração/LKG, usa janela segura, health check, versão reportada, rollback e recuperação persistente.",
+        "GRA-3: queda de rede/energia, estado intermediário e falha de reversão."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R12",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 212,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R12",
+        "G §8.8",
+        "Confirmar PWA/empacotado/nativo; lojas e update flexível/imediato só conforme plataforma real; sem promessa de update silencioso ou bypass da loja.",
+        "GRA-4: navegador/dispositivo suportado; nativo/MDM condicional."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R13",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 213,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R13",
+        "G §8.9",
+        "Matriz frontend/API/schema/dispositivo; expand/contract, janela N/N-1, remoção só após telemetria, unsupported controlado e reconexão tardia.",
+        "GRA-0/2/3/4: contratos atuais/anteriores e rollback sem banco destrutivo."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R14",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 214,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R14",
+        "G §8.3, §8.10–8.11",
+        "Development/internal/canary/pilot/stable; ondas por alvos absolutos, limites e período saudável; pausa severa/threshold/crash loop, pin com motivo/revisão e offline sem falsa atribuição de falha.",
+        "GRA-2/3/7: preview de alvos, start/pause/resume/rollback auditados, step-up e idempotência."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R15",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 215,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R15",
+        "G §9.1–9.5",
+        "Request válida e grant não permanente: tenant/unidades, solicitante/aprovador, finalidade/referência, categorias, ações/recursos, início/expiração/revogação e máximo de sessões.",
+        "GRA-5: leitura padrão; escrita/export/delete/publish/bulk separadas; renovar é nova decisão."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R16",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 216,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R16",
+        "G §9.6–9.7",
+        "Sessão curta com MFA/step-up, contexto/expiração/finalidade visíveis, encerramento acessível, inatividade, troca de tenant encerra anterior, ator real e cache limpo.",
+        "GRA-5: token revogado falha imediatamente, voltar/aba antiga não reabre dados, autoria preservada."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R17",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 217,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R17",
+        "G §9.8",
+        "Matriz de diagnóstico, cadastro, workspace, batch, memberships, exportação, exclusão e publicação com escopo e step-up próprios.",
+        "GRA-0/5/6: ações fora do grant negadas no backend."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R18",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 218,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R18",
+        "G §10",
+        "Workspace por tenant/unidades/ordem/responsável/template/lote e validação/aprovação/publicação separadas; staging privado, prévia e handover.",
+        "GRA-6: dry-run sem escrita, lote aplicado idempotente e aceite do cliente encerra grant."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R19",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 219,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R19",
+        "G §10.4, §17.3",
+        "Upload limitado, assinatura/MIME reais, anticorrupção/fórmula/path traversal, colunas explícitas, timezone, referências tenant, erro por campo, transação/compensação e origem por registro.",
+        "GRA-6: falha intermediária declarada, compensação não apaga edição posterior e relatório só com contagens."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R20",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 220,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R20",
+        "G §11",
+        "Modelo conceitual de releases, compatibilidade, alvos/saúde/chaves; requests/grants/sessões/notificações; templates/batches/erros/handover; auditoria central.",
+        "GRA-0 e pacote responsável: mapa entidade proposta→owner real, sem tabelas equivalentes duplicadas."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R21",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 221,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R21",
+        "G §12",
+        "APIs de lifecycle de release/rollout; request/grant/session/transparência; workspace/validate/preview/approve/apply/compensate/handover.",
+        "GRA-2/5/6: auth server-side, rate limit, CSRF aplicável, idempotência, concorrência, correlação e audit_event_id."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R22",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 222,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R22",
+        "G §13",
+        "Outbox existente para fatos de release, suporte e implantação; IDs opacos, revisão/categoria/resultado; nenhuma PII completa em eventos.",
+        "GRA-2/5/6: transação+outbox, consumidor idempotente e reconciliação por API."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R23",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 223,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R23",
+        "G §14.1–14.3",
+        "MFA resistente quando suportado, sessão curta, detecção anormal, recuperação, segregação de chaves/ambientes/CI; autorização horizontal/vertical inclusive jobs, anexos, exports, real-time.",
+        "GRA-1/5/7: revogação/reavaliação e testes negativos; RLS apenas defesa adicional após ADR."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R24",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 224,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R24",
+        "G §14.4–14.6",
+        "Classificação por campo, mascaramento, mínimo acesso, anexos privados/URLs temporárias, retenção/backups/anonimização e proteção reforçada PEMSE.",
+        "GRA-0/5/6/7: nada restrito em Rotinas; Consulta só projeção autorizada; piloto exige revisão de privacidade/contratos."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R25",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 225,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R25",
+        "G §15; escopo revisado por Gui em 22/09/2026",
+        "Cliente vê requests/acessos/escopo/prazo/ator/resumo, revoga e acessa relatório autorizado; avisos internos dos eventos de assistência implementados. Break-glass permanece desabilitado.",
+        "GRA-5: UI e histórico autorizados, sem PII nos avisos. Envio externo via WhatsApp adiado para contratação/integração futura; não é requisito deste fechamento local."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R26",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 226,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R26",
+        "G §16",
+        "Métricas por versão/plataforma/etapa, falhas/health/LKG/desired-report; alertas de assinatura/chave/rollout travado e uso anormal de suporte.",
+        "GRA-2/3/5/7: sinais sanitizados com correlação e ação operacional definida."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R27",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 227,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R27",
+        "G §17",
+        "Runbooks para falha web, updater, import, conta comprometida e chave comprometida; parar promoção, recuperar estado e preservar evidência.",
+        "GRA-7: exercícios de rollback/restore/revogação sem loop infinito."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R28",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 228,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R28",
+        "G §18",
+        "Pacotes GRA-0…7 pequenos e reversíveis, com pré-requisitos comprovados e aceite independente.",
+        "Todos: registros de saída sem ativação implícita."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R29",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 229,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R29",
+        "G §19–20",
+        "Preservar os três conjuntos de aceite e as cinco matrizes de testes da fonte.",
+        "Pacotes abaixo: segurança 10; web/PWA 10; Player 12; import 10; UX 11."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R30",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 230,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R30",
+        "G §21",
+        "Pré-mortem: conta comprometida, frota quebrada, tenant errado, backdoor informal, dado socioeducativo exposto e duplicação OWM.",
+        "GRA-0/7: ameaça→sinal→mitigação→ensaio→responsável."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R31",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 231,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R31",
+        "G §22",
+        "Estimar fixo/variável, artefatos, egress, logs/retenção, notificações, KMS/assinatura, ambientes, backup, lojas e MDM.",
+        "GRA-0/7: reaproveitar infraestrutura aprovada, limites/amostragem e custo antes do cliente real."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "GRA-R32",
+      "source_path": "docs/evolucao-progressiva/03_RELEASES_E_ASSISTENCIA.md",
+      "source_line": 232,
+      "source_sha256": "0989f779acad94ace1ccb6e73902623f7a25282c154bf0e2b5c9fbd18d38ff8b",
+      "cells": [
+        "GRA-R32",
+        "G §24–25",
+        "Conclusão exige funcionamento rastreável/reversível por superfície, grants reais, handover, isolamento, operação sem PC do owner e piloto autorizado.",
+        "GRA-7: aceite operacional separado de código/teste local."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R01",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 58,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R01",
+        "S §0–3, §25, §30–31; G0/G1; P0",
+        "Gate pós-OWM reconciliado, fonte/estado real, baseline, ADRs, gap analysis e migração antes de código. PCE-0; parcial até aceitação do marco."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R02",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 59,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R02",
+        "S §1–6; G2",
+        "Arquétipo configura tenant; role autoriza pessoa; capabilities determinam comportamento/navegação. Barbeiro/cadeira são rótulos de template, nunca fork ou if por nome de cliente. PCE-2."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R03",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 60,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R03",
+        "S §5.2–5.5",
+        "Institutional/education/commerce_services/multi_use ou equivalentes reais; packs compõem modos por profissional, recurso, capacidade e híbrido. Verticais sensíveis não ativadas por arquétipo. PCE-2/3."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R04",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 61,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R04",
+        "S §5.3, §6, §24.3",
+        "Packs catálogo/profissionais/recursos/disponibilidade/compromissos/reserva pública/autosserviço/fila/timeline/notificações/relatórios; revisão antes de habilitar, seed idempotente, desligar sem apagar, reativação e histórico. PCE-2."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R05",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 62,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R05",
+        "S §6; L §6",
+        "Policies server-side por tenant/unidade/recurso; gestor, recepção, profissional, gestor de telas e consumidor têm acessos distintos. Profissional sem login não duplica identidade. PCE-2…9."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R06",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 63,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R06",
+        "S §8.1–8.3; L §1–4/§13",
+        "Branding central com ID estável e resolução override publicado da unidade→tenant→padrão ClubAL; não por usuário, nome/pasta ou cache. PCE-1; fundação parcial."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R07",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 64,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R07",
+        "S §8.3–8.4, §23.2; L §5",
+        "Administrar rascunho/upload/substituir/remover/prévia/aplicar/descartar; proporção/fallback/contraste; ver origem, versão/autor/hash/data e propagação real. Principal obrigatória, variantes claro/escuro/ícone/capa/cores/texto por necessidade. PCE-1."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R08",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 65,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R08",
+        "S §8.5; L §7",
+        "Reutilizar limites mais restritivos reais; validar extensão/MIME/assinatura/dimensões, bloquear corrupção/polyglot/SVG inseguro/traversal/decompression bomb, chave interna e metadados mínimos. PCE-1."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R09",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 66,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R09",
+        "S §8.6; L §8",
+        "Metadata tenant/unidade/tipo/objeto/revisão/hash/MIME/dimensões/estado/ator/horário do servidor/operação/versão anterior; publicação muda revisão monotônica, não data de arquivo. PCE-1."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R10",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 67,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R10",
+        "S §8.7; L §9",
+        "Publicar branding e outbox na mesma transação; evento mínimo por versão/hash/operação; remoção gera nova revisão; nunca copiar entre diretórios. PCE-1."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R11",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 68,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R11",
+        "S §8.8–8.9/§19.2; L §10–14",
+        "Consumidor contextual compara revisão, ignora duplicata/atraso, reconcilia lacuna, valida imagem/hash antes de troca atômica e avanço dos metadados; mantém LKG/retry. PCE-1/5/7/8."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R12",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 69,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R12",
+        "S §8.8–8.11; L §2/§11–12",
+        "Origem persistente compartilhada, URL imutável/versionada web, cópia local Player quando necessária, restart/deploy/múltiplas instâncias, sem download por login. Propagação mostra pendente/offline sem falso sucesso. PCE-1."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R13",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 70,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R13",
+        "S §8.6–8.10; L §15",
+        "Remoção idempotente/publicada desativa personalização e restaura fallback contextual; auditoria/versão preservadas. PCE-1/9."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R14",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 71,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R14",
+        "S §8.10/§24.1; L §16–17",
+        "Inventariar logo legada e vínculo comprovado, dry-run/backup/relatório, migrar/publicar/validar consumidores; retirar autoridade da primeira imagem da pasta e corrigir ajuda; adapter temporário com término seguro. PCE-0/1."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R15",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 72,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R15",
+        "S §9/§17.3–17.4",
+        "Serviço por unidade com duração/buffers/modalidade/requisitos/visibilidade/políticas e preço informativo; profissional com login opcional/vínculos/consentimento; recurso com capacidade/manutenção/bloqueio. PCE-3."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R16",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 73,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R16",
+        "S §10/§26.3",
+        "Disponibilidade server-side intersecta timezone, funcionamento, escalas/recursos, pausas/feriados/exceções/bloqueios, duração/buffers, compromissos/capacidade, antecedência/horizonte/granularidade/política e estados bloqueadores. PCE-3."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R17",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 74,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R17",
+        "S §10–11/§17.9/§20.2",
+        "Hold com TTL/liberação/limites, revalidação transacional, constraint/lock/concurrency real, proteção double-booking e idempotência; slot obsoleto não confirma. PCE-3/5; segurança nasce no primeiro endpoint público."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R18",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 75,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R18",
+        "S §11/§17.6",
+        "Lifecycle hold→pendente→confirmado→checked-in→em atendimento→concluído; cancelamentos, no-show, expiração e rejeição; histórico/ator/canal/horário servidor, reagendamento rastreável e snapshot informativo. PCE-4/6."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R19",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 76,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R19",
+        "S §7.1/§12/§23.1",
+        "Agenda dia/semana por profissional/recurso/unidade/status; criação manual, bloqueio, confirmação/reagendamento/cancelamento, conflitos e reconciliação; alternativa completa por teclado ao drag-and-drop. PCE-4."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R20",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 77,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R20",
+        "S §12.2–12.3",
+        "Painel Agora com timezone, atendimentos/próximos/fila/atraso/disponíveis e divergência publicada; políticas de reserva/cancelamento/encaixe/privacidade/labels/notificação/retenção. PCE-4/6."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R21",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 78,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R21",
+        "S §7.2/§13.1–13.3/§18.2",
+        "Portal web responsivo instalável opcionalmente, slug estável seguro de tenant/unidade, marca→serviço→profissional opcional→slot→dados mínimos→revisão→confirmação→comprovante. PCE-5."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R22",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 79,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R22",
+        "S §13.4/§17.5/§18.2/§20.2–20.3",
+        "Consumidor tenant-scoped, token aleatório com digest/TTL/revogação, verificação de contato quando exigida, sem sessão administrativa/identidade global; rate limit/antienumeração/antiabuso e logs sem token. PCE-5."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R23",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 80,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R23",
+        "S §13.5/§26.4",
+        "Acesso só ao próprio compromisso; cancelar/reagendar dentro de política; instrução/calendário/contato e solicitação de correção/exclusão conforme contrato; repetição segura. Base segura PCE-5, experiência completa PCE-8."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R24",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 81,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R24",
+        "S §13.6/§19.3",
+        "Cache de shell/branding versionado, sem resposta pessoal em cache público; logout/expiração limpa privado; confirmação exige servidor; offline/retry não cria reserva fictícia/duplicada. PCE-5/8."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R25",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 82,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R25",
+        "S §7.3/§14.1–14.3/§17.7",
+        "Check-in recepção/QR/terminal/link permitido; encaixe ou compromisso gera fila, alias/senha, chegada, prioridade autorizada, profissional/recurso e timestamps de chamada/início/fim. PCE-6."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R26",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 83,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R26",
+        "S §14.4/§29",
+        "Atraso/espera são derivados com horário de cálculo e incerteza; não sobrescrever compromisso original; ajuste manual autorizado/auditado. PCE-6/9."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R27",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 84,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R27",
+        "S §15.1–15.4/§15.9–15.10/§23.3",
+        "Timeline 16:9 com eixo/agora/lanes/blocos proporcionais/fila/QR; 9:16 prioriza Agora/Próximos/fila; status textual/ícone, legibilidade à distância, contraste/movimento reduzido e modo alto contraste. PCE-7."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R28",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 85,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R28",
+        "S §15.5–15.6/§20.4",
+        "DTO público allowlist/revisão/schema, IDs opacos, senha anônima padrão ou política de alias/nome parcial/ocupação; sem contato, observação, histórico ou credencial humana. PCE-7."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R29",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 86,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R29",
+        "S §15.7/§19.1/§19.4",
+        "Domínio→outbox→projeção→aviso SignalR→API; polling/backoff, revisão monotônica, reconexão/LKG, relógio/timezone e troca validada de branding/projeção. PCE-7/8."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R30",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 87,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R30",
+        "S §15.8–15.9/§18.3",
+        "Device Manager resolve device/tenant/unidade/view/capability e desired/reported; modo timeline como capacidade de exibição dos módulos existentes, sem URL livre/fork/player paralelo. PCE-7."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R31",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 88,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R31",
+        "S §16–18",
+        "Owners de dados/APIs/eventos/jobs no backend atual, OpenAPI tipada, FKs tenant, índices por escopo/data/status, idempotência/concorrência/revisão/token digest; reusar tenancy/pessoas/agenda/branding/outbox/storage/dispositivos/auditoria. PCE-0…9."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R32",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 89,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R32",
+        "S §16.4/§19/§21",
+        "Jobs idempotentes multi-instância para holds/lembretes/reconciliação/projeções/retry/retenção/divergência; notificação assíncrona não bloqueia reserva, outbox por mensagem/canal, limite/dead-letter/template e cancelar lembrete obsoleto. PCE-3/5/8."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R33",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 90,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R33",
+        "S §20/§29",
+        "Threat model de corrida, token/enumeração/XSS/upload/cross-tenant/player/replay/PII/hold infinito/spam/link compartilhado/cache; mínimos dados e retenção/anonimização compatíveis com auditoria. Todos desde a primeira superfície exposta."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R34",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 91,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R34",
+        "S §22",
+        "Métricas de canal/ocupação/utilização/cancelamento/no-show/encaixe/espera/atraso/duração planejada-real/conversão com privacidade/saúde Player; definição, cobertura, timezone/período, export autorizado, sem ranking punitivo. PCE-9."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R35",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 92,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R35",
+        "S §23/§26.5–26.6",
+        "Teclado/foco/labels/erros/toque/contraste/responsividade/status sem depender de cor; loading/vazio/erro/retry, formulários preservados; 720p/1080p/retrato e distância física. Todos, consolidado PCE-9."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R36",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 93,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R36",
+        "S §24",
+        "Migração aditiva/composição sem alterar agenda institucional, branding com rollback, capability desabilitada preserva dados, flags por tenant e rollback UI/routes sem exclusão. PCE-0…9."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R37",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 94,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R37",
+        "S §26–27/§33; L §18–19",
+        "27 testes originais + casos canônicos + E2E15 + piloto autorizado; todos os canais aplicáveis recebem branding e fatos reais sem degradar tenant institucional. PCE-1/9."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R38",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 95,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R38",
+        "S §28/§32",
+        "X1 nativo, X2 pagamentos, X3 PDV/estoque/comissões, X4 domínio/white-label e outras ideias ficam visíveis como condicionais com aceite próprio. Não são excluídas silenciosamente nem incluídas no núcleo sem decisão."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    },
+    {
+      "id": "PCE-R39",
+      "source_path": "docs/evolucao-progressiva/04_PCE_POS_OWM.md",
+      "source_line": 96,
+      "source_sha256": "55f551bd0248b6327bb702868fa1c5871a06d90d47dd61fddcfda52412df5b8c",
+      "cells": [
+        "PCE-R39",
+        "S §30–31; L §20–22; P0…P9",
+        "Pacote pequeno com gate/baseline/owners/diff/migração/contratos/testes/aceite/limitação/rollback/retomada; evidência factual, sem claim de teste não executado. Todos."
+      ],
+      "treatment": "preserve_requirement_evaluate_per_capability",
+      "runtime_test_status_here": "NOT_RUN"
+    }
+  ]
+}

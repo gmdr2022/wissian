@@ -1,0 +1,302 @@
+{
+  "schema_version": 1,
+  "milestone": "M0",
+  "date": "2026-09-25",
+  "scope": "first bounded foundation slice; not complete origin audit or implemented SaaS",
+  "origin": {
+    "repository": "ClubAL/clubal",
+    "current_ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+    "base44_local_ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+    "main_local_ref": "9fb158ddfd942f6fa15abeb370713351f130f965",
+    "fetch_performed": false,
+    "preserved_wip_paths": [
+      ".codex/config.toml",
+      "graphics/weather/bg/weather_day.png",
+      "graphics/weather/bg/weather_night.png"
+    ]
+  },
+  "source_records": [
+    {
+      "scope": "identity",
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/backend/ClubAL.Infrastructure/IdentityAccess/HumanIdentityService.cs",
+      "symbols": "SignInWithPasswordAsync/SignInWithAuthenticatorAsync",
+      "sha256": "9e90078be4d9ef00c14642be0855c1317678370914c2ab5402c1fb15425b4193",
+      "inspection": "bounded_symbol_review"
+    },
+    {
+      "scope": "identity",
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/backend/ClubAL.Infrastructure/IdentityAccess/PlatformAccessService.cs",
+      "symbols": "AuthorizeAsync/FindAvailableContextAsync",
+      "sha256": "a5c7554e84933acc53d206912cec11e1411de782aee8ef249837a459a7dd7606",
+      "inspection": "bounded_symbol_review"
+    },
+    {
+      "scope": "identity",
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/backend/ClubAL.Api/Security/PlatformAuthorizationHandlers.cs",
+      "symbols": "ActiveHumanSessionAuthorizationHandler/PlatformPermissionAuthorizationHandler",
+      "sha256": "daa5d3b2f96d02955ff04d7540531f1e881bee9368c9f1f51fe607352242b7ba",
+      "inspection": "bounded_symbol_review"
+    },
+    {
+      "scope": "identity",
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "tests/backend-integration/ClubAL.Api.IntegrationTests/IdentityAccessEndpointsTests.cs",
+      "symbols": "Guessed_cross_tenant_context_is_denied_without_resource_inference/Revoked_membership_and_disabled_capability_take_effect_without_new_cookie",
+      "sha256": "092f3ca8f3c2fe045fd756cf7da7b9daac49b14ff269a3667ecdf8982d0e0188",
+      "inspection": "bounded_symbol_review"
+    },
+    {
+      "scope": "persistence",
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/backend/ClubAL.Infrastructure/Persistence/PlatformDbContext.cs",
+      "symbols": "DbSets/SaveChanges/SaveChangesAsync",
+      "sha256": "ea0ea6032e7303c15ab1ec0cba9475f593e8bbaf72e58c91f19e12fdad7bd8a8",
+      "inspection": "bounded_symbol_review"
+    },
+    {
+      "scope": "persistence",
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/backend/ClubAL.Infrastructure/Persistence/PlatformModelConfiguration.cs",
+      "symbols": "ConfigureTenancy/ConfigureAccess",
+      "sha256": "341edac03632646b0db7b23570e060a8c4048a0926d4891e961914a83342f158",
+      "inspection": "bounded_symbol_review"
+    },
+    {
+      "scope": "persistence",
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/backend/ClubAL.Infrastructure/ServiceCollectionExtensions.cs",
+      "symbols": "AddPlatformInfrastructure",
+      "sha256": "7dfdcc47c544a5f518c7ac984fdd136d3e15fd58e8d7f78456e4ee1aec1b0254",
+      "inspection": "bounded_symbol_review"
+    },
+    {
+      "scope": "module",
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/backend/ClubAL.Domain/Knowledge/KnowledgeArticle.cs",
+      "symbols": "KnowledgeArticle",
+      "sha256": "55a04e3236ff92fffd47500d525d7c3d3d6f86495cb19a6acfa9799227f9c5fb",
+      "inspection": "bounded_symbol_review"
+    },
+    {
+      "scope": "module",
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/backend/ClubAL.Infrastructure/Knowledge/KnowledgeService.cs",
+      "symbols": "SearchAsync/CreateRevisionAsync",
+      "sha256": "dfb55ef7bda887768aeed33c51b7a7eac42ed43a69668be7f48edd9768cd361d",
+      "inspection": "bounded_symbol_review"
+    },
+    {
+      "scope": "module",
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/backend/ClubAL.Application/Knowledge/KnowledgeModels.cs",
+      "symbols": "KnowledgeFeatureOptions/KnowledgeAccessSnapshot",
+      "sha256": "1f4f41ee6dc6a54ba8805cd17d1e2eb62da7676fa6b14882c6fbdcfd8ed08dc7",
+      "inspection": "bounded_symbol_review"
+    },
+    {
+      "scope": "module",
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/web/operador/src/pages/KnowledgePage.tsx",
+      "symbols": "KnowledgePage",
+      "sha256": "efa34c6369aca9203fd177b10930dfaf63b517a1a5138c97b809feb6fca2334e",
+      "inspection": "bounded_symbol_review"
+    },
+    {
+      "scope": "ui",
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/web/operador/src/IdentityGate.tsx",
+      "symbols": "IdentityGate/loadSession/handleContextSelection",
+      "sha256": "14b9634e49da3e93e5d505fdf408bcff246e12979168aff001e187e5aeb258db",
+      "inspection": "bounded_symbol_review"
+    },
+    {
+      "scope": "ui",
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/web/operador/src/api/identity.ts",
+      "symbols": "selectContext/signInWithPassword/getAccessProbe",
+      "sha256": "441265b3eb3e446b595c60a120ea09ae3320a65c504b0f00f762fa7767852c79",
+      "inspection": "bounded_symbol_review"
+    },
+    {
+      "scope": "ui",
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/web/operador/src/App.tsx",
+      "symbols": "OperatorApp",
+      "sha256": "6d9040136b7760c5d86f33e645dac0d14ccb71c1225dbb8ed2cb446ca1f69480",
+      "inspection": "bounded_symbol_review"
+    },
+    {
+      "scope": "ui",
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/web/operador/src/pages/OverviewPage.tsx",
+      "symbols": "OverviewPage",
+      "sha256": "2614b34c8163d710f68f32170d97221011537dbd81fbae11c5082f05a32c241d",
+      "inspection": "bounded_symbol_review"
+    },
+    {
+      "scope": "dependencies",
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "global.json",
+      "symbols": "sdk",
+      "sha256": "011333d26938869d4d34df64e864a85ca6f9e0e385e87d1221f83b3a4262d8e3",
+      "inspection": "manifest_metadata_review"
+    },
+    {
+      "scope": "dependencies",
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "Directory.Packages.props",
+      "symbols": "PackageVersion",
+      "sha256": "9d062f66401423ca05ffb3f1ce0248614175a52c675ef967e0589a84cd2b02a9",
+      "inspection": "manifest_metadata_review"
+    },
+    {
+      "scope": "dependencies",
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/web/operador/package.json",
+      "symbols": "dependencies/devDependencies",
+      "sha256": "11e46cad70f5e4ad5ae57ea6d2fb74899553351b1df31a7d33b70937f444ceda",
+      "inspection": "manifest_metadata_review"
+    },
+    {
+      "scope": "dependencies",
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "path": "src/web/operador/package-lock.json",
+      "symbols": "lockfile metadata only; full dependency audit deferred",
+      "sha256": "bda37ca6094597ff4e5e045a3cf9878df7403dc3566f475b77b2c41f6367928a",
+      "inspection": "manifest_metadata_review"
+    },
+    {
+      "scope": "base44_comparison",
+      "ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+      "path": "src/web/operador/src/pages/AlojamentosMap.tsx",
+      "sha256": "a2194273e26bf1e6642da0ee5fcb18467b7077437a02785eb73b373158022060",
+      "inspection": "bounded_imports_structure_or_diff"
+    },
+    {
+      "scope": "base44_comparison",
+      "ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+      "path": "src/web/operador/src/App.tsx",
+      "sha256": "30e99a5dc05fac7a1adbdd8b9be404f6bbe1b4e4c4cf8d25bc3e103427813509",
+      "inspection": "bounded_imports_structure_or_diff"
+    },
+    {
+      "scope": "base44_comparison",
+      "ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+      "path": "src/web/operador/package.json",
+      "sha256": "267cdb605145e86faf0390669cf51965a8dbeb3d4456eaa97d80874aad7909ce",
+      "inspection": "bounded_imports_structure_or_diff"
+    }
+  ],
+  "assessments": [
+    {
+      "ids": [
+        "ABS-004",
+        "ABS-005",
+        "ABS-006"
+      ],
+      "decision": "ADAPT",
+      "scope": "Identity, organization and audit fragments",
+      "reason": "Six bounded files compiled independently; domain and context behavior characterized. Server membership/permissions still need extraction and integration.",
+      "destination": "Wissian Core contracts/domain, after proprietary identity adaptation and M1 integration tests"
+    },
+    {
+      "ids": [
+        "ABS-016",
+        "ABS-017",
+        "ABS-023",
+        "ABS-024"
+      ],
+      "decision": "ADAPT",
+      "scope": "Identity wiring, persistence and API",
+      "reason": "Scoped joins/composite FKs/version tokens exist. DI, DbContext and migrations aggregate many domains; extract only scoped identity mappings and create fresh Wissian schema, never transplant whole projects.",
+      "destination": "Wissian host and persistence adapters outside minimal domain"
+    },
+    {
+      "ids": [
+        "ABS-012",
+        "ABS-036"
+      ],
+      "decision": "ADAPT",
+      "scope": "Knowledge patterns informing documents",
+      "reason": "Found version/classification/search/idempotency patterns, not an already complete administrative document and counterparty module. Unit-scoped normative content is not equivalent to general business documents.",
+      "destination": "documents module in M2; refine missing upload, counterparties and organization-only scope then"
+    },
+    {
+      "ids": [
+        "ABS-025",
+        "ABS-031",
+        "ABS-032",
+        "ABS-034"
+      ],
+      "decision": "ADAPT",
+      "scope": "React identity/UI and Base44 comparison",
+      "reason": "Local Base44 ref uses .NET plus React/Vite. No Base44 SDK imports matched in selected src/package scope. Integrated identity and context flow adds platform separation; shell providers and capability catalog remain coupled.",
+      "destination": "Wissian shell and typed API adapter; no whole App/OperatorPortal copy"
+    },
+    {
+      "ids": [
+        "ABS-029",
+        "ABS-030",
+        "ABS-033"
+      ],
+      "decision": "DEFER",
+      "scope": "Map, legacy brand assets and visual themes",
+      "reason": "Base44 map imports socioeducational resident/occupancy/movement components; preserve as M6 reference. Asset diff observed, binary license/visual acceptance not audited; no brand assets enter Core.",
+      "destination": "optional vertical/appearance capability after customer flow and asset provenance"
+    }
+  ],
+  "experiment": {
+    "project": "experiments/m0-reuso/M0.ReuseProbe.csproj",
+    "provenance": "experiments/m0-reuso/provenance.json",
+    "sdk": "10.0.302",
+    "runtime": "10.0.10",
+    "os": "Windows",
+    "commands": [
+      "dotnet restore experiments/m0-reuso/M0.ReuseProbe.csproj --configfile experiments/m0-reuso/NuGet.Config --disable-parallel",
+      "dotnet run --project experiments/m0-reuso/M0.ReuseProbe.csproj --no-restore --disable-build-servers"
+    ],
+    "result": "PASS",
+    "cases": 16,
+    "failures": 0,
+    "packages_downloaded": 0,
+    "case_ids": [
+      "M0-01-tenant-normalization",
+      "M0-02-tenant-invalid-input",
+      "M0-03-membership-references",
+      "M0-04-session-invalid-lifetime",
+      "M0-05-session-time-boundaries",
+      "M0-06-context-idempotency",
+      "M0-07-context-identifiers",
+      "M0-08-revocation-idempotency",
+      "M0-09-revoked-context-denied",
+      "M0-10-platform-clears-tenant-context",
+      "M0-11-platform-requires-fresh-mfa",
+      "M0-12-platform-limits",
+      "M0-13-platform-exit-on-context",
+      "M0-14-mfa-cannot-come-from-future",
+      "M0-15-audit-keeps-scope",
+      "M0-16-audit-requires-correlation"
+    ],
+    "database_tested": false,
+    "api_tested": false,
+    "ui_tested": false,
+    "product_tenant_isolation_tested": false
+  },
+  "first_m1_blockers": [
+    "Extract tenant identity without mandatory legacy unit/location/product codes",
+    "Separate module catalogs and scoped persistence from source-wide DbContext/DI",
+    "Implement and prove server membership/revocation, composition and negative access on real synthetic PostgreSQL",
+    "Pin supported patches/lockfiles and review actual dependency licenses before application bootstrap"
+  ],
+  "limitations": [
+    "No whole-branch or whole-Base44-export audit; local refs only",
+    "No explicit LICENSE located in the source repository; private same-owner characterization is not a public redistribution grant",
+    "No binary assets, original credentials, databases, seeds or migrations imported",
+    "Package and source versions are observed snapshots; .NET 10.0.10 runtime is not the current supported patch baseline",
+    "All product planned tests remain NOT_RUN; 16 cases belong only to M0 extraction"
+  ],
+  "rollback": "Discard experiment from consumers and restore only changed documentation from preserved pre-M0 baseline; source and databases unaffected"
+}

@@ -1,0 +1,7 @@
+Este é o pacote WISSIAN_REESTRUTURACAO_v1.1_2026-09-22. Wissian é a plataforma-base da Fultuma; Fultuma Tech Ltda é a empresa proprietária definida por Gui.
+
+Quando eu solicitar a aplicação deste plano, leia 00_COMECE_AQUI_CODEX.md da pasta extraída e siga o direcionamento do pacote dentro do escopo autorizado na conversa. O simples envio do ZIP para leitura, organização ou revisão não inicia o desenvolvimento.
+
+Na pasta dedicada do Wissian, confira o guia fundador, a governança local e a continuidade C7. Identifique separadamente o checkout legado do ClubAL e a baseline a reaproveitar, preservando a evolução Codex/Base44 e o trabalho em andamento. Se houver um incremento ativo nos arquivos afetados, leve-o até um checkpoint seguro antes de iniciar a reestruturação.
+
+Com a execução solicitada, avance pelos incrementos seguros e elegíveis, com testes e evidências reais. Preserve a stack, os identificadores técnicos e os limites de autorização do plano. A marca do produto socioeducativo continua pendente e ClubAL permanece reservado para clubes.

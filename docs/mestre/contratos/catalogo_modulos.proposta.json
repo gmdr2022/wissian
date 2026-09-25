@@ -1,0 +1,538 @@
+{
+  "schema_version": 1,
+  "reference_only": true,
+  "grants_authority": false,
+  "runtime_activation": false,
+  "modules": [
+    {
+      "id": "core",
+      "contract_version": "0.1-proposal",
+      "kind": "core",
+      "owner": "a_designar_na_fatia",
+      "required_dependencies": [],
+      "optional_integrations": [],
+      "purpose": "Identidade, tenancy, autorização, composição e auditoria mínima",
+      "phase": "M1",
+      "runtime_status": "NOT_IMPLEMENTED",
+      "permission_namespace": "core.* (lista concreta a definir; wildcard nao concede acesso)",
+      "data_owner": "core",
+      "routes": [],
+      "jobs": [],
+      "migrations": [],
+      "retention": "definir por classe/finalidade antes de dados reais",
+      "disable_policy": "bloquear novas operacoes; revalidar jobs; preservar historico; reativacao sem restaurar grants"
+    },
+    {
+      "id": "documents",
+      "contract_version": "0.1-proposal",
+      "kind": "operational",
+      "owner": "a_designar_na_fatia",
+      "required_dependencies": [
+        "core"
+      ],
+      "optional_integrations": [],
+      "purpose": "Documentos e arquivos protegidos, classificação, versões e vínculos",
+      "phase": "M2",
+      "runtime_status": "NOT_IMPLEMENTED",
+      "permission_namespace": "documents.* (lista concreta a definir; wildcard nao concede acesso)",
+      "data_owner": "documents",
+      "routes": [],
+      "jobs": [],
+      "migrations": [],
+      "retention": "definir por classe/finalidade antes de dados reais",
+      "disable_policy": "bloquear novas operacoes; revalidar jobs; preservar historico; reativacao sem restaurar grants"
+    },
+    {
+      "id": "counterparties",
+      "contract_version": "0.1-proposal",
+      "kind": "operational",
+      "owner": "a_designar_na_fatia",
+      "required_dependencies": [
+        "core"
+      ],
+      "optional_integrations": [],
+      "purpose": "Clientes, fornecedores e contatos por referência",
+      "phase": "M2",
+      "runtime_status": "NOT_IMPLEMENTED",
+      "permission_namespace": "counterparties.* (lista concreta a definir; wildcard nao concede acesso)",
+      "data_owner": "counterparties",
+      "routes": [],
+      "jobs": [],
+      "migrations": [],
+      "retention": "definir por classe/finalidade antes de dados reais",
+      "disable_policy": "bloquear novas operacoes; revalidar jobs; preservar historico; reativacao sem restaurar grants"
+    },
+    {
+      "id": "fiscal-records",
+      "contract_version": "0.1-proposal",
+      "kind": "operational",
+      "owner": "a_designar_na_fatia",
+      "required_dependencies": [
+        "core",
+        "documents",
+        "counterparties"
+      ],
+      "optional_integrations": [],
+      "purpose": "Notas registradas e conferência, sem emissão oficial",
+      "phase": "M3",
+      "runtime_status": "NOT_IMPLEMENTED",
+      "permission_namespace": "fiscal-records.* (lista concreta a definir; wildcard nao concede acesso)",
+      "data_owner": "fiscal-records",
+      "routes": [],
+      "jobs": [],
+      "migrations": [],
+      "retention": "definir por classe/finalidade antes de dados reais",
+      "disable_policy": "bloquear novas operacoes; revalidar jobs; preservar historico; reativacao sem restaurar grants"
+    },
+    {
+      "id": "finance",
+      "contract_version": "0.1-proposal",
+      "kind": "operational",
+      "owner": "a_designar_na_fatia",
+      "required_dependencies": [
+        "core",
+        "counterparties"
+      ],
+      "optional_integrations": [
+        "fiscal-records"
+      ],
+      "purpose": "Obrigações, parcelas, liquidações, estornos e conciliação",
+      "phase": "M3",
+      "runtime_status": "NOT_IMPLEMENTED",
+      "permission_namespace": "finance.* (lista concreta a definir; wildcard nao concede acesso)",
+      "data_owner": "finance",
+      "routes": [],
+      "jobs": [],
+      "migrations": [],
+      "retention": "definir por classe/finalidade antes de dados reais",
+      "disable_policy": "bloquear novas operacoes; revalidar jobs; preservar historico; reativacao sem restaurar grants"
+    },
+    {
+      "id": "monthly-close",
+      "contract_version": "0.1-proposal",
+      "kind": "operational",
+      "owner": "a_designar_na_fatia",
+      "required_dependencies": [
+        "core",
+        "documents",
+        "fiscal-records",
+        "finance"
+      ],
+      "optional_integrations": [],
+      "purpose": "Pacote mensal versionado e retomável",
+      "phase": "M4",
+      "runtime_status": "NOT_IMPLEMENTED",
+      "permission_namespace": "monthly-close.* (lista concreta a definir; wildcard nao concede acesso)",
+      "data_owner": "monthly-close",
+      "routes": [],
+      "jobs": [],
+      "migrations": [],
+      "retention": "definir por classe/finalidade antes de dados reais",
+      "disable_policy": "bloquear novas operacoes; revalidar jobs; preservar historico; reativacao sem restaurar grants"
+    },
+    {
+      "id": "agenda",
+      "contract_version": "0.1-proposal",
+      "kind": "shared",
+      "owner": "a_designar_na_fatia",
+      "required_dependencies": [
+        "core"
+      ],
+      "optional_integrations": [],
+      "purpose": "Ocorrências, responsáveis, prazos e notificações internas",
+      "phase": "M5a",
+      "runtime_status": "NOT_IMPLEMENTED",
+      "permission_namespace": "agenda.* (lista concreta a definir; wildcard nao concede acesso)",
+      "data_owner": "agenda",
+      "routes": [],
+      "jobs": [],
+      "migrations": [],
+      "retention": "definir por classe/finalidade antes de dados reais",
+      "disable_policy": "bloquear novas operacoes; revalidar jobs; preservar historico; reativacao sem restaurar grants"
+    },
+    {
+      "id": "contracts",
+      "contract_version": "0.1-proposal",
+      "kind": "operational",
+      "owner": "a_designar_na_fatia",
+      "required_dependencies": [
+        "core",
+        "documents",
+        "counterparties"
+      ],
+      "optional_integrations": [
+        "agenda"
+      ],
+      "purpose": "Revisões, assinados, aditivos e obrigações",
+      "phase": "M5a",
+      "runtime_status": "NOT_IMPLEMENTED",
+      "permission_namespace": "contracts.* (lista concreta a definir; wildcard nao concede acesso)",
+      "data_owner": "contracts",
+      "routes": [],
+      "jobs": [],
+      "migrations": [],
+      "retention": "definir por classe/finalidade antes de dados reais",
+      "disable_policy": "bloquear novas operacoes; revalidar jobs; preservar historico; reativacao sem restaurar grants"
+    },
+    {
+      "id": "governance",
+      "contract_version": "0.1-proposal",
+      "kind": "operational",
+      "owner": "a_designar_na_fatia",
+      "required_dependencies": [
+        "core",
+        "documents"
+      ],
+      "optional_integrations": [],
+      "purpose": "Governança, registros, licenças e decisões",
+      "phase": "M5b",
+      "runtime_status": "NOT_IMPLEMENTED",
+      "permission_namespace": "governance.* (lista concreta a definir; wildcard nao concede acesso)",
+      "data_owner": "governance",
+      "routes": [],
+      "jobs": [],
+      "migrations": [],
+      "retention": "definir por classe/finalidade antes de dados reais",
+      "disable_policy": "bloquear novas operacoes; revalidar jobs; preservar historico; reativacao sem restaurar grants"
+    },
+    {
+      "id": "intellectual-assets",
+      "contract_version": "0.1-proposal",
+      "kind": "operational",
+      "owner": "a_designar_na_fatia",
+      "required_dependencies": [
+        "core",
+        "documents"
+      ],
+      "optional_integrations": [],
+      "purpose": "PI, marca e cadeia documental; sem inferir direitos",
+      "phase": "M5b",
+      "runtime_status": "NOT_IMPLEMENTED",
+      "permission_namespace": "intellectual-assets.* (lista concreta a definir; wildcard nao concede acesso)",
+      "data_owner": "intellectual-assets",
+      "routes": [],
+      "jobs": [],
+      "migrations": [],
+      "retention": "definir por classe/finalidade antes de dados reais",
+      "disable_policy": "bloquear novas operacoes; revalidar jobs; preservar historico; reativacao sem restaurar grants"
+    },
+    {
+      "id": "people-services",
+      "contract_version": "0.1-proposal",
+      "kind": "operational",
+      "owner": "a_designar_na_fatia",
+      "required_dependencies": [
+        "core",
+        "documents",
+        "counterparties"
+      ],
+      "optional_integrations": [],
+      "purpose": "Pessoas, prestadores e serviços; ciclo de acesso",
+      "phase": "M5c",
+      "runtime_status": "NOT_IMPLEMENTED",
+      "permission_namespace": "people-services.* (lista concreta a definir; wildcard nao concede acesso)",
+      "data_owner": "people-services",
+      "routes": [],
+      "jobs": [],
+      "migrations": [],
+      "retention": "definir por classe/finalidade antes de dados reais",
+      "disable_policy": "bloquear novas operacoes; revalidar jobs; preservar historico; reativacao sem restaurar grants"
+    },
+    {
+      "id": "privacy",
+      "contract_version": "0.1-proposal",
+      "kind": "operational",
+      "owner": "a_designar_na_fatia",
+      "required_dependencies": [
+        "core",
+        "documents"
+      ],
+      "optional_integrations": [],
+      "purpose": "Tratamentos, solicitações, retenção e incidentes restritos",
+      "phase": "M5c",
+      "runtime_status": "NOT_IMPLEMENTED",
+      "permission_namespace": "privacy.* (lista concreta a definir; wildcard nao concede acesso)",
+      "data_owner": "privacy",
+      "routes": [],
+      "jobs": [],
+      "migrations": [],
+      "retention": "definir por classe/finalidade antes de dados reais",
+      "disable_policy": "bloquear novas operacoes; revalidar jobs; preservar historico; reativacao sem restaurar grants"
+    },
+    {
+      "id": "devices",
+      "contract_version": "0.1-proposal",
+      "kind": "shared",
+      "owner": "a_designar_na_fatia",
+      "required_dependencies": [
+        "core"
+      ],
+      "optional_integrations": [],
+      "purpose": "Dispositivos e pareamento quando comprovado reutilizável",
+      "phase": "M6",
+      "runtime_status": "NOT_IMPLEMENTED",
+      "permission_namespace": "devices.* (lista concreta a definir; wildcard nao concede acesso)",
+      "data_owner": "devices",
+      "routes": [],
+      "jobs": [],
+      "migrations": [],
+      "retention": "definir por classe/finalidade antes de dados reais",
+      "disable_policy": "bloquear novas operacoes; revalidar jobs; preservar historico; reativacao sem restaurar grants"
+    },
+    {
+      "id": "displays",
+      "contract_version": "0.1-proposal",
+      "kind": "shared",
+      "owner": "a_designar_na_fatia",
+      "required_dependencies": [
+        "core",
+        "devices"
+      ],
+      "optional_integrations": [],
+      "purpose": "Publicação e exibição com contrato próprio",
+      "phase": "M6",
+      "runtime_status": "NOT_IMPLEMENTED",
+      "permission_namespace": "displays.* (lista concreta a definir; wildcard nao concede acesso)",
+      "data_owner": "displays",
+      "routes": [],
+      "jobs": [],
+      "migrations": [],
+      "retention": "definir por classe/finalidade antes de dados reais",
+      "disable_policy": "bloquear novas operacoes; revalidar jobs; preservar historico; reativacao sem restaurar grants"
+    },
+    {
+      "id": "release-support",
+      "contract_version": "0.1-proposal",
+      "kind": "shared",
+      "owner": "a_designar_na_fatia",
+      "required_dependencies": [
+        "core"
+      ],
+      "optional_integrations": [],
+      "purpose": "Release, assistência e recuperação derivados de GRA quando pertinentes",
+      "phase": "M7",
+      "runtime_status": "NOT_IMPLEMENTED",
+      "permission_namespace": "release-support.* (lista concreta a definir; wildcard nao concede acesso)",
+      "data_owner": "release-support",
+      "routes": [],
+      "jobs": [],
+      "migrations": [],
+      "retention": "definir por classe/finalidade antes de dados reais",
+      "disable_policy": "bloquear novas operacoes; revalidar jobs; preservar historico; reativacao sem restaurar grants"
+    },
+    {
+      "id": "socioeducativo",
+      "contract_version": "0.1-proposal",
+      "kind": "vertical",
+      "owner": "a_designar_na_fatia",
+      "required_dependencies": [
+        "core"
+      ],
+      "optional_integrations": [
+        "agenda",
+        "displays"
+      ],
+      "purpose": "Regras e dados socioeducativos, incluindo alojamentos quando absorvidos",
+      "phase": "M6",
+      "runtime_status": "NOT_IMPLEMENTED",
+      "permission_namespace": "socioeducativo.* (lista concreta a definir; wildcard nao concede acesso)",
+      "data_owner": "socioeducativo",
+      "routes": [],
+      "jobs": [],
+      "migrations": [],
+      "retention": "definir por classe/finalidade antes de dados reais",
+      "disable_policy": "bloquear novas operacoes; revalidar jobs; preservar historico; reativacao sem restaurar grants"
+    },
+    {
+      "id": "educacao",
+      "contract_version": "0.1-proposal",
+      "kind": "vertical",
+      "owner": "a_designar_na_fatia",
+      "required_dependencies": [
+        "core"
+      ],
+      "optional_integrations": [
+        "agenda"
+      ],
+      "purpose": "Fluxos educacionais a caracterizar",
+      "phase": "M6",
+      "runtime_status": "NOT_IMPLEMENTED",
+      "permission_namespace": "educacao.* (lista concreta a definir; wildcard nao concede acesso)",
+      "data_owner": "educacao",
+      "routes": [],
+      "jobs": [],
+      "migrations": [],
+      "retention": "definir por classe/finalidade antes de dados reais",
+      "disable_policy": "bloquear novas operacoes; revalidar jobs; preservar historico; reativacao sem restaurar grants"
+    },
+    {
+      "id": "clubal-telas",
+      "contract_version": "0.1-proposal",
+      "kind": "vertical",
+      "owner": "a_designar_na_fatia",
+      "required_dependencies": [
+        "core",
+        "displays"
+      ],
+      "optional_integrations": [],
+      "purpose": "Produto ClubAL/Telas separado; não ativado por este exemplo",
+      "phase": "M6",
+      "runtime_status": "NOT_IMPLEMENTED",
+      "permission_namespace": "clubal-telas.* (lista concreta a definir; wildcard nao concede acesso)",
+      "data_owner": "clubal-telas",
+      "routes": [],
+      "jobs": [],
+      "migrations": [],
+      "retention": "definir por classe/finalidade antes de dados reais",
+      "disable_policy": "bloquear novas operacoes; revalidar jobs; preservar historico; reativacao sem restaurar grants"
+    },
+    {
+      "id": "eventos",
+      "contract_version": "0.1-proposal",
+      "kind": "vertical",
+      "owner": "a_designar_na_fatia",
+      "required_dependencies": [
+        "core"
+      ],
+      "optional_integrations": [],
+      "purpose": "Operação de eventos/clubes quando definida",
+      "phase": "M8",
+      "runtime_status": "NOT_IMPLEMENTED",
+      "permission_namespace": "eventos.* (lista concreta a definir; wildcard nao concede acesso)",
+      "data_owner": "eventos",
+      "routes": [],
+      "jobs": [],
+      "migrations": [],
+      "retention": "definir por classe/finalidade antes de dados reais",
+      "disable_policy": "bloquear novas operacoes; revalidar jobs; preservar historico; reativacao sem restaurar grants"
+    },
+    {
+      "id": "fleet",
+      "contract_version": "0.1-proposal",
+      "kind": "operational",
+      "owner": "a_designar_na_fatia",
+      "required_dependencies": [
+        "core"
+      ],
+      "optional_integrations": [],
+      "purpose": "Frota: primeiro fluxo e modelo ainda por definir",
+      "phase": "M8",
+      "runtime_status": "NOT_IMPLEMENTED",
+      "permission_namespace": "fleet.* (lista concreta a definir; wildcard nao concede acesso)",
+      "data_owner": "fleet",
+      "routes": [],
+      "jobs": [],
+      "migrations": [],
+      "retention": "definir por classe/finalidade antes de dados reais",
+      "disable_policy": "bloquear novas operacoes; revalidar jobs; preservar historico; reativacao sem restaurar grants"
+    },
+    {
+      "id": "inventory-qr",
+      "contract_version": "0.1-proposal",
+      "kind": "operational",
+      "owner": "a_designar_na_fatia",
+      "required_dependencies": [
+        "core"
+      ],
+      "optional_integrations": [],
+      "purpose": "Estoque/produtos/QR: rastreio administrativo, não pareamento",
+      "phase": "M8",
+      "runtime_status": "NOT_IMPLEMENTED",
+      "permission_namespace": "inventory-qr.* (lista concreta a definir; wildcard nao concede acesso)",
+      "data_owner": "inventory-qr",
+      "routes": [],
+      "jobs": [],
+      "migrations": [],
+      "retention": "definir por classe/finalidade antes de dados reais",
+      "disable_policy": "bloquear novas operacoes; revalidar jobs; preservar historico; reativacao sem restaurar grants"
+    },
+    {
+      "id": "legal",
+      "contract_version": "0.1-proposal",
+      "kind": "operational",
+      "owner": "a_designar_na_fatia",
+      "required_dependencies": [
+        "core"
+      ],
+      "optional_integrations": [
+        "contracts"
+      ],
+      "purpose": "Jurídico: fluxo/dados/perfis a definir",
+      "phase": "M8",
+      "runtime_status": "NOT_IMPLEMENTED",
+      "permission_namespace": "legal.* (lista concreta a definir; wildcard nao concede acesso)",
+      "data_owner": "legal",
+      "routes": [],
+      "jobs": [],
+      "migrations": [],
+      "retention": "definir por classe/finalidade antes de dados reais",
+      "disable_policy": "bloquear novas operacoes; revalidar jobs; preservar historico; reativacao sem restaurar grants"
+    },
+    {
+      "id": "hr-time",
+      "contract_version": "0.1-proposal",
+      "kind": "operational",
+      "owner": "a_designar_na_fatia",
+      "required_dependencies": [
+        "core"
+      ],
+      "optional_integrations": [],
+      "purpose": "RH/ponto: domínio e obrigações a definir",
+      "phase": "M8",
+      "runtime_status": "NOT_IMPLEMENTED",
+      "permission_namespace": "hr-time.* (lista concreta a definir; wildcard nao concede acesso)",
+      "data_owner": "hr-time",
+      "routes": [],
+      "jobs": [],
+      "migrations": [],
+      "retention": "definir por classe/finalidade antes de dados reais",
+      "disable_policy": "bloquear novas operacoes; revalidar jobs; preservar historico; reativacao sem restaurar grants"
+    },
+    {
+      "id": "fiscal-issuance",
+      "contract_version": "0.1-proposal",
+      "kind": "operational",
+      "owner": "a_designar_na_fatia",
+      "required_dependencies": [
+        "core",
+        "fiscal-records"
+      ],
+      "optional_integrations": [],
+      "purpose": "Emissão oficial: somente futura integração autorizada",
+      "phase": "M7",
+      "runtime_status": "NOT_IMPLEMENTED",
+      "permission_namespace": "fiscal-issuance.* (lista concreta a definir; wildcard nao concede acesso)",
+      "data_owner": "fiscal-issuance",
+      "routes": [],
+      "jobs": [],
+      "migrations": [],
+      "retention": "definir por classe/finalidade antes de dados reais",
+      "disable_policy": "bloquear novas operacoes; revalidar jobs; preservar historico; reativacao sem restaurar grants"
+    },
+    {
+      "id": "continuity",
+      "contract_version": "0.1-proposal",
+      "kind": "shared",
+      "owner": "a_designar_na_fatia",
+      "required_dependencies": [
+        "core"
+      ],
+      "optional_integrations": [
+        "monthly-close",
+        "agenda",
+        "devices",
+        "displays"
+      ],
+      "purpose": "Agora, Passagens e Verificações contextuais, sem task manager genérico",
+      "phase": "M5-CO",
+      "runtime_status": "NOT_IMPLEMENTED",
+      "permission_namespace": "continuity.view, continuity.handoff.create, continuity.handoff.acknowledge, continuity.verification.decide; nunca concessão automática",
+      "data_owner": "continuity",
+      "routes": [],
+      "jobs": [],
+      "migrations": [],
+      "retention": "definir por classe/finalidade antes de dados reais",
+      "disable_policy": "suspender novas operações/subscrições; preservar histórico e gates da origem; reconciliar antes de reativar"
+    }
+  ]
+}

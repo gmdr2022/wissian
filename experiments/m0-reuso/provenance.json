@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "purpose": "M0 characterization only, not SaaS runtime",
+  "license": "No repository LICENSE found at source ref; no new license or public redistribution grant inferred.",
+  "sources": [
+    {
+      "repository": "ClubAL/clubal",
+      "ref": "integration/base44-main",
+      "commit": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "source_path": "src/backend/ClubAL.Domain/DomainText.cs",
+      "source_sha256": "741dd16820a2ba2a30070a3638c8332f43744bce91a7d262eaba39c5fafc64eb",
+      "checkout_sha256": "403edfc4b310c43d61f7f4652e2a0eaec16f8d61b15cc2c905b62b8e434edfa0",
+      "destination": "experiments/m0-reuso/origin/DomainText.cs",
+      "destination_sha256": "741dd16820a2ba2a30070a3638c8332f43744bce91a7d262eaba39c5fafc64eb",
+      "selection": "whole_file",
+      "modification": "none except bounded Tenant selection"
+    },
+    {
+      "repository": "ClubAL/clubal",
+      "ref": "integration/base44-main",
+      "commit": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "source_path": "src/backend/ClubAL.Domain/IdentityAccess/HumanSession.cs",
+      "source_sha256": "6c11b77c47629f17cdfc329339c11fd784e046b40c07356d163bf7f2b5940555",
+      "checkout_sha256": "ef1c433919798e28bbb662b948587cb52fdc6f008d752c6364f0dfc7c66f6f20",
+      "destination": "experiments/m0-reuso/origin/IdentityAccess/HumanSession.cs",
+      "destination_sha256": "6c11b77c47629f17cdfc329339c11fd784e046b40c07356d163bf7f2b5940555",
+      "selection": "whole_file",
+      "modification": "none except bounded Tenant selection"
+    },
+    {
+      "repository": "ClubAL/clubal",
+      "ref": "integration/base44-main",
+      "commit": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "source_path": "src/backend/ClubAL.Domain/IdentityAccess/Membership.cs",
+      "source_sha256": "a8911a8989fbe2a07d0ceac92ae58b413da5c52ac07df85d98fc2dff5d6e422a",
+      "checkout_sha256": "a7d1f4f99dbb3140dd6f83017436cb705aa613905dc00cd75dea68305982c938",
+      "destination": "experiments/m0-reuso/origin/IdentityAccess/Membership.cs",
+      "destination_sha256": "a8911a8989fbe2a07d0ceac92ae58b413da5c52ac07df85d98fc2dff5d6e422a",
+      "selection": "whole_file",
+      "modification": "none except bounded Tenant selection"
+    },
+    {
+      "repository": "ClubAL/clubal",
+      "ref": "integration/base44-main",
+      "commit": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "source_path": "src/backend/ClubAL.Domain/Audit/AuditEvent.cs",
+      "source_sha256": "e0d0ea787e33b7c6428bb1b24c7769d326082b3bc505c995b611994b1cb6d02b",
+      "checkout_sha256": "c4abcffb6b994b1e000c162ea08b54486ab4471d467e6ca3232c4cb3de7fbda7",
+      "destination": "experiments/m0-reuso/origin/Audit/AuditEvent.cs",
+      "destination_sha256": "e0d0ea787e33b7c6428bb1b24c7769d326082b3bc505c995b611994b1cb6d02b",
+      "selection": "whole_file",
+      "modification": "none except bounded Tenant selection"
+    },
+    {
+      "repository": "ClubAL/clubal",
+      "ref": "integration/base44-main",
+      "commit": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "source_path": "src/backend/ClubAL.Domain/Tenancy/DeploymentEnvironment.cs",
+      "source_sha256": "8511b127cb30e1b5ce067d11d29fe735c54109c1720b3e2d8ded3136706fd3ac",
+      "checkout_sha256": "939f075ba47a0f17ddd65e7413e6a199d54a47b0ae2dfb8ce6bcbb6a16d57090",
+      "destination": "experiments/m0-reuso/origin/Tenancy/DeploymentEnvironment.cs",
+      "destination_sha256": "8511b127cb30e1b5ce067d11d29fe735c54109c1720b3e2d8ded3136706fd3ac",
+      "selection": "whole_file",
+      "modification": "none except bounded Tenant selection"
+    },
+    {
+      "repository": "ClubAL/clubal",
+      "ref": "integration/base44-main",
+      "commit": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "source_path": "src/backend/ClubAL.Domain/Tenancy/Tenant.cs",
+      "source_sha256": "d9390ed740863805648771d559c07661dc3949a9972dcf2c080186117a4eeb11",
+      "checkout_sha256": "acbd17e1d86cbef2086fa218433e86cb819e1f1a2eaf985280c5de4f5c7c448e",
+      "destination": "experiments/m0-reuso/origin/Tenancy/Tenant.cs",
+      "destination_sha256": "b2db9247cc45ad43b226be65f11559ecc9e8f922277e947e88ea89cc1eb6dba8",
+      "selection": "namespace and Tenant class only; stop before Unit",
+      "modification": "none except bounded Tenant selection"
+    }
+  ]
+}

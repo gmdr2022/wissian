@@ -1,0 +1,759 @@
+{
+  "schema_version": 1,
+  "kind": "planned_application_tests_not_executed",
+  "cases": [
+    {
+      "id": "TM-01",
+      "requirements": [
+        "WM-01",
+        "WM-14",
+        "WM-20"
+      ],
+      "kind": "audit",
+      "phase": "M0",
+      "fixture": "Refs atuais e fontes da primeira fatia, sem dados reais",
+      "action": "Comparar cenários Codex/Base44 e registrar ficha por diferença",
+      "expected": "Nenhuma melhoria relevante perdida/reaplicada sem decisão; hashes e estado de inspeção verificáveis",
+      "negative": "Origem ausente ou ref divergente impede declarar auditoria completa",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TM-02",
+      "requirements": [
+        "WM-02",
+        "WM-23"
+      ],
+      "kind": "build_contract",
+      "phase": "M1",
+      "fixture": "Core, host neutro e extensão sintética",
+      "action": "Construir artefato e inspecionar grafo/registro de endpoints/jobs/assets",
+      "expected": "Core sem domínio; extensão usa contrato público sem copiar auth/tenancy",
+      "negative": "Introduzir referência Core->vertical em fixture e verificar gate falhando",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TM-03",
+      "requirements": [
+        "WM-03",
+        "WM-17"
+      ],
+      "kind": "integration",
+      "phase": "M1",
+      "fixture": "Catálogo real e composições sintéticas",
+      "action": "Tentar IDs duplicados, versão inválida, ciclo e dependência ausente",
+      "expected": "Bootstrap/configuração recusados antes de servir operação",
+      "negative": "Fallback não ativa todos os módulos nem concede acesso",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TM-04",
+      "requirements": [
+        "WM-04",
+        "WM-05"
+      ],
+      "kind": "integration_db",
+      "phase": "M1",
+      "fixture": "Dois tenants, usuários e roles reais do runtime no banco sintético",
+      "action": "Trocar ID/tenant/unidade em CRUD/consulta/agregação",
+      "expected": "Negação sem informação ou alteração cruzada",
+      "negative": "Inclui SQL/joins/repositórios e role que de fato executa produção planejada",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TM-05",
+      "requirements": [
+        "WM-05"
+      ],
+      "kind": "integration",
+      "phase": "M1",
+      "fixture": "Sessão válida, aba aberta e job pendente",
+      "action": "Revogar associação/permissão; expirar concessão; repetir operação",
+      "expected": "Revogação efetiva e suporte expirado negado; cobrança/flag não restaura autoridade",
+      "negative": "Admin de plataforma não lê operação por padrão",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TM-06",
+      "requirements": [
+        "WM-04",
+        "WM-06"
+      ],
+      "kind": "integration_storage",
+      "phase": "M2",
+      "fixture": "Arquivo, índice, cache e export de A; usuário B",
+      "action": "Abrir URL conhecida, buscar, contar, exportar e executar job de leitura",
+      "expected": "Sem corpo, metadado, contagem ou arquivo cruzado; auditoria sanitizada",
+      "negative": "Chave cache sem tenant e link reutilizado devem ser detectados",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TM-07",
+      "requirements": [
+        "WM-06",
+        "WM-07"
+      ],
+      "kind": "e2e",
+      "phase": "M2",
+      "fixture": "Duas organizações sintéticas",
+      "action": "Criar contraparte de dois papéis, documento, nova versão, vínculos e arquivamento",
+      "expected": "Localização/vínculos mantidos e permissão correta, sem duplicar contraparte",
+      "negative": "Referência inválida/outra organização rejeitada",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TM-08",
+      "requirements": [
+        "WM-08",
+        "WM-09"
+      ],
+      "kind": "integration_db",
+      "phase": "M3",
+      "fixture": "Nota1000, duas parcelas500; fixtures NF-01/02/03/04/09",
+      "action": "Baixa300, estorno, nova baixa e cancelamento fiscal com evidência",
+      "expected": "Saldos200/700 e500/1000 corretos; valor fiscal e caixa independentes",
+      "negative": "Sem delete da baixa, sem pagamento automático no cancelamento",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TM-09",
+      "requirements": [
+        "WM-10"
+      ],
+      "kind": "concurrency",
+      "phase": "M3",
+      "fixture": "Requisição repetida, timeout e duas transações concorrentes",
+      "action": "Reimportar/repetir baixa e alterar a mesma revisão simultaneamente",
+      "expected": "Uma operação lógica; conflito explícito; constraints garantem invariantes",
+      "negative": "Não basta desabilitar botão nem teste sequencial com mock",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TM-10",
+      "requirements": [
+        "WM-11",
+        "WM-04"
+      ],
+      "kind": "security_import",
+      "phase": "M3",
+      "fixture": "CSV/XML/arquivo sintético com fórmula, XXE, linha inválida e excesso",
+      "action": "Processar importação com diagnóstico por item e interrupção",
+      "expected": "Sem execução/rede indevida/carga parcial silenciosa; retry controlado",
+      "negative": "Identificador de tenant no arquivo não muda contexto autorizado",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TM-11",
+      "requirements": [
+        "WM-12",
+        "WM-09"
+      ],
+      "kind": "e2e_db",
+      "phase": "M4",
+      "fixture": "Fultuma Exemplo e Empresa Exemplo na mesma versão: nota setembro/pagamento outubro, transferência, diferença e documento pendente",
+      "action": "Conciliar e gerar pacote mensal; interromper geração e retomar; exportar registros/documentos autorizados e conferir o pacote fora da sessão SaaS",
+      "expected": "Competência/caixa corretos, diferença explícita, sem dupla receita, versão anterior preservada; ambas organizações concluem sem código exclusivo; exportação permite conferir documentos, vínculos e totais",
+      "negative": "Export não marcado enviado; pendência não inventada",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TM-12",
+      "requirements": [
+        "WM-13"
+      ],
+      "kind": "manual_and_automated_ui",
+      "phase": "M2",
+      "fixture": "Fluxo administrativo sintético em viewports/zoom/temas declarados; controle manual equivalente; baseline e critérios por tarefa definidos antes do ensaio, conforme capítulo 17",
+      "action": "Concluir por teclado/tecnologia assistiva; testar vazio/erro/espera/conflito; comparar localizar nota, conferir saldo, baixar/estornar e preparar mês, medindo tempo, passos, redigitação e erros",
+      "expected": "Ação legível/acessível e recuperação preserva contexto; marca equivalente aprovada; benefício demonstrado pelos critérios prévios, regressões tratadas e aceite humano separado; aparência/online não provam superioridade",
+      "negative": "Ausência de módulo não deixa menu/card especializado",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TM-13",
+      "requirements": [
+        "WM-15",
+        "WM-16"
+      ],
+      "kind": "recovery_lab",
+      "phase": "M4",
+      "fixture": "Banco/blobs sintéticos e pares app/schema definidos",
+      "action": "Bootstrap, upgrade repetido, falha controlada e restore em destino isolado; simular perda de conexão e timeout durante operação administrativa e retomar",
+      "expected": "Integridade, saldos, vínculos, autoridade e compatibilidade preservados; tempo medido; falha de conexão explícita, sem falso salvamento, perda silenciosa de contexto ou efeito duplicado; sem presumir suporte offline",
+      "negative": "Downgrade incompatível bloqueado; backup existente sem restore não passa",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TM-14",
+      "requirements": [
+        "WM-17",
+        "WM-05"
+      ],
+      "kind": "integration",
+      "phase": "M1",
+      "fixture": "Duas organizações na mesma release com módulo habilitado só em A",
+      "action": "Desativar A com job pendente; tentar URL; reativar",
+      "expected": "Novas operações negadas; job revalidado; histórico preservado; sem duplicação/grant restaurado",
+      "negative": "B continua sem acesso; nenhum fork ou rebuild por tenant",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TM-15",
+      "requirements": [
+        "WM-18",
+        "WM-04"
+      ],
+      "kind": "e2e",
+      "phase": "M5",
+      "fixture": "Dois tenants e contratos/governança/PI/pessoas/serviços/privacidade sintéticos",
+      "action": "Executar todos os WB remanescentes E4–E6 e importação revisada das abas",
+      "expected": "Fluxos e critérios WB demonstrados, evidências e permissões coerentes",
+      "negative": "Minuta não registrada; upload não prova direito; saída revoga acesso interno sem fingir revogação externa",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TM-16",
+      "requirements": [
+        "WM-19",
+        "WM-02"
+      ],
+      "kind": "vertical_contract_and_device",
+      "phase": "M6",
+      "fixture": "Vertical selecionada, neutro e consumidor/dispositivo alvo quando aplicável",
+      "action": "Executar paridade e negativos do roteiro original pertinente",
+      "expected": "Contrato preservado no destino e domínio ausente no neutro",
+      "negative": "Dispositivo/offline/hardware não testado fica NOT_RUN/BLOCKED, nunca PASS por screenshot",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TM-17",
+      "requirements": [
+        "WM-16",
+        "WM-21"
+      ],
+      "kind": "security_observability",
+      "phase": "M4",
+      "fixture": "Falhas/ações sintéticas e artefato de build",
+      "action": "Inspecionar logs/traces/audit/zip/image e dependências",
+      "expected": "Correlação útil sem segredos/PII/corpos; fontes e licenças conhecidas",
+      "negative": "Erro deliberado não revela token ou dados de outro tenant",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TM-18",
+      "requirements": [
+        "WM-22"
+      ],
+      "kind": "release_review",
+      "phase": "M7",
+      "fixture": "Evidências atuais e autorizações do ambiente",
+      "action": "Confrontar cada gate, recuperação, custo e responsabilidade com prova",
+      "expected": "Piloto liberado apenas no escopo autorizado e gates satisfeitos",
+      "negative": "Gate humano pendente ou dado real não autorizado impede promoção",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TM-19",
+      "requirements": [
+        "WM-24",
+        "WM-03"
+      ],
+      "kind": "design_and_acceptance",
+      "phase": "M8",
+      "fixture": "Uma nova capacidade com problema/público definidos",
+      "action": "Preencher ficha, contrato, custo, casos e dependências; demonstrar fluxo",
+      "expected": "Módulo resolve necessidade sem inflar Core nem obrigar tenants alheios",
+      "negative": "Não aceitar catálogo de menus sem caso útil",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TM-20",
+      "requirements": [
+        "WM-14",
+        "WM-13",
+        "WM-19"
+      ],
+      "kind": "comparative_ui_data",
+      "phase": "M0",
+      "fixture": "Mesmos cenários/fixtures nas fontes Base44 e Codex disponíveis",
+      "action": "Comparar alojamentos/estrutura/navegação/logo/modelos e registrar delta",
+      "expected": "Destino conserva escolhas aprovadas e semântica; cada divergência tem justificativa",
+      "negative": "Mudança de dados/estrutura não tratada só como cor/estilo",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TC-01",
+      "requirements": [
+        "WM-25"
+      ],
+      "kind": "build_contract",
+      "phase": "M1",
+      "fixture": "Core/host neutro, extensão sintética e contratos mínimos",
+      "action": "Compilar sem Continuity e exercitar escopo/evento/auditoria/versão/idempotência na fixture",
+      "expected": "Grafo sem dependência, primeiro ciclo independente e contratos verificáveis",
+      "negative": "Falha se WorkItem/UI/broker for requisito de bootstrap",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TC-02",
+      "requirements": [
+        "WM-26",
+        "WM-27"
+      ],
+      "kind": "integration_db",
+      "phase": "M5-CO",
+      "fixture": "Mesmo evento e condição em uma organização com banco real sintético",
+      "action": "Consumir 100 entregas iguais e 10 eventos novos da mesma condição, em concorrência",
+      "expected": "Um item estável, inbox deduplicada e Agora com motivo/ação; ordem total reproduzível",
+      "negative": "Sem timestamp/retry na stable key nem atualização artificial de prioridade",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TC-03",
+      "requirements": [
+        "WM-27",
+        "WM-33"
+      ],
+      "kind": "event_contract",
+      "phase": "M5-CO",
+      "fixture": "Dois tenants, evento id igual; offline seq2/recovery seq3/atrasado seq1/nova queda seq4",
+      "action": "Repetir ID com payload diferente, trocar escopo e entregar fora de ordem",
+      "expected": "Colisões conflitantes rejeitadas; escopos isolados; sem reabrir por atraso; seq4 cria novo episódio",
+      "negative": "Relógio sozinho/tenant forjado não arbitra autoridade ou ordem",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TC-04",
+      "requirements": [
+        "WM-28"
+      ],
+      "kind": "concurrency",
+      "phase": "M5-CO",
+      "fixture": "Item version5 com notas/atribuição/adiamento humanos",
+      "action": "Dois writers atualizam version5 e produtor repete snapshot",
+      "expected": "Uma atualização vence; outra conflita; campos humanos e histórico preservados",
+      "negative": "Sem last-write-wins nem upsert que apague decisão",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TC-05",
+      "requirements": [
+        "WM-28",
+        "WM-34",
+        "WM-36"
+      ],
+      "kind": "recovery_db",
+      "phase": "M5-CO",
+      "fixture": "Banco/outbox/inbox e pontos de falha antes/depois de commit",
+      "action": "Interromper entre mudança, evento e ack; reiniciar workers e replay",
+      "expected": "Fato ou transação íntegros; sem perda/duplicação; sinais e recibo reconciliáveis",
+      "negative": "Não marcar inbox antes de efeito persistido; sem publicação antes de commit",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TC-06",
+      "requirements": [
+        "WM-29",
+        "WM-33"
+      ],
+      "kind": "concurrency_db",
+      "phase": "M5-CO",
+      "fixture": "A/B/C no mesmo escopo e D de outro; episódios definidos",
+      "action": "Inserir A→B e B→A simultaneamente; autoaresta, ausente, cruzada; cancelar pré-requisito",
+      "expected": "Ciclo/referências cruzadas rejeitados; cancelamento mantém bloqueio; versão/episódio conferidos",
+      "negative": "Checagem só em memória ou sequencial não satisfaz o teste",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TC-07",
+      "requirements": [
+        "WM-30",
+        "WM-33",
+        "WM-38"
+      ],
+      "kind": "e2e_db",
+      "phase": "M5-CO",
+      "fixture": "Passagem com quatro categorias, dois papéis e duas organizações",
+      "action": "Enviar, reconhecer duas vezes, editar criando revisão e revogar destinatário",
+      "expected": "Um ACK por revisão/ator; categorias preservadas; receber não conclui nem aprova; mudança visível",
+      "negative": "ACK de versão anterior/outro escopo ou papel revogado negado",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TC-08",
+      "requirements": [
+        "WM-27",
+        "WM-31",
+        "WM-33",
+        "WM-38"
+      ],
+      "kind": "human_authority",
+      "phase": "M5-CO",
+      "fixture": "Revisor e solicitante distintos; nova revisão/episódio da origem",
+      "action": "Confirmar revisão atual, pedir ajustes, reabrir e tentar autoaprovar/usar decisão antiga",
+      "expected": "Origem recebe decisão humana autorizada; confirmação antiga inválida para nova versão",
+      "negative": "Serviço/IA, mesmo humano com dois papéis e revisão obsoleta não aprovam gate crítico",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TC-09",
+      "requirements": [
+        "WM-32",
+        "WM-33"
+      ],
+      "kind": "security_api",
+      "phase": "M5-CO",
+      "fixture": "Duas ações mínimas registradas e parâmetros sintéticos hostis",
+      "action": "Enviar handler/shell/path/URL livre, campo desconhecido, alvo cruzado e ação não registrada",
+      "expected": "Recusa antes de qualquer efeito; permissões exatas e schema/limites no servidor",
+      "negative": "Ocultar botão ou wildcard de papel não substitui autorização",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TC-10",
+      "requirements": [
+        "WM-32",
+        "WM-36"
+      ],
+      "kind": "concurrency_recovery",
+      "phase": "M5-CO",
+      "fixture": "Comando com mesma chave, revisão, ator e timeout após possível efeito",
+      "action": "Disputar execução e trocar payload/ator/alvo na mesma chave; consultar recibo",
+      "expected": "Um efeito lógico ou resultado desconhecido reconciliável; binding conflitante negado",
+      "negative": "Não repetir efeito incerto nem retornar sucesso por timeout",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TC-11",
+      "requirements": [
+        "WM-32",
+        "WM-33"
+      ],
+      "kind": "revocation",
+      "phase": "M5-CO",
+      "fixture": "Job aceito e recibo existente de usuário que perde acesso",
+      "action": "Revogar membership, mudar papel, suspender módulo antes de executar/reler recibo",
+      "expected": "Job e replay reautorizados; nenhum efeito/dado após revogação",
+      "negative": "Cache de resultado não devolve conteúdo sem autorização atual",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TC-12",
+      "requirements": [
+        "WM-34"
+      ],
+      "kind": "audit_privacy",
+      "phase": "M5-CO",
+      "fixture": "Eventos de mudança, comentário sensível sintético e decisão",
+      "action": "Corrigir comentário, consultar ActivityHistory em papéis diferentes e inspecionar telemetria",
+      "expected": "Histórico de autoria/decisão preservado com conteúdo mínimo e política de retenção",
+      "negative": "Sem corpo de documento, segredo ou detalhe de dependência restrita em log/card",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TC-13",
+      "requirements": [
+        "WM-26",
+        "WM-35"
+      ],
+      "kind": "product_queue",
+      "phase": "M5-CO",
+      "fixture": "Fila com empate, adiados, bloqueados, sem responsável e notificação repetida",
+      "action": "Reconsultar, vencer prazo, repetir telemetria e mudar severidade por política",
+      "expected": "Ordem determinística, adiamento respeitado, um aviso por transição/destinatário; motivo/ação úteis",
+      "negative": "Nada de criar tarefa sem origem ou transformar repetição em urgência",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TC-14",
+      "requirements": [
+        "WM-35"
+      ],
+      "kind": "load_observability",
+      "phase": "M5-CO",
+      "fixture": "Carga limitada/medida e produtor com atraso ou poison event",
+      "action": "Atrasar consumer, esgotar tentativas e retomar DLQ com mesmos IDs",
+      "expected": "Fila desatualizada explícita; limites/backoff/owner; métricas de atraso e sem ruído",
+      "negative": "Fila vazia por indisponibilidade não é Tudo em dia; limiar vem de baseline",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TC-15",
+      "requirements": [
+        "WM-25",
+        "WM-31",
+        "WM-36"
+      ],
+      "kind": "module_lifecycle",
+      "phase": "M5-CO",
+      "fixture": "Origem com gate humano e Continuity ativa/ausente/suspensa",
+      "action": "Suspender com decisão/itens pendentes; usar fluxo nativo; reativar por snapshot/replay",
+      "expected": "Gates da origem permanecem; histórico preservado; reconciliação sem repetir efeitos",
+      "negative": "Desativação não libera aprovação nem recria grants; Core neutro continua independente",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TC-16",
+      "requirements": [
+        "WM-33",
+        "WM-37"
+      ],
+      "kind": "integration_security",
+      "phase": "M5-CO",
+      "fixture": "Envelope schema inválido/excesso, campo repetido, produtor/tenant forjado",
+      "action": "Validar entrada de máquina e futura prévia de importação; ensaiar limites e erro por item",
+      "expected": "Recusa explícita sem executar conteúdo/rede; escopo do servidor prevalece",
+      "negative": "Nenhum suporte automático a .ccard/ZIP/command ou aprovação humana importada",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TC-17",
+      "requirements": [
+        "WM-26",
+        "WM-38"
+      ],
+      "kind": "manual_and_automated_ui",
+      "phase": "M5-CO",
+      "fixture": "Pacote mensal sintético, operadores/revisores de dois tenants",
+      "action": "Completar trio; teclado/leitor/zoom/móvel; vazio/erro/conflito/rascunho/versão obsoleta",
+      "expected": "Usuário identifica o quê/por quê/ação; retoma contexto e reconhece resultado correto",
+      "negative": "Screenshot isolado não aprova UX; falha não aparenta conclusão",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TC-18",
+      "requirements": [
+        "WM-34",
+        "WM-36"
+      ],
+      "kind": "restore_lab",
+      "phase": "M5-CO",
+      "fixture": "Dados/recibos/histórico/outbox e versões compatíveis sintéticos",
+      "action": "Restaurar em destino vazio, reconciliar in-flight e reconsultar itens/decisões",
+      "expected": "Integridade, autorização, ordem e dedupe mantidos; RPO/RTO medidos",
+      "negative": "Restore não reexecuta comando nem ressuscita confirmação/grant revogado",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TC-19",
+      "requirements": [
+        "WM-29",
+        "WM-30",
+        "WM-31"
+      ],
+      "kind": "workflow_liveness",
+      "phase": "M5-CO",
+      "fixture": "Papel sem membro, cadeia bloqueada e gate de duas pessoas",
+      "action": "Remover destinatário/aprovador, adiar e cancelar pré-requisito; tentar escalonamento",
+      "expected": "Bloqueio explícito com dono e reatribuição autorizada, sem fila sem saída invisível",
+      "negative": "SLA não autoaprova; troca de papel não burla separação nem revela recurso oculto",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TC-20",
+      "requirements": [
+        "WM-37"
+      ],
+      "kind": "provenance_review",
+      "phase": "M0/M5-CO",
+      "fixture": "Pedido, fontes ancestrais realmente necessárias e artefato do destino",
+      "action": "Preencher ficha com ref/hash/licença/caso; inspecionar imports/handlers/arquivos",
+      "expected": "Princípios testados no destino; nenhum transplante desktop ou integração Codex",
+      "negative": "Não alegar código/CI auditados se só conversa foi lida; origens permanecem intactas",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TC-21",
+      "requirements": [
+        "WM-39"
+      ],
+      "kind": "reuse_and_architecture_review",
+      "phase": "M0/M1/M5-CO/M6",
+      "fixture": "Primeira fatia, refs/símbolos/testes e diff real de destino",
+      "action": "Mapear cada componente a manter/extrair/adaptar; justificar lacuna de todo componente novo; comparar comportamento e fronteiras",
+      "expected": "Versão administrativa limpa/addons reaproveitam bases comprovadas e preservam melhorias; Core só mecanismos mínimos",
+      "negative": "Scaffold paralelo, reescrita por preferência ou especialização no Core impede aceite; fonte não acessível não vira inexistente",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "id": "TC-22",
+      "requirements": [
+        "WM-40"
+      ],
+      "kind": "conceptual_coverage_review",
+      "phase": "M0/M5-CO/M6/M7/M8",
+      "fixture": "Matriz NC/UC-NC, fontes, ficha da fatia e diff de destino",
+      "action": "Conferir cada decisão, cenário, motivo, owner, fase e requisito; distinguir futuro de aposentado e mecanismo de regra de domínio",
+      "expected": "Demais usos continuam recuperáveis e compatíveis com o plano; módulo real conserva política e base existente é reaproveitada",
+      "negative": "Excluir cenário, portar mecanismo aposentado, incluir especialidade no Core ou construir antecipadamente tudo impede aceite",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null,
+      "human_acceptance": "NOT_REQUESTED"
+    }
+  ]
+}

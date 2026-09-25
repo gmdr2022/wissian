@@ -1,0 +1,487 @@
+{
+  "schema_version": 1,
+  "kind": "target_requirements_not_implementation",
+  "requirements": [
+    {
+      "id": "WM-01",
+      "title": "Procedência e repositório independente",
+      "phase": "M0",
+      "acceptance": "Fonte/ref/hash e decisão por capacidade; ClubAL e WIP preservados",
+      "origin": "Pedido atual; CF-01/06/08; REQ01/02",
+      "status": "NOT_RUN",
+      "tests": [
+        "TM-01"
+      ]
+    },
+    {
+      "id": "WM-02",
+      "title": "Core mínimo e grafo neutro",
+      "phase": "M1",
+      "acceptance": "Core não alcança módulo operacional/vertical; build neutro sem assets/jobs/endpoints de domínio",
+      "origin": "Pedido atual; REQ04/06",
+      "status": "NOT_RUN",
+      "tests": [
+        "TM-02",
+        "TM-16"
+      ]
+    },
+    {
+      "id": "WM-03",
+      "title": "Composição tipada e opcionalidade",
+      "phase": "M1",
+      "acceptance": "ID/versão/dependência/ciclo/config inválidos falham sem fallback permissivo",
+      "origin": "REQ05/24; guia §23",
+      "status": "NOT_RUN",
+      "tests": [
+        "TM-03",
+        "TM-19"
+      ]
+    },
+    {
+      "id": "WM-04",
+      "title": "Isolamento de organização e unidade",
+      "phase": "M1",
+      "acceptance": "Dois tenants com negativos em todos os canais e persistência real sintética",
+      "origin": "REQ07/08; WB-16",
+      "status": "NOT_RUN",
+      "tests": [
+        "TM-04",
+        "TM-06",
+        "TM-10",
+        "TM-15"
+      ]
+    },
+    {
+      "id": "WM-05",
+      "title": "Autoridade e plano de controle",
+      "phase": "M1",
+      "acceptance": "Revogação/JIT/associação e escopos efetivos separados de contratação/flags",
+      "origin": "REQ09/18; plano §7",
+      "status": "NOT_RUN",
+      "tests": [
+        "TM-04",
+        "TM-05",
+        "TM-14"
+      ]
+    },
+    {
+      "id": "WM-06",
+      "title": "Documentos protegidos e pesquisa",
+      "phase": "M2",
+      "acceptance": "Versionar/arquivar/localizar com acesso por recurso e download direto protegido",
+      "origin": "WB-12/13; plano E1",
+      "status": "NOT_RUN",
+      "tests": [
+        "TM-06",
+        "TM-07"
+      ]
+    },
+    {
+      "id": "WM-07",
+      "title": "Contrapartes sem duplicidade artificial",
+      "phase": "M2",
+      "acceptance": "Uma contraparte tem papéis cliente/fornecedor e vínculos íntegros no tenant",
+      "origin": "WB-15; plano E1",
+      "status": "NOT_RUN",
+      "tests": [
+        "TM-07"
+      ]
+    },
+    {
+      "id": "WM-08",
+      "title": "Estados fiscais, financeiros e de conferência",
+      "phase": "M3",
+      "acceptance": "Registro não simula emissão; cancelamento fiscal não apaga pagamento",
+      "origin": "NF-01/04; plano §6",
+      "status": "NOT_RUN",
+      "tests": [
+        "TM-08"
+      ]
+    },
+    {
+      "id": "WM-09",
+      "title": "Dinheiro, baixas e estornos",
+      "phase": "M3",
+      "acceptance": "Valores exatos e saldos NF-01/02/03/09; estorno rastreável",
+      "origin": "WB-05; NF-01/02/03/09",
+      "status": "NOT_RUN",
+      "tests": [
+        "TM-08",
+        "TM-11"
+      ]
+    },
+    {
+      "id": "WM-10",
+      "title": "Idempotência e concorrência",
+      "phase": "M3",
+      "acceptance": "Replay/timeout/edição concorrente não duplicam nota/parcela/baixa ou perdem atualização",
+      "origin": "REQ31; NF-05",
+      "status": "NOT_RUN",
+      "tests": [
+        "TM-09"
+      ]
+    },
+    {
+      "id": "WM-11",
+      "title": "Importação segura e por item",
+      "phase": "M3",
+      "acceptance": "Linha inválida/XXE/fórmula/tamanho excessivo falham de forma explícita e recuperável",
+      "origin": "NF-10; plano §10",
+      "status": "NOT_RUN",
+      "tests": [
+        "TM-10"
+      ]
+    },
+    {
+      "id": "WM-12",
+      "title": "Fechamento e competência/caixa",
+      "phase": "M4",
+      "acceptance": "NF-06/08, conciliação com divergência, transferência sem dupla receita, pacote versionado",
+      "origin": "Plano E3; WB-04/05/14",
+      "status": "NOT_RUN",
+      "tests": [
+        "TM-11"
+      ]
+    },
+    {
+      "id": "WM-13",
+      "title": "UX acessível e marca preservada",
+      "phase": "M2",
+      "acceptance": "Fluxos completos e estados; teclado/tecnologia assistiva/zoom/temas; assets de origem comparados",
+      "origin": "REQ16/25/27; guia §§19-26",
+      "status": "NOT_RUN",
+      "tests": [
+        "TM-12",
+        "TM-20"
+      ]
+    },
+    {
+      "id": "WM-14",
+      "title": "Absorção Base44/Codex sem perda invisível",
+      "phase": "M0",
+      "acceptance": "Cada mudança relevante tem decisão e cenário; alojamentos/estrutura/logo avaliados como comportamento e dados",
+      "origin": "Pedido atual; REQ02",
+      "status": "NOT_RUN",
+      "tests": [
+        "TM-01",
+        "TM-20"
+      ]
+    },
+    {
+      "id": "WM-15",
+      "title": "Schema e compatibilidade delimitados",
+      "phase": "M1",
+      "acceptance": "Migrations próprias, bootstrap/upgrade/replay/pares; IDs da origem preservados",
+      "origin": "REQ10/12/22; CF-11",
+      "status": "NOT_RUN",
+      "tests": [
+        "TM-13"
+      ]
+    },
+    {
+      "id": "WM-16",
+      "title": "Recuperação e observabilidade",
+      "phase": "M4",
+      "acceptance": "Falha controlada e restore sintético com estado/autoridade íntegros; sinais sanitizados",
+      "origin": "REQ11/20; guia §§22/24",
+      "status": "NOT_RUN",
+      "tests": [
+        "TM-13",
+        "TM-17"
+      ]
+    },
+    {
+      "id": "WM-17",
+      "title": "Ciclo de vida de módulo",
+      "phase": "M1",
+      "acceptance": "Desativar bloqueia operações/jobs sem apagar dados; reativar não duplica nem amplia grants",
+      "origin": "REQ06/18/24",
+      "status": "NOT_RUN",
+      "tests": [
+        "TM-03",
+        "TM-14"
+      ]
+    },
+    {
+      "id": "WM-18",
+      "title": "Operação base ampliada",
+      "phase": "M5",
+      "acceptance": "WB-01–16 demonstrados por fluxo, em dois tenants, ou exceção explicitamente aprovada",
+      "origin": "Plano E4-E6",
+      "status": "NOT_RUN",
+      "tests": [
+        "TM-15"
+      ]
+    },
+    {
+      "id": "WM-19",
+      "title": "Verticais preservadas e segregadas",
+      "phase": "M6",
+      "acceptance": "Paridade da capacidade escolhida; domínio não vaza para neutro; offline/dispositivo com gates próprios",
+      "origin": "REQ13/15/17/26; v1.1 §09/10",
+      "status": "NOT_RUN",
+      "tests": [
+        "TM-16",
+        "TM-20"
+      ]
+    },
+    {
+      "id": "WM-20",
+      "title": "Roadmaps e ADRs rastreáveis",
+      "phase": "M0",
+      "acceptance": "REQ/WB/NF/TEM/OWM/GRA/QR/PCE e decisões de origem conservados e classificados",
+      "origin": "Pedido atual; REQ20/21/32",
+      "status": "NOT_RUN",
+      "tests": [
+        "TM-01"
+      ]
+    },
+    {
+      "id": "WM-21",
+      "title": "Artefato limpo e licenças",
+      "phase": "M1",
+      "acceptance": "Sem segredos/dados privados/SDK inadvertido; licença e procedência por absorção",
+      "origin": "REQ23/29/30",
+      "status": "NOT_RUN",
+      "tests": [
+        "TM-17"
+      ]
+    },
+    {
+      "id": "WM-22",
+      "title": "Evidência e autorização de piloto",
+      "phase": "M7",
+      "acceptance": "Execução/ambiente/commit distintos de plano; gates humanos/dados/externos explícitos",
+      "origin": "REQ19/21/32; plano §11",
+      "status": "NOT_RUN",
+      "tests": [
+        "TM-18"
+      ]
+    },
+    {
+      "id": "WM-23",
+      "title": "Reuso sem cópia de infraestrutura",
+      "phase": "M1",
+      "acceptance": "Extensão sintética e módulo real consomem mesmo Core com contratos públicos",
+      "origin": "REQ14/28",
+      "status": "NOT_RUN",
+      "tests": [
+        "TM-02"
+      ]
+    },
+    {
+      "id": "WM-24",
+      "title": "Catálogo amplo sem big bang",
+      "phase": "M8",
+      "acceptance": "Cada nova capacidade tem fluxo, dono, prioridade, custo, fronteira e aceite antes de implementar",
+      "origin": "Pedido atual; guia §§8/9/32/37",
+      "status": "NOT_RUN",
+      "tests": [
+        "TM-19"
+      ]
+    },
+    {
+      "id": "WM-25",
+      "title": "Fundação sem implementação prematura",
+      "phase": "M1",
+      "acceptance": "Preparar escopo, autorização, auditoria, versões/eventos/idempotência sem WorkItem/UI/broker; Core e primeiro ciclo funcionam sem Continuity",
+      "origin": "Pedido Continuity 24/09/2026; ADR-M08; capítulo 16",
+      "status": "NOT_RUN",
+      "tests": [
+        "TC-01",
+        "TC-15"
+      ]
+    },
+    {
+      "id": "WM-26",
+      "title": "Agora com contexto e ordem determinística",
+      "phase": "M5-CO",
+      "acceptance": "Itens de processo real, elegibilidade e ação autorizadas, motivo claro; prioridade/prazo/criação/ID desempata, sem task manager genérico",
+      "origin": "Pedido Continuity 24/09/2026; ADR-M08; capítulo 16",
+      "status": "NOT_RUN",
+      "tests": [
+        "TC-02",
+        "TC-13",
+        "TC-17"
+      ]
+    },
+    {
+      "id": "WM-27",
+      "title": "Stable keys, eventos e episódios",
+      "phase": "M5-CO",
+      "acceptance": "Uma condição por chave escopada; evento repetido/atrasado não duplica/regride; nova ocorrência e revisão invalidam confirmação antiga",
+      "origin": "Pedido Continuity 24/09/2026; ADR-M08; capítulo 16",
+      "status": "NOT_RUN",
+      "tests": [
+        "TC-02",
+        "TC-03",
+        "TC-08"
+      ]
+    },
+    {
+      "id": "WM-28",
+      "title": "Concorrência e merge humano",
+      "phase": "M5-CO",
+      "acceptance": "Versão esperada, transação e merge preservam notas, atribuição e decisão; conflito explícito",
+      "origin": "Pedido Continuity 24/09/2026; ADR-M08; capítulo 16",
+      "status": "NOT_RUN",
+      "tests": [
+        "TC-04",
+        "TC-05"
+      ]
+    },
+    {
+      "id": "WM-29",
+      "title": "Dependências e bloqueios finitos",
+      "phase": "M5-CO",
+      "acceptance": "Grafo acíclico sob concorrência, escopado por episódio; cancelamento não satisfaz dependência; bloqueio tem responsável",
+      "origin": "Pedido Continuity 24/09/2026; ADR-M08; capítulo 16",
+      "status": "NOT_RUN",
+      "tests": [
+        "TC-06",
+        "TC-19"
+      ]
+    },
+    {
+      "id": "WM-30",
+      "title": "Passagens e reconhecimento explícito",
+      "phase": "M5-CO",
+      "acceptance": "Fotografia versionada, destinatário válido e ACK idempotente; receber não aprova nem conclui",
+      "origin": "Pedido Continuity 24/09/2026; ADR-M08; capítulo 16",
+      "status": "NOT_RUN",
+      "tests": [
+        "TC-07",
+        "TC-19"
+      ]
+    },
+    {
+      "id": "WM-31",
+      "title": "Verificações e autoridade humana",
+      "phase": "M5-CO",
+      "acceptance": "Decisão na revisão atual com segregação crítica; automação não aprova; fonte permanece autoridade",
+      "origin": "Pedido Continuity 24/09/2026; ADR-M08; capítulo 16",
+      "status": "NOT_RUN",
+      "tests": [
+        "TC-08",
+        "TC-15",
+        "TC-19"
+      ]
+    },
+    {
+      "id": "WM-32",
+      "title": "ActionCatalog seguro",
+      "phase": "M5-CO",
+      "acceptance": "Handler/schema/versão/permissão registrados; sem comandos arbitrários; resultado/recibo explícitos",
+      "origin": "Pedido Continuity 24/09/2026; ADR-M08; capítulo 16",
+      "status": "NOT_RUN",
+      "tests": [
+        "TC-09",
+        "TC-10",
+        "TC-11"
+      ]
+    },
+    {
+      "id": "WM-33",
+      "title": "Isolamento e revogação em todos os canais",
+      "phase": "M5-CO",
+      "acceptance": "Tenant/unidade/recurso atuais em UI/API/DB/evento/fila/cache/histórico/recibo; sem herança transitiva de acesso",
+      "origin": "Pedido Continuity 24/09/2026; ADR-M08; capítulo 16",
+      "status": "NOT_RUN",
+      "tests": [
+        "TC-03",
+        "TC-06",
+        "TC-07",
+        "TC-08",
+        "TC-09",
+        "TC-11",
+        "TC-16"
+      ]
+    },
+    {
+      "id": "WM-34",
+      "title": "Histórico e observabilidade minimizados",
+      "phase": "M5-CO",
+      "acceptance": "Eventos/decisões preservados; ActivityHistory referencia auditoria existente; sinais sem dados sensíveis e ação de recuperação",
+      "origin": "Pedido Continuity 24/09/2026; ADR-M08; capítulo 16",
+      "status": "NOT_RUN",
+      "tests": [
+        "TC-05",
+        "TC-12",
+        "TC-18"
+      ]
+    },
+    {
+      "id": "WM-35",
+      "title": "Controle de ruído e adiamento",
+      "phase": "M5-CO",
+      "acceptance": "Repetição não notifica novamente; adiamento/prazo/severidade e relevância respeitados; fila atrasada explícita",
+      "origin": "Pedido Continuity 24/09/2026; ADR-M08; capítulo 16",
+      "status": "NOT_RUN",
+      "tests": [
+        "TC-13",
+        "TC-14"
+      ]
+    },
+    {
+      "id": "WM-36",
+      "title": "Ciclo de vida e recuperação opcional",
+      "phase": "M5-CO",
+      "acceptance": "Suspender não apaga nem remove gate humano; reativação reconcilia sem replay de efeitos; restore testado",
+      "origin": "Pedido Continuity 24/09/2026; ADR-M08; capítulo 16",
+      "status": "NOT_RUN",
+      "tests": [
+        "TC-05",
+        "TC-10",
+        "TC-15",
+        "TC-18"
+      ]
+    },
+    {
+      "id": "WM-37",
+      "title": "Migração conceitual e integração defensiva",
+      "phase": "M0/M5-CO",
+      "acceptance": "Princípios Nexus/CC com procedência; mecanismos desktop aposentados; API schema/limites; sem importador CC implícito",
+      "origin": "Pedido Continuity 24/09/2026; ADR-M08; capítulo 16",
+      "status": "NOT_RUN",
+      "tests": [
+        "TC-16",
+        "TC-20"
+      ]
+    },
+    {
+      "id": "WM-38",
+      "title": "Trio útil e UX acessível",
+      "phase": "M5-CO",
+      "acceptance": "Mesmo fluxo de pacote mensal passa por Agora, Passagens e Verificações com recuperação e acesso em duas organizações",
+      "origin": "Pedido Continuity 24/09/2026; ADR-M08; capítulo 16",
+      "status": "NOT_RUN",
+      "tests": [
+        "TC-07",
+        "TC-08",
+        "TC-17"
+      ]
+    },
+    {
+      "id": "WM-39",
+      "title": "Fragmentação e reuso antes de código novo",
+      "phase": "M0/M1/M5-CO/M6",
+      "acceptance": "Cada componente tem equivalente de origem e decisão manter/extrair/adaptar; lacuna explícita antes de código novo; administrativo e especializações fora do Core; sem greenfield/rewrite",
+      "origin": "Reforço explícito de Gui nesta tarefa; CF-19; capítulo 04",
+      "status": "NOT_RUN",
+      "tests": [
+        "TC-21"
+      ]
+    },
+    {
+      "id": "WM-40",
+      "title": "Patrimônio e demais usos Nexus/CC preservados",
+      "phase": "M0/M5-CO/M6/M7/M8",
+      "acceptance": "28 decisões e 18 usos rastreados; futuro preservado com gate; aposentadoria do mecanismo sem apagar origem; especialidade fora do Core",
+      "origin": "Releitura integral das conversas e reforço explícito de Gui; matriz NC/UC-NC; capítulo 16 seção 10",
+      "status": "NOT_RUN",
+      "tests": [
+        "TC-22"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,776 @@
+{
+  "schema_version": 1,
+  "scope": "all_49_archive_files_and_all_26_local_non_git_files",
+  "sources": [
+    {
+      "id": "RAR-001",
+      "family": "RAR",
+      "source_relative": "00_COMECE_AQUI_CODEX.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/00_COMECE_AQUI_CODEX.md",
+      "bytes": 8725,
+      "sha256": "d767e93916173f16e76cb8a0a7cb6b5ead9069c8ce14c98950b7726325a380c9",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-002",
+      "family": "RAR",
+      "source_relative": "01_LEIA_PRIMEIRO.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/01_LEIA_PRIMEIRO.md",
+      "bytes": 4801,
+      "sha256": "cd82bf383983aa0c26f6b892f0777c39d1585bdbc523d2175208ea7de6666527",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-003",
+      "family": "RAR",
+      "source_relative": "02_DECISOES_E_LIMITES.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/02_DECISOES_E_LIMITES.md",
+      "bytes": 5137,
+      "sha256": "097194e03ecc978666ae92f130ec82f84ec7dd1832c194a45295a95df6deb5bc",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-004",
+      "family": "RAR",
+      "source_relative": "03_ESTADO_VERIFICADO_REPOSITORIO.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/03_ESTADO_VERIFICADO_REPOSITORIO.md",
+      "bytes": 5918,
+      "sha256": "344f63ad62cbb94cb08102d2a04e313491219a80d23ae49563422449936ba554",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-005",
+      "family": "RAR",
+      "source_relative": "04_ARQUITETURA_ALVO.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/04_ARQUITETURA_ALVO.md",
+      "bytes": 6915,
+      "sha256": "08357bb50437e9200f9f5b1f5c1c2b6d36545eb937f01bab17a4336e2dd8642f",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-006",
+      "family": "RAR",
+      "source_relative": "05_MAPA_DE_EXTRACAO.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/05_MAPA_DE_EXTRACAO.md",
+      "bytes": 5626,
+      "sha256": "6e3b4b368c755fcb5aea091c3d552d2c5d17e5ead2bf4bedb89df2f5933b345a",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-007",
+      "family": "RAR",
+      "source_relative": "06_CONTRATOS_DE_MODULOS.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/06_CONTRATOS_DE_MODULOS.md",
+      "bytes": 5537,
+      "sha256": "ed05d7e9cb47dacd03acf1b05932c9e664f6776dd9b4614ed378d4e2be8fca8c",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-008",
+      "family": "RAR",
+      "source_relative": "07_DADOS_MIGRACOES_COMPATIBILIDADE.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/07_DADOS_MIGRACOES_COMPATIBILIDADE.md",
+      "bytes": 6444,
+      "sha256": "0bb721da0a6cb99ff38a9adaba91f597c7f4ffbc8558799d75a7da101ac7b226",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-009",
+      "family": "RAR",
+      "source_relative": "08_SEGURANCA_PRIVACIDADE.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/08_SEGURANCA_PRIVACIDADE.md",
+      "bytes": 6047,
+      "sha256": "93536c2157c98a9e394755c5e9ae1fd9ea81d643769834b9db1aea6a681ec3ba",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-010",
+      "family": "RAR",
+      "source_relative": "09_PRODUTO_SOCIOEDUCATIVO.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/09_PRODUTO_SOCIOEDUCATIVO.md",
+      "bytes": 5064,
+      "sha256": "f15ae83fd70f27143121463c03ef45b0fc0211debb5c9103196e041331a1a48c",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-011",
+      "family": "RAR",
+      "source_relative": "10_CLUBAL_E_LEGADO.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/10_CLUBAL_E_LEGADO.md",
+      "bytes": 3392,
+      "sha256": "fe12f9882f7127864f127ddafaa664ea87ca6ea77692cc1d6c690fa113e31b13",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-012",
+      "family": "RAR",
+      "source_relative": "11_UX_MARCA_I18N.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/11_UX_MARCA_I18N.md",
+      "bytes": 4582,
+      "sha256": "f0d2c50906b90ac3d4bce45c4cd18c6ab1bc9a3589b82f40a50ced8390cd7500",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-013",
+      "family": "RAR",
+      "source_relative": "12_ROADMAP_EXECUTAVEL.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/12_ROADMAP_EXECUTAVEL.md",
+      "bytes": 12579,
+      "sha256": "357985f377d73d582a259d03a47822dee6537f9ece0131c132db2936bdba58c5",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-014",
+      "family": "RAR",
+      "source_relative": "13_TESTES_E_ACEITE.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/13_TESTES_E_ACEITE.md",
+      "bytes": 6235,
+      "sha256": "49db38f82232256bafd15d0d909766f8713023a6880236d73a1cc6fdfda52230",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-015",
+      "family": "RAR",
+      "source_relative": "14_OPERACAO_IMPLANTACAO_CUSTOS.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/14_OPERACAO_IMPLANTACAO_CUSTOS.md",
+      "bytes": 3373,
+      "sha256": "af1a5feaae19b81970485351bb2bc3b3df9d2a5baa242835665a7e01f2d8b670",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-016",
+      "family": "RAR",
+      "source_relative": "15_RISCOS_E_ROLLBACK.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/15_RISCOS_E_ROLLBACK.md",
+      "bytes": 4596,
+      "sha256": "417ab965454d6b4251f1568944ca7dcd25bacb292a8736f808bb4fcdc4c09761",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-017",
+      "family": "RAR",
+      "source_relative": "16_PLAYBOOK_NOVO_PRODUTO.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/16_PLAYBOOK_NOVO_PRODUTO.md",
+      "bytes": 2968,
+      "sha256": "cb3f9d05d893d4d6edf5aeea798d417753e0c03cf6bc3f0160d3ad53dfaec4bc",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-018",
+      "family": "RAR",
+      "source_relative": "17_CONTINUIDADE_E_RELATORIOS.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/17_CONTINUIDADE_E_RELATORIOS.md",
+      "bytes": 3612,
+      "sha256": "c9b0244fb789bfed41c57b56ccdb44bcacc1eff10f5eeac337db062273836641",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-019",
+      "family": "RAR",
+      "source_relative": "18_FONTES_E_REFERENCIAS.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/18_FONTES_E_REFERENCIAS.md",
+      "bytes": 6072,
+      "sha256": "042f4e010db7caf9777d1ee7ef9140b5c7631e9fee23238e04d2581711ba1f5c",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-020",
+      "family": "RAR",
+      "source_relative": "19_PROPRIEDADE_E_MARCA.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/19_PROPRIEDADE_E_MARCA.md",
+      "bytes": 2300,
+      "sha256": "85ada82456d137d4156729a6ef294861f7ddd02858fc108a37051e36b018b7f5",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-021",
+      "family": "RAR",
+      "source_relative": "99_VALIDACAO_DO_PACOTE.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/99_VALIDACAO_DO_PACOTE.md",
+      "bytes": 4620,
+      "sha256": "6aeb8d788b3ec3f3ce7801fd8edf9edb36df680093b98bc2617d3d81b1d05e05",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-022",
+      "family": "RAR",
+      "source_relative": "adrs/ADR-REEST-001_MONOREPO_E_COMPOSICAO.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/adrs/ADR-REEST-001_MONOREPO_E_COMPOSICAO.md",
+      "bytes": 1345,
+      "sha256": "dd7a9301ad5b490d1c879c6494ff50dfd44ca3523add04bbabd6513fb5595304",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-023",
+      "family": "RAR",
+      "source_relative": "adrs/ADR-REEST-002_SUPERSESSAO_DE_PRODUTO.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/adrs/ADR-REEST-002_SUPERSESSAO_DE_PRODUTO.md",
+      "bytes": 1215,
+      "sha256": "1e84b818d05fee71ee2815bf3464f967eb8cd738b2f5eef36f6b3fb68646c1bf",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-024",
+      "family": "RAR",
+      "source_relative": "adrs/ADR-REEST-003_IDENTIDADE_E_COMPATIBILIDADE.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/adrs/ADR-REEST-003_IDENTIDADE_E_COMPATIBILIDADE.md",
+      "bytes": 1287,
+      "sha256": "c733af147bf8cb485045668fc3776620a3fc9af0215e1dc90e8282bbb833cc14",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-025",
+      "family": "RAR",
+      "source_relative": "adrs/ADR-REEST-004_PERSISTENCIA_SEM_DESTRUICAO.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/adrs/ADR-REEST-004_PERSISTENCIA_SEM_DESTRUICAO.md",
+      "bytes": 1353,
+      "sha256": "6f8f22ebc4294376f8e37c062c8590b8a49fd351610e5f9ab1edafdcd2890bdf",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-026",
+      "family": "RAR",
+      "source_relative": "adrs/ADR-REEST-005_CONTINUIDADE_E_GATES.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/adrs/ADR-REEST-005_CONTINUIDADE_E_GATES.md",
+      "bytes": 1183,
+      "sha256": "cb4ca4df9f4b7830489fff02f949eda0c39620374f384597d46a8c42a0b527c0",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-027",
+      "family": "RAR",
+      "source_relative": "adrs/README.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/adrs/README.md",
+      "bytes": 885,
+      "sha256": "68fce5759f67005da83308383e37c5754c46760a53ac396b08733368096a1dea",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-028",
+      "family": "RAR",
+      "source_relative": "contratos/catalogo_modulos.exemplo.json",
+      "package_path": "docs/fontes/reestruturacao-v1.1/contratos/catalogo_modulos.exemplo.json",
+      "bytes": 2984,
+      "sha256": "c95d4124d9efc0b467dd821563d5e8d28d6f824166254d72f3f2db1bf30dae3e",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-029",
+      "family": "RAR",
+      "source_relative": "contratos/extensao_tecnica.exemplo.json",
+      "package_path": "docs/fontes/reestruturacao-v1.1/contratos/extensao_tecnica.exemplo.json",
+      "bytes": 508,
+      "sha256": "63bf2fb7393b22a9a7368fb50c38d24e7bd874abd6ff0e9389b69826b0aad7ff",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-030",
+      "family": "RAR",
+      "source_relative": "contratos/fundacao_neutra.exemplo.json",
+      "package_path": "docs/fontes/reestruturacao-v1.1/contratos/fundacao_neutra.exemplo.json",
+      "bytes": 489,
+      "sha256": "a29b1cc406238072ab093fab29815f554020bb3d4a67dbfbc4b029438ffaa0fe",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-031",
+      "family": "RAR",
+      "source_relative": "contratos/README.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/contratos/README.md",
+      "bytes": 2917,
+      "sha256": "6c8b624b3cf8b5af24d8fb311872b00829a56df491f8c65f643aad68f6ac4bbc",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-032",
+      "family": "RAR",
+      "source_relative": "contratos/socioeducativo.exemplo.json",
+      "package_path": "docs/fontes/reestruturacao-v1.1/contratos/socioeducativo.exemplo.json",
+      "bytes": 614,
+      "sha256": "c84792fa6e2ae290187632df65b2d9e5d0f0425bf8cab161338897380330d30d",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-033",
+      "family": "RAR",
+      "source_relative": "evidencias/fontes_publicas.json",
+      "package_path": "docs/fontes/reestruturacao-v1.1/evidencias/fontes_publicas.json",
+      "bytes": 3094,
+      "sha256": "f7e4543a8a6713c4ca976ca3b45b8e3f5a412bf4fe64e6a28fca066e77b26a08",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-034",
+      "family": "RAR",
+      "source_relative": "evidencias/repositorio_observado.json",
+      "package_path": "docs/fontes/reestruturacao-v1.1/evidencias/repositorio_observado.json",
+      "bytes": 3638,
+      "sha256": "f94b458e69e2c7728ef35810fd498ebec1162a2c9af5e5a8e376c858189b5c28",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-035",
+      "family": "RAR",
+      "source_relative": "ferramentas/README.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/ferramentas/README.md",
+      "bytes": 2206,
+      "sha256": "559716a6a9ecf906f34189af4459eef381828b3104c0e6d20dcf0e4219c7698f",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-036",
+      "family": "RAR",
+      "source_relative": "ferramentas/testar_validador.py",
+      "package_path": "docs/fontes/reestruturacao-v1.1/ferramentas/testar_validador.py",
+      "bytes": 7051,
+      "sha256": "a7fcc67060e881dac8cc58cc407618fac819169c6ef130eb541c5b664fe202da",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-037",
+      "family": "RAR",
+      "source_relative": "ferramentas/validar_pacote.py",
+      "package_path": "docs/fontes/reestruturacao-v1.1/ferramentas/validar_pacote.py",
+      "bytes": 10748,
+      "sha256": "9ebdfaa523e0819ed851367eb6b17aee4748b29ac0edb11c4730b36d86013fbf",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-038",
+      "family": "RAR",
+      "source_relative": "manifesto_pacote.json",
+      "package_path": "docs/fontes/reestruturacao-v1.1/manifesto_pacote.json",
+      "bytes": 8353,
+      "sha256": "d9adec552656d4a4961ed52b02e6b5fdbc203f6bb99420b954b1a6c7cdcf692b",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-039",
+      "family": "RAR",
+      "source_relative": "matrizes/casos_de_teste.json",
+      "package_path": "docs/fontes/reestruturacao-v1.1/matrizes/casos_de_teste.json",
+      "bytes": 32361,
+      "sha256": "c22c17fb861312822f444d5ce23c22cfe068ed10f78fb51f99f6c12b00af522c",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-040",
+      "family": "RAR",
+      "source_relative": "matrizes/inventario_inicial.json",
+      "package_path": "docs/fontes/reestruturacao-v1.1/matrizes/inventario_inicial.json",
+      "bytes": 11532,
+      "sha256": "aa50fc75981c4b93fb6282327f53c9c11ea1753e77bb27e0256ee6f36f4b2499",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-041",
+      "family": "RAR",
+      "source_relative": "matrizes/README.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/matrizes/README.md",
+      "bytes": 958,
+      "sha256": "c67d79913150992c725b9b50afa7c35d54a228eb16c5aa6b2bf1f450e2b0a291",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-042",
+      "family": "RAR",
+      "source_relative": "matrizes/requisitos.json",
+      "package_path": "docs/fontes/reestruturacao-v1.1/matrizes/requisitos.json",
+      "bytes": 8774,
+      "sha256": "ebc28f1646a022faf5fac5a38a22efcfc6ee2eb1ad98fa8b973d7a7e2142f8a3",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-043",
+      "family": "RAR",
+      "source_relative": "modelos/AGENTS_ADENDO_REFERENCIA.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/modelos/AGENTS_ADENDO_REFERENCIA.md",
+      "bytes": 1594,
+      "sha256": "d98d519b774ea54e2b6cebafc024b9e6b198106c2aeb0d6ee51446443d224770",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-044",
+      "family": "RAR",
+      "source_relative": "modelos/INVENTARIO.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/modelos/INVENTARIO.md",
+      "bytes": 879,
+      "sha256": "f9169e7f37a3bfd2d509a40ec81e1cfa438f9b28a3158898f70119c89e9d71cc",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-045",
+      "family": "RAR",
+      "source_relative": "modelos/MATRIZ_COMPATIBILIDADE.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/modelos/MATRIZ_COMPATIBILIDADE.md",
+      "bytes": 656,
+      "sha256": "476a83c9c86fd7427c4090ee9ed87c79560cf632b6aa30e63a77daa9fab8612d",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-046",
+      "family": "RAR",
+      "source_relative": "modelos/RELATORIO_INCREMENTO.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/modelos/RELATORIO_INCREMENTO.md",
+      "bytes": 1070,
+      "sha256": "c8d954f7d6b93bfbe911c551510e193eb6113f807e67543d8fd058c5234be42f",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-047",
+      "family": "RAR",
+      "source_relative": "Prompt.txt",
+      "package_path": "docs/fontes/reestruturacao-v1.1/Prompt.txt",
+      "bytes": 1084,
+      "sha256": "894e9db43821f7852d570d03c51104ebb1e4b04e7a19d535e658150a1c3a0845",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-048",
+      "family": "RAR",
+      "source_relative": "prompts/RETOMAR.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/prompts/RETOMAR.md",
+      "bytes": 1856,
+      "sha256": "9fe3ddcf482dcab5b0fe845fd2c65f49c6fd11a81bb82f19db56acb055c28478",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "RAR-049",
+      "family": "RAR",
+      "source_relative": "prompts/REVISAO_INDEPENDENTE.md",
+      "package_path": "docs/fontes/reestruturacao-v1.1/prompts/REVISAO_INDEPENDENTE.md",
+      "bytes": 1509,
+      "sha256": "3811b4213be5105f0471cacbf0800161dd69d5af140e651ba096deb3158bfe3b",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "LOCAL-001",
+      "family": "LOCAL",
+      "source_relative": ".dockerignore",
+      "package_path": "docs/fontes/workspace-2026-09-24/.dockerignore",
+      "bytes": 491,
+      "sha256": "36cd0dcf1c149c5580da2ca63ef5b537d03a79dbe81259d90bfdb591a675170d",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "LOCAL-002",
+      "family": "LOCAL",
+      "source_relative": ".editorconfig",
+      "package_path": "docs/fontes/workspace-2026-09-24/.editorconfig",
+      "bytes": 222,
+      "sha256": "93e397513db49150b55cd7ff6fd4a573a70751b6aae8ff7ae6a4a6cb6782dfbd",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "LOCAL-003",
+      "family": "LOCAL",
+      "source_relative": ".env.example",
+      "package_path": "docs/fontes/workspace-2026-09-24/.env.example",
+      "bytes": 860,
+      "sha256": "d7f9e3142f00a606f1d15c8f5090cf839f85d4ec2ca995d9110d309455c66e57",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "LOCAL-004",
+      "family": "LOCAL",
+      "source_relative": ".gitattributes",
+      "package_path": "docs/fontes/workspace-2026-09-24/.gitattributes",
+      "bytes": 181,
+      "sha256": "df58df1c0ad92a90294429666f9aa404507df59bd999285694b736e4cbc8bb75",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "LOCAL-005",
+      "family": "LOCAL",
+      "source_relative": ".gitignore",
+      "package_path": "docs/fontes/workspace-2026-09-24/.gitignore",
+      "bytes": 730,
+      "sha256": "0d3cfb49ff799f8d98b9fe78edf09c2b051711fb83d96675c34eb09396cf326c",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "LOCAL-006",
+      "family": "LOCAL",
+      "source_relative": ".prettierignore",
+      "package_path": "docs/fontes/workspace-2026-09-24/.prettierignore",
+      "bytes": 272,
+      "sha256": "5242075cb94b94fe433c4a1a20c6d696a0979e66181cbed8da0ddd3c4e476d3c",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "LOCAL-007",
+      "family": "LOCAL",
+      "source_relative": ".prettierrc.json",
+      "package_path": "docs/fontes/workspace-2026-09-24/.prettierrc.json",
+      "bytes": 154,
+      "sha256": "d21fcb51397494de5c5a0c2389406a1ac0f98d560fb2598449e064c1245f7094",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "LOCAL-008",
+      "family": "LOCAL",
+      "source_relative": "AGENTS.md",
+      "package_path": "docs/fontes/workspace-2026-09-24/AGENTS.md",
+      "bytes": 2786,
+      "sha256": "afec008a09e1364b672175e24dedd80baddede8391f3e72fff9e1c055f15ae7b",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "LOCAL-009",
+      "family": "LOCAL",
+      "source_relative": "apps/.gitkeep",
+      "package_path": "docs/fontes/workspace-2026-09-24/apps/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "LOCAL-010",
+      "family": "LOCAL",
+      "source_relative": "CONTRIBUTING.md",
+      "package_path": "docs/fontes/workspace-2026-09-24/CONTRIBUTING.md",
+      "bytes": 4220,
+      "sha256": "be7ce1fa5dbe54d05e92e959c9ef2b5b9611ada5ff88ded04de7d7cf13e2b9c5",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "LOCAL-011",
+      "family": "LOCAL",
+      "source_relative": "database/.gitkeep",
+      "package_path": "docs/fontes/workspace-2026-09-24/database/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "LOCAL-012",
+      "family": "LOCAL",
+      "source_relative": "docs/architecture/decisions/0001-base-tecnica.md",
+      "package_path": "docs/fontes/workspace-2026-09-24/docs/architecture/decisions/0001-base-tecnica.md",
+      "bytes": 4664,
+      "sha256": "4574af4e0fcbc83afcf19800f2a3c62c1af404c323f8900a2333d7498a8aa4f8",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "LOCAL-013",
+      "family": "LOCAL",
+      "source_relative": "docs/architecture/README.md",
+      "package_path": "docs/fontes/workspace-2026-09-24/docs/architecture/README.md",
+      "bytes": 11652,
+      "sha256": "560fedafe0278a64dca55a41c54861be621bff3f6cf97796396a87bad7895f72",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "LOCAL-014",
+      "family": "LOCAL",
+      "source_relative": "docs/engineering/ambiente.md",
+      "package_path": "docs/fontes/workspace-2026-09-24/docs/engineering/ambiente.md",
+      "bytes": 5782,
+      "sha256": "428479afc97aac7c96deb69e7fb8ced4379e4e271686e41a77fcbb45ea5a3957",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "LOCAL-015",
+      "family": "LOCAL",
+      "source_relative": "docs/engineering/git.md",
+      "package_path": "docs/fontes/workspace-2026-09-24/docs/engineering/git.md",
+      "bytes": 4669,
+      "sha256": "b79856ddf9f0429a6fde624f5eff5bae8ec472eea6990df335cbd19083c87393",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "LOCAL-016",
+      "family": "LOCAL",
+      "source_relative": "docs/templates/pull-request.md",
+      "package_path": "docs/fontes/workspace-2026-09-24/docs/templates/pull-request.md",
+      "bytes": 879,
+      "sha256": "51623c0469f5e4266b8ce9535f00fe7626704aae412291971b6a6904d96891f0",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "LOCAL-017",
+      "family": "LOCAL",
+      "source_relative": "infra/.gitkeep",
+      "package_path": "docs/fontes/workspace-2026-09-24/infra/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "LOCAL-018",
+      "family": "LOCAL",
+      "source_relative": "INICIAR_WISSIAN_NO_CODEX.md",
+      "package_path": "docs/fontes/workspace-2026-09-24/INICIAR_WISSIAN_NO_CODEX.md",
+      "bytes": 3841,
+      "sha256": "a3190731da5978cc8f5a4fe29351fee224646c6c2066a55f1cc49dc90b5f8259",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "LOCAL-019",
+      "family": "LOCAL",
+      "source_relative": "NOTICE.md",
+      "package_path": "docs/fontes/workspace-2026-09-24/NOTICE.md",
+      "bytes": 627,
+      "sha256": "b70fe26492a15596244a274a64d42223c1ffbee32dfd7a7236ce971828fa3788",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "LOCAL-020",
+      "family": "LOCAL",
+      "source_relative": "packages/.gitkeep",
+      "package_path": "docs/fontes/workspace-2026-09-24/packages/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "LOCAL-021",
+      "family": "LOCAL",
+      "source_relative": "PLANO_WISSIAN_OPERACAO_BASE.md",
+      "package_path": "docs/fontes/workspace-2026-09-24/PLANO_WISSIAN_OPERACAO_BASE.md",
+      "bytes": 54936,
+      "sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "LOCAL-022",
+      "family": "LOCAL",
+      "source_relative": "README.md",
+      "package_path": "docs/fontes/workspace-2026-09-24/README.md",
+      "bytes": 5973,
+      "sha256": "986151446695dbb62b50cfaf3917083dbc193a8ccbefb8b27c618ef5f10b401a",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "LOCAL-023",
+      "family": "LOCAL",
+      "source_relative": "scripts/.gitkeep",
+      "package_path": "docs/fontes/workspace-2026-09-24/scripts/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "LOCAL-024",
+      "family": "LOCAL",
+      "source_relative": "SECURITY.md",
+      "package_path": "docs/fontes/workspace-2026-09-24/SECURITY.md",
+      "bytes": 2267,
+      "sha256": "1e8dd1f8cbe46e98e57a963fc57e55d6253a6ee1e247c0e717a7f54df4c7a598",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "LOCAL-025",
+      "family": "LOCAL",
+      "source_relative": "tests/.gitkeep",
+      "package_path": "docs/fontes/workspace-2026-09-24/tests/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    },
+    {
+      "id": "LOCAL-026",
+      "family": "LOCAL",
+      "source_relative": "Wissian-Guia-Fundador-da-Plataforma.md",
+      "package_path": "docs/fontes/workspace-2026-09-24/Wissian-Guia-Fundador-da-Plataforma.md",
+      "bytes": 37548,
+      "sha256": "5e402556313afa90a188aaf425543fc8d5e1c5e03aca2fd747083f8c674b10c7",
+      "inspection": "read_complete",
+      "treatment": "preserved_exact_reference_not_current_instruction"
+    }
+  ],
+  "attachment_aliases": {
+    "fundador": {
+      "name": "Wissian-Guia-Fundador-da-Plataforma.md",
+      "bytes": 37548,
+      "sha256": "5e402556313afa90a188aaf425543fc8d5e1c5e03aca2fd747083f8c674b10c7",
+      "matches_local": true
+    },
+    "inicio": {
+      "name": "INICIAR_WISSIAN_NO_CODEX.md",
+      "bytes": 3841,
+      "sha256": "a3190731da5978cc8f5a4fe29351fee224646c6c2066a55f1cc49dc90b5f8259",
+      "matches_local": true
+    },
+    "operacao": {
+      "name": "PLANO_WISSIAN_OPERACAO_BASE.md",
+      "bytes": 54936,
+      "sha256": "b38b0ecc222ed544a14b122441a2106e683a1a385e437ec43e9f59b2db41a96c",
+      "matches_local": true
+    }
+  }
+}

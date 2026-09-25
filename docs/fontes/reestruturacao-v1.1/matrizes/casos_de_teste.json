@@ -1,0 +1,918 @@
+{
+  "schema_version": 1,
+  "kind": "planned_application_test_cases_not_executed",
+  "cases": [
+    {
+      "id": "T001",
+      "requirements": [
+        "REQ01"
+      ],
+      "title": "Snapshot sem perda de WIP",
+      "preconditions": "Checkout com alterações próprias e alheias identificadas.",
+      "action": "Inventariar status/staged/unstaged/untracked/worktrees antes e depois da preparação.",
+      "expected": "Nada é apagado, commitado ou sobrescrito indevidamente; preservação documentada.",
+      "evidence_kind": "Git/diff inspecionado",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T002",
+      "requirements": [
+        "REQ01",
+        "REQ02"
+      ],
+      "title": "Baseline não presume main",
+      "preconditions": "Refs locais/remotas atuais disponíveis ou limitação registrada.",
+      "action": "Comparar ancestry e conteúdo relevante de main/integration/Base44/local.",
+      "expected": "Baseline inclui trabalho requerido; SHAs antigos não são usados para reset.",
+      "evidence_kind": "Git/compare + revisão",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T003",
+      "requirements": [
+        "REQ02"
+      ],
+      "title": "Mudança Base44 já absorvida",
+      "preconditions": "Exemplo real de mudança na origem e integração.",
+      "action": "Rastrear adoção existente e testar o comportamento reaproveitado.",
+      "expected": "Sem reaplicação/duplicação; intenção UX e segurança preservadas.",
+      "evidence_kind": "Diff + teste funcional",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T004",
+      "requirements": [
+        "REQ03"
+      ],
+      "title": "ProductBoundary por composição",
+      "preconditions": "Consumidores das três strings identificados.",
+      "action": "Executar composição socio e neutra após extração do contrato.",
+      "expected": "Socio preserva superfícies; core não exige PEMSE; aliases necessários funcionam.",
+      "evidence_kind": "Teste unitário/contrato",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T005",
+      "requirements": [
+        "REQ03"
+      ],
+      "title": "Gates antigos preservados",
+      "preconditions": "Testes de escopo/direção com expectativas antigas.",
+      "action": "Revisar alterações nos validadores e executar negativos equivalentes.",
+      "expected": "Nenhum skip/remoção deixa de proteger permissão, privacidade ou offline.",
+      "evidence_kind": "Diff + testes negativos",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T006",
+      "requirements": [
+        "REQ04"
+      ],
+      "title": "Grafo de dependências core",
+      "preconditions": "Projetos/imports do core definidos.",
+      "action": "Gerar/verificar dependências diretas e transitivas .NET/TS.",
+      "expected": "Nenhuma dependência alcança implementação socio/ClubAL/cliente.",
+      "evidence_kind": "Build e teste de arquitetura",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T007",
+      "requirements": [
+        "REQ04",
+        "REQ28"
+      ],
+      "title": "Build sem vertical",
+      "preconditions": "Host neutro e dependências próprias disponíveis.",
+      "action": "Construir sem referência/registro do módulo socioeducativo.",
+      "expected": "Build e fluxo neutro passam; remover vertical não exige stub do domínio no core.",
+      "evidence_kind": "Build isolado + execução",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T008",
+      "requirements": [
+        "REQ05"
+      ],
+      "title": "Ciclo de módulo rejeitado",
+      "preconditions": "Catálogo de módulos de teste isolado.",
+      "action": "Introduzir ciclo A→B→A em fixture.",
+      "expected": "Inicialização recusa composição com erro controlado; sem execução parcial.",
+      "evidence_kind": "Teste de contrato negativo",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T009",
+      "requirements": [
+        "REQ05"
+      ],
+      "title": "Dependência ou versão ausente",
+      "preconditions": "Módulo requerido por composição sintética.",
+      "action": "Remover dependência ou fornecer versão não suportada.",
+      "expected": "Falha explícita/fechada; não ativa todos nem escolhe outro produto.",
+      "evidence_kind": "Teste de contrato negativo",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T010",
+      "requirements": [
+        "REQ05"
+      ],
+      "title": "ID duplicado/manifesto malformado",
+      "preconditions": "Fixture de manifesto.",
+      "action": "Enviar duplicatas/tipos inválidos/campos desconhecidos críticos.",
+      "expected": "Validação falha antes de registrar rotas/jobs; sem queda com secrets.",
+      "evidence_kind": "Teste unitário de schema",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T011",
+      "requirements": [
+        "REQ06"
+      ],
+      "title": "URL direta de módulo ausente",
+      "preconditions": "Composição neutra com usuário autorizado ao core.",
+      "action": "Chamar rotas socio profundas diretamente, sem UI.",
+      "expected": "Ausência/negação conforme contrato; nenhum dado ou side effect do módulo.",
+      "evidence_kind": "API real de laboratório",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T012",
+      "requirements": [
+        "REQ06"
+      ],
+      "title": "Jobs e hubs excluídos",
+      "preconditions": "Registro de handlers/subscriptions do cenário neutro.",
+      "action": "Inspecionar montagem e tentar mensagem/evento de módulo ausente.",
+      "expected": "Nenhum processamento socio nem assinatura global indevida.",
+      "evidence_kind": "Integração/registro real",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T013",
+      "requirements": [
+        "REQ06",
+        "REQ23"
+      ],
+      "title": "Artefato neutro sem nicho",
+      "preconditions": "Build de composição neutra.",
+      "action": "Inspecionar referências, chunks, assets, seeds e migrações novas selecionadas.",
+      "expected": "Sem negócios socio/clientes; exceções legadas delimitadas fora do core.",
+      "evidence_kind": "Inspeção de artefato",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T014",
+      "requirements": [
+        "REQ07"
+      ],
+      "title": "ID de outra organização",
+      "preconditions": "Organizações fictícias A e B, dados distintos.",
+      "action": "Usuário A tenta GET/POST sobre recurso B por ID conhecido.",
+      "expected": "Negado sem conteúdo, alteração ou vazamento de existência indevido.",
+      "evidence_kind": "API + PostgreSQL reais",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T015",
+      "requirements": [
+        "REQ08"
+      ],
+      "title": "Unidade fora do escopo",
+      "preconditions": "Usuário limitado a A1; A2 existente.",
+      "action": "Alterar unidade via rota/header/payload e chamar operação.",
+      "expected": "Servidor nega; não confia no selector/ID enviado pelo browser.",
+      "evidence_kind": "API + PostgreSQL reais",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T016",
+      "requirements": [
+        "REQ07",
+        "REQ08"
+      ],
+      "title": "Usuário multi-organização",
+      "preconditions": "Mesma pessoa sintética com memberships A/B distintas.",
+      "action": "Trocar contexto durante consulta e operação pendente.",
+      "expected": "Autorização atual reavaliada; rascunho não é aplicado no contexto errado.",
+      "evidence_kind": "Browser + API reais",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T017",
+      "requirements": [
+        "REQ08"
+      ],
+      "title": "Produto diferente",
+      "preconditions": "Dois contextos de produto sintéticos válidos.",
+      "action": "Reutilizar sessão/token/link/cache em produto não autorizado.",
+      "expected": "Sem ampliação de escopo, dados cruzados ou autoridade herdada.",
+      "evidence_kind": "Contrato + API/cache",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T018",
+      "requirements": [
+        "REQ09"
+      ],
+      "title": "Somente leitor não escreve",
+      "preconditions": "Perfil Consulta/somente leitura.",
+      "action": "Chamar escrita/exportação restrita diretamente.",
+      "expected": "Escrita/exportação negada conforme contrato, não apenas botão ausente.",
+      "evidence_kind": "API real de laboratório",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T019",
+      "requirements": [
+        "REQ09"
+      ],
+      "title": "Admin de plataforma não é operador",
+      "preconditions": "Identidade técnica de plataforma sem grant operacional.",
+      "action": "Tentar ler/editar conteúdo institucional.",
+      "expected": "Acesso operacional negado; control plane não concede data plane.",
+      "evidence_kind": "API + autorização",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T020",
+      "requirements": [
+        "REQ09"
+      ],
+      "title": "Suporte JIT expira/revoga",
+      "preconditions": "Concessão sintética com finalidade/escopo/tempo.",
+      "action": "Tentar ação fora de propósito, depois de expirar ou após revogação.",
+      "expected": "Negado; concessão não vira membership; auditoria sanitizada preservada.",
+      "evidence_kind": "Integração de sessão e banco",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T021",
+      "requirements": [
+        "REQ09",
+        "REQ31"
+      ],
+      "title": "MFA/CSRF preservados",
+      "preconditions": "Operação privilegiada protegida na baseline.",
+      "action": "Omitir CSRF ou evidência de MFA vigente.",
+      "expected": "Rejeição conforme política; nada é persistido.",
+      "evidence_kind": "Teste HTTP negativo",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T022",
+      "requirements": [
+        "REQ10"
+      ],
+      "title": "Upgrade de fixture antiga",
+      "preconditions": "Banco PostgreSQL exclusivamente sintético na versão baseline.",
+      "action": "Aplicar plano de migração revisado.",
+      "expected": "Dados/IDs/histórico/índices/políticas preservados; nenhuma perda inesperada.",
+      "evidence_kind": "Migração + consultas/assertions",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T023",
+      "requirements": [
+        "REQ10"
+      ],
+      "title": "Bootstrap novo e reaplicação",
+      "preconditions": "Banco sintético novo e scripts aprovados.",
+      "action": "Inicializar e repetir migração aplicável.",
+      "expected": "Schema coerente e repetição segura; nenhuma duplicata ou grant adicional.",
+      "evidence_kind": "PostgreSQL real de laboratório",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T024",
+      "requirements": [
+        "REQ10",
+        "REQ11"
+      ],
+      "title": "Falha durante mudança",
+      "preconditions": "Cenário de falha controlada em banco sintético.",
+      "action": "Interromper ponto seguro de teste e executar recuperação planejada.",
+      "expected": "Estado parcial identificado e recuperável sem corrupção silenciosa.",
+      "evidence_kind": "Injeção de falha local",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T025",
+      "requirements": [
+        "REQ11"
+      ],
+      "title": "Backup e restauração",
+      "preconditions": "Snapshot sintético e destino separado.",
+      "action": "Restaurar e executar aplicação/negativos na cópia.",
+      "expected": "Integridade, autoridade, histórico e funcionalidade confirmados.",
+      "evidence_kind": "Restore real de laboratório",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T026",
+      "requirements": [
+        "REQ12"
+      ],
+      "title": "Rebranding conserva sessão",
+      "preconditions": "Sessão e cookies legados sintéticos válidos.",
+      "action": "Trocar somente nome exibido e executar navegação/operação protegida.",
+      "expected": "Sessão/políticas permanecem; cookies não são alterados por cosmética.",
+      "evidence_kind": "Browser/API reais",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T027",
+      "requirements": [
+        "REQ12"
+      ],
+      "title": "Pareamento e identidades",
+      "preconditions": "Dispositivo/deploy sintético já registrado.",
+      "action": "Atualizar composição/apresentação e reconectar.",
+      "expected": "IDs/credenciais/assinaturas preservados; não há re-pairing silencioso.",
+      "evidence_kind": "Simulador/processo local",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T028",
+      "requirements": [
+        "REQ12",
+        "REQ26"
+      ],
+      "title": "Paths e dados Windows",
+      "preconditions": "Distribuição legada de laboratório Windows.",
+      "action": "Atualizar artefato e iniciar pelo launcher.",
+      "expected": "Dados são encontrados; IDs do instalador/paths não causam instalação paralela inesperada.",
+      "evidence_kind": "Windows real de laboratório",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T029",
+      "requirements": [
+        "REQ13"
+      ],
+      "title": "Fluxo operacional ponta a ponta",
+      "preconditions": "Usuários e organização sintéticos com permissões delimitadas.",
+      "action": "Editar rotina, publicar, visualizar no Player e na Consulta.",
+      "expected": "Revisões/autoridade coerentes; projeção minimizada e leitores sem escrita.",
+      "evidence_kind": "Browser + API + PostgreSQL",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T030",
+      "requirements": [
+        "REQ13",
+        "REQ31"
+      ],
+      "title": "Cenário não é ocupação confirmada",
+      "preconditions": "Dados sintéticos de planejamento e mapa confirmado.",
+      "action": "Planejar/validar alteração sem confirmar execução.",
+      "expected": "Mapa confirmado não muda antes do fluxo autorizado.",
+      "evidence_kind": "Integração de domínio/API",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T031",
+      "requirements": [
+        "REQ13",
+        "REQ09"
+      ],
+      "title": "Segregação de aprovação",
+      "preconditions": "Workflow existente que exige dois responsáveis.",
+      "action": "Tentar autoaprovação indevida e sequência incompleta.",
+      "expected": "Maker-checker e transições legítimas preservados.",
+      "evidence_kind": "API + estado persistido",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T032",
+      "requirements": [
+        "REQ14"
+      ],
+      "title": "Segundo cliente por configuração",
+      "preconditions": "A funciona; configuração sintética B distinta.",
+      "action": "Configurar B pelo mecanismo permitido sem alterar código de domínio.",
+      "expected": "Mesma implementação; diferença legítima por configuração; isolamento testado.",
+      "evidence_kind": "Integração funcional",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T033",
+      "requirements": [
+        "REQ15"
+      ],
+      "title": "ClubAL futuro não é produto ativo",
+      "preconditions": "Composição socio e catálogo de escopos.",
+      "action": "Inspecionar ofertas/menus/manifests/deploys.",
+      "expected": "ClubAL reservado e não contratável; recursos atuais de telas não desaparecem.",
+      "evidence_kind": "Revisão + teste de composição",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T034",
+      "requirements": [
+        "REQ16"
+      ],
+      "title": "Marca institucional e preferência",
+      "preconditions": "Dois clientes, temas/preferências diferentes.",
+      "action": "Alterar apresentação do produto e alternar contextos.",
+      "expected": "Marca correta e preferências preservadas; nenhuma alteração de autoridade.",
+      "evidence_kind": "Browser + estado",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T035",
+      "requirements": [
+        "REQ16",
+        "REQ27"
+      ],
+      "title": "Rascunho protegido",
+      "preconditions": "Formulário com alterações não salvas.",
+      "action": "Trocar módulo, contexto ou atualização de shell.",
+      "expected": "Aviso/recuperação conforme contrato; nada é salvo em contexto diferente.",
+      "evidence_kind": "Browser real",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T036",
+      "requirements": [
+        "REQ17"
+      ],
+      "title": "Rotinas offline",
+      "preconditions": "Publicação sintética autorizada, válida e já recebida.",
+      "action": "Interromper rede e reiniciar canal conforme suporte atual.",
+      "expected": "Conteúdo permitido continua conforme TTL/integridade; sem novos privilégios.",
+      "evidence_kind": "Browser/processo offline",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T037",
+      "requirements": [
+        "REQ17"
+      ],
+      "title": "Consulta expira e logout limpa escopo",
+      "preconditions": "Conteúdo público/permitido em cache; dado restrito separado.",
+      "action": "Expirar publicação/sessão e efetuar logout/troca de cliente.",
+      "expected": "Nenhum cache restrito persiste/exibe; shell não é confundido com dados.",
+      "evidence_kind": "Browser + cache/IndexedDB",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T038",
+      "requirements": [
+        "REQ18"
+      ],
+      "title": "Flag não concede licença/role",
+      "preconditions": "Módulo incluído, mas usuário/cliente sem direito aplicável.",
+      "action": "Alterar flag ou manifesto enviado pelo navegador.",
+      "expected": "Nenhuma permissão/grant emerge; negação server-side.",
+      "evidence_kind": "API + contrato negativo",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T039",
+      "requirements": [
+        "REQ19"
+      ],
+      "title": "Sem ações externas não autorizadas",
+      "preconditions": "Registros de comandos e diff do incremento.",
+      "action": "Revisar operações, scripts, endpoints e recursos criados.",
+      "expected": "Nenhum push/deploy/compra/dado real; dry-run não confundido com publicação.",
+      "evidence_kind": "Revisão de evidência",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T040",
+      "requirements": [
+        "REQ20"
+      ],
+      "title": "Retomada coerente",
+      "preconditions": "Checkpoint no mecanismo C7/portátil existente.",
+      "action": "Interromper em marco seguro e retomar seguindo o protocolo.",
+      "expected": "Próximo passo e estado reais recuperados; sem diário paralelo.",
+      "evidence_kind": "Ensaio de retomada",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T041",
+      "requirements": [
+        "REQ20"
+      ],
+      "title": "Fallback de continuidade",
+      "preconditions": "C7 indisponível em condição de teste ou acesso ausente.",
+      "action": "Usar instrução local/fallback e registrar limitação.",
+      "expected": "Trabalho verificável prossegue sem inventar leitura do cofre.",
+      "evidence_kind": "Revisão do procedimento",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T042",
+      "requirements": [
+        "REQ21"
+      ],
+      "title": "Registro de testes honesto",
+      "preconditions": "Execuções unitárias, mockadas e integradas distintas.",
+      "action": "Confrontar relatório com comandos/saídas/artefatos.",
+      "expected": "Estados/cobertura precisos; nenhum teste planejado marcado PASS.",
+      "evidence_kind": "Auditoria de evidência",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T043",
+      "requirements": [
+        "REQ22"
+      ],
+      "title": "Cliente gerado coerente",
+      "preconditions": "API compilada e gerador existente.",
+      "action": "Gerar OpenAPI/tipos e executar consumers impactados.",
+      "expected": "Sem patch manual enganoso; schema/rotas/DTOs compatíveis ou adapter testado.",
+      "evidence_kind": "Geração + build + integração",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T044",
+      "requirements": [
+        "REQ22",
+        "REQ31"
+      ],
+      "title": "Publicação inválida/incompatível",
+      "preconditions": "Payload/hash/schema assinados ou verificados na baseline.",
+      "action": "Corromper conteúdo ou fornecer versão não suportada.",
+      "expected": "Rejeição segura e fallback permitido; nada promove conteúdo indevido.",
+      "evidence_kind": "Teste de contrato + integração",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T045",
+      "requirements": [
+        "REQ23"
+      ],
+      "title": "Higiene de artefato",
+      "preconditions": "Artefato local candidato.",
+      "action": "Verificar conteúdo e padrões de dados/secrets com escopo delimitado.",
+      "expected": "Não inclui C7/.codex/AGENTS operacionais/dados reais/tokens.",
+      "evidence_kind": "Inspeção local de artefato",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T046",
+      "requirements": [
+        "REQ24"
+      ],
+      "title": "Capacidade opcional realmente opcional",
+      "preconditions": "Core e cenário sem Devices/Scheduling quando não exigidos.",
+      "action": "Construir/executar sem capability selecionada.",
+      "expected": "Núcleo continua; não há bootstrap oculto dependente dela.",
+      "evidence_kind": "Build + smoke",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T047",
+      "requirements": [
+        "REQ24"
+      ],
+      "title": "Agenda com autoridade única",
+      "preconditions": "Produto compõe Scheduling/publicação.",
+      "action": "Atualizar item e observar consumidores.",
+      "expected": "Sem store paralelo/dual-write; revisão e fonte única preservadas.",
+      "evidence_kind": "API/PostgreSQL/consumidores",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T048",
+      "requirements": [
+        "REQ25"
+      ],
+      "title": "Texto longo e chave ausente",
+      "preconditions": "Infraestrutura de textos existente e fixture sintética.",
+      "action": "Exercitar rótulos longos e fallback definido.",
+      "expected": "Sem overflow/perda de compreensão; IDs não dependem de texto.",
+      "evidence_kind": "Browser + unitário",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T049",
+      "requirements": [
+        "REQ25"
+      ],
+      "title": "Fuso e recorrência",
+      "preconditions": "Unidade sintética com fuso diferente do servidor.",
+      "action": "Exibir/alterar recorrência perto de limite de dia.",
+      "expected": "Semântica local e instantes preservados; sem reescrita de datas históricas.",
+      "evidence_kind": "Teste de domínio + UI",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T050",
+      "requirements": [
+        "REQ26"
+      ],
+      "title": "Legado sem rede e sem escrita",
+      "preconditions": "Sandbox Windows ou ambiente suportado do legado.",
+      "action": "Exercitar startup/self-test/limitação de rede e disco.",
+      "expected": "Fallback seguro; sem dependência nova de cloud/login para Rotinas.",
+      "evidence_kind": "Runtime legado real",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T051",
+      "requirements": [
+        "REQ26"
+      ],
+      "title": "Fonte/portable/instalador",
+      "preconditions": "Artefatos reconstruídos no ambiente correto.",
+      "action": "Executar validadores de distribuição e fluxos mínimos.",
+      "expected": "Paridade do escopo testado; não declarar plataformas não exercitadas.",
+      "evidence_kind": "Build/distribuição Windows",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T052",
+      "requirements": [
+        "REQ27"
+      ],
+      "title": "Teclado e reflow",
+      "preconditions": "UI neutra e socio com fixtures.",
+      "action": "Navegar só por teclado e em 320px/desktop; avaliar zoom quando possível.",
+      "expected": "Foco/ações/conteúdo legíveis, sem overflow impeditivo.",
+      "evidence_kind": "Browser e screenshots inspecionados",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T053",
+      "requirements": [
+        "REQ27"
+      ],
+      "title": "UI neutra útil",
+      "preconditions": "Composição sem domínio socio.",
+      "action": "Entrar/selecionar escopo autorizado/preferências.",
+      "expected": "Fluxo funciona sem menus/ajuda/assets de nicho nem links quebrados.",
+      "evidence_kind": "Browser + API neutra",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T054",
+      "requirements": [
+        "REQ28"
+      ],
+      "title": "Extensão fictícia sem copiar core",
+      "preconditions": "Contrato de módulo e composição neutra.",
+      "action": "Adicionar/remover módulo técnico mínimo e atualizar componente comum.",
+      "expected": "Consumidores usam mesma implementação; core não conhece a extensão.",
+      "evidence_kind": "Build/contrato/integração",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T055",
+      "requirements": [
+        "REQ29"
+      ],
+      "title": "Toolchain e lockfiles",
+      "preconditions": "Baseline de SDK/lockfiles/dependências.",
+      "action": "Comparar diff e rodar restore/build aprovados.",
+      "expected": "Sem atualização massiva ou framework novo; mudanças mínimas justificadas.",
+      "evidence_kind": "Diff + restore/build",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T056",
+      "requirements": [
+        "REQ30"
+      ],
+      "title": "Marca/licenças sem alegações falsas",
+      "preconditions": "Inventário de assets/dependências e documentos comerciais.",
+      "action": "Revisar naming, copyright e avisos.",
+      "expected": "Nome provisório; licenças mantidas; nenhuma exclusividade jurídica inventada.",
+      "evidence_kind": "Revisão documental/técnica",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T057",
+      "requirements": [
+        "REQ31"
+      ],
+      "title": "Idempotência e replay",
+      "preconditions": "Operação com chave idempotente/revisão já existente.",
+      "action": "Repetir comando e reordenar resposta em cenário controlado.",
+      "expected": "Não duplica operação nem troca causa/escopo; estado ambíguo reconciliável.",
+      "evidence_kind": "API/PostgreSQL concorrência",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T058",
+      "requirements": [
+        "REQ31"
+      ],
+      "title": "Concorrência e revogação em curso",
+      "preconditions": "Duas sessões sintéticas e operação versionada.",
+      "action": "Conflitar alterações e revogar autoridade antes da confirmação.",
+      "expected": "Revalidação/revisão rejeitam gravação indevida; sem perda silenciosa.",
+      "evidence_kind": "Integração concorrente",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T059",
+      "requirements": [
+        "REQ32"
+      ],
+      "title": "Handoff por gate",
+      "preconditions": "Matriz preenchida com evidências reais.",
+      "action": "Revisar todos os requisitos críticos e pendências externas.",
+      "expected": "Somente escopo demonstrado concluído; sem aprovação humana/produção inferida.",
+      "evidence_kind": "Revisão final independente",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "id": "T060",
+      "requirements": [
+        "REQ32",
+        "REQ21"
+      ],
+      "title": "Regressão de desempenho contextualizada",
+      "preconditions": "Mesmo ambiente e dataset antes/depois.",
+      "action": "Medir operações impactadas, startup/bundle/memória quando disponíveis.",
+      "expected": "Resultados comparáveis registrados; regressão material analisada, sem números inventados.",
+      "evidence_kind": "Medição de laboratório",
+      "status": "NOT_RUN",
+      "actual_command": null,
+      "exit_code": null,
+      "evidence_path": null
+    }
+  ]
+}

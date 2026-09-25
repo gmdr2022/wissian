@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "reference_only": true,
+  "grants_authority": false,
+  "runtime_activation": false,
+  "compositions": [
+    {
+      "id": "neutral",
+      "modules": [
+        "core"
+      ],
+      "goal": "provar Core sem operacional/vertical"
+    },
+    {
+      "id": "admin-first-cycle",
+      "modules": [
+        "core",
+        "documents",
+        "counterparties",
+        "fiscal-records",
+        "finance",
+        "monthly-close"
+      ],
+      "goal": "primeiro ciclo E1-E3, tenant ainda requer permissao/ativacao"
+    },
+    {
+      "id": "socio-reference",
+      "modules": [
+        "core",
+        "socioeducativo"
+      ],
+      "goal": "composicao de fronteira; nao representa completude do produto"
+    },
+    {
+      "id": "display-reference",
+      "modules": [
+        "core",
+        "devices",
+        "displays",
+        "clubal-telas"
+      ],
+      "goal": "separacao tecnica de exemplo, nao produto ativado"
+    },
+    {
+      "id": "admin-continuity-reference",
+      "modules": [
+        "core",
+        "documents",
+        "counterparties",
+        "fiscal-records",
+        "finance",
+        "monthly-close",
+        "continuity"
+      ],
+      "goal": "M5-CO: referência de revisão/passagem mensal; não ativa módulo nem concede acesso"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "observed_on": "2026-09-22",
+  "repository": "gmdr2022/clubal",
+  "mode": "read_only_partial_remote_inspection",
+  "repository_changed": false,
+  "application_tests_executed": false,
+  "local_workspace_inspected": false,
+  "refs": {
+    "main": "8ac5f093092ba4afef4bea813562a9c985dd96b3",
+    "integration/base44-main": "75f1fc34624dfb39beef57475d4e619303dcfcee",
+    "base44/setup-32dcb42e": "46370e599c021c52ee9734249b438f4a664ab33b"
+  },
+  "comparison": {
+    "base": "main",
+    "head": "integration/base44-main",
+    "ahead_by": 27,
+    "behind_by": 0,
+    "status": "ahead",
+    "full_diff_reviewed": false
+  },
+  "evidence": [
+    {
+      "id": "E01",
+      "title": "Refs e comparação",
+      "url": "https://api.github.com/repos/gmdr2022/clubal/compare/8ac5f093092ba4afef4bea813562a9c985dd96b3...75f1fc34624dfb39beef57475d4e619303dcfcee?per_page=1&page=2",
+      "scope": "Metadados da comparação; ahead=27; behind=0; não foi revisão de todos os diffs."
+    },
+    {
+      "id": "E02",
+      "title": "Instruções locais",
+      "url": "https://github.com/gmdr2022/clubal/blob/75f1fc34624dfb39beef57475d4e619303dcfcee/AGENTS.md",
+      "scope": "Linhas 1–160 solicitadas; arquivo retornado integralmente."
+    },
+    {
+      "id": "E03",
+      "title": "Continuidade portátil",
+      "url": "https://github.com/gmdr2022/clubal/blob/75f1fc34624dfb39beef57475d4e619303dcfcee/ops/runtime/ACTIVE_SLICE.md",
+      "scope": "Linhas 1–140; relatos históricos não reexecutados."
+    },
+    {
+      "id": "E04",
+      "title": "Arquitetura legado",
+      "url": "https://github.com/gmdr2022/clubal/blob/75f1fc34624dfb39beef57475d4e619303dcfcee/docs/01_ARCHITECTURE_CURRENT.md",
+      "scope": "Linhas 1–200; descrição parcial frente ao OWM atual."
+    },
+    {
+      "id": "E05",
+      "title": "Fronteira de produto",
+      "url": "https://github.com/gmdr2022/clubal/blob/75f1fc34624dfb39beef57475d4e619303dcfcee/src/backend/ClubAL.Domain/ProductBoundary.cs",
+      "scope": "Arquivo completo: lista global de três nomes PEMSE."
+    },
+    {
+      "id": "E06",
+      "title": "Bootstrap da API",
+      "url": "https://github.com/gmdr2022/clubal/blob/75f1fc34624dfb39beef57475d4e619303dcfcee/src/backend/ClubAL.Api/Program.cs",
+      "scope": "Linhas 1–170; não cobre todos os endpoints."
+    },
+    {
+      "id": "E07",
+      "title": "Scripts SPA",
+      "url": "https://github.com/gmdr2022/clubal/blob/75f1fc34624dfb39beef57475d4e619303dcfcee/src/web/operador/package.json",
+      "scope": "Arquivo completo; comandos não executados."
+    },
+    {
+      "id": "E08",
+      "title": "Validador integrado OWM",
+      "url": "https://github.com/gmdr2022/clubal/blob/75f1fc34624dfb39beef57475d4e619303dcfcee/scripts/owm/Invoke-OwmFoundationValidation.ps1",
+      "scope": "Linhas 1–175 solicitadas; script retornado integralmente."
+    },
+    {
+      "id": "E09",
+      "title": "Projetos backend",
+      "url": "https://api.github.com/repos/gmdr2022/clubal/contents/src/backend?ref=75f1fc34624dfb39beef57475d4e619303dcfcee",
+      "scope": "Listagem de projetos; não análise de dependências."
+    },
+    {
+      "id": "E10",
+      "title": "Domínio",
+      "url": "https://api.github.com/repos/gmdr2022/clubal/git/trees/812c6e90872011037a273a4411ee93d91d93bd22",
+      "scope": "Árvore não recursiva; truncated=false."
+    },
+    {
+      "id": "E11",
+      "title": "Infraestrutura",
+      "url": "https://api.github.com/repos/gmdr2022/clubal/git/trees/7b30b6aeff82fd06ec1e3ed95c7c08a3cd16ba74",
+      "scope": "Árvore não recursiva; truncated=false; conteúdos não integralmente lidos."
+    }
+  ]
+}

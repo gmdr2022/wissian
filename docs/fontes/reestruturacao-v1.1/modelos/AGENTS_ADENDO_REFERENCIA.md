@@ -1,0 +1,7 @@
+# Referência de adendo — não substituir AGENTS automaticamente
+
+Após ler o AGENTS efetivo e os escopos aninhados, incorporar somente a diferença de direção abaixo, adaptando à estrutura atual. Não copiar todo este pacote nem remover políticas de segurança, C7, distribuição e operação.
+
+> Direção vigente: o repositório passa a abrigar fundação tecnológica privada, capacidades compartilhadas opcionais e produtos especializados por composição. Wissian é a identidade escolhida para a plataforma-base da Fultuma, cuja empresa proprietária definida por Gui é Fultuma Tech Ltda; primeiro produto é socioeducativo independente do PEMSE, com nome comercial pendente; ClubAL é reservado para clubes. Isso substitui a antiga regra de produto único e de três módulos formais universais, preservando Operação/Rotinas/Consulta como experiências socioeducativas, seus contratos de autoridade/leitura/publicação e todo gate de segurança, offline, humano, institucional e produção. Não criar fork por cliente, trocar stack ou renomear identificadores persistidos por cosmética. C7 e ACTIVE_SLICE mantêm os papéis atuais de continuidade. Executar alterações em incrementos testáveis, registrar resultados reais e respeitar proibições de custo, deploy, dados reais e destruição.
+
+Referenciar os contratos duráveis que forem incorporados ao repositório. Se o ambiente tratar AGENTS como instrução não modificável, registrar o conflito e a direção no relatório, sem alegar que o arquivo foi atualizado. A orientação superior do ambiente prevalece.

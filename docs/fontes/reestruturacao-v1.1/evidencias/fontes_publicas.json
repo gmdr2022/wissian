@@ -1,0 +1,65 @@
+{
+  "checked_on": "2026-09-22",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Microsoft — multitenant deployment/configuration",
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/guide/multitenant/approaches/deployment-configuration",
+      "application": "Isolamento, implantação consistente e distinção entre flags e entitlements. Não exige Azure."
+    },
+    {
+      "id": "S02",
+      "title": "Microsoft — aplicar migrations EF Core",
+      "url": "https://learn.microsoft.com/pt-br/ef/core/managing-schemas/migrations/applying",
+      "application": "Inspeção/teste de SQL e riscos de estratégias de implantação. Não autoriza produção."
+    },
+    {
+      "id": "S03",
+      "title": "OWASP — Authorization Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+      "application": "Autorização por requisição, privilégio mínimo e testes negativos."
+    },
+    {
+      "id": "S04",
+      "title": "GitHub — criar repositório a partir de template",
+      "url": "https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template",
+      "application": "Template inicia novo repositório; não é mecanismo de atualização compartilhada."
+    },
+    {
+      "id": "S05",
+      "title": "ANPD — dados de crianças e adolescentes",
+      "url": "https://www.gov.br/anpd/pt-br/assuntos/noticias/anpd-divulga-enunciado-sobre-o-tratamento-de-dados-pessoais-de-criancas-e-adolescentes",
+      "application": "Notícia de 24/05/2023 sobre melhor interesse e hipóteses legais; não é análise jurídica do SaaS."
+    },
+    {
+      "id": "S06",
+      "title": "Cloudflare — pricing de Pages Functions",
+      "url": "https://developers.cloudflare.com/pages/functions/pricing/",
+      "application": "Diferencia entrega estática e execução Functions; não dimensiona o backend deste projeto."
+    },
+    {
+      "id": "S07",
+      "title": "Cloudflare — framework guides",
+      "url": "https://developers.cloudflare.com/pages/framework-guides/",
+      "application": "Orientação atual para novos projetos; não motivação para migrar o ClubAL existente."
+    },
+    {
+      "id": "S08",
+      "title": "Cloudflare — Git integration",
+      "url": "https://developers.cloudflare.com/pages/get-started/git-integration/",
+      "application": "Integração/publicação a partir de Git; visibilidade da origem não é política de acesso do site."
+    },
+    {
+      "id": "S09",
+      "title": "INPI — guia básico de marcas",
+      "url": "https://www.gov.br/inpi/pt-br/servicos/marcas/guia-basico",
+      "application": "Busca de semelhantes e registro; não houve liberação da marca Wissian."
+    },
+    {
+      "id": "S10",
+      "title": "INPI — perguntas sobre programas de computador",
+      "url": "https://www.gov.br/inpi/pt-br/acesso-a-informacao/perguntas-frequentes/programas-de-computador",
+      "application": "Orientação de registro/titularidade; não determina titularidade deste projeto."
+    }
+  ]
+}

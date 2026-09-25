@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "reference_only": true,
+  "kind": "module_catalog_proposal_not_runtime_configuration",
+  "modules": [
+    {
+      "id": "core.tenancy",
+      "version": "0.1.0-example",
+      "layer": "core",
+      "requires": [],
+      "notes": "Organizações e unidades; reutilizar identidade e escopo existentes."
+    },
+    {
+      "id": "core.audit",
+      "version": "0.1.0-example",
+      "layer": "core",
+      "requires": [
+        "core.tenancy"
+      ],
+      "notes": "Envelope transversal; os payloads específicos permanecem no módulo."
+    },
+    {
+      "id": "core.identity",
+      "version": "0.1.0-example",
+      "layer": "core",
+      "requires": [
+        "core.tenancy",
+        "core.audit"
+      ],
+      "notes": "Autenticação e autoridade; não cria permissões automaticamente."
+    },
+    {
+      "id": "core.configuration",
+      "version": "0.1.0-example",
+      "layer": "core",
+      "requires": [
+        "core.tenancy",
+        "core.audit"
+      ],
+      "notes": "Configuração neutra e contratos de revisão."
+    },
+    {
+      "id": "ui.shell",
+      "version": "0.1.0-example",
+      "layer": "presentation",
+      "requires": [
+        "core.identity",
+        "core.configuration"
+      ],
+      "notes": "Composição de navegação e preferências sem conhecimento de nicho."
+    },
+    {
+      "id": "cap.scheduling",
+      "version": "0.1.0-example",
+      "layer": "shared_capability",
+      "requires": [
+        "core.tenancy",
+        "core.audit"
+      ],
+      "notes": "Capacidade de agenda com uma fonte autoritativa."
+    },
+    {
+      "id": "cap.publication",
+      "version": "0.1.0-example",
+      "layer": "shared_capability",
+      "requires": [
+        "cap.scheduling",
+        "core.audit"
+      ],
+      "notes": "Publicação minimizada e versionada; separar regras de projeção de nicho."
+    },
+    {
+      "id": "cap.devices",
+      "version": "0.1.0-example",
+      "layer": "shared_capability",
+      "requires": [
+        "core.identity",
+        "core.audit"
+      ],
+      "notes": "Dispositivos e pareamento quando necessários ao produto."
+    },
+    {
+      "id": "cap.readonly",
+      "version": "0.1.0-example",
+      "layer": "shared_capability",
+      "requires": [
+        "cap.publication"
+      ],
+      "notes": "Consumo somente leitura de projeção aprovada, não do banco inteiro."
+    },
+    {
+      "id": "soc.operations",
+      "version": "0.1.0-example",
+      "layer": "vertical",
+      "requires": [
+        "core.identity",
+        "cap.scheduling",
+        "core.audit"
+      ],
+      "notes": "Agrupamento conceitual socioeducativo; decompor segundo o código real."
+    },
+    {
+      "id": "demo.notes",
+      "version": "0.1.0-example",
+      "layer": "test_fixture",
+      "requires": [
+        "core.identity",
+        "core.tenancy",
+        "core.audit"
+      ],
+      "notes": "Extensão de prova, dados fictícios; não um novo produto comercial."
+    }
+  ]
+}

@@ -1,0 +1,340 @@
+{
+  "schema_version": 1,
+  "contract_version": "0.1-proposal",
+  "package_version": "2.1.0",
+  "reference_only": true,
+  "runtime_activation": false,
+  "grants_authority": false,
+  "runtime_status": "NOT_IMPLEMENTED",
+  "module": {
+    "id": "continuity",
+    "kind": "shared",
+    "optional": true,
+    "phase": "M5-CO",
+    "required_dependencies": [
+      "core"
+    ],
+    "first_consumer": "monthly-close",
+    "first_consumer_gate": "M4",
+    "core_imports_continuity": false,
+    "role": "internal_cross_module_capability",
+    "standalone_product": false,
+    "commercial_packaging": "not_decided_no_separate_addon_assumed",
+    "user_surfaces": "integrated_in_module_flows_and_shared_attention"
+  },
+  "reuse_policy": {
+    "strategy": "fragment_existing_then_adapt",
+    "equivalent_search_required": true,
+    "new_code_requires_proven_gap": true,
+    "specialization_in_core": false,
+    "source_code_audited_here": false
+  },
+  "scope": {
+    "canonical_tenant": "organization_id",
+    "envelope_alias": "tenant_id",
+    "server_validated": true,
+    "optional_dimensions": [
+      "workspace_id",
+      "unit_id"
+    ],
+    "hierarchy_must_match": true,
+    "scope_key_nullable": false,
+    "scope_key_server_derived": true
+  },
+  "keys": {
+    "work_item_unique": [
+      "organization_id",
+      "source_module",
+      "scope_key",
+      "stable_key"
+    ],
+    "inbox_unique": [
+      "organization_id",
+      "producer",
+      "event_id"
+    ],
+    "action_unique": [
+      "organization_id",
+      "action_name",
+      "idempotency_key"
+    ],
+    "action_binding": [
+      "actor_ref",
+      "target_id",
+      "expected_version",
+      "action_version",
+      "normalized_parameters_hash"
+    ],
+    "notification_unique": [
+      "organization_id",
+      "recipient_ref",
+      "work_item_id",
+      "episode",
+      "transition",
+      "channel"
+    ]
+  },
+  "events": {
+    "delivery": "at_least_once",
+    "order_by": "source_sequence",
+    "duplicate_payload_mismatch": "reject_conflict",
+    "late_event": "ignore_or_reconcile_never_regress",
+    "gap": "reconcile_with_source",
+    "transaction": [
+      "inbox",
+      "work_item",
+      "history",
+      "outbox_if_effect"
+    ],
+    "producer_commit_with_outbox": true,
+    "replay_preserves_ids": true,
+    "schema_validation": true,
+    "unknown_fields": "reject",
+    "unsupported_version": "quarantine",
+    "scope_revalidated": true,
+    "dedupe_retention": "at_least_authorized_replay_window_and_effect_reconciliation"
+  },
+  "concurrency": {
+    "write": "expected_version",
+    "conflict": "explicit",
+    "human_fields_merge": "preserve",
+    "dependency_cycle_guard": "transactional_scope_lock_or_serializable",
+    "cross_scope_dependencies": false,
+    "dependency_identity": [
+      "work_item_id",
+      "episode"
+    ],
+    "cancelled_satisfies_dependency": false
+  },
+  "human_authority": {
+    "critical_requester_must_differ_from_approver": true,
+    "automated_approval": false,
+    "decision_bound_to": [
+      "source_entity_revision",
+      "episode",
+      "policy_version"
+    ],
+    "acknowledgement_is_approval": false,
+    "source_owns_gate": true,
+    "disabled_module_bypasses_gate": false,
+    "decision_requires_source_receipt": true
+  },
+  "work_item_statuses": [
+    "pendente",
+    "em_andamento",
+    "requer_ajustes",
+    "adiado",
+    "concluido",
+    "cancelado"
+  ],
+  "verification_statuses": [
+    "aguardando",
+    "ajustes_solicitados",
+    "adiada",
+    "confirmada",
+    "invalidada"
+  ],
+  "handoff_statuses": [
+    "rascunho",
+    "aguardando_recebimento",
+    "recebida",
+    "cancelada",
+    "substituida"
+  ],
+  "handoff_categories": [
+    "resolvido",
+    "requer_atencao",
+    "bloqueado",
+    "requer_confirmacao"
+  ],
+  "queue": {
+    "source_context_required": true,
+    "order": [
+      "priority_desc",
+      "due_at_asc_nulls_last",
+      "created_at_asc",
+      "id_asc"
+    ],
+    "eligibility": [
+      "authority",
+      "routing",
+      "module_active",
+      "current_revision",
+      "dependencies",
+      "deferred_until"
+    ],
+    "deferred_reason_required": true,
+    "repeat_promotes_urgency": false,
+    "stale_projection_is_empty_success": false
+  },
+  "action_registry": {
+    "controlled_by": "trusted_server_release",
+    "arbitrary_execution": false,
+    "client_selected_handler": false,
+    "unknown_parameters": "reject",
+    "authorize_before_enqueue_execute_and_receipt": true,
+    "uncertain_result": "reconcile_without_blind_retry",
+    "handlers": [
+      "monthly-close.open.v1",
+      "monthly-close.request-review.v1"
+    ]
+  },
+  "action_definitions": [
+    {
+      "name": "monthly_close.open",
+      "version": "1",
+      "owner": "monthly-close",
+      "handler_ref": "monthly-close.open.v1",
+      "effect": "read",
+      "required_permission": "monthly-close.read",
+      "human_approval": false,
+      "parameter_schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "close_id"
+        ],
+        "properties": {
+          "close_id": {
+            "type": "string",
+            "maxLength": 128
+          }
+        }
+      }
+    },
+    {
+      "name": "monthly_close.request_review",
+      "version": "1",
+      "owner": "monthly-close",
+      "handler_ref": "monthly-close.request-review.v1",
+      "effect": "request_verification",
+      "required_permission": "monthly-close.review.request",
+      "human_approval": false,
+      "parameter_schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "close_id",
+          "expected_version"
+        ],
+        "properties": {
+          "close_id": {
+            "type": "string",
+            "maxLength": 128
+          },
+          "expected_version": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
+    }
+  ],
+  "future_action_examples": {
+    "phase": "M6_or_later_consumer",
+    "implemented": false,
+    "names": [
+      "device.run_diagnostic",
+      "display.republish",
+      "schedule.open",
+      "notice.request_approval",
+      "inspection.start",
+      "report.generate",
+      "incident.acknowledge"
+    ]
+  },
+  "retired_mechanisms": [
+    "WPF/.NET Framework desktop",
+    "arbitrary PowerShell/BAT/EXE",
+    "Codex-specific integration",
+    "desktop mutex/JSON/transaction journal",
+    "ccard/Windows file association"
+  ],
+  "lifecycle": {
+    "no_data_drop": true,
+    "source_native_flow_retains_gate": true,
+    "reactivation": "authorized_snapshot_or_bounded_replay_then_ready"
+  },
+  "limits": {
+    "fixture_only_not_production_policy": true,
+    "max_event_bytes": 65536,
+    "max_batch_items": 100,
+    "max_nesting_depth": 12,
+    "max_comment_characters": 4000,
+    "production_limits_gate": "M5-CO.0; measured and versioned"
+  },
+  "examples": {
+    "monthly_event": {
+      "event_id": "synthetic-event-month-001",
+      "event_type": "MonthlyClosePrepared",
+      "schema_version": 1,
+      "producer": "monthly-close",
+      "tenant_id": "synthetic-org-a",
+      "workspace_id": null,
+      "unit_id": null,
+      "source_entity_id": "synthetic-close-001",
+      "source_entity_revision": "7",
+      "source_sequence": 7,
+      "occurred_at": "2026-09-24T12:00:00Z",
+      "correlation_id": "synthetic-flow-001",
+      "causation_id": null,
+      "payload": {
+        "review_required": true
+      }
+    },
+    "work_items": [
+      {
+        "id": "synthetic-review-001",
+        "organization_id": "synthetic-org-a",
+        "scope_key": "organization",
+        "stable_key": "monthly-close:synthetic-close-001:review",
+        "source_module": "monthly-close",
+        "source_entity_id": "synthetic-close-001",
+        "episode": 1,
+        "version": 1,
+        "status": "pendente"
+      },
+      {
+        "id": "synthetic-evidence-001",
+        "organization_id": "synthetic-org-a",
+        "scope_key": "organization",
+        "stable_key": "monthly-close:synthetic-close-001:evidence-check",
+        "source_module": "monthly-close",
+        "source_entity_id": "synthetic-close-001",
+        "episode": 1,
+        "version": 1,
+        "status": "concluido"
+      }
+    ],
+    "dependencies": [
+      {
+        "organization_id": "synthetic-org-a",
+        "scope_key": "organization",
+        "item_id": "synthetic-review-001",
+        "item_episode": 1,
+        "prerequisite_id": "synthetic-evidence-001",
+        "prerequisite_episode": 1
+      }
+    ],
+    "device_event": {
+      "event_id": "synthetic-event-device-001",
+      "event_type": "DeviceOfflineDetected",
+      "schema_version": 1,
+      "producer": "devices",
+      "tenant_id": "synthetic-org-a",
+      "workspace_id": null,
+      "unit_id": null,
+      "source_entity_id": "synthetic-device-001",
+      "source_entity_revision": "2",
+      "source_sequence": 2,
+      "occurred_at": "2026-09-24T12:01:00Z",
+      "correlation_id": "synthetic-flow-002",
+      "causation_id": null,
+      "payload": {
+        "health": "unavailable"
+      }
+    },
+    "device_stable_key": "device:synthetic-device-001:connectivity",
+    "notice": "Synthetic partial fixtures only. No event, handler, approval or application test was executed."
+  }
+}

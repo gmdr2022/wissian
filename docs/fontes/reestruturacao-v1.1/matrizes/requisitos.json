@@ -1,0 +1,262 @@
+{
+  "schema_version": 1,
+  "kind": "specification_not_execution_results",
+  "requirements": [
+    {
+      "id": "REQ01",
+      "title": "Preservar baseline e trabalho ativo",
+      "gate": "G0",
+      "primary_phase": "R00",
+      "acceptance": "Nenhuma mudança local, branch Base44 ou evolução de integração é descartada ou sobreposta.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ02",
+      "title": "Reconciliar evolução Base44/Codex",
+      "gate": "G0",
+      "primary_phase": "R01",
+      "acceptance": "Mudanças relevantes têm decisão rastreável e não são reaplicadas cegamente.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ03",
+      "title": "Atualizar direção sem enfraquecer contratos",
+      "gate": "G0",
+      "primary_phase": "R02",
+      "acceptance": "Produto único/três módulos globais são substituídos; segurança/offline/gates continuam.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ04",
+      "title": "Core independente da vertical",
+      "gate": "G1",
+      "primary_phase": "R03",
+      "acceptance": "Grafo compilado/transitivo do core não alcança o domínio socioeducativo.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ05",
+      "title": "Composição tipada e falha segura",
+      "gate": "G1",
+      "primary_phase": "R04",
+      "acceptance": "IDs/dependências/versões/ciclos são validados; ausências não ampliam acesso.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ06",
+      "title": "Ausência real de módulo",
+      "gate": "G3",
+      "primary_phase": "R04",
+      "acceptance": "Módulo ausente não registra endpoint/job/hub/seed/asset ou menu.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ07",
+      "title": "Isolamento de organizações",
+      "gate": "G3",
+      "primary_phase": "R05",
+      "acceptance": "Dados e operações não cruzam tenants, inclusive por IDs previsíveis e cache.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ08",
+      "title": "Isolamento de unidades e produtos",
+      "gate": "G3",
+      "primary_phase": "R05",
+      "acceptance": "Trocar unidade/produto não reutiliza autoridade ou dados indevidos.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ09",
+      "title": "Autorização e JIT preservados",
+      "gate": "G3",
+      "primary_phase": "R05",
+      "acceptance": "Roles, MFA, concessão/expiração/revogação e plano de controle continuam separados.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ10",
+      "title": "Migrações e histórico preservados",
+      "gate": "G4",
+      "primary_phase": "R06",
+      "acceptance": "Bootstrap/upgrade/idempotência passam sem apagar história/IDs indevidamente.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ11",
+      "title": "Recuperação verificável",
+      "gate": "G4",
+      "primary_phase": "R06",
+      "acceptance": "Falha controlada e restauração em laboratório preservam estado e autoridade.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ12",
+      "title": "Identidades técnicas compatíveis",
+      "gate": "G4",
+      "primary_phase": "R06",
+      "acceptance": "Cookies, DataProtection, DPAPI, IDs, paths e pareamento não mudam por marca.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ13",
+      "title": "Fluxo socioeducativo preservado",
+      "gate": "G2",
+      "primary_phase": "R05",
+      "acceptance": "Operação→publicação→Rotinas/Consulta e recursos inventariados mantêm contrato.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ14",
+      "title": "Múltiplos clientes sem forks",
+      "gate": "G2",
+      "primary_phase": "R05",
+      "acceptance": "Duas organizações fictícias usam a mesma implementação com configuração permitida.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ15",
+      "title": "ClubAL futuro reservado",
+      "gate": "G7",
+      "primary_phase": "R05",
+      "acceptance": "Nenhum segundo produto comercial é iniciado/ativado; legado necessário preservado.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ16",
+      "title": "Marca/temas separados de autoridade",
+      "gate": "G5",
+      "primary_phase": "R07",
+      "acceptance": "Marca de produto/organização/pessoa é coerente sem perda de preferências ou privilégios novos.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ17",
+      "title": "Offline e minimização preservados",
+      "gate": "G5",
+      "primary_phase": "R05",
+      "acceptance": "Rotinas mantém fallback autorizado; Consulta/restritos não ganham cache ou escrita indevida.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ18",
+      "title": "Cobrança não concede permissão",
+      "gate": "G3",
+      "primary_phase": "R04",
+      "acceptance": "Flags, entitlements, identidade e autorização permanecem separados; nenhum gateway novo.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ19",
+      "title": "Sem custo ou ação externa não autorizada",
+      "gate": "G7",
+      "primary_phase": "R09",
+      "acceptance": "Nenhuma compra, provisão paga, publicação, push/merge/deploy ou dado real.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ20",
+      "title": "Continuidade sem duplicação",
+      "gate": "G7",
+      "primary_phase": "R09",
+      "acceptance": "C7/ACTIVE_SLICE preservados; retomada real sem diário paralelo ou aprovação inventada.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ21",
+      "title": "Testes verdadeiros e rastreáveis",
+      "gate": "G7",
+      "primary_phase": "R09",
+      "acceptance": "Comandos/exit codes/evidências distinguem mocks, integração, hardware e gates.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ22",
+      "title": "Versões/API/publicação compatíveis",
+      "gate": "G4",
+      "primary_phase": "R06",
+      "acceptance": "Contratos e clientes gerados se mantêm coerentes, pares suportados são testados.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ23",
+      "title": "Artefatos sem dados/segredos indevidos",
+      "gate": "G6",
+      "primary_phase": "R08",
+      "acceptance": "Pacotes excluem cofre/.codex/dados reais/secrets e código de nicho não selecionado.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ24",
+      "title": "Capacidades opcionais sem duplicação",
+      "gate": "G1",
+      "primary_phase": "R04",
+      "acceptance": "Agenda/dispositivos/telas e outras capacidades não são core obrigatório nem duplicam autoridade.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ25",
+      "title": "Preparação internacional sem promessa",
+      "gate": "G5",
+      "primary_phase": "R07",
+      "acceptance": "Texto/fuso/IDs mantêm semântica; suporte só é declarado quando testado.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ26",
+      "title": "Legado/distribuição preservados",
+      "gate": "G5",
+      "primary_phase": "R09",
+      "acceptance": "Entrypoints, launchers, Windows e paridade relevante permanecem ou têm adapters testados.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ27",
+      "title": "UX acessível e sem vazamento de nicho",
+      "gate": "G5",
+      "primary_phase": "R07",
+      "acceptance": "Composição neutra é útil; teclado/reflow/rascunhos e UX do produto não regridem.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ28",
+      "title": "Reutilização comprovada",
+      "gate": "G6",
+      "primary_phase": "R08",
+      "acceptance": "Extensão sintética e produto consomem o mesmo core sem copiar infraestrutura.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ29",
+      "title": "Stack e manutenção controladas",
+      "gate": "G1",
+      "primary_phase": "R03",
+      "acceptance": "Tecnologia/lockfiles preservados salvo alteração mínima fundamentada e autorizada.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ30",
+      "title": "Naming e titularidade não presumidos",
+      "gate": "G7",
+      "primary_phase": "R09",
+      "acceptance": "Nome provisório, licenças preservadas e nenhuma declaração falsa de liberação/titularidade.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ31",
+      "title": "Integridade, replay e concorrência",
+      "gate": "G3",
+      "primary_phase": "R05",
+      "acceptance": "Assinaturas/hashes/idempotência/revisão/estados ambíguos mantêm suas garantias.",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "REQ32",
+      "title": "Encerramento delimitado e íntegro",
+      "gate": "G7",
+      "primary_phase": "R09",
+      "acceptance": "Requisitos críticos demonstrados ou marco marcado parcial; próximos gates permanecem explícitos.",
+      "status": "NOT_RUN"
+    }
+  ]
+}
