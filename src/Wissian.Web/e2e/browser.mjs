@@ -3,6 +3,7 @@ import { createHmac } from 'node:crypto'
 import { createInterface } from 'node:readline'
 import { join } from 'node:path'
 import { chromium, expect } from '@playwright/test'
+import { registerCounterpartyTests } from './counterparties.mjs'
 
 if (!process.env.WISSIAN_BROWSER_FIXTURE) throw new Error('Use Test-Postgres.ps1 -Suite Browser: laboratorio sintetico obrigatorio.')
 const fixture = JSON.parse(process.env.WISSIAN_BROWSER_FIXTURE)
@@ -264,6 +265,7 @@ test('M1-S4-18 account action waits for logout and handles a revoked current ses
   await expect(page.getByLabel('Nova senha', { exact: true })).toBeVisible()
 })
 
+if (fixture.administration) { tests.length = 0; registerCounterpartyTests({ test, fixture, login, choose, control }) }
 const selectedTests = process.env.WISSIAN_BROWSER_CASE
   ? tests.filter(test => test.name.startsWith(process.env.WISSIAN_BROWSER_CASE)) : tests
 assert.ok(selectedTests.length > 0, 'Caso de navegador desconhecido.')

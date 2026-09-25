@@ -210,6 +210,9 @@ AsyncTest("M1-S1-23 HTTP neutral composition exposes no test module", async () =
     using var client = Client(app.Services);
     Require((await client.GetAsync("/health/live")).StatusCode == HttpStatusCode.OK);
     Require((await client.GetAsync("/api/foundation-probe")).StatusCode == HttpStatusCode.NotFound);
+    Require((await client.GetAsync($"/api/organizations/{Guid.NewGuid()}/counterparties")).StatusCode == HttpStatusCode.NotFound);
+    Require((await client.GetAsync("/")).StatusCode == HttpStatusCode.NotFound);
+    Require(app.Services.GetService<Wissian.Counterparties.CounterpartiesDbContext>() is null);
     Require(!typeof(HostApplication).Assembly.GetReferencedAssemblies().Any(a => a.Name!.StartsWith("Wissian.Test", StringComparison.Ordinal)));
     await app.StopAsync();
 });

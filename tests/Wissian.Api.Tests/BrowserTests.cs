@@ -13,7 +13,7 @@ namespace Wissian.Api.Tests;
 
 internal static class BrowserTests
 {
-    public static async Task<int> RunAsync(ApiLab lab)
+    public static async Task<int> RunAsync(ApiLab lab, bool administration = false)
     {
         var root = new DirectoryInfo(AppContext.BaseDirectory);
         while (root is not null && !File.Exists(Path.Combine(root.FullName, "Wissian.slnx"))) root = root.Parent;
@@ -35,6 +35,12 @@ internal static class BrowserTests
             db.Permissions.Add(new MembershipPermission(secondary.OrganizationId, secondMembership, "foundation-probe.inspect"));
             return Task.CompletedTask;
         });
+        if (administration)
+        {
+            await CounterpartyTests.EnableAsync(lab, primary);
+            await CounterpartyTests.EnableAsync(lab, secondary);
+            await CounterpartyTests.EnableAsync(lab, primary with { OrganizationId = secondary.OrganizationId, MembershipId = secondMembership });
+        }
         var noMembership = await lab.PersonAsync(membership: false);
         var mfa = await lab.PersonAsync();
         var recovering = await lab.PersonAsync(membership: false);
@@ -58,7 +64,7 @@ internal static class BrowserTests
         start.Environment["WISSIAN_BROWSER_FIXTURE"] = JsonSerializer.Serialize(new
         {
             baseUrl = address, productionUrl = lab.Address.ToString(), primary, secondary,
-            noMembership, mfa, mfaKey, recovering, activating, recovery, activation, screenshots
+            noMembership, mfa, mfaKey, recovering, activating, recovery, activation, screenshots, administration
         }, new JsonSerializerOptions(JsonSerializerDefaults.Web));
         // Synthetic credentials stay in this owned child's environment, not command line/files/logs.
         using var process = Process.Start(start) ?? throw new InvalidOperationException("Navegador não iniciou.");
@@ -71,7 +77,7 @@ internal static class BrowserTests
                 if (!line.StartsWith("WISSIAN_TEST_CONTROL ", StringComparison.Ordinal)) { Console.WriteLine(line); continue; }
                 var action = line[21..];
                 // No HTTP test-admin route. The owned child's pipe supports only these synthetic mutations.
-                object result = await ControlAsync(action, lab, primary);
+                object result = await ControlAsync(action, lab, primary, administration);
                 await process.StandardInput.WriteLineAsync(JsonSerializer.Serialize(result));
                 await process.StandardInput.FlushAsync(deadline.Token);
             }
@@ -88,15 +94,21 @@ internal static class BrowserTests
         }
     }
 
-    private static async Task<object> ControlAsync(string action, ApiLab lab, SyntheticPerson primary)
+    private static async Task<object> ControlAsync(string action, ApiLab lab, SyntheticPerson primary, bool administration)
     {
         await using var db = lab.OwnerDb();
         switch (action)
         {
             case "disable-module":
             case "enable-module":
-                var module = await db.OrganizationModules.SingleAsync(m => m.OrganizationId == primary.OrganizationId);
+                var moduleId = administration ? "counterparties" : "foundation-probe";
+                var module = await db.OrganizationModules.SingleAsync(m => m.OrganizationId == primary.OrganizationId && m.ModuleId == moduleId);
                 db.Entry(module).Property(m => m.IsEnabled).CurrentValue = action == "enable-module";
+                break;
+            case "disable-write" when administration:
+            case "enable-write" when administration:
+                var permission = await db.Permissions.SingleAsync(p => p.MembershipId == primary.MembershipId && p.Permission == "counterparties.write");
+                db.Entry(permission).Property(p => p.IsActive).CurrentValue = action == "enable-write";
                 break;
             case "revoke-membership":
             case "restore-membership":

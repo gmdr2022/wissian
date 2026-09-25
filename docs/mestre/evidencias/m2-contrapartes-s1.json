@@ -1,0 +1,297 @@
+{
+  "schema_version": 1,
+  "slice": "M2-S1",
+  "status": "VERIFIED_LOCALLY",
+  "baseline_commit": "d38de0ce5cfbf9f039e7280327d558bb0e230fce",
+  "capability": "counterparties",
+  "contract": "docs/mestre/contratos/M2_ADMINISTRACAO.md",
+  "sources": [
+    {
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "comparison_ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+      "path": "src/backend/ClubAL.Domain/Knowledge/KnowledgeArticle.cs",
+      "blob": "d828b39a0c02f70849cb52869133f4a07a721642",
+      "decision": "ADAPT_PATTERN",
+      "scope": "IDs e versao esperada; nao transportar dominio normativo por unidade"
+    },
+    {
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "comparison_ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+      "path": "src/backend/ClubAL.Infrastructure/Knowledge/KnowledgeService.cs",
+      "blob": "681425eced23ffacd87889044b1c013d634d8972",
+      "decision": "ADAPT_PATTERN",
+      "scope": "Busca filtrada antes da contagem, paginacao e recibo/hash de idempotencia; backend igual entre os dois refs"
+    },
+    {
+      "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+      "comparison_ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+      "path": "src/web/operador/src/pages/KnowledgePage.tsx",
+      "blob": "2181412a995a287ed783df3b831f048a2975ea41",
+      "decision": "ADAPT_PATTERN",
+      "scope": "Diff Base44/integracao preserva rascunhos e baseline; aplicar principio no CRUD proprio"
+    }
+  ],
+  "gap": "Busca dirigida M0/M2 nao encontrou modulo administrativo de contrapartes nas origens examinadas. Knowledge nao e esse modulo. Novo agregado/store/UI apoiam os mecanismos ja extraidos de autoridade, organizacao, recibos e auditoria. Sem alegacao de auditoria exaustiva do legado.",
+  "verification": {
+    "counterparties_api": [
+      {
+        "case": "M2-S1-01 create, search, read, edit, archive and restore persist",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S1-02 anonymous, missing context, CSRF and foreign organization denied",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S1-03 read permission never grants write",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S1-04 same command replays once and changed payload conflicts",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S1-05 concurrent versions have one winner and preserve loser",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S1-06 revocation blocks reads, commands and prior receipts",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S1-07 invalid shape, bounds, action and stale context have no effect",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S1-08 RLS hides rows without session and with forged organization",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S1-09 runtime cannot delete, move ownership or rewrite receipt",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S1-10 revocation committed while request waits wins before mutation",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S1-11 failed audit rolls back entity and idempotency receipt",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S1-12 pagination and literal filters never reveal another tenant",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S1-13 restart reads persisted records and repeated migration is inert",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-S1-14 foreign organization cannot acquire authority locks",
+        "result": "PASS"
+      }
+    ],
+    "counterparties_browser": [
+      {
+        "case": "M2-UI-01 create, locate and reopen keep filters and data after reload",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-UI-02 lost response reuses identical command and creates once",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-UI-03 conflict preserves draft until explicit reload",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-UI-04 archive preserves detail and restore returns to active search",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-UI-05 revoked write clears edit and leaves read-only menu",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-UI-06 disabled module hides menu and direct URL is denied",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-UI-07 two organizations keep different records on narrow screens",
+        "result": "PASS"
+      },
+      {
+        "case": "M2-UI-08 unsaved edit can cancel internal navigation",
+        "result": "PASS"
+      }
+    ],
+    "frontend": "TypeScript strict e Vite production build PASS",
+    "ci": "Resultado por SHA no workflow Wissian CI; suites M1 anteriores e novas suites M2, sem substituir por dotnet test.",
+    "initial_browser_failure": "Tres casos apontaram labels implicitos dos selects; labels associados por for/id e controles com altura minima corrigidos. Reexecucao8/8 PASS.",
+    "visual_review": "Screenshots locais de desktop1280 e mobile390 inspecionados; reflow390/320 testado. Nao equivale a aceite de Gui ou tecnologia assistiva."
+  },
+  "boundaries": [
+    "Core nao referencia o modulo; schema/contexto/migrations privados de contrapartes; integracao no Host por transacao compartilhada.",
+    "Runtime sem UPDATE de autoridade nem DELETE de cadastros; funcao definer restrita fixa search_path e trava apenas escopo da sessao, comprovado por bloqueio de organizacao estrangeira.",
+    "Mutacao/recibo/auditoria atomicos; revogacao concorrente, replay e conflito exercitados com PostgreSQL18.6 e HTTPS reais.",
+    "Campo referencia e interno opcional; nao validacao fiscal/identitaria ou chave unica. Somente dados sinteticos.",
+    "Sem dados reais, deploy, email, cobranca, aceite humano, alteracao nas origens ou conclusao de M2."
+  ],
+  "human_acceptance": "PENDING",
+  "production": "NOT_DEPLOYED",
+  "next_slice": "M2-S2 documentos privados, classificacao, versoes, busca e vinculos; upload/download e recuperacao precisam prova propria.",
+  "destination_hashes": [
+    {
+      "path": ".github/workflows/dotnet.yml",
+      "sha256": "907819b4985f9c752ea4c2649da2eaa96539f4890624522a8e09438bf1ff4c2e"
+    },
+    {
+      "path": "Wissian.slnx",
+      "sha256": "3b4b7a1a6760771c577512284a0ea33bb1fe49773fe67b11f6af772ab40b4ec0"
+    },
+    {
+      "path": "scripts/Test-Postgres.ps1",
+      "sha256": "9b74430f7054e00aa039f5e1444bd1d464a00b69e219098a43fc4adabc60f37a"
+    },
+    {
+      "path": "src/Wissian.Counterparties/CounterpartiesDbContext.cs",
+      "sha256": "767761486971da562334ae8a697edf20492bc50ada63b8256c8047f86bec0404"
+    },
+    {
+      "path": "src/Wissian.Counterparties/Counterparty.cs",
+      "sha256": "241b2b9ae6c0644bcdfe420e7e88cfb12f7ed97a3278a19f908695ae617b4c23"
+    },
+    {
+      "path": "src/Wissian.Counterparties/CounterpartyStore.cs",
+      "sha256": "9fbfc752dfa69c75105bec1c7eb8ddc91623d3e263fa4f640f8e961f07e44efe"
+    },
+    {
+      "path": "src/Wissian.Counterparties/Migrations/20260925181938_Counterparties.Designer.cs",
+      "sha256": "64b6d3fdb1e93409c738998e13fbc9d5c00eca1ce50ed94770549ae49a03d261"
+    },
+    {
+      "path": "src/Wissian.Counterparties/Migrations/20260925181938_Counterparties.cs",
+      "sha256": "976595a05eadb87a0c9a5c5721476f89ab70884d35b368eacc3ff304dc78922d"
+    },
+    {
+      "path": "src/Wissian.Counterparties/Migrations/CounterpartiesDbContextModelSnapshot.cs",
+      "sha256": "cf713e0a47c4bc1e8e3c7218b765cdc8c8fca262192f9fab173e7cbabbbdda53"
+    },
+    {
+      "path": "src/Wissian.Counterparties/Wissian.Counterparties.csproj",
+      "sha256": "08912768a9b223d90f0b4cbde31ca3330d25896d25ec71cb9da57554b36995a3"
+    },
+    {
+      "path": "src/Wissian.Counterparties/packages.lock.json",
+      "sha256": "778e4b5cbb51da126dd6d16c602782394c202e7f7e2885c601bbb88a6a293eb2"
+    },
+    {
+      "path": "src/Wissian.Host/HostApplication.cs",
+      "sha256": "3c70b66a6e9b098674448d00e4b545316b23d6f23007f25c2561837cc5fb301b"
+    },
+    {
+      "path": "src/Wissian.Host/Identity/AuthorizedOperation.cs",
+      "sha256": "6b95fda70b317e500552c61a326ffe034832dfa78604f76930c95c6a8511fab0"
+    },
+    {
+      "path": "src/Wissian.Host/Identity/IdentityEndpoints.cs",
+      "sha256": "61e2b2dc4db31211c0319dda363e23828566ace9e4fbbbbbffc42f5864d19c18"
+    },
+    {
+      "path": "src/Wissian.Host/Identity/SessionAuthority.cs",
+      "sha256": "bd476c80b513b2b6cbd1d0bc47cfb185e4527db3824e3197a485c3b95f7ff5ec"
+    },
+    {
+      "path": "src/Wissian.Host/Modules/CounterpartiesEndpoints.cs",
+      "sha256": "3c936af4e768374e7d11549a0bda1aa77e8c78343a88eab2d5e02dd5dffe4665"
+    },
+    {
+      "path": "src/Wissian.Host/Program.cs",
+      "sha256": "afbd4ea7faf35c4d3c41322b75f242241d31c577f95809622e8fad631e1a1a73"
+    },
+    {
+      "path": "src/Wissian.Host/Wissian.Host.csproj",
+      "sha256": "6dcd7f8a07340b295a06ca47013cf187b9892afe5281dcb2769cde1bbde5b823"
+    },
+    {
+      "path": "src/Wissian.Host/packages.lock.json",
+      "sha256": "dcbed8cdb8eb5217eaf462f3968710da7c9d5166d087fbef943491e4d68d1230"
+    },
+    {
+      "path": "src/Wissian.Operator/packages.lock.json",
+      "sha256": "05f7b63ff77422485578455ff697eb8e8f4c22cbfdccde149254881557b00361"
+    },
+    {
+      "path": "src/Wissian.Persistence/Migrations/20260925181933_OperationAuthority.Designer.cs",
+      "sha256": "20f4de25863054c9be02c508da4598b33c486dd447df8b789a9a5bc73b111071"
+    },
+    {
+      "path": "src/Wissian.Persistence/Migrations/20260925181933_OperationAuthority.cs",
+      "sha256": "d6221b7767fb3b9e3a6fbe108ceb68afe53bfc6339a5b11b689d7369079ef4c9"
+    },
+    {
+      "path": "src/Wissian.Persistence/Migrations/20260925183202_AuthorityScopeGuard.Designer.cs",
+      "sha256": "de91fae1651222eaaa9f40c37e8addaec4a8d8d9fcbdd142a136e5179792c9b7"
+    },
+    {
+      "path": "src/Wissian.Persistence/Migrations/20260925183202_AuthorityScopeGuard.cs",
+      "sha256": "14da12c6f3625a1e3daf61affa95812f9e3ef4e647eba04bf01f5824a71d99b9"
+    },
+    {
+      "path": "src/Wissian.Web/e2e/browser.mjs",
+      "sha256": "5aff7cadad08c7bcc126807a7c5a6993c4308c169129d9a7631e447c2e479beb"
+    },
+    {
+      "path": "src/Wissian.Web/e2e/counterparties.mjs",
+      "sha256": "3364e4775d149e5cceb041ff7b646774059d264f75bdbbcbcb6cf13917e3e95a"
+    },
+    {
+      "path": "src/Wissian.Web/src/main.tsx",
+      "sha256": "f939b40524f8700c7bff93dbdac2d674addab20ee147cfdae0fd9ce31c0e6217"
+    },
+    {
+      "path": "src/Wissian.Web/src/modules/Counterparties.tsx",
+      "sha256": "2e2c26bd17de0533a3c2727f21d240d785eadd4369cba6da6c3c9db35736c6f8"
+    },
+    {
+      "path": "src/Wissian.Web/src/navigation.ts",
+      "sha256": "00602ef9706524e81d7ba555ee945fe1af71a33961a4b249ba79d558f365d877"
+    },
+    {
+      "path": "src/Wissian.Web/src/styles.css",
+      "sha256": "fdf4ea3c56414549f28c08fe80ad202e96b1a91107828922ea42a069e7cef8c9"
+    },
+    {
+      "path": "tests/Wissian.Api.Tests/ApiLab.cs",
+      "sha256": "2d01de6fa8818faf0900078fd98c76077188a0da9293276d14072d0e87a320b2"
+    },
+    {
+      "path": "tests/Wissian.Api.Tests/BrowserTests.cs",
+      "sha256": "1ea423ff701361e8bd81456d1a033f0d9af93d231bed98c9c05e3659310f0ee0"
+    },
+    {
+      "path": "tests/Wissian.Api.Tests/CounterpartyTests.cs",
+      "sha256": "8fd7eb9da3bb2ca1472f6696229ecb1f567de1d2f0ac894f9f1e5330163cc75f"
+    },
+    {
+      "path": "tests/Wissian.Api.Tests/Program.cs",
+      "sha256": "56803f7bb1bc94daff4d56d1a749ebf9d5aed7505861b98711e29950d22311cd"
+    },
+    {
+      "path": "tests/Wissian.Api.Tests/packages.lock.json",
+      "sha256": "8c175437d5d1ebbc37867c13ff8c3f0233dd732c90053d8d8b24d641d49f9f0d"
+    },
+    {
+      "path": "tests/Wissian.Foundation.Tests/Program.cs",
+      "sha256": "92e51382faf115ba44258e510a39ef1c90196140558b3b00ddeab287d6f3be81"
+    },
+    {
+      "path": "tests/Wissian.Foundation.Tests/packages.lock.json",
+      "sha256": "0981414e98c877a895a637ee310f347cee6c401fd0715d5e958caa7996a64605"
+    },
+    {
+      "path": "tests/Wissian.TestExtension/packages.lock.json",
+      "sha256": "05f7b63ff77422485578455ff697eb8e8f4c22cbfdccde149254881557b00361"
+    }
+  ]
+}

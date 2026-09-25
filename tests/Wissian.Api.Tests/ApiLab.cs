@@ -26,6 +26,8 @@ using Wissian.Host;
 using Wissian.Host.Identity;
 using Wissian.Persistence;
 using Wissian.TestExtension;
+using Wissian.Counterparties;
+using Wissian.Host.Modules;
 
 namespace Wissian.Api.Tests;
 
@@ -40,6 +42,10 @@ public sealed class LabClock : TimeProvider
 
 public sealed class ApiLab : IAsyncDisposable
 {
+    private bool administration;
+    public CounterpartiesDbContext CounterpartiesDb(bool runtime = false) => new(new DbContextOptionsBuilder<CounterpartiesDbContext>()
+        .UseNpgsql(Connection(runtime ? "wissian_runtime" : "wissian_migrator"), p => p.SetPostgresVersion(18, 6)
+            .MigrationsHistoryTable("schema_history", "wissian_counterparties")).Options);
     private readonly string adminConnection;
     private readonly string migratorPassword = Convert.ToHexString(RandomNumberGenerator.GetBytes(32));
     private readonly string runtimePassword = Convert.ToHexString(RandomNumberGenerator.GetBytes(32));
@@ -80,8 +86,9 @@ public sealed class ApiLab : IAsyncDisposable
         .UseNpgsql(Connection("wissian_migrator"), p => p.SetPostgresVersion(18, 6)
             .MigrationsHistoryTable("schema_history", "wissian")).Options);
 
-    public async Task StartAsync()
+    public async Task StartAsync(bool includeAdministration = false)
     {
+        administration = includeAdministration;
         await using var admin = new NpgsqlConnection(adminConnection);
         await admin.OpenAsync();
         foreach (var sql in new[]
@@ -97,6 +104,7 @@ public sealed class ApiLab : IAsyncDisposable
             await command.ExecuteNonQueryAsync();
         }
         await using (var db = OwnerDb()) await db.Database.MigrateAsync();
+        if (administration) await using (var db = CounterpartiesDb()) await db.Database.MigrateAsync();
         App = Build();
         await App.StartAsync();
         Address = new(App.Services.GetRequiredService<IServer>().Features.Get<IServerAddressesFeature>()!.Addresses.Single());
@@ -106,7 +114,8 @@ public sealed class ApiLab : IAsyncDisposable
         string database = "wissian_api_synthetic", bool persistentKeys = false, string? webRoot = null) => HostApplication.Build(
         ["--environment", "Testing", "--Logging:LogLevel:Default", "Critical",
          "--Wissian:Database", Connection(ownerCredential ? "wissian_migrator" : "wissian_runtime", database),
-         "--Wissian:KeyDirectory", KeyDirectory], [FoundationProbe.SecuredRegistration], builder =>
+         "--Wissian:KeyDirectory", KeyDirectory], administration
+            ? [FoundationProbe.SecuredRegistration, CounterpartiesEndpoints.Registration] : [FoundationProbe.SecuredRegistration], builder =>
         {
             if (webRoot is not null) builder.Configuration["Wissian:WebRoot"] = webRoot;
             builder.WebHost.ConfigureKestrel(server => server.Listen(IPAddress.Loopback, 0, endpoint => endpoint.UseHttps(certificate)));

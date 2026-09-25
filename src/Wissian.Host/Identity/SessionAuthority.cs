@@ -12,7 +12,7 @@ public sealed record ActiveContext(Guid OrganizationId, Guid MembershipId, strin
 public sealed record SessionView(Guid SessionId, long Version, DateTimeOffset ExpiresAtUtc,
     string DisplayName, ActiveContext? Context, IReadOnlyList<OrganizationChoice> Organizations);
 
-public sealed class SessionAuthority(WissianDbContext db, TimeProvider clock, ModuleCatalog catalog)
+public sealed partial class SessionAuthority(WissianDbContext db, TimeProvider clock, ModuleCatalog catalog)
 {
     internal static bool TryIds(ClaimsPrincipal principal, out Guid userId, out Guid sessionId)
     {

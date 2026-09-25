@@ -34,14 +34,14 @@ public static class IdentityEndpoints
         commands.MapPost("/reset-password", (CompleteAccountAction request, HttpContext context, AccountActions actions) =>
             actions.CompleteAsync(request, activation: false, context)).RequireRateLimiting("identity");
     }
+}
 
-    private sealed class RequireCsrf(IAntiforgery antiforgery) : IEndpointFilter
+public sealed class RequireCsrf(IAntiforgery antiforgery) : IEndpointFilter
+{
+    public async ValueTask<object?> InvokeAsync(EndpointFilterInvocationContext context, EndpointFilterDelegate next)
     {
-        public async ValueTask<object?> InvokeAsync(EndpointFilterInvocationContext context, EndpointFilterDelegate next)
-        {
-            try { await antiforgery.ValidateRequestAsync(context.HttpContext); }
-            catch (AntiforgeryValidationException) { return Results.BadRequest(new { code = "csrf_invalid" }); }
-            return await next(context);
-        }
+        try { await antiforgery.ValidateRequestAsync(context.HttpContext); }
+        catch (AntiforgeryValidationException) { return Results.BadRequest(new { code = "csrf_invalid" }); }
+        return await next(context);
     }
 }

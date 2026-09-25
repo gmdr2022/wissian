@@ -48,7 +48,7 @@ python -B docs/mestre/ferramentas/testar_validacao.py
 
 O primeiro comando verifica somente o escopo documental governado, permitindo evolução do código fora dele. Atualização do manifesto e recuperação estão no [procedimento de manutenção](docs/mestre/14_INSTALACAO_E_RESTAURACAO.md). Executar a validação após mudanças documentais; repetir a suíte quando o verificador ou seus contratos forem afetados. Não rodar tudo em cada consulta.
 
-## Executar a fundação M1
+## Executar a fundação e a primeira fatia administrativa
 
 Pré-requisito: SDK .NET **10.0.401** com runtime **10.0.12**, fixados em
 `global.json` e `Directory.Build.props`. O executável `dotnet` deve resolver esse SDK;
@@ -93,6 +93,26 @@ Gerar migrations com a ferramenta local (`dotnet tool restore`,
 migration já aplicada; `Down` destrutivo é recusado. Instalação, repetição, falha
 transacional e retomada em outro banco sintético são exercitadas pela suíte.
 O runtime não executa migrations nem recebe a credencial do migrador.
+
+### Clientes e fornecedores — M2-S1
+
+O executável inclui o módulo opcional `counterparties`. A organização só o utiliza
+quando estiver elegível/habilitado e tiver grants explícitos de leitura/escrita;
+nenhum usuário ou organização real é criado automaticamente. Cadastro, busca,
+edição com versão, arquivamento e restauração têm API, UI e auditoria. Ver
+[contrato M2](docs/mestre/contratos/M2_ADMINISTRACAO.md) para limites e instalação.
+Documentos/anexos e os marcos M3/M4 ainda não estão disponíveis.
+
+```powershell
+dotnet ef migrations has-pending-model-changes --project src/Wissian.Counterparties --no-build
+./scripts/Test-Postgres.ps1 -PostgresBin /caminho/para/pgsql/bin -Suite Counterparties
+./scripts/Test-Postgres.ps1 -PostgresBin /caminho/para/pgsql/bin -Suite CounterpartiesBrowser
+```
+
+A suíte de navegador requer os builds web abaixo e Edge instalado. Os laboratórios
+instalam migrations da fundação e do módulo, em schemas próprios, antes do host.
+Compartilham somente a transação de cada operação autorizada. A composição neutra
+de testes continua sem registrar endpoints ou migrations administrativas.
 
 ### Interface e jornadas em navegador
 

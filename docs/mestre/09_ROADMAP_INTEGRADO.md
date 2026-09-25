@@ -8,6 +8,10 @@ na [ADR-M03](adrs/ADR-M03_STACK_E_REUSO.md),
 [contrato de saída M1](contratos/M1_FUNDACAO.md). Os demais marcos e testes de produto
 seguem os estados de suas evidências específicas. Esse recorte não equivale a auditoria de todo o legado.
 
+**Avanço executável:** a [fundação M1](contratos/M1_FUNDACAO.md) foi verificada no
+recorte técnico. [M2-S1](contratos/M2_ADMINISTRACAO.md) entrega contrapartes com
+evidência própria; documentos e os demais critérios de M2 permanecem pendentes.
+
 ## Avanço autônomo autorizado
 
 Gui autorizou em 25/09/2026 a retomada do desenvolvimento e uma meta persistente:

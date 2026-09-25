@@ -1,3 +1,4 @@
 using Wissian.Host;
+using Wissian.Host.Modules;
 
-await HostApplication.Build(args, []).RunAsync();
+await HostApplication.Build(args, [CounterpartiesEndpoints.Registration]).RunAsync();

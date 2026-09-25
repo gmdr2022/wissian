@@ -55,6 +55,13 @@
       "wissian.core": {
         "type": "Project"
       },
+      "wissian.counterparties": {
+        "type": "Project",
+        "dependencies": {
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "[10.0.3, )",
+          "Wissian.Core": "[1.0.0, )"
+        }
+      },
       "wissian.persistence": {
         "type": "Project",
         "dependencies": {

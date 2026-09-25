@@ -4,7 +4,8 @@ using Wissian.Host.Web;
 
 namespace Wissian.Host;
 
-public sealed record ModuleRegistration(ModuleManifest Manifest, Action<IEndpointRouteBuilder> MapEndpoints);
+public sealed record ModuleRegistration(ModuleManifest Manifest, Action<IEndpointRouteBuilder> MapEndpoints,
+    Action<WebApplicationBuilder>? Configure = null);
 
 public static class HostApplication
 {
@@ -25,6 +26,7 @@ public static class HostApplication
         builder.Services.AddSingleton(catalog);
         builder.Services.AddProblemDetails();
         if (identity) builder.AddWissianIdentity();
+        if (identity) foreach (var registration in registrations) registration.Configure?.Invoke(builder);
         configure?.Invoke(builder);
         var app = builder.Build();
         app.UseExceptionHandler();

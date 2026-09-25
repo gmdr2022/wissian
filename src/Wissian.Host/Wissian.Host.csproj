@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="../Wissian.Counterparties/Wissian.Counterparties.csproj" />
     <ProjectReference Include="../Wissian.Core/Wissian.Core.csproj" />
     <ProjectReference Include="../Wissian.Persistence/Wissian.Persistence.csproj" />
     <Content Include="../Wissian.Web/dist/**" Link="wwwroot/%(RecursiveDir)%(Filename)%(Extension)"

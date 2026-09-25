@@ -14,7 +14,9 @@ using static Wissian.Api.Tests.ApiLab;
 using static Wissian.Api.Tests.LabClient;
 
 await using var lab = new ApiLab();
-await lab.StartAsync();
+await lab.StartAsync(args is ["--counterparties"] or ["--counterparties-browser"]);
+if (args is ["--counterparties"]) return await CounterpartyTests.RunAsync(lab);
+if (args is ["--counterparties-browser"]) return await BrowserTests.RunAsync(lab, administration: true);
 if (args is ["--browser"]) return await BrowserTests.RunAsync(lab);
 if (args.Length != 0) throw new ArgumentException("Modo de teste desconhecido.");
 var tests = new List<(string Name, Func<Task> Run)>();

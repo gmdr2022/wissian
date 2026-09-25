@@ -2,7 +2,7 @@
 param(
     [Parameter(Mandatory)][string]$PostgresBin,
     [string]$Dotnet = 'dotnet',
-    [ValidateSet('Persistence', 'Api', 'Browser')][string]$Suite = 'Persistence'
+    [ValidateSet('Persistence', 'Api', 'Browser', 'Counterparties', 'CounterpartiesBrowser')][string]$Suite = 'Persistence'
 )
 
 $ErrorActionPreference = 'Stop'
@@ -56,8 +56,13 @@ try {
     Invoke-PgControl 'start'
     $started = $true
     $env:WISSIAN_TEST_ADMIN_CONNECTION = "Host=127.0.0.1;Port=$port;Database=postgres;Username=wissian_test_admin;Password=$password;Pooling=false;Timeout=10"
-    $targetSuite = if ($Suite -eq 'Browser') { 'Api' } else { $Suite }
-    $suiteArguments = if ($Suite -eq 'Browser') { @('--', '--browser') } else { @() }
+    $targetSuite = if ($Suite -in @('Browser', 'Counterparties', 'CounterpartiesBrowser')) { 'Api' } else { $Suite }
+    $suiteArguments = switch ($Suite) {
+        'Browser' { @('--', '--browser') }
+        'Counterparties' { @('--', '--counterparties') }
+        'CounterpartiesBrowser' { @('--', '--counterparties-browser') }
+        default { @() }
+    }
     & $Dotnet run --project (Join-Path $repoRoot ('tests/Wissian.' + $targetSuite + '.Tests')) --no-restore --disable-build-servers -p:BuildInParallel=false -p:UseSharedCompilation=false @suiteArguments
     if ($LASTEXITCODE -ne 0) { throw "Testes $Suite falharam." }
 } finally {
