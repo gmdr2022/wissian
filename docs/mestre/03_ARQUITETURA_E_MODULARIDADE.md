@@ -4,6 +4,16 @@
 
 ## Limites e consumidores
 
+### Product ownership and builder independence — Gui, 2026-10-08
+
+Wissian is an independently owned SaaS. Lovable, Base44 and similar builders are temporary development accelerators, not required production operators. Their expertise may accelerate international delivery; ending a builder subscription must not be a required dependency for operating the target production architecture. This is a target requirement, not a claim that the current application is already independent.
+
+Keep source, migrations, deployment configuration and recovery procedures versioned in owner-controlled repositories. Production accounts, domains, credentials and billing must remain under the owner's control. Reuse third-party and open-source software with its applicable licenses; product ownership does not imply ownership of those dependencies.
+
+Independently contracted Supabase, Hostinger and Cloudflare are preferred candidates, not mandatory vendors or purchase authorization. Evaluate managed Supabase versus self-hosting, hosting capacity, recurring and renewal costs, maintenance burden and an exit path before committing. Builder independence does not require eliminating every managed service or moving all components onto one small VPS.
+
+Prepare portability during development. Before moving customer traffic or cancelling the existing service, independently verify deployment outside the builder, authentication/provider configuration, tenant isolation, audited commands, document integrity and inspection, backup/export and isolated restoration, and rollback. Preserve users and data; keep the working environment until the replacement passes acceptance. This decision authorizes migration planning and reversible preparation, not immediate cutover, purchases, destructive changes or a claim that product roadmap gates are complete.
+
 ```mermaid
 flowchart TB
     H["Host confiável de composição"] --> C["Core mínimo"]

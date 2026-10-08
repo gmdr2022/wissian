@@ -17,6 +17,8 @@ Os contratos ativos estão em `docs/mestre/`. `docs/fontes/` é acervo históric
 
 ## Fronteiras que devem sobreviver a qualquer fatia
 
+- **Permanent builder-independence directive (Gui, 2026-10-08):** follow the ownership and portability contract in [chapter 03](docs/mestre/03_ARQUITETURA_E_MODULARIDADE.md). Lovable/Base44 accelerate development; the target production SaaS must operate independently of their subscriptions. Independently contracted Supabase/Hostinger/Cloudflare are candidates subject to validation and the existing no-new-cost constraint.
+
 - Repositório Wissian independente. Preservar ClubAL e demais origens; não fundir históricos, importar integralmente backend/migrations/credenciais nem criar fork por cliente.
 - **Foco exclusivo no Wissian — decisão de Gui em 25/09/2026:** ClubAL, Codex Checkpoint e NexusDevHub encerram sua evolução como produtos independentes. São fontes de leitura e absorção seletiva; seguir o [encerramento do capítulo 05](docs/mestre/05_GIT_E_REPOSITORIOS.md) e a [preservação de UX Base44 no capítulo 04](docs/mestre/04_ABSORCAO_CODEX_BASE44.md). Não reabrir desenvolvimento nas origens nem considerar a interface absorvida por arquivar o repositório.
 - **Fragmentar e reutilizar antes de criar.** Localizar equivalente, origem/ref/hash/símbolo, dependências e testes conforme [absorção](docs/mestre/04_ABSORCAO_CODEX_BASE44.md). Código novo exige lacuna demonstrada; rewrite ou troca ampla de stack exige revisão da decisão com Gui. Ausência de aplicação nesta pasta não significa ausência de software reutilizável.

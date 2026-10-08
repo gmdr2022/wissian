@@ -33,8 +33,8 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 6201,
-      "sha256": "e9e42aa3b16ac7c6ea8e40fec9784e32643310d3718d81f8ce6fe9be82d11c0d"
+      "bytes": 6627,
+      "sha256": "5a1042f810106f16334fdf97d6a3a8cdbf43bc84ba5098fda4c2aad30bb9e11f"
     },
     {
       "path": "README.md",
@@ -443,8 +443,8 @@
     },
     {
       "path": "docs/mestre/03_ARQUITETURA_E_MODULARIDADE.md",
-      "bytes": 13128,
-      "sha256": "4fde3e861cb12335c45151c74df6f8ccc31b2470f05550ede23043e0df69c17b"
+      "bytes": 14964,
+      "sha256": "5e7c898864666a6e81c754fad0e10a1de3c7eb5ecdf4570cd6e717390b9636ea"
     },
     {
       "path": "docs/mestre/04_ABSORCAO_CODEX_BASE44.md",
