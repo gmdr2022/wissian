@@ -1,5 +1,7 @@
 # Wissian
 
+> **Current development mandate — Gui, 2026-10-08:** this repository holds the canonical specifications and preserved source evidence. The active application is [gmdr2022/pixel-perfect-replica](https://github.com/gmdr2022/pixel-perfect-replica), using the approved native TypeScript/TanStack Start route. Follow the permanent [product-first delivery and consolidated migration decision](docs/mestre/03_ARQUITETURA_E_MODULARIDADE.md) and [roadmap](docs/mestre/09_ROADMAP_INTEGRADO.md): build/validate M2–M4 with active Lovable construction and Codex integration, retain portability and migrate independently before real customers. Earlier .NET/M0 preparation descriptions below are historical evidence, not the active application/runtime or a reason to restart development.
+
 Plataforma B2B da Fultuma Tech Ltda, com Core mínimo, administração por módulos e especialidades separadas. **Estado: M0 caracterizado; há um ensaio executável de reuso, ainda não uma aplicação SaaS.** Stack decidida por evidência na [ADR-M03](docs/mestre/adrs/ADR-M03_STACK_E_REUSO.md): .NET/ASP.NET Core, EF/PostgreSQL e React/TypeScript/Vite. O código existente será fragmentado e adaptado conforme o [contrato de absorção](docs/mestre/04_ABSORCAO_CODEX_BASE44.md), preservando a identidade própria do Wissian.
 
 O ensaio em `experiments/m0-reuso/README.md` passou 16 casos sintéticos. A

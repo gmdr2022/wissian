@@ -17,6 +17,8 @@ Os contratos ativos estão em `docs/mestre/`. `docs/fontes/` é acervo históric
 
 ## Fronteiras que devem sobreviver a qualquer fatia
 
+- **Permanent product-first sequencing (Gui, 2026-10-08):** consult [chapter 03](docs/mestre/03_ARQUITETURA_E_MODULARIDADE.md), "Product-first delivery and consolidated migration", at session start and after context loss. Prioritize the working M2–M4 administrative release with active Lovable construction and Codex integration/direct economical fixes; preserve portability and consolidate independent deployment before real customers. Do not resume infrastructure-only work or per-package destination migration by default. Gui's autonomous development mandate supersedes the historical pre-development/M1-only scope; security, ownership, preservation and no-new-cost constraints remain.
+
 - **Permanent builder-independence directive (Gui, 2026-10-08):** follow the ownership and portability contract in [chapter 03](docs/mestre/03_ARQUITETURA_E_MODULARIDADE.md). Lovable/Base44 accelerate development; the target production SaaS must operate independently of their subscriptions. Independently contracted Supabase/Hostinger/Cloudflare are candidates subject to validation and the existing no-new-cost constraint.
 
 - Repositório Wissian independente. Preservar ClubAL e demais origens; não fundir históricos, importar integralmente backend/migrations/credenciais nem criar fork por cliente.

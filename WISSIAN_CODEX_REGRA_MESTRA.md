@@ -8,6 +8,8 @@
 
 # 1. MISSÃO
 
+**Permanent execution update approved by Gui, 2026-10-08:** apply [chapter 03](docs/mestre/03_ARQUITETURA_E_MODULARIDADE.md), "Product-first delivery and consolidated migration", before choosing the next slice, including after restarts or context compaction. Deliver the usable M2–M4 administrative cycle through active Lovable construction, selective ClubAL/Base44 reuse and Codex integration/direct fixes/independent validation. Keep lightweight portability; consolidate independent deployment before real customers instead of migrating every small package. Existing security gates, one writer per file and no-new-cost constraints remain. The chapter is the canonical decision; a session handoff must not override it with an older infrastructure priority.
+
 Inicie e mantenha o desenvolvimento real do **Wissian**.
 
 Seu objetivo principal não é produzir planejamento, documentação ou explicações para o Product Owner.

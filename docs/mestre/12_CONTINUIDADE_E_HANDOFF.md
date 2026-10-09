@@ -14,6 +14,8 @@ O estado preparado agora: anexos lidos e preservados, conflitos reconciliados, m
 
 ## Sessão de retomada
 
+**Permanent resume priority (Gui, 2026-10-08):** read the product-first sequencing in [chapter 03](03_ARQUITETURA_E_MODULARIDADE.md) together with the [roadmap](09_ROADMAP_INTEGRADO.md). Older infrastructure checkpoints describe retained assets and pending gates; they do not supersede the priority of delivering M2–M4 with Lovable as an active constructor. Recheck current code and evidence before claiming completion or choosing the next implementation package.
+
 1. Identificar pedido vigente, raiz, instruções aplicáveis, branch/HEAD/remotes/status e alterações alheias.
 2. Quando os documentos forem alterados, verificar o [manifesto](manifesto.json) com `--workspace`; não repetir toda a suíte para uma consulta sem mudanças.
 3. Escolher a rota no [README](../../README.md), ler somente os contratos/ADRs da fatia e resolver conflitos pelo [mandato](01_MANDATO_E_PRECEDENCIA.md). Consultar histórico só onde a decisão depende dele.

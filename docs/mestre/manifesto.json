@@ -33,18 +33,18 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 6627,
-      "sha256": "5a1042f810106f16334fdf97d6a3a8cdbf43bc84ba5098fda4c2aad30bb9e11f"
+      "bytes": 7319,
+      "sha256": "6d1589f0e06268aeeec39bd8b9b2b355ec257f2e35fe1438d08f70382a937210"
     },
     {
       "path": "README.md",
-      "bytes": 5455,
-      "sha256": "2258945eeef851b789ed1da3b3792d7f20cacd576fb44be86adc23bb39562d90"
+      "bytes": 6233,
+      "sha256": "e248fe73a5adbe5a8beb07b737f9eaf030fb8337c607418004076213c6b76b42"
     },
     {
       "path": "WISSIAN_CODEX_REGRA_MESTRA.md",
-      "bytes": 27840,
-      "sha256": "b6fcdb26adc4e1d12ec69bdda063cad85c1e5f97cce227b121d60cb42773dafd"
+      "bytes": 28601,
+      "sha256": "87abf33f591c1e54c931f57db55404776e45a4ed4a866a9e6608172005535c42"
     },
     {
       "path": "docs/fontes/README.md",
@@ -443,8 +443,8 @@
     },
     {
       "path": "docs/mestre/03_ARQUITETURA_E_MODULARIDADE.md",
-      "bytes": 15515,
-      "sha256": "1cc7c50bf425abc762672c434b6212554c7205b44205bd36030577b7de4e904b"
+      "bytes": 18184,
+      "sha256": "1278e51358b117314668089b4656030f3cf33d247c56cedf593ad3d3d6f7428f"
     },
     {
       "path": "docs/mestre/04_ABSORCAO_CODEX_BASE44.md",
@@ -473,8 +473,8 @@
     },
     {
       "path": "docs/mestre/09_ROADMAP_INTEGRADO.md",
-      "bytes": 11141,
-      "sha256": "561ec9d643267f03e768009685f58a56a844b9f7a4f9c6b5592e2f968a102461"
+      "bytes": 11770,
+      "sha256": "ca223ab3dc4230749d8fb3d1cbe7ab43e10b77893837c168eae55090920687ec"
     },
     {
       "path": "docs/mestre/10_TESTES_E_ACEITE.md",
@@ -488,8 +488,8 @@
     },
     {
       "path": "docs/mestre/12_CONTINUIDADE_E_HANDOFF.md",
-      "bytes": 4137,
-      "sha256": "edb3362795781b1cf16eb704bcea02224a5b4769e41598d7facd4d706e22a4d5"
+      "bytes": 4604,
+      "sha256": "644535675076f04c7c275b936ce7ec71f29a8ed738842f652dd9c0e4de1e50a2"
     },
     {
       "path": "docs/mestre/13_RISCOS_E_DECISOES_ABERTAS.md",

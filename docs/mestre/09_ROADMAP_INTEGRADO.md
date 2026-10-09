@@ -12,6 +12,8 @@ As fontes usam nomes que colidem: R00–R09 pertencem à reestruturação v1.1; 
 
 ## Sequência
 
+**Permanent sequencing approved by Gui, 2026-10-08:** follow the product-first delivery and consolidated migration decision in [chapter 03](03_ARQUITETURA_E_MODULARIDADE.md). Build and validate M2–M4 with Lovable as an active constructor, Codex as integrator/validator and GitHub as the shared source; retain lightweight portability without keeping the independent deployment in lockstep with every small feature. Consolidated independent deployment must pass its gates before real customer onboarding; optional M5–M8 work does not condition that migration. This changes execution priority, not milestone acceptance status.
+
 | Marco | Resultado observável e fatias | Dependência | Evidência de saída | Fontes preservadas |
 |---|---|---|---|---|
 | M0 — reconhecer e decidir | Estado Git real, fichas por capacidade, comparação Base44/Codex, ADR de stack e primeiro contrato executável | Pedido de implementação vigente; código de origem acessível em leitura | Matriz de procedência completa para a primeira fatia; lacunas bloqueantes resolvidas; critérios e rollback definidos | R00–R02; E0; ADR local; TEM/OWM/GRA |
