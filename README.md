@@ -2,18 +2,20 @@
 
 > **Current development mandate — Gui, 2026-10-08:** this repository holds the canonical specifications and preserved source evidence. The active application is [gmdr2022/pixel-perfect-replica](https://github.com/gmdr2022/pixel-perfect-replica), using the approved native TypeScript/TanStack Start route. Follow the permanent [product-first delivery and consolidated migration decision](docs/mestre/03_ARQUITETURA_E_MODULARIDADE.md) and [roadmap](docs/mestre/09_ROADMAP_INTEGRADO.md): build/validate M2–M4 with active Lovable construction and Codex integration, retain portability and migrate independently before real customers. Earlier .NET/M0 preparation descriptions below are historical evidence, not the active application/runtime or a reason to restart development.
 
-Plataforma B2B da Fultuma Tech Ltda, com Core mínimo, administração por módulos e especialidades separadas. **Estado: M0 caracterizado; há um ensaio executável de reuso, ainda não uma aplicação SaaS.** Stack decidida por evidência na [ADR-M03](docs/mestre/adrs/ADR-M03_STACK_E_REUSO.md): .NET/ASP.NET Core, EF/PostgreSQL e React/TypeScript/Vite. O código existente será fragmentado e adaptado conforme o [contrato de absorção](docs/mestre/04_ABSORCAO_CODEX_BASE44.md), preservando a identidade própria do Wissian.
+Plataforma B2B da Fultuma Tech Ltda, com Core mínimo, administração por módulos e especialidades separadas.
 
-O ensaio em `experiments/m0-reuso/README.md` passou 16 casos sintéticos. A
-[evidência da fatia](docs/mestre/evidencias/m0-primeira-fatia.json) delimita o que foi
-inspecionado e executado. Próxima frente: [fundação M1](docs/mestre/contratos/M1_FUNDACAO.md).
+**Runtime and current evidence:** the application's accepted [ADR-M09](https://github.com/gmdr2022/pixel-perfect-replica/blob/main/docs/adr/ADR-M09-runtime-lovable.md) partially supersedes [ADR-M03](docs/mestre/adrs/ADR-M03_STACK_E_REUSO.md) for Rota B. Use its [README](https://github.com/gmdr2022/pixel-perfect-replica/blob/main/README.md), [roadmap](https://github.com/gmdr2022/pixel-perfect-replica/blob/main/roadmap.md) and linked evidence for current progress and open gates. Earlier .NET work remains preserved and paused; this routing does not rename repositories, restart M0, authorize a rewrite or imply milestone completion, human acceptance or production readiness.
+
+Historical M0 baseline: the experiment in `experiments/m0-reuso/README.md` passed 16 synthetic cases. Its
+[evidence](docs/mestre/evidencias/m0-primeira-fatia.json) bounds that earlier validation;
+the [M1 contract](docs/mestre/contratos/M1_FUNDACAO.md) remains a reference, not a claim that the active application is still at M0.
 Módulos/addons continuam [planejados](docs/mestre/03_ARQUITETURA_E_MODULARIDADE.md),
 sem disponibilidade comercial presumida.
 
 ## Começar ou retomar
 
 1. Identificar o pedido vigente, ler [AGENTS.md](AGENTS.md) e conferir Git/alterações existentes. Ler esta entrada não autoriza desenvolvimento, commit ou publicação.
-2. Recuperar a nota `continuity` do projeto C7 `wissian` e confrontá-la com o workspace. Sem C7, esta entrada e os contratos abaixo continuam suficientes para orientar o trabalho seguro.
+2. Recover current state from the relevant repository's existing roadmap, ADRs and slice evidence, and compare it with Git/workspace state. Follow [chapter 12](docs/mestre/12_CONTINUIDADE_E_HANDOFF.md); C7/Obsidian is not required.
 3. Selecionar **somente a rota pertinente**. Ler os arquivos da rota e a seção/caso necessário; consultar as fontes históricas apenas quando houver lacuna concreta.
 4. Gui autorizou M0 em 25/09/2026 e o início foi caracterizado. Reutilizar a evidência existente; avançar por marco/fatia conforme o pedido vigente. Não reiniciar auditoria global nem criar scaffold por preferência.
 
@@ -35,7 +37,7 @@ O [roadmap](docs/mestre/09_ROADMAP_INTEGRADO.md) define os marcos; o [mandato](d
 | `README.md` / `AGENTS.md` | Entrada de trabalho / regras locais |
 | [docs/mestre](docs/mestre/00_INDICE.md) | Contratos vigentes, ADRs, matrizes, exemplos, prompts e ferramentas documentais |
 | [docs/fontes](docs/fontes/README.md) | 75 fontes originais, preservadas por hash; consulta sob demanda, sem instruções executáveis vigentes |
-| C7, projeto `wissian` | Continuidade, decisões de sessão, evidências e próximo passo; sem diários duplicados aqui |
+| Existing roadmap, ADRs and slice evidence in the relevant repository | Canonical engineering continuity, current slice, verified results, blockers and next step; no duplicate session diary |
 
 Backups, ZIPs e relatórios de entregas anteriores foram arquivados fora do checkout. Não são dependências do desenvolvimento. As configurações remanescentes na raiz protegem Git, encoding e fontes; não escolhem stack. Os exemplos antigos de ambiente/Docker/formatação continuam no acervo, sem ativação automática.
 
@@ -51,5 +53,5 @@ python -B docs/mestre/ferramentas/testar_validacao.py
 O primeiro comando verifica somente o escopo documental governado, permitindo evolução do código fora dele. Atualização do manifesto e recuperação estão no [procedimento de manutenção](docs/mestre/14_INSTALACAO_E_RESTAURACAO.md). Executar a validação após mudanças documentais; repetir a suíte quando o verificador ou seus contratos forem afetados. Não rodar tudo em cada consulta.
 
 Python é ferramenta documental. Os comandos do ensaio de domínio estão em seu README;
-build/teste de aplicação serão definidos em M1. Testes de pacote e caracterização
+current application build/test commands belong to the active application's README. Testes de pacote e caracterização
 isolada não comprovam funcionamento ou segurança do SaaS.

@@ -19,7 +19,7 @@
 | Evidência de equivalência | Casos positivo/negativo, execução/commit/ambiente, UX/hardware pendentes |
 | Rollback | Ação concreta, versão/estado recuperável, gatilho, teste sintético |
 | Aceite | Técnico separado de humano e de produção; responsável e estado explícito |
-| Continuidade | Contrato/ADR atualizado, checkpoint no cofre, próximo passo seguro |
+| Continuidade | Updated contract/ADR, existing slice/status record and next safe step |
 
 Concluída só quando comportamento escolhido foi implementado e validado no destino, diferenças aprovadas e origem preservada. Listar arquivos copiados sem prova de uso não encerra a absorção.
 
