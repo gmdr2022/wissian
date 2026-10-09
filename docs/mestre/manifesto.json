@@ -33,18 +33,18 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 7319,
-      "sha256": "6d1589f0e06268aeeec39bd8b9b2b355ec257f2e35fe1438d08f70382a937210"
+      "bytes": 8032,
+      "sha256": "5fe7fa67525ce4cc9bfb7ce30b570f2be0669e95aa425241987b6116e730dc46"
     },
     {
       "path": "README.md",
-      "bytes": 6233,
-      "sha256": "e248fe73a5adbe5a8beb07b737f9eaf030fb8337c607418004076213c6b76b42"
+      "bytes": 6708,
+      "sha256": "0ef8c70c4de5d34ca3cf7ab3c3fd2ab2810e23b3603245225c6f6bcb3b63fd0c"
     },
     {
       "path": "WISSIAN_CODEX_REGRA_MESTRA.md",
-      "bytes": 28601,
-      "sha256": "87abf33f591c1e54c931f57db55404776e45a4ed4a866a9e6608172005535c42"
+      "bytes": 29188,
+      "sha256": "e76d24534f248051427eef584e8538f8468aa073c336b21916ebf4024e91ed8e"
     },
     {
       "path": "docs/fontes/README.md",
@@ -433,8 +433,8 @@
     },
     {
       "path": "docs/mestre/01_MANDATO_E_PRECEDENCIA.md",
-      "bytes": 9352,
-      "sha256": "83f4fcb1c1beeeac82e739674314f0776fbd995296fce699d927248b21705bf9"
+      "bytes": 9977,
+      "sha256": "b3fc061b53b6f4e3eb2719d86c016893bca5d270fe4be3fa466dadb9dfe2a653"
     },
     {
       "path": "docs/mestre/02_ESTADO_FONTES_E_LACUNAS.md",
@@ -488,8 +488,8 @@
     },
     {
       "path": "docs/mestre/12_CONTINUIDADE_E_HANDOFF.md",
-      "bytes": 4604,
-      "sha256": "644535675076f04c7c275b936ce7ec71f29a8ed738842f652dd9c0e4de1e50a2"
+      "bytes": 5108,
+      "sha256": "5c134d36d5f1ed3bf64c23032d6cbb665f117740fdddbc2f91cbd38d67d42ba5"
     },
     {
       "path": "docs/mestre/13_RISCOS_E_DECISOES_ABERTAS.md",
@@ -498,8 +498,8 @@
     },
     {
       "path": "docs/mestre/14_INSTALACAO_E_RESTAURACAO.md",
-      "bytes": 4796,
-      "sha256": "79ca11b0e0fb39f304e7ced4d67255273513c4422ec8cc2aa9e7c474e9d3257d"
+      "bytes": 5232,
+      "sha256": "395f53d63f8e8c45e49b001541cb80b1268a77a579e1ce8256809aa86fb942f4"
     },
     {
       "path": "docs/mestre/15_REFERENCIAS_TECNICAS.md",
@@ -603,8 +603,8 @@
     },
     {
       "path": "docs/mestre/ferramentas/README.md",
-      "bytes": 1793,
-      "sha256": "13970ae87977f92b20731ff751a9f95702feeb0875426af867b35cc122ff15ac"
+      "bytes": 1797,
+      "sha256": "da73950805fff84be0b270b930c8d629c446326753685cfe0e28e4c8b3724a07"
     },
     {
       "path": "docs/mestre/ferramentas/atualizar_manifesto.py",
@@ -698,23 +698,23 @@
     },
     {
       "path": "docs/mestre/modelos/FICHA_ABSORCAO.md",
-      "bytes": 2639,
-      "sha256": "8659e5c5fc7fb556a24d4c2baa5bdaa84ccd399f95b2860a2a68a159cfb2f148"
+      "bytes": 2641,
+      "sha256": "ff059470e7d37bcd3abfcc2d6b8efb51bc10941133b7413696b1a53ee90ff70d"
     },
     {
       "path": "docs/mestre/modelos/RELATORIO_INCREMENTO.md",
-      "bytes": 847,
-      "sha256": "7c64f4b3c7c1ac4723f94594c72c380bcc599f757fcf6faa0be7ad7cf243250a"
+      "bytes": 904,
+      "sha256": "e7005da9e26d232b9d1e4ac6b2f002e400eeab12e68f720c49c6f4c9d5260d33"
     },
     {
       "path": "docs/mestre/prompts/01_AUDITAR_FONTES.md",
-      "bytes": 2115,
-      "sha256": "2c1e90d3863bc4605ea681eaf947b12da86b2e7a6714b877197dc0e97e90b004"
+      "bytes": 2152,
+      "sha256": "87ea61a6c78d5982c3369dd268d2478773731f898a0bc8c1e6b24d9e0583fdc3"
     },
     {
       "path": "docs/mestre/prompts/02_IMPLEMENTAR_FUNDACAO.md",
-      "bytes": 2823,
-      "sha256": "19320859f860de9128c43194227724faa3b381cc77e2938068fe13ac29f0e94f"
+      "bytes": 2844,
+      "sha256": "3811f2a6a5c74be2638b52d8bf5b877d2208b65523641ddcf9f38fae1fd970c3"
     },
     {
       "path": "docs/mestre/prompts/03_ABSORVER_CAPACIDADE.md",
@@ -723,8 +723,8 @@
     },
     {
       "path": "docs/mestre/prompts/04_RETOMAR.md",
-      "bytes": 1268,
-      "sha256": "0cb2ec27b52a2c7460543944954c0c8e31a589960be1327c01e9505c54e6bd19"
+      "bytes": 1396,
+      "sha256": "b9bfeb9e78c2576b5aedd3c7e784fbdd5fe67842e52028fe4cdaa1278e929196"
     },
     {
       "path": "docs/mestre/prompts/05_REVISAR.md",
@@ -733,8 +733,8 @@
     },
     {
       "path": "docs/mestre/prompts/06_IMPLEMENTAR_CONTINUITY.md",
-      "bytes": 2634,
-      "sha256": "50eb181e5807c7aed0e08734dd320d1f786aa1194356dac09075a94a051e8bad"
+      "bytes": 2659,
+      "sha256": "23739030f3aca59f083966710f228a3b132869f015a109745e8ed484a5d94dc6"
     }
   ],
   "evolution": "Additive Continuity plan; original 2.0.0 sources and historical evidence preserved",

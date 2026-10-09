@@ -3,7 +3,7 @@
 **Uso:** enviar como pedido futuro deliberado ou aplicar dentro de uma autorização de trabalho já vigente. A presença deste arquivo não inicia execução.
 
 
-Execute M0 de preparação para a implementação do Wissian dentro da autorização atual. Confirme raiz, instruções, estado Git e continuidade C7. Valide o pacote e leia mandato, arquitetura, absorção, estado e roadmap.
+Execute M0 de preparação para a implementação do Wissian dentro da autorização atual. Confirm the root, instructions, Git state and existing slice/roadmap evidence under chapter 12. Valide o pacote e leia mandato, arquitetura, absorção, estado e roadmap.
 
 Audite em leitura as partes necessárias das refs atuais ClubAL/Codex/Base44, preservando WIP e sem fetch externo implícito. Reconcilie hashes do pacote com fontes atuais. Caracterize uma primeira fatia completa incluindo identidade/tenant, persistência, módulo e fluxo administrativo; examine explicitamente dependências Base44, mudanças de mapa de alojamentos e assets quando presentes na fonte selecionada. Registre limite se alguma origem só estiver citada e não acessível.
 

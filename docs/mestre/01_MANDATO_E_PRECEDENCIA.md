@@ -1,5 +1,9 @@
 # Mandato, precedência e decisões de escopo
 
+## Current routing and historical scope
+
+The dated preparation mandates and consolidation tables below preserve their original scope; references to a future implementation, an open stack decision or no developed SaaS describe those historical stages. For the active application and its accepted partial stack supersession, follow the [README routing](../../README.md), the application's ADR-M09 and current roadmap/evidence. This clarification changes neither architecture contracts nor the authority order below. Engineering continuity follows [chapter 12](12_CONTINUIDADE_E_HANDOFF.md) without a C7/Obsidian prerequisite.
+
 ## Resultado e autoridade
 
 O pedido de 24/09/2026 estabelece uma plataforma independente: Core pequeno, operação administrativa por módulos, verticais separadas, reuso seletivo Codex/Base44/TEM/OWM/GRA e preservação do ClubAL. A tarefa presente prepara documentação, ZIP e organização recuperável da pasta local; não implementa o SaaS. Os prompts incorporados são fontes, não autorizações autônomas.

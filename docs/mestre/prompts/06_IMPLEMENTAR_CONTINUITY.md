@@ -1,6 +1,6 @@
 # Implementar a fatia autorizada de continuidade operacional
 
-**Uso futuro deliberado; este arquivo não autoriza execução por estar no pacote.** Ler entrada, mandato, ADR-M08, capítulo 16, roadmap M5-CO e matriz WM-25…40/TC-01…22. Conferir Git, fontes e continuidade C7; preservar alterações existentes.
+**Uso futuro deliberado; este arquivo não autoriza execução por estar no pacote.** Ler entrada, mandato, ADR-M08, capítulo 16, roadmap M5-CO e matriz WM-25…40/TC-01…22. Check Git, sources and existing slice evidence under chapter 12; preservar alterações existentes.
 
 Quando a tarefa for M0/M1, preparar somente contratos/fundações listados no capítulo 16. Não criar tabelas, telas, worker ou broker da Continuity. M2–M4 devem concluir o primeiro ciclo administrativo sem depender dela.
 

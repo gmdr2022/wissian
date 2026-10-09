@@ -17,4 +17,4 @@ python -B docs/mestre/ferramentas/testar_validacao.py
 
 O modo `--workspace` deixa código/dependências fora do escopo, preservando a fiscalização de documentos. O modo padrão estrito serve a uma distribuição documental limpa. `--installed` conserva compatibilidade com pacotes anteriores e a conferência da cópia histórica de nome exato; não é incentivo a duplicar o workspace.
 
-[Procedimento completo de manutenção/recuperação](../14_INSTALACAO_E_RESTAURACAO.md). Resultados de cada execução ficam no C7 ou na evidência compartilhável da mudança; não manter relatórios estáticos que aparentem validar versões posteriores.
+[Procedimento completo de manutenção/recuperação](../14_INSTALACAO_E_RESTAURACAO.md). Record execution results in the change's existing sanitized evidence, following chapter 12; não manter relatórios estáticos que aparentem validar versões posteriores.
