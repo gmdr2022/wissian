@@ -4,6 +4,14 @@
 
 ## Limites e consumidores
 
+### Milestone ownership and customer release gate — Gui, 2026-10-10
+
+Latest owner direction supersedes earlier pilot-priority wording: the existing M3 conversation owns M3, then M4, then the full approved canonical M5a/M5b/M5c scope, and prioritizes resolving and validating customer loading before handoff. Once those scoped exit criteria are actually met, create one new autonomous user-owned M6 conversation; after M6 completion, a new M7 conversation; after M7 completion, a new M8 conversation. Gui authorizes those staged creations, not premature or overlapping phase writers. Each handoff carries exact commits, evidence, unresolved operational limits and verified persistent-goal activation. M2 remains paused.
+
+**The customer pilot will be released only after completion and validation of M1 through M8.** Reconcile outstanding M1/M2 acceptance limits and all essential loading, security, recovery, compatibility and operational gates. A retained owner/developer workspace is a development fixture, not a released customer pilot. M7 may prepare/rehearse synthetic or owner development operation; actual customers remain excluded through M8 acceptance. M8 means its bounded approved roadmap scope, not every hypothetical catalog module. Public publication still needs applicable authorization.
+
+Keep product construction and customer distribution separate. The earlier product-first consolidated independent migration can remain approved development preparation; deployment success or M2–M4/M5 completion does not authorize customer onboarding. Do not migrate each package. Preserve the managed pilot, paid KVM 2/scanner, prepared Free Supabase destination, published history and no-new-cost boundary. Propagate this release condition into every future M6/M7/M8 handoff and persistent goal.
+
 ### Product ownership and builder independence — Gui, 2026-10-08
 
 Wissian is an independently owned SaaS. Lovable, Base44 and similar builders are temporary development accelerators, not required production operators. Their expertise may accelerate international delivery; ending a builder subscription must not be a required dependency for operating the target production architecture. This is a target requirement, not a claim that the current application is already independent.
@@ -87,7 +95,7 @@ ERP obrigatório. As opções abaixo estão **planejadas, ainda não disponívei
 |---|---|---|
 | Primeira base administrativa | `documents`, `counterparties`, `fiscal-records`, `finance`, `monthly-close` | M2–M4; composição `admin-first-cycle` do capítulo 17; regras permanecem fora do Core |
 | Contratos e organização do trabalho | `contracts`, `agenda` | M5a por demanda; agenda não é dependência obrigatória de contratos |
-| Governança, ativos intelectuais e pessoas | `governance`, `intellectual-assets`, `people-services`, `privacy` | M5b/c por fluxo; não condicionam o primeiro piloto |
+| Governança, ativos intelectuais e pessoas | `governance`, `intellectual-assets`, `people-services`, `privacy` | M5b/c por fluxo; a liberação do piloto exige M1–M8 conforme decisão de 10/10/2026 |
 | Especialidades de negócio | `socioeducativo`, `educacao`, `clubal-telas`, `eventos` | M6 por público e demanda; composições neutras não carregam vocabulário ou código dessas especialidades |
 | Expansões administrativas | `fleet`, `inventory-qr`, `legal`, `hr-time`, `fiscal-issuance` | M8; emissão oficial e operações reguladas exigem contratos e autorização próprios |
 | Capacidades transversais | `devices`, `displays`, `release-support`, `continuity` | Integração conforme consumidor; `continuity` é infraestrutura interna opcional após M4, sem produto/cobrança própria presumida |
