@@ -11,7 +11,7 @@ Quando o pedido incluir M2–M4, entregue o fluxo documentos/contrapartes → no
 
 Aplicar o [capítulo 17](../17_BASE_ADMINISTRATIVA_E_TRANSICAO.md): Fultuma Exemplo e Empresa Exemplo usam o mesmo produto; comprovar benefício sobre tarefas manuais equivalentes, exportação utilizável e recuperação. A oferta administrativa usa o Core mínimo com módulos; não implementar marca, contratos, societário ou ERP completo para reproduzir pastas retiradas. A retirada do kit preparatório não autoriza dados reais nem comprova migração concluída.
 
-Atualize contratos, comandos reais de execução e evidências por requisito. Registre checkpoint C7 e validação humana de UI quando pertinente; não aprove por Gui. Continue os próximos passos seguros dentro do escopo solicitado e pare no marco acordado, com resultado verificável e pendências exatas.
+Atualize contratos, comandos reais de execução e evidências por requisito. Update the existing slice/evidence record and record human UI validation when applicable; não aprove por Gui. Continue os próximos passos seguros dentro do escopo solicitado e pare no marco acordado, com resultado verificável e pendências exatas.
 
 ## Complemento Continuity
 

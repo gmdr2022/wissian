@@ -1,7 +1,7 @@
 # WISSIAN — ORDEM MESTRE DE DESENVOLVIMENTO AUTÔNOMO, EFICIENTE E ORIENTADO AO PILOTO
 
 > **Status:** regra operacional persistente do Codex para o projeto Wissian.  
-> **Uso:** consultar no início de cada nova sessão, após compactações de contexto e sempre que houver dúvida de prioridade, autonomia, pesquisa, reutilização, testes ou continuidade.  
+> **Uso:** consultar por seções pertinentes à decisão e ao risco da fatia. No início ou após perda de contexto, recuperar prioridade, restrições aplicáveis e evidência corrente; não reler integralmente por rotina. Todas as restrições aplicáveis continuam obrigatórias.
 > **Objetivo principal:** transformar o patrimônio técnico existente em um Wissian funcional, seguro e comercializável, chegando ao piloto o mais cedo possível sem sacrificar fundamentos críticos.
 
 ---
@@ -71,9 +71,11 @@ O produto do seu trabalho deve estar principalmente:
 
 O workspace/repositório atual do Wissian é a fonte da realidade executável.
 
-A entrada atual é `README.md`, com contratos vigentes em `docs/mestre/` e fontes
-históricas em `docs/fontes/`. Não recriar o antigo pacote aninhado. Resolver a raiz
-real do Git e a continuidade C7 antes de agir.
+Start from the actual repository's `README.md` and `AGENTS.md`. This repository's
+`docs/mestre/` holds governing contracts and `docs/fontes/` holds historical sources;
+`gmdr2022/pixel-perfect-replica` holds the active application, its roadmap and evidence.
+Do not recreate the old nested package. Resolve the actual Git root and current
+slice from existing repository records before acting; follow chapter 12 for continuity.
 
 Considere também, quando disponíveis:
 
@@ -84,7 +86,7 @@ Considere também, quando disponíveis:
 - código herdável do ClubAL;
 - implementações produzidas e aprimoradas via Base44;
 - documentação consolidada;
-- decisões do C7;
+- historical C7 decisions, only when available and relevant; they are optional evidence;
 - materiais de Nexus e CC previamente destinados à absorção;
 - ADRs;
 - roadmaps;
@@ -421,52 +423,27 @@ Não "redescubra" a arquitetura em toda sessão.
 
 ---
 
-# 14. OBISIDIAN / C7 — MEMÓRIA OPERACIONAL
+# 14. REPOSITORY-NATIVE ENGINEERING CONTINUITY
 
-Integre o Wissian ao modelo de memória persistente já utilizado no C7.
+Follow [chapter 12](docs/mestre/12_CONTINUIDADE_E_HANDOFF.md) as the canonical continuity protocol.
 
-Primeiro descubra as convenções existentes.
+Use the existing roadmap/status, ADRs and slice evidence in the repository that owns the work. Record verified results and decisions, not private reasoning or session transcripts. Do not create a parallel memory system, duplicate diary or new documentation hierarchy.
 
-Não crie um segundo sistema paralelo.
-
-A memória deve registrar **resultados cognitivos**, não raciocínio interno.
-
-Registre somente o que possui valor futuro:
-
-- estado atual;
-- decisões relevantes;
-- ADRs importantes;
-- checkpoints;
-- problemas e solução;
-- riscos;
-- dívida técnica;
-- funcionalidades concluídas;
-- próxima frente;
-- evidências de validação.
-
-Não registre pensamentos passo a passo.
-
-Não transforme Obsidian em diário da sessão.
+C7/Obsidian is retired as an operational dependency. Existing notes may be consulted as optional historical references when already available; no installation, vault repair, synchronization or duplicated write is required. Context7 library documentation is a separate technical-reference tool and is unaffected.
 
 ---
 
-# 15. CONTEXTO DE RETOMADA
+# 15. RESUME CONTEXT
 
-Mantenha uma nota curta que permita responder rapidamente:
+Keep the existing slice/status entry compact and sufficient to identify:
 
-- onde estamos;
-- o que funciona;
-- o que mudou;
-- o que foi validado;
-- o que está pendente;
-- qual frente está ativa;
-- qual é a próxima;
-- qual bloqueio existe;
-- quais decisões não devem ser rediscutidas sem nova evidência.
+- current repository, branch/base SHA and active owner;
+- active slice and verified result;
+- decisions and their canonical references;
+- tests and their actual scope;
+- blockers, human dependencies and next safe step.
 
-Esse documento deve ser compacto.
-
-Detalhes ficam em documentos específicos.
+Link detailed evidence instead of copying it. Revalidate Git and concurrent ownership before editing. A historical note or a newer timestamp does not authorize action or override the actual implementation.
 
 ---
 

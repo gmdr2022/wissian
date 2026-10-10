@@ -12,4 +12,4 @@
 - Commit/push/publicação: realizado com referência verificável ou não realizado:
 - Pendências necessárias, dono e próximo passo:
 
-Não copiar logs com segredos/dados reais nem transcrição de sessão. Contratos duradouros ficam no repositório; histórico interno detalhado no cofre.
+Não copiar logs com segredos/dados reais nem transcrição de sessão. Durable contracts and sanitized results belong in the existing repository records; do not create a session diary or require a vault update.
