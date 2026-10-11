@@ -33,8 +33,8 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 8032,
-      "sha256": "5fe7fa67525ce4cc9bfb7ce30b570f2be0669e95aa425241987b6116e730dc46"
+      "bytes": 8436,
+      "sha256": "dd570d019ef7a7d92e05b6d27d78040379de205c81f2ba39f6799554a0a042a6"
     },
     {
       "path": "README.md",
@@ -448,8 +448,8 @@
     },
     {
       "path": "docs/mestre/04_ABSORCAO_CODEX_BASE44.md",
-      "bytes": 12194,
-      "sha256": "2ffcefd175d9fad78ee3a184c0c97f5416ad8f004d0d2138d721aef1ba1bae62"
+      "bytes": 14291,
+      "sha256": "e7334586d06653033a5edadb19f2a35b7e93fb57c44469a74b8147e28a770f02"
     },
     {
       "path": "docs/mestre/05_GIT_E_REPOSITORIOS.md",

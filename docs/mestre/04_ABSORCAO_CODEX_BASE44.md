@@ -1,5 +1,13 @@
 # Absorção seletiva de Codex, Base44 e frentes maduras
 
+## Permanent interface reuse directive — Gui, 2026-10-11
+
+Across Wissian phases, consult both the preserved ClubAL work built with Codex and improved through Base44, and the [Lovable template catalog](https://lovable.dev/templates), before creating an equivalent interface or utility. Prefer reusing, adapting and improving compatible existing code to save delivery time and retain mature visual and functional behavior. The owner's product-quality direction is **SaaS P2P Elite Prime**: preserve Wissian's identity and improve the selected interface to its SaaS requirements rather than importing a complete template indiscriminately. This label does not introduce an unapproved transport protocol, paid service or certification.
+
+Keep discovery bounded to the active phase and its concrete workflows. Select relevant ready-to-use templates, inspect their actual source when available, and record the source URL, inspected date, available ref/hash, components, dependencies, applicable license and stated/observed upstream validation. Use the existing ADOPT/ADAPT/KEEP/DEFER/REJECT decisions and slice evidence; do not create a second status system or require an exhaustive catalog audit. Prefer compatible tested interface fragments and useful utilities over rebuilding equivalents. Preserve ClubAL/Base44 sources and published history.
+
+Treat a Lovable readiness or validation claim as evidence about the template's own baseline. After adaptation, independently verify Wissian's actual data contracts, organization isolation, session revocation, audited commands, permissions, accessibility, responsiveness, six supported locales, error/retry behavior and affected regressions. Reuse presentation through public module contracts; keep credentials, domain authority and tenant data ownership in Wissian. Demo data, embedded financial files and an unauthenticated preview are not an authorized SaaS backend. Keep reusable code and recovery paths owner-controlled, respect existing credits and the no-new-cost limit, and avoid a mandatory builder subscription in the target production runtime.
+
 ## Unidade de decisão
 
 **Primeira caracterização M0, 25/09/2026:** a
