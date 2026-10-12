@@ -31,6 +31,8 @@ Os contratos ativos estão em `docs/mestre/`. `docs/fontes/` é acervo históric
 - The M0 stack decision is preserved in ADR-M03; the active application's accepted ADR-M09 partially supersedes it for Rota B. Follow the [repository routing](README.md) and the applicable decision; do not restart M0, revive the paused .NET implementation or change infrastructure by preference.
 - Continuity é infraestrutura interna transversal para os módulos, opcional por composição, sem produto/cobrança separada presumidos. O [capítulo 16](docs/mestre/16_CONTINUIDADE_OPERACIONAL.md) e a [ADR-M08](docs/mestre/adrs/ADR-M08_CONTINUIDADE_OPERACIONAL.md) são suas fontes canônicas. M0/M1 preparam apenas contratos mínimos; M2–M4 não dependem do MVP; M5-CO vem após consumidor M4. Não portar WPF, shell arbitrário ou integração Codex ao SaaS.
 
+- **Selected Base44 application interface (Gui, 2026-10-12):** use the existing Base44 branch interface as the visual/code baseline and adapt actual source through current-runtime bindings. Follow chapter 04, "Interface baseline and execution correction"; source-pattern/palette reuse alone is not the full port. Lovable preserves this baseline; keep current functional modules and milestone gates.
+
 ## Execução e evidência
 
 Conferir Git antes/depois e preservar alterações existentes. Não fazer commit, push, remote, publicação, uso de dados reais ou ação externa sem autorização aplicável. Não usar `git add -A` sobre material desconhecido. Fontes históricas permanecem byte a byte; matrizes JSON/CSV equivalentes não são duplicatas descartáveis.

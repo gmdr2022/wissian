@@ -8,6 +8,61 @@ Keep discovery bounded to the active phase and its concrete workflows. Select re
 
 Treat a Lovable readiness or validation claim as evidence about the template's own baseline. After adaptation, independently verify Wissian's actual data contracts, organization isolation, session revocation, audited commands, permissions, accessibility, responsiveness, six supported locales, error/retry behavior and affected regressions. Reuse presentation through public module contracts; keep credentials, domain authority and tenant data ownership in Wissian. Demo data, embedded financial files and an unauthenticated preview are not an authorized SaaS backend. Keep reusable code and recovery paths owner-controlled, respect existing credits and the no-new-cost limit, and avoid a mandatory builder subscription in the target production runtime.
 
+## Interface baseline and execution correction — Gui, 2026-10-12
+
+Gui explicitly selected the **existing Base44 branch interface as Wissian's application interface baseline**. Adapt and optimize its actual JSX, CSS, components and useful utilities to Wissian; retaining only palette values or abstract interaction ideas does not satisfy this decision. Lovable must receive source-backed adaptation packages and preserve that interface. Templates remain secondary candidates for an uncovered need; they do not replace the selected baseline. This supersedes treating the recently built Wissian shell as the automatic visual authority.
+
+The [source review](evidencias/reuse-plan-review-2026-10-12.json) pins the inspected source variants, file hashes, dependencies, available test files, destination files and limitations. It is source evidence and a delivery plan, not executed UI equivalence or milestone acceptance.
+
+### Findings that change execution
+
+- The selected Base44 source is `gmdr2022/clubal`, `base44/setup-32dcb42e` at `46370e599c021c52ee9734249b438f4a664ab33b`. Compare `integration/base44-main` at `3380fa923bd6e3b05610642da0d283fb81514c7b` for useful later changes. The preserved ClubAL main `35381b9` is not a substitute for either: 212 paths differ under `src/web/operador/src` between main and integration. This counts changed paths, including tests, not missing features.
+- Both source variants use React 19. The active TanStack/TypeScript runtime requires route, query, public-contract, locale and identity adapters; it does not require a fresh visual design. Keep ADR-M09 and the current server/domain authorities. No stack reset, whole-branch merge or legacy backend/migration import is needed for presentation reuse.
+- Actual reuse already exists: four palette objects and the high-contrast palette retain every role/color exactly; preference storage and area navigation adapt legacy behavior; M2 catalog/detail/history adapts inspected source interaction. The full Base44 interface has **not** been ported. Four of fifteen source themes were selected; the remaining eleven stay preserved, with no claim of complete theme absorption.
+- M1/M2 also ported prior Wissian foundation/counterparty contracts and flows from `codex/m1-foundation` / `codex/m2-administration`. Those branches belong to `gmdr2022/wissian`. The current ClubAL remote heads include Base44/integration but no head named Wissian; a differently named or historical source is not inferred absent.
+- The prior M3/M4 financial keyword search supports only a bounded domain gap. It cannot justify rebuilding shell, editors, revision/history, date filters, tables or recovery UI. `ReportsAuditPage`, `ConfigurationDraftContext`, agenda, maps and support components are concrete available sources.
+- The recovered Lovable Finance contribution is real Wissian code reuse. ExpenseDesk and Finance Dashboard remain catalog references with no imported template code. Upstream test files exist for many legacy components, but their presence does not prove execution in this review or validation after adaptation.
+
+### Corrective contribution before further M4 feature construction
+
+One contribution, one writer, one integrated application interface. Start from the selected Base44 source below, preserve the working Wissian module panels and commands, and make the minimum integration adapters. Do not build a parallel shell or run a general redesign.
+
+| Source fragment | Destination / boundary | Required result |
+|---|---|---|
+| Base44 `OperatorPortal.tsx` / `OperatorPortal.css` | Adapt actual markup/styles into `WorkspaceShell.tsx`, `WorkspaceAreas.tsx` and scoped portal CSS in the active app | Preserve header/sidebar structure, collapse/mobile controls, context placement, content hierarchy, focus/skip behavior and useful footer layout; use verified Wissian branding and current authorized area projection |
+| Base44 `components/UserMenu.tsx`, `WorkspaceIcon.tsx`; compare integration `components/OperatorBrand.tsx` | Adapt visual/menu fragments to current identity, personal preferences and installed controls | Retain the chosen visual organization; route actions to current Wissian handlers; never copy tenant logos, credential state or administrative grants |
+| Integration `configuration/ConfigurationDraftContext.tsx` and `releases/useUpdateBlocker.ts` / `updateWorkRegistry.ts` | Extract only compatible draft/revision/update behavior into the existing editing lifecycle | Preserve dirty edits on refresh/reconnect, explicit discard and uncertain command payload/key; replace institutional DTO/release dependencies with current contracts |
+| Base44/integration `NormativeLibraryPanel.tsx`, `KnowledgePage.tsx`, `ReportsAuditPage.tsx` | Reuse catalog/detail/history, period/metric/lineage/pagination presentation in existing Documents/Finance/monthly panels | Keep useful source layout and interaction; actual financial amounts, revisions, originals and authority remain owned by Wissian |
+| Current palettes, locales, brand assets, public module contracts and command runner | KEEP working implementation and evidence | Reuse already integrated behavior; adapt styling/slots without replacing data models or restarting completed foundation work |
+
+The first UI acceptance compares the selected Base44 source with the adapted real application on the same workflow: desktop and narrow layout, navigation/collapse, personal menu, focus, list/detail/history, loading/empty/error, retained drafts and current permission changes. Record the copied/adapted source ranges and exact hashes. A visual difference needs a concrete Wissian integration/accessibility reason, not a new builder aesthetic. Owner visual acceptance stays separate from technical checks; this review does not claim either.
+
+This is a bounded port of the application frame and touched workflows. It does not require auditing all archived branches, porting all fifteen themes, activating every legacy menu, rewriting every module or finishing all future specialties before M4. Preserve unselected improvements for the relevant consumer. Direct Codex adaptation can proceed within current tools; a lack of Lovable credits is not a reason to wait or rebuild.
+
+### Reuse map across M0–M8
+
+M0–M8 describe observable outcomes and acceptance, not instructions to create eight new interfaces. Neutral presentation reuse applies in every phase; M6 is the specialty boundary, not the first opportunity to use ClubAL UI.
+
+| Milestone | Reuse-first execution | Bounded gap / preserved limit |
+|---|---|---|
+| M0 | Use the pinned source map and selected Base44 baseline | Reconcile only a newly touched source/decision; do not restart global discovery |
+| M1 | KEEP ported organization/membership/module/audit contracts and current runtime; adapt source access/workspace presentation | Current destination authority and outstanding specific acceptance remain; no second foundation |
+| M2 | KEEP working counterparties/documents and actual original delivery; integrate Base44 catalog/detail/history/layout | Adapt source DTOs/styles to current public contracts; preserve existing data and evidence |
+| M3 | KEEP exact-money, fiscal/financial titles, installments, immutable settlement/reversal and import | Missing fiscal/financial business rules require destination implementation; presentation still follows the selected source |
+| M4 | Port the frame/touched recovery UI first; KEEP recovered Lovable Finance controls and existing monthly workflow; reuse reports/history fragments | Complete draft protection, actual interface/managed/recovery criteria and remaining bounded monthly behavior; pending SQL/review stays pending |
+| M5a/b/c | Start agenda with `SchedulePage.tsx`, `WeeklyBoard.tsx`, `SchedulePublicationPanel.tsx`; use Knowledge/configuration/branding presentation where compatible | Contract/obligation, governance/IP and people/privacy semantics need their own gap decision; a schedule component does not establish all M5 capabilities |
+| M6 | Start selected specialty with `CurrentMapPage.tsx`, `SpatialLayoutPanel.tsx`, `SpatialLayoutProjection.tsx`, movement/restricted-operation components and tests | Preserve specialty authority outside Core; adapt only approved consumer scope |
+| M7 | Consult `DeviceCenterPage.tsx`, `SupportAssistancePanel.tsx`, `SupportHistoryPanel.tsx` and existing recovery/release evidence | Adapt relevant operation/support behavior; do not import a universal legacy control plane |
+| M8 | Reuse relevant scheduling, resource/device, classification and spatial fragments for the bounded approved module | QR, inventory, fleet, HR and legal/fiscal are distinct domains; no readiness claim from a menu or source inventory |
+
+### Minimum decision record and stopping rule
+
+Before a touched interface, record source/ref/path/hash, the useful observable behavior, destination owner, ADOPT/ADAPT/KEEP decision and affected test. A small fragment needs a small record; no new framework or full audit is required. Choose literal reuse when compatible, a thin adapter when bindings differ, and new code only for the demonstrated remaining gap. Compare total extraction/integration effort rather than forcing a large legacy dependency onto a tiny helper.
+
+Use the active app's existing reuse/evidence records and this canonical decision. The preparation migration matrix retains its historical PENDING_AUDIT/NOT_RUN fields; those are not the current app's runtime status. Its updated evidence pointers route to this review and executed app receipts rather than requiring repeated M0 work.
+
+M4 feature implementation was paused for this review. The review changes execution priority and visual authority; it does not complete the UI port, restart the goal, promote SQL, rerun the interrupted review, deploy or authorize customer release. Preserve the latest M1–M8 release gate and no-new-cost boundary.
+
 ## Unidade de decisão
 
 **Primeira caracterização M0, 25/09/2026:** a

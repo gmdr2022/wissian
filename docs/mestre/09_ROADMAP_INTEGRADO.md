@@ -10,6 +10,12 @@ permanecem não executados. Esse recorte não equivale a auditoria de todo o leg
 
 As fontes usam nomes que colidem: R00–R09 pertencem à reestruturação v1.1; E0–E7 ao plano da operação; “Marco M1/M2” naquele plano significa primeiro ciclo/cobertura completa. Aqui, M0–M8 são marcos mestre. Referir sempre o namespace: `mestre:M1` ≠ `operacao:Marco-M1`.
 
+## Current execution clarification — 2026-10-12
+
+Gui selected the existing Base44 branch interface as the application's visual/code baseline, adapted and optimized to Wissian. Apply [the canonical interface correction and M0–M8 reuse map](04_ABSORCAO_CODEX_BASE44.md#interface-baseline-and-execution-correction--gui-2026-10-12) before further M4 feature construction. Port actual source markup/styles/components through minimal current-runtime adapters; Lovable contributions preserve that baseline. Source interaction references alone do not constitute the full port.
+
+The active app is `gmdr2022/pixel-perfect-replica`; its `roadmap.md` and scoped evidence hold implementation status. The historical preparation statements and matrices below are not current runtime status. M0–M8 are acceptance milestones, with reuse in every phase; M6 does not postpone neutral legacy interface reuse. KEEP the working M1–M3 and recovered M4 contributions, avoid another foundation or shell redesign, and complete only demonstrated functional gaps. The customer gate remains validated M1–M8. M4 is paused during this roadmap review; the source audit is not a UI, managed, human or production acceptance.
+
 ## Sequência
 
 **Permanent sequencing approved by Gui, 2026-10-08:** follow the product-first delivery and consolidated migration decision in [chapter 03](03_ARQUITETURA_E_MODULARIDADE.md). Build and validate M2–M4 with Lovable as an active constructor, Codex as integrator/validator and GitHub as the shared source; retain lightweight portability without keeping the independent deployment in lockstep with every small feature. Consolidated independent deployment must pass its gates before real customer onboarding; optional M5–M8 work does not condition that migration. This changes execution priority, not milestone acceptance status.

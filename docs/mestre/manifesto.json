@@ -33,8 +33,8 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 8436,
-      "sha256": "dd570d019ef7a7d92e05b6d27d78040379de205c81f2ba39f6799554a0a042a6"
+      "bytes": 8836,
+      "sha256": "4bf3dd42633b2b42dbf1b21f8f90fd84278d90b309af776ede5c1b32e0019222"
     },
     {
       "path": "README.md",
@@ -448,8 +448,8 @@
     },
     {
       "path": "docs/mestre/04_ABSORCAO_CODEX_BASE44.md",
-      "bytes": 14291,
-      "sha256": "e7334586d06653033a5edadb19f2a35b7e93fb57c44469a74b8147e28a770f02"
+      "bytes": 24188,
+      "sha256": "e1f312fe8b014814fd93401f19fdfa17de13b6ca3b28d4f7cdf1b01207709a9d"
     },
     {
       "path": "docs/mestre/05_GIT_E_REPOSITORIOS.md",
@@ -473,8 +473,8 @@
     },
     {
       "path": "docs/mestre/09_ROADMAP_INTEGRADO.md",
-      "bytes": 11770,
-      "sha256": "ca223ab3dc4230749d8fb3d1cbe7ab43e10b77893837c168eae55090920687ec"
+      "bytes": 12972,
+      "sha256": "eda857cd3a8055f7a4f78be2466588723eb28e1bd09e9313b0a67f43fa71ccb6"
     },
     {
       "path": "docs/mestre/10_TESTES_E_ACEITE.md",
@@ -602,6 +602,11 @@
       "sha256": "805585d65f4bd13697725046bd94852c8d6ec25df2ce8ae969322e09d42a1c87"
     },
     {
+      "path": "docs/mestre/evidencias/reuse-plan-review-2026-10-12.json",
+      "bytes": 85415,
+      "sha256": "5db7046d2ec18727dee2a30cee0078b513a37e84878e68414ebe12b40e53279d"
+    },
+    {
       "path": "docs/mestre/ferramentas/README.md",
       "bytes": 1797,
       "sha256": "da73950805fff84be0b270b930c8d629c446326753685cfe0e28e4c8b3724a07"
@@ -653,13 +658,13 @@
     },
     {
       "path": "docs/mestre/matrizes/migracao.csv",
-      "bytes": 29505,
-      "sha256": "3fe4fdd3bdecd4d601b374a593c00f1a369ea10aa6b790a94ce1f7ee4dfbbe63"
+      "bytes": 31149,
+      "sha256": "ab1f341e3852da1eacfc69f8356b802b6a7c0ebb6ce1a9225b26161daa717abd"
     },
     {
       "path": "docs/mestre/matrizes/migracao.json",
-      "bytes": 48023,
-      "sha256": "bad7db485fc228d33205d9fe681e99cf280354831c0133b88e69fa175e52c934"
+      "bytes": 49128,
+      "sha256": "cf030a68c1a7a585c67bfd5e17188d19b82407c82f61401ccdf16afb4bda6f06"
     },
     {
       "path": "docs/mestre/matrizes/reaproveitamento-nexus-cc.json",

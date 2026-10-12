@@ -1,0 +1,2231 @@
+{
+  "schema_version": 1,
+  "scope": "Owner-requested roadmap/source reuse review before further M4 feature construction",
+  "observed_at_utc": "2026-10-12T16:22:53.643119+00:00",
+  "authority": "Chapter 04: Interface baseline and execution correction — Gui, 2026-10-12",
+  "owner_decision": {
+    "application_ui_baseline": "clubal@base44/setup-32dcb42e",
+    "commit": "46370e599c021c52ee9734249b438f4a664ab33b",
+    "mode": "Port actual existing JSX/CSS/components and optimize/adapt current-runtime bindings; not a fresh builder design",
+    "comparison_reference": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+    "full_interface_port": "NOT_IMPLEMENTED_BY_THIS_REVIEW"
+  },
+  "inspection_method": [
+    "git ls-remote --heads origin in each named repository",
+    "git show <pinned commit>:<path> in the source repository; never assume another checkout resolves the same source",
+    "git ls-tree -r --name-only <pinned commit> <scope>",
+    "git diff --name-only ClubAL main integration -- src/web/operador/src",
+    "SHA-256 of exact Git blob bytes",
+    "Static comparison of JSON-shaped exported theme data",
+    "Read current canonical architecture/absorption/roadmap/migration contracts and application reuse/evidence/source"
+  ],
+  "refs": {
+    "base44": "46370e599c021c52ee9734249b438f4a664ab33b",
+    "integration": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+    "clubal_main": "35381b9dbe2f6ef865783f55416ad5ea9860b49a",
+    "m1": "d38de0ce5cfbf9f039e7280327d558bb0e230fce",
+    "m2": "9ffd1d4ddd6b4687d788be15056352a969fc1b7b",
+    "app": "1249ba403c3f50171ae60f36c2948490c79de39c"
+  },
+  "observed_remote_heads": {
+    "clubal": [
+      "54715c3dddea1211becd6bbbd47f9a2ab80bf87f\trefs/heads/agent/refresh-clubal-rotinas-preview",
+      "138cb5dbbbf1bf9f41cc1b1d29c19b3b8a927219\trefs/heads/agent/site-ux-i18n-20260725-clubal",
+      "46370e599c021c52ee9734249b438f4a664ab33b\trefs/heads/base44/setup-32dcb42e",
+      "f0784cabf70849ac654a69a76d65fc338288ceca\trefs/heads/chore/profile-and-repo-polish",
+      "e064941da33430fef9285355f347ec2b90b98d5e\trefs/heads/cloudflare-pages-migration",
+      "6149f398195eb7f8cc1794bd7b85d7e13b2525ee\trefs/heads/clubal-generic-archive-2026-06-12",
+      "3380fa923bd6e3b05610642da0d283fb81514c7b\trefs/heads/integration/base44-main",
+      "35381b9dbe2f6ef865783f55416ad5ea9860b49a\trefs/heads/main"
+    ],
+    "canonical": [
+      "ce7bcf9b96d546dd446dffd367bc9f07fc4d2a0d\trefs/heads/codex/ci-foundation",
+      "5c332c3ad33419bf222475544c04ca738135e9ef\trefs/heads/codex/docs-c7-retirement-20261009",
+      "d38de0ce5cfbf9f039e7280327d558bb0e230fce\trefs/heads/codex/m1-foundation",
+      "9ffd1d4ddd6b4687d788be15056352a969fc1b7b\trefs/heads/codex/m2-administration",
+      "fd09c435a50aba6458536c033e78e2652a151366\trefs/heads/main"
+    ]
+  },
+  "source_tree_counts": {
+    "scope": "src/web/operador/src, including tests; not a count of validated UI features",
+    "base44_files": 174,
+    "integration_files": 267,
+    "main_vs_integration_changed_path_count": 212
+  },
+  "main_vs_integration_changed_ui_paths": [
+    "src/web/operador/src/App.css",
+    "src/web/operador/src/App.test.tsx",
+    "src/web/operador/src/App.tsx",
+    "src/web/operador/src/IdentityGate.test.tsx",
+    "src/web/operador/src/IdentityGate.tsx",
+    "src/web/operador/src/OperatorPortal.css",
+    "src/web/operador/src/OperatorPortal.tsx",
+    "src/web/operador/src/api/brandingProjection.test.ts",
+    "src/web/operador/src/api/configurationCenter.ts",
+    "src/web/operador/src/api/currentOperation.ts",
+    "src/web/operador/src/api/deviceCenter.ts",
+    "src/web/operador/src/api/firstVertical.ts",
+    "src/web/operador/src/api/generated/index.ts",
+    "src/web/operador/src/api/generated/types.gen.ts",
+    "src/web/operador/src/api/health.ts",
+    "src/web/operador/src/api/identity.ts",
+    "src/web/operador/src/api/institutionalBranding.ts",
+    "src/web/operador/src/api/institutionalConfiguration.ts",
+    "src/web/operador/src/api/knowledge.ts",
+    "src/web/operador/src/api/movementPlanning.ts",
+    "src/web/operador/src/api/movementWorkflow.ts",
+    "src/web/operador/src/api/normativeLibrary.ts",
+    "src/web/operador/src/api/reportsAudit.ts",
+    "src/web/operador/src/api/restrictedOperations.test.ts",
+    "src/web/operador/src/api/restrictedOperations.ts",
+    "src/web/operador/src/api/scheduling.ts",
+    "src/web/operador/src/api/socioeducational.ts",
+    "src/web/operador/src/api/spatialLayout.ts",
+    "src/web/operador/src/api/workspace.ts",
+    "src/web/operador/src/appearance/AppearancePreferencesContext.test.tsx",
+    "src/web/operador/src/appearance/AppearancePreferencesContext.tsx",
+    "src/web/operador/src/appearance/AppearancePreferencesDialog.css",
+    "src/web/operador/src/appearance/AppearancePreferencesDialog.test.tsx",
+    "src/web/operador/src/appearance/AppearancePreferencesDialog.tsx",
+    "src/web/operador/src/appearance/AppearanceScope.test.tsx",
+    "src/web/operador/src/appearance/AppearanceScope.tsx",
+    "src/web/operador/src/appearance/appearance.css",
+    "src/web/operador/src/appearance/appearanceAreaCoverage.test.ts",
+    "src/web/operador/src/appearance/appearancePreferencesStorage.test.ts",
+    "src/web/operador/src/appearance/appearancePreferencesStorage.ts",
+    "src/web/operador/src/brandAssets.test.ts",
+    "src/web/operador/src/components/OperatorBrand.test.tsx",
+    "src/web/operador/src/components/OperatorBrand.tsx",
+    "src/web/operador/src/configuration/ConfigurationDraftContext.tsx",
+    "src/web/operador/src/consulta-build.d.ts",
+    "src/web/operador/src/consulta/ConsultaApp.test.tsx",
+    "src/web/operador/src/consulta/ConsultaApp.tsx",
+    "src/web/operador/src/consulta/ConsultaApp.updateRace.test.tsx",
+    "src/web/operador/src/consulta/ConsultaDeploymentPanel.test.tsx",
+    "src/web/operador/src/consulta/ConsultaDeploymentPanel.tsx",
+    "src/web/operador/src/consulta/ConsultaMapPanel.test.tsx",
+    "src/web/operador/src/consulta/ConsultaMapPanel.tsx",
+    "src/web/operador/src/consulta/consulta.css",
+    "src/web/operador/src/consulta/consultaLegacyCache.test.ts",
+    "src/web/operador/src/consulta/consultaLegacyCache.ts",
+    "src/web/operador/src/consulta/consultaUpdateSafety.test.ts",
+    "src/web/operador/src/consulta/consultaUpdateSafety.ts",
+    "src/web/operador/src/consulta/deploymentApi.test.ts",
+    "src/web/operador/src/consulta/deploymentApi.ts",
+    "src/web/operador/src/consulta/deploymentIntentRegistry.test.ts",
+    "src/web/operador/src/consulta/deploymentIntentRegistry.ts",
+    "src/web/operador/src/consulta/main.tsx",
+    "src/web/operador/src/consulta/mapIntentRegistry.test.ts",
+    "src/web/operador/src/consulta/mapIntentRegistry.ts",
+    "src/web/operador/src/consulta/useConsultaRelease.test.ts",
+    "src/web/operador/src/consulta/useConsultaRelease.ts",
+    "src/web/operador/src/consulta/useConsultaRuntime.test.tsx",
+    "src/web/operador/src/consulta/useConsultaRuntime.ts",
+    "src/web/operador/src/consulta/useConsultaUpdate.ts",
+    "src/web/operador/src/devices/PairingCodeCapture.test.tsx",
+    "src/web/operador/src/devices/PairingCodeCapture.tsx",
+    "src/web/operador/src/index.css",
+    "src/web/operador/src/pages/BrandingPanel.css",
+    "src/web/operador/src/pages/BrandingPanel.test.tsx",
+    "src/web/operador/src/pages/BrandingPanel.tsx",
+    "src/web/operador/src/pages/ConfigurationCenterPanels.css",
+    "src/web/operador/src/pages/ConfigurationCenterPanels.test.tsx",
+    "src/web/operador/src/pages/ConfigurationCenterPanels.tsx",
+    "src/web/operador/src/pages/ConfigurationPage.css",
+    "src/web/operador/src/pages/ConfigurationPage.test.tsx",
+    "src/web/operador/src/pages/ConfigurationPage.tsx",
+    "src/web/operador/src/pages/CurrentMapPage.css",
+    "src/web/operador/src/pages/CurrentMapPage.test.tsx",
+    "src/web/operador/src/pages/CurrentMapPage.tsx",
+    "src/web/operador/src/pages/DeviceCenterPage.css",
+    "src/web/operador/src/pages/DeviceCenterPage.test.tsx",
+    "src/web/operador/src/pages/DeviceCenterPage.tsx",
+    "src/web/operador/src/pages/KnowledgePage.css",
+    "src/web/operador/src/pages/KnowledgePage.test.tsx",
+    "src/web/operador/src/pages/KnowledgePage.tsx",
+    "src/web/operador/src/pages/MovementPlanningPanel.css",
+    "src/web/operador/src/pages/MovementWorkflowPanel.css",
+    "src/web/operador/src/pages/MovementWorkflowPanel.test.tsx",
+    "src/web/operador/src/pages/MovementWorkflowPanel.tsx",
+    "src/web/operador/src/pages/NormativeLibraryPanel.css",
+    "src/web/operador/src/pages/OperationsPage.css",
+    "src/web/operador/src/pages/OperationsPage.test.tsx",
+    "src/web/operador/src/pages/OperationsPage.tsx",
+    "src/web/operador/src/pages/ReportsAuditPage.css",
+    "src/web/operador/src/pages/RestrictedOperationsPanel.css",
+    "src/web/operador/src/pages/RestrictedOperationsPanel.test.tsx",
+    "src/web/operador/src/pages/RestrictedOperationsPanel.tsx",
+    "src/web/operador/src/pages/SchedulePage.css",
+    "src/web/operador/src/pages/SchedulePage.test.tsx",
+    "src/web/operador/src/pages/SchedulePage.tsx",
+    "src/web/operador/src/pages/SchedulePublicationPanel.css",
+    "src/web/operador/src/pages/SpatialLayoutPanel.css",
+    "src/web/operador/src/pages/SpatialLayoutPanel.test.tsx",
+    "src/web/operador/src/pages/SpatialLayoutPanel.tsx",
+    "src/web/operador/src/pages/SpatialLayoutProjection.css",
+    "src/web/operador/src/pages/SpatialLayoutProjection.test.tsx",
+    "src/web/operador/src/pages/SpatialLayoutProjection.tsx",
+    "src/web/operador/src/pages/WeeklyBoard.css",
+    "src/web/operador/src/platform/NativeCanaryPanel.test.tsx",
+    "src/web/operador/src/platform/NativeCanaryPanel.tsx",
+    "src/web/operador/src/platform/PlatformAdministrationPage.css",
+    "src/web/operador/src/platform/PlatformAdministrationPage.test.tsx",
+    "src/web/operador/src/platform/PlatformAdministrationPage.tsx",
+    "src/web/operador/src/platform/PlatformEntryLink.tsx",
+    "src/web/operador/src/platform/ReleaseRegistryPanel.test.tsx",
+    "src/web/operador/src/platform/ReleaseRegistryPanel.tsx",
+    "src/web/operador/src/platform/ReleaseRolloutPanel.test.tsx",
+    "src/web/operador/src/platform/ReleaseRolloutPanel.tsx",
+    "src/web/operador/src/platform/nativeCanaryApi.test.ts",
+    "src/web/operador/src/platform/nativeCanaryApi.ts",
+    "src/web/operador/src/platform/platformApi.test.ts",
+    "src/web/operador/src/platform/platformApi.ts",
+    "src/web/operador/src/platform/releaseRegistryApi.test.ts",
+    "src/web/operador/src/platform/releaseRegistryApi.ts",
+    "src/web/operador/src/platform/releaseRolloutApi.test.ts",
+    "src/web/operador/src/platform/releaseRolloutApi.ts",
+    "src/web/operador/src/platform/usePlatformAdministration.ts",
+    "src/web/operador/src/player/AboutPlayerDialog.tsx",
+    "src/web/operador/src/player/PlayerApp.test.tsx",
+    "src/web/operador/src/player/PlayerApp.tsx",
+    "src/web/operador/src/player/api.ts",
+    "src/web/operador/src/player/main.tsx",
+    "src/web/operador/src/player/player.css",
+    "src/web/operador/src/player/playerUpdateClient.test.ts",
+    "src/web/operador/src/player/playerUpdateClient.ts",
+    "src/web/operador/src/player/updateBarrier.ts",
+    "src/web/operador/src/player/usePlayerRuntime.test.ts",
+    "src/web/operador/src/player/usePlayerRuntime.ts",
+    "src/web/operador/src/player/usePlayerUpdate.test.ts",
+    "src/web/operador/src/player/usePlayerUpdate.ts",
+    "src/web/operador/src/pwa/consultaUpdateClient.test.ts",
+    "src/web/operador/src/pwa/consultaUpdateClient.ts",
+    "src/web/operador/src/pwa/useConsultaUpdate.test.ts",
+    "src/web/operador/src/pwa/usePwaUpdate.ts",
+    "src/web/operador/src/pwa/workerUpdateClient.ts",
+    "src/web/operador/src/releases/WebReleaseContext.tsx",
+    "src/web/operador/src/releases/WebUpdateNotice.css",
+    "src/web/operador/src/releases/WebUpdateNotice.tsx",
+    "src/web/operador/src/releases/updateWorkRegistry.test.ts",
+    "src/web/operador/src/releases/updateWorkRegistry.ts",
+    "src/web/operador/src/releases/useUpdateBlocker.ts",
+    "src/web/operador/src/releases/useWebRelease.ts",
+    "src/web/operador/src/releases/webRelease.test.tsx",
+    "src/web/operador/src/releases/webReleaseContract.test.ts",
+    "src/web/operador/src/releases/webReleaseContract.ts",
+    "src/web/operador/src/releases/webReleaseFetch.test.ts",
+    "src/web/operador/src/releases/webReleaseFetch.ts",
+    "src/web/operador/src/releases/webReleaseTransportClients.test.ts",
+    "src/web/operador/src/support/SupportAssistancePanel.css",
+    "src/web/operador/src/support/SupportAssistancePanel.test.tsx",
+    "src/web/operador/src/support/SupportAssistancePanel.tsx",
+    "src/web/operador/src/support/SupportDeviceRegistryView.test.tsx",
+    "src/web/operador/src/support/SupportDeviceRegistryView.tsx",
+    "src/web/operador/src/support/SupportHistoryPanel.test.tsx",
+    "src/web/operador/src/support/SupportHistoryPanel.tsx",
+    "src/web/operador/src/support/SupportSchedulePreparation.test.tsx",
+    "src/web/operador/src/support/SupportSchedulePreparation.tsx",
+    "src/web/operador/src/support/SupportScheduleReview.test.tsx",
+    "src/web/operador/src/support/SupportScheduleReview.tsx",
+    "src/web/operador/src/support/SupportScheduleStaging.test.tsx",
+    "src/web/operador/src/support/SupportScheduleStaging.tsx",
+    "src/web/operador/src/support/SupportTechnicalSummaryView.tsx",
+    "src/web/operador/src/support/TenantSupportActivity.css",
+    "src/web/operador/src/support/TenantSupportActivity.test.tsx",
+    "src/web/operador/src/support/TenantSupportActivity.tsx",
+    "src/web/operador/src/support/TenantSupportAssistance.tsx",
+    "src/web/operador/src/support/supportActivity.test.ts",
+    "src/web/operador/src/support/supportApi.test.ts",
+    "src/web/operador/src/support/supportApi.ts",
+    "src/web/operador/src/support/supportApplication.test.ts",
+    "src/web/operador/src/support/supportApplication.ts",
+    "src/web/operador/src/support/supportClock.test.ts",
+    "src/web/operador/src/support/supportClock.ts",
+    "src/web/operador/src/support/supportContracts.ts",
+    "src/web/operador/src/support/supportDeviceRegistry.test.ts",
+    "src/web/operador/src/support/supportDeviceRegistry.ts",
+    "src/web/operador/src/support/supportFixtures.ts",
+    "src/web/operador/src/support/supportHandover.test.ts",
+    "src/web/operador/src/support/supportHandover.ts",
+    "src/web/operador/src/support/supportHistory.test.ts",
+    "src/web/operador/src/support/supportNotices.ts",
+    "src/web/operador/src/support/supportPreparation.test.ts",
+    "src/web/operador/src/support/supportPreparation.ts",
+    "src/web/operador/src/support/supportPreparationFixtures.ts",
+    "src/web/operador/src/support/supportReference.test.ts",
+    "src/web/operador/src/support/supportReview.test.ts",
+    "src/web/operador/src/support/supportReview.ts",
+    "src/web/operador/src/support/supportReviewFixtures.ts",
+    "src/web/operador/src/support/supportStaging.test.ts",
+    "src/web/operador/src/support/supportStaging.ts",
+    "src/web/operador/src/support/supportStagingFixtures.ts",
+    "src/web/operador/src/support/supportTechnicalDiagnostic.test.ts",
+    "src/web/operador/src/support/supportTechnicalDiagnostic.ts",
+    "src/web/operador/src/support/useSupportActivity.ts",
+    "src/web/operador/src/support/useSupportAssistance.ts",
+    "src/web/operador/src/theme/themeCatalog.test.ts",
+    "src/web/operador/src/theme/themeCatalog.ts"
+  ],
+  "source_families": {
+    "shell": [
+      {
+        "path": "src/web/operador/src/OperatorPortal.tsx",
+        "versions": {
+          "clubal_main": {
+            "repo": "clubal",
+            "ref": "35381b9dbe2f6ef865783f55416ad5ea9860b49a",
+            "path": "src/web/operador/src/OperatorPortal.tsx",
+            "sha256": "ec9e10081e92d39263dfc51c00ce18bb61cbb6a9d92da7a344046de6792f30ea",
+            "bytes": 15196,
+            "imports": [
+              "react",
+              "./api/workspace",
+              "./components/WorkspaceIcon",
+              "./IdentityGate",
+              "./router/AppLink",
+              "./router/usePathname",
+              "./OperatorPortal.css"
+            ]
+          },
+          "base44": {
+            "repo": "clubal",
+            "ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+            "path": "src/web/operador/src/OperatorPortal.tsx",
+            "sha256": "388f03ec67ffd3ff9f8f3f82c6ed5f1630437b1c9935f310f8e202496284a3df",
+            "bytes": 14951,
+            "imports": [
+              "react",
+              "./api/workspace",
+              "./components/WorkspaceIcon",
+              "./IdentityGate",
+              "./router/AppLink",
+              "./router/usePathname",
+              "./hooks/useBrandingProjection",
+              "./components/UserMenu",
+              "./components/BrandGuard",
+              "./OperatorPortal.css"
+            ]
+          },
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/OperatorPortal.tsx",
+            "sha256": "cebdccc07ede159308a7cb4f5b0b02f392a4f4af35b743560646e03a2e982db3",
+            "bytes": 17821,
+            "imports": [
+              "react",
+              "./api/workspace",
+              "./appearance/AppearancePreferencesDialog",
+              "./appearance/AppearancePreferencesContext",
+              "./components/WorkspaceIcon",
+              "./components/OperatorBrand",
+              "./support/TenantSupportActivity",
+              "./IdentityGate",
+              "./platform/PlatformEntryLink",
+              "./router/AppLink",
+              "./router/usePathname",
+              "./OperatorPortal.css"
+            ]
+          }
+        },
+        "available_integration_tests": []
+      },
+      {
+        "path": "src/web/operador/src/OperatorPortal.css",
+        "versions": {
+          "clubal_main": {
+            "repo": "clubal",
+            "ref": "35381b9dbe2f6ef865783f55416ad5ea9860b49a",
+            "path": "src/web/operador/src/OperatorPortal.css",
+            "sha256": "605135259fcc1d9ff489b3a5a7531286d2f52eb93cfa4d50f86c6fb94690125a",
+            "bytes": 21777,
+            "imports": []
+          },
+          "base44": {
+            "repo": "clubal",
+            "ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+            "path": "src/web/operador/src/OperatorPortal.css",
+            "sha256": "d7588adef9069e93744462ee959d9e699aafcc3a4c0c24ef04ec21320cb93ac5",
+            "bytes": 25060,
+            "imports": []
+          },
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/OperatorPortal.css",
+            "sha256": "d0c7880f963feafeeea6091191cd719a7306af32011325ae241e5da0d9180a8e",
+            "bytes": 31321,
+            "imports": []
+          }
+        },
+        "available_integration_tests": []
+      },
+      {
+        "path": "src/web/operador/src/App.tsx",
+        "versions": {
+          "clubal_main": {
+            "repo": "clubal",
+            "ref": "35381b9dbe2f6ef865783f55416ad5ea9860b49a",
+            "path": "src/web/operador/src/App.tsx",
+            "sha256": "30e99a5dc05fac7a1adbdd8b9be404f6bbe1b4e4c4cf8d25bc3e103427813509",
+            "bytes": 452,
+            "imports": [
+              "./App.css",
+              "./configuration/ConfigurationDraftContext",
+              "./IdentityGate",
+              "./OperatorPortal"
+            ]
+          },
+          "base44": {
+            "repo": "clubal",
+            "ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+            "path": "src/web/operador/src/App.tsx",
+            "sha256": "30e99a5dc05fac7a1adbdd8b9be404f6bbe1b4e4c4cf8d25bc3e103427813509",
+            "bytes": 452,
+            "imports": [
+              "./App.css",
+              "./configuration/ConfigurationDraftContext",
+              "./IdentityGate",
+              "./OperatorPortal"
+            ]
+          },
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/App.tsx",
+            "sha256": "6d9040136b7760c5d86f33e645dac0d14ccb71c1225dbb8ed2cb446ca1f69480",
+            "bytes": 1512,
+            "imports": [
+              "./App.css",
+              "./appearance/AppearancePreferencesContext",
+              "./configuration/ConfigurationDraftContext",
+              "./IdentityGate",
+              "./OperatorPortal",
+              "./platform/PlatformAdministrationPage",
+              "./router/usePathname",
+              "./releases/WebUpdateNotice",
+              "./releases/WebReleaseContext",
+              "./support/TenantSupportAssistance"
+            ]
+          }
+        },
+        "available_integration_tests": [
+          {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/App.test.tsx",
+            "sha256": "4fb6d1d051f072a285f1bb00e5fc39699471ca4a1f7b0c07eefe1701e054ec8d",
+            "bytes": 30299,
+            "imports": [
+              "@testing-library/react",
+              "@testing-library/user-event",
+              "vitest",
+              "./App",
+              "./api/workspace",
+              "./support/supportFixtures"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "src/web/operador/src/IdentityGate.tsx",
+        "versions": {
+          "clubal_main": {
+            "repo": "clubal",
+            "ref": "35381b9dbe2f6ef865783f55416ad5ea9860b49a",
+            "path": "src/web/operador/src/IdentityGate.tsx",
+            "sha256": "17642cb129d5d03cbd2b1b44a04ef6a75bc5f16bdf30f42110bb1bdbdd2c90c3",
+            "bytes": 13183,
+            "imports": [
+              "react",
+              "./api/identity"
+            ]
+          },
+          "base44": {
+            "repo": "clubal",
+            "ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+            "path": "src/web/operador/src/IdentityGate.tsx",
+            "sha256": "8a310f05da5ff3dc47df266a10f39fe92289d88338a76e03730022e3ff96c81e",
+            "bytes": 14718,
+            "imports": [
+              "react",
+              "qrcode",
+              "./api/identity"
+            ]
+          },
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/IdentityGate.tsx",
+            "sha256": "14b9634e49da3e93e5d505fdf408bcff246e12979168aff001e187e5aeb258db",
+            "bytes": 15800,
+            "imports": [
+              "react",
+              "./api/identity",
+              "./platform/PlatformEntryLink"
+            ]
+          }
+        },
+        "available_integration_tests": [
+          {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/IdentityGate.test.tsx",
+            "sha256": "b86ef4a06dae3009e845afb7e7ced1d7318c2f220dbd94fd091b36dedeb04657",
+            "bytes": 5309,
+            "imports": [
+              "@testing-library/react",
+              "@testing-library/user-event",
+              "vitest",
+              "./IdentityGate",
+              "./api/identity"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "src/web/operador/src/components/WorkspaceIcon.tsx",
+        "versions": {
+          "clubal_main": {
+            "repo": "clubal",
+            "ref": "35381b9dbe2f6ef865783f55416ad5ea9860b49a",
+            "path": "src/web/operador/src/components/WorkspaceIcon.tsx",
+            "sha256": "e2c8c94276bfd83012f911aed3551cb201c15c6326d0507345e0bf4505027dc6",
+            "bytes": 4673,
+            "imports": []
+          },
+          "base44": {
+            "repo": "clubal",
+            "ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+            "path": "src/web/operador/src/components/WorkspaceIcon.tsx",
+            "sha256": "bb42e1fee5aed836dd693e1f917342d3c1a12db6e836921b4ef61736fa7c6a00",
+            "bytes": 681,
+            "imports": [
+              "lucide-react"
+            ]
+          },
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/components/WorkspaceIcon.tsx",
+            "sha256": "e2c8c94276bfd83012f911aed3551cb201c15c6326d0507345e0bf4505027dc6",
+            "bytes": 4673,
+            "imports": []
+          }
+        },
+        "available_integration_tests": []
+      },
+      {
+        "path": "src/web/operador/src/components/OperatorBrand.tsx",
+        "versions": {
+          "clubal_main": null,
+          "base44": null,
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/components/OperatorBrand.tsx",
+            "sha256": "8778f9fa4b30e2249eb89fd6ac61250b30f6a23f587ffc5268452eb85c6daec4",
+            "bytes": 3393,
+            "imports": [
+              "react",
+              "../api/institutionalBranding",
+              "../router/AppLink"
+            ]
+          }
+        },
+        "available_integration_tests": [
+          {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/components/OperatorBrand.test.tsx",
+            "sha256": "a6d7bae794d13c6e038f7a0bbf51fe61d87a4a5b1913764e499a402206ef6cc7",
+            "bytes": 5192,
+            "imports": [
+              "@testing-library/react",
+              "vitest",
+              "../api/institutionalBranding",
+              "./OperatorBrand"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "src/web/operador/src/components/UserMenu.tsx",
+        "versions": {
+          "clubal_main": null,
+          "base44": {
+            "repo": "clubal",
+            "ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+            "path": "src/web/operador/src/components/UserMenu.tsx",
+            "sha256": "b32102384191b86e540f71bac9642cf8e01f7214add9efc5fcc4560c1a23feef",
+            "bytes": 5919,
+            "imports": [
+              "react",
+              "../IdentityGate"
+            ]
+          },
+          "integration": null
+        },
+        "available_integration_tests": []
+      },
+      {
+        "path": "src/web/operador/src/components/BrandGuard.tsx",
+        "versions": {
+          "clubal_main": null,
+          "base44": {
+            "repo": "clubal",
+            "ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+            "path": "src/web/operador/src/components/BrandGuard.tsx",
+            "sha256": "29169f3627cffae1266ae8df8d6d630928f2eaed78f751ce632fe2afe8a98210",
+            "bytes": 2604,
+            "imports": [
+              "react"
+            ]
+          },
+          "integration": null
+        },
+        "available_integration_tests": []
+      },
+      {
+        "path": "src/web/operador/src/pages/OverviewPage.tsx",
+        "versions": {
+          "clubal_main": {
+            "repo": "clubal",
+            "ref": "35381b9dbe2f6ef865783f55416ad5ea9860b49a",
+            "path": "src/web/operador/src/pages/OverviewPage.tsx",
+            "sha256": "2614b34c8163d710f68f32170d97221011537dbd81fbae11c5082f05a32c241d",
+            "bytes": 11804,
+            "imports": [
+              "react",
+              "../api/firstVertical",
+              "../api/workspace",
+              "../components/WorkspaceIcon",
+              "../router/AppLink"
+            ]
+          },
+          "base44": {
+            "repo": "clubal",
+            "ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+            "path": "src/web/operador/src/pages/OverviewPage.tsx",
+            "sha256": "577713b969f9394edd01c70d0988e366f241572c4fa949c3265dcbe2d54d7c6e",
+            "bytes": 11569,
+            "imports": [
+              "react",
+              "../api/firstVertical",
+              "../api/workspace",
+              "../components/WorkspaceIcon",
+              "../router/AppLink"
+            ]
+          },
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/OverviewPage.tsx",
+            "sha256": "2614b34c8163d710f68f32170d97221011537dbd81fbae11c5082f05a32c241d",
+            "bytes": 11804,
+            "imports": [
+              "react",
+              "../api/firstVertical",
+              "../api/workspace",
+              "../components/WorkspaceIcon",
+              "../router/AppLink"
+            ]
+          }
+        },
+        "available_integration_tests": []
+      }
+    ],
+    "appearance": [
+      {
+        "path": "src/web/operador/src/theme/themeCatalog.ts",
+        "versions": {
+          "clubal_main": null,
+          "base44": null,
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/theme/themeCatalog.ts",
+            "sha256": "68003c3c777a146fc5543c14d35a02ba92af41a0a93a9c8afd8420e8d5c4fd83",
+            "bytes": 32725,
+            "imports": []
+          }
+        },
+        "available_integration_tests": [
+          {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/theme/themeCatalog.test.ts",
+            "sha256": "311561b40fcee7caf745d7d323b5fbcbcba198ff154ed93d64963dc3074b38d2",
+            "bytes": 8921,
+            "imports": [
+              "node:child_process",
+              "node:path",
+              "vitest",
+              "./themeCatalog"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "src/web/operador/src/appearance/AppearanceScope.tsx",
+        "versions": {
+          "clubal_main": null,
+          "base44": null,
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/appearance/AppearanceScope.tsx",
+            "sha256": "a63f3609cc6c6220b03a93a71be47d82b3eb1e9b3e70ba06e4089c1c7be5f1be",
+            "bytes": 8254,
+            "imports": [
+              "react",
+              "../theme/themeCatalog",
+              "./appearance.css"
+            ]
+          }
+        },
+        "available_integration_tests": [
+          {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/appearance/AppearanceScope.test.tsx",
+            "sha256": "f145b380211861778d4b5276f3aa8e5a7ebd41058fd8aa69280b3d1497f21424",
+            "bytes": 15436,
+            "imports": [
+              "@testing-library/react",
+              "node:fs",
+              "node:path",
+              "react",
+              "vitest",
+              "../theme/themeCatalog",
+              "./AppearanceScope"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "src/web/operador/src/appearance/AppearancePreferencesContext.tsx",
+        "versions": {
+          "clubal_main": null,
+          "base44": null,
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/appearance/AppearancePreferencesContext.tsx",
+            "sha256": "07e9b7e46ff44c3f3fe5a3ac3d1d2030349e874ccfcf6ea40dc5348d56b6ffb2",
+            "bytes": 21916,
+            "imports": [
+              "react",
+              "../api/identity",
+              "../theme/themeCatalog",
+              "./appearancePreferencesStorage",
+              "./AppearanceScope",
+              "../releases/useUpdateBlocker"
+            ]
+          }
+        },
+        "available_integration_tests": [
+          {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/appearance/AppearancePreferencesContext.test.tsx",
+            "sha256": "b17988557225d976c131a8f475c0ede7e127f74f40230985b27d97e0c420ff61",
+            "bytes": 19224,
+            "imports": [
+              "@testing-library/react",
+              "react",
+              "vitest",
+              "../api/identity",
+              "../theme/themeCatalog",
+              "./appearancePreferencesStorage",
+              "./AppearancePreferencesContext",
+              "../releases/updateWorkRegistry"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "src/web/operador/src/appearance/appearancePreferencesStorage.ts",
+        "versions": {
+          "clubal_main": null,
+          "base44": null,
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/appearance/appearancePreferencesStorage.ts",
+            "sha256": "fc50162fa3510b8e1912a844922384446bc2e123d461e9b1a7f5daeab2a03401",
+            "bytes": 9791,
+            "imports": [
+              "../api/identity",
+              "../theme/themeCatalog"
+            ]
+          }
+        },
+        "available_integration_tests": [
+          {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/appearance/appearancePreferencesStorage.test.ts",
+            "sha256": "49241b639d5e54cdd86071c62ae583085156ab624ddc8c9128952c2e4e3c3350",
+            "bytes": 10188,
+            "imports": [
+              "vitest",
+              "../api/identity",
+              "../theme/themeCatalog",
+              "./appearancePreferencesStorage"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "src/web/operador/src/appearance/AppearancePreferencesDialog.tsx",
+        "versions": {
+          "clubal_main": null,
+          "base44": null,
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/appearance/AppearancePreferencesDialog.tsx",
+            "sha256": "a193fc74bd19875fa27b1b3522a5a2deac3c36e0c295a50926b0e39ec8112014",
+            "bytes": 16062,
+            "imports": [
+              "react",
+              "../theme/themeCatalog",
+              "./AppearancePreferencesDialog.css"
+            ]
+          }
+        },
+        "available_integration_tests": [
+          {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/appearance/AppearancePreferencesDialog.test.tsx",
+            "sha256": "db805f8ec2bffd0cfa2ebe1f3c8df5c85d97f3e6f71ede74bf41df0095ee430a",
+            "bytes": 10440,
+            "imports": [
+              "@testing-library/react",
+              "@testing-library/user-event",
+              "node:fs",
+              "node:path",
+              "react",
+              "vitest",
+              "../theme/themeCatalog",
+              "./AppearancePreferencesDialog"
+            ]
+          }
+        ]
+      }
+    ],
+    "drafts": [
+      {
+        "path": "src/web/operador/src/configuration/ConfigurationDraftContext.tsx",
+        "versions": {
+          "clubal_main": {
+            "repo": "clubal",
+            "ref": "35381b9dbe2f6ef865783f55416ad5ea9860b49a",
+            "path": "src/web/operador/src/configuration/ConfigurationDraftContext.tsx",
+            "sha256": "4f6d5807bf1ac62b8947d78866a8e077c068dd69515a15754d0f490fc21d30a4",
+            "bytes": 6984,
+            "imports": [
+              "react",
+              "../api/institutionalConfiguration"
+            ]
+          },
+          "base44": {
+            "repo": "clubal",
+            "ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+            "path": "src/web/operador/src/configuration/ConfigurationDraftContext.tsx",
+            "sha256": "4f6d5807bf1ac62b8947d78866a8e077c068dd69515a15754d0f490fc21d30a4",
+            "bytes": 6984,
+            "imports": [
+              "react",
+              "../api/institutionalConfiguration"
+            ]
+          },
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/configuration/ConfigurationDraftContext.tsx",
+            "sha256": "1f4145afdfa68745389160ed878060ee1474192dfb265d7e64eebaf24b986dfd",
+            "bytes": 7080,
+            "imports": [
+              "react",
+              "../api/institutionalConfiguration",
+              "../releases/useUpdateBlocker"
+            ]
+          }
+        },
+        "available_integration_tests": []
+      },
+      {
+        "path": "src/web/operador/src/releases/useUpdateBlocker.ts",
+        "versions": {
+          "clubal_main": null,
+          "base44": null,
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/releases/useUpdateBlocker.ts",
+            "sha256": "32707bd2e8644ed1ee992540b15652d911094681eb0495802a84215657181904",
+            "bytes": 696,
+            "imports": [
+              "react",
+              "./updateWorkRegistry"
+            ]
+          }
+        },
+        "available_integration_tests": []
+      },
+      {
+        "path": "src/web/operador/src/releases/updateWorkRegistry.ts",
+        "versions": {
+          "clubal_main": null,
+          "base44": null,
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/releases/updateWorkRegistry.ts",
+            "sha256": "484a98989141165d2b644f748ac6747e6767d81aa8d83f334116e07f55b639f2",
+            "bytes": 1307,
+            "imports": []
+          }
+        },
+        "available_integration_tests": [
+          {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/releases/updateWorkRegistry.test.ts",
+            "sha256": "c9fe880b3f91d75070ef36a124a93a6808fc6076bac48eab56dcaede013d06a9",
+            "bytes": 2507,
+            "imports": [
+              "vitest",
+              "@testing-library/react",
+              "./updateWorkRegistry",
+              "./useUpdateBlocker"
+            ]
+          }
+        ]
+      }
+    ],
+    "catalog": [
+      {
+        "path": "src/web/operador/src/pages/NormativeLibraryPanel.tsx",
+        "versions": {
+          "clubal_main": {
+            "repo": "clubal",
+            "ref": "35381b9dbe2f6ef865783f55416ad5ea9860b49a",
+            "path": "src/web/operador/src/pages/NormativeLibraryPanel.tsx",
+            "sha256": "a33fd4119722c891780151f1b7bd1b5d156d6dff8c28dc592b71187a9284ff49",
+            "bytes": 12279,
+            "imports": [
+              "react",
+              "../api/normativeLibrary",
+              "./NormativeLibraryPanel.css"
+            ]
+          },
+          "base44": {
+            "repo": "clubal",
+            "ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+            "path": "src/web/operador/src/pages/NormativeLibraryPanel.tsx",
+            "sha256": "a33fd4119722c891780151f1b7bd1b5d156d6dff8c28dc592b71187a9284ff49",
+            "bytes": 12279,
+            "imports": [
+              "react",
+              "../api/normativeLibrary",
+              "./NormativeLibraryPanel.css"
+            ]
+          },
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/NormativeLibraryPanel.tsx",
+            "sha256": "a33fd4119722c891780151f1b7bd1b5d156d6dff8c28dc592b71187a9284ff49",
+            "bytes": 12279,
+            "imports": [
+              "react",
+              "../api/normativeLibrary",
+              "./NormativeLibraryPanel.css"
+            ]
+          }
+        },
+        "available_integration_tests": [
+          {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/NormativeLibraryPanel.test.tsx",
+            "sha256": "2ad636797273323687c3f79f5b39a93c33c512e661b7a1fb836509436eae549a",
+            "bytes": 6750,
+            "imports": [
+              "@testing-library/react",
+              "@testing-library/user-event",
+              "vitest",
+              "../api/normativeLibrary",
+              "./NormativeLibraryPanel"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "src/web/operador/src/pages/KnowledgePage.tsx",
+        "versions": {
+          "clubal_main": {
+            "repo": "clubal",
+            "ref": "35381b9dbe2f6ef865783f55416ad5ea9860b49a",
+            "path": "src/web/operador/src/pages/KnowledgePage.tsx",
+            "sha256": "36c28daaff4d1a21498888ad1c34c82baa4b8bc4c19bcd879f1ee1f8a0e93320",
+            "bytes": 29952,
+            "imports": [
+              "react",
+              "../api/knowledge",
+              "../api/workspace",
+              "./NormativeLibraryPanel",
+              "./KnowledgePage.css"
+            ]
+          },
+          "base44": {
+            "repo": "clubal",
+            "ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+            "path": "src/web/operador/src/pages/KnowledgePage.tsx",
+            "sha256": "8feb18e69a9a23cba68d960526c20a06961de3d8c9872a488205556127020881",
+            "bytes": 29925,
+            "imports": [
+              "react",
+              "../api/knowledge",
+              "../api/workspace",
+              "./NormativeLibraryPanel",
+              "./KnowledgePage.css"
+            ]
+          },
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/KnowledgePage.tsx",
+            "sha256": "efa34c6369aca9203fd177b10930dfaf63b517a1a5138c97b809feb6fca2334e",
+            "bytes": 31795,
+            "imports": [
+              "../releases/useUpdateBlocker",
+              "react",
+              "../api/knowledge",
+              "../api/workspace",
+              "../router/AppLink",
+              "./NormativeLibraryPanel",
+              "./KnowledgePage.css"
+            ]
+          }
+        },
+        "available_integration_tests": [
+          {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/KnowledgePage.test.tsx",
+            "sha256": "59d027035682560d1c09e15a1ec9ce2b440bd2295aece6c71b97c8deea0a31c1",
+            "bytes": 12933,
+            "imports": [
+              "@testing-library/react",
+              "@testing-library/user-event",
+              "vitest",
+              "../api/knowledge",
+              "../api/workspace",
+              "./KnowledgePage",
+              "../releases/updateWorkRegistry"
+            ]
+          }
+        ]
+      }
+    ],
+    "reports": [
+      {
+        "path": "src/web/operador/src/pages/ReportsAuditPage.tsx",
+        "versions": {
+          "clubal_main": {
+            "repo": "clubal",
+            "ref": "35381b9dbe2f6ef865783f55416ad5ea9860b49a",
+            "path": "src/web/operador/src/pages/ReportsAuditPage.tsx",
+            "sha256": "3772ab93afdea30e126f2c20d27f8f5083fe1f1a29d3281eceb98042fe3009a5",
+            "bytes": 34693,
+            "imports": [
+              "react",
+              "../api/reportsAudit",
+              "../api/workspace",
+              "./ReportsAuditPage.css"
+            ]
+          },
+          "base44": {
+            "repo": "clubal",
+            "ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+            "path": "src/web/operador/src/pages/ReportsAuditPage.tsx",
+            "sha256": "b37724ce0eed4e57fb3919bf128b03eb1e64db7daaa4e4d1c5befaadbbcdd3a2",
+            "bytes": 36077,
+            "imports": [
+              "react",
+              "../api/reportsAudit",
+              "../api/workspace",
+              "./ReportsAuditPage.css"
+            ]
+          },
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/ReportsAuditPage.tsx",
+            "sha256": "3772ab93afdea30e126f2c20d27f8f5083fe1f1a29d3281eceb98042fe3009a5",
+            "bytes": 34693,
+            "imports": [
+              "react",
+              "../api/reportsAudit",
+              "../api/workspace",
+              "./ReportsAuditPage.css"
+            ]
+          }
+        },
+        "available_integration_tests": [
+          {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/ReportsAuditPage.test.tsx",
+            "sha256": "5025e2f5292cae891acf22b14642b8013faace244411af79dbce6928903feb35",
+            "bytes": 8553,
+            "imports": [
+              "@testing-library/react",
+              "@testing-library/user-event",
+              "vitest",
+              "../api/reportsAudit",
+              "../api/workspace",
+              "./ReportsAuditPage"
+            ]
+          }
+        ]
+      }
+    ],
+    "schedule": [
+      {
+        "path": "src/web/operador/src/pages/SchedulePage.tsx",
+        "versions": {
+          "clubal_main": {
+            "repo": "clubal",
+            "ref": "35381b9dbe2f6ef865783f55416ad5ea9860b49a",
+            "path": "src/web/operador/src/pages/SchedulePage.tsx",
+            "sha256": "cb3c9ac8d1cf68e0a76b31a34defd048269bcdd3e434ac640da17dc4780261d6",
+            "bytes": 64791,
+            "imports": [
+              "react",
+              "../api/scheduling",
+              "./WeeklyBoard",
+              "./SchedulePublicationPanel",
+              "./SchedulePage.css"
+            ]
+          },
+          "base44": {
+            "repo": "clubal",
+            "ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+            "path": "src/web/operador/src/pages/SchedulePage.tsx",
+            "sha256": "b6dd624b556d99f2dbc2c23a1e68ad87f1d89b2917a46b8ec32d945d4df68bb0",
+            "bytes": 64648,
+            "imports": [
+              "react",
+              "../api/scheduling",
+              "./WeeklyBoard",
+              "./SchedulePublicationPanel",
+              "./SchedulePage.css"
+            ]
+          },
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/SchedulePage.tsx",
+            "sha256": "c62b6cea352ace1910b869df7d18ff309dc5689533d6ac438a511d7922915605",
+            "bytes": 70541,
+            "imports": [
+              "../releases/useUpdateBlocker",
+              "react",
+              "../api/scheduling",
+              "./WeeklyBoard",
+              "./SchedulePublicationPanel",
+              "./SchedulePage.css"
+            ]
+          }
+        },
+        "available_integration_tests": [
+          {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/SchedulePage.test.tsx",
+            "sha256": "0c3406cef8c5d867fcab4cbd29a4df06b879a17f6254b583a3178f8c62e75c18",
+            "bytes": 21271,
+            "imports": [
+              "@testing-library/react",
+              "@testing-library/user-event",
+              "vitest",
+              "../api/scheduling",
+              "./SchedulePage",
+              "../releases/updateWorkRegistry"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "src/web/operador/src/pages/WeeklyBoard.tsx",
+        "versions": {
+          "clubal_main": {
+            "repo": "clubal",
+            "ref": "35381b9dbe2f6ef865783f55416ad5ea9860b49a",
+            "path": "src/web/operador/src/pages/WeeklyBoard.tsx",
+            "sha256": "72899a5d631f3174f4c7ed856b6e5de7b11863dfc69984c1cd4bc039d4b02373",
+            "bytes": 17312,
+            "imports": [
+              "react",
+              "../api/scheduling",
+              "./WeeklyBoard.css"
+            ]
+          },
+          "base44": {
+            "repo": "clubal",
+            "ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+            "path": "src/web/operador/src/pages/WeeklyBoard.tsx",
+            "sha256": "72899a5d631f3174f4c7ed856b6e5de7b11863dfc69984c1cd4bc039d4b02373",
+            "bytes": 17312,
+            "imports": [
+              "react",
+              "../api/scheduling",
+              "./WeeklyBoard.css"
+            ]
+          },
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/WeeklyBoard.tsx",
+            "sha256": "72899a5d631f3174f4c7ed856b6e5de7b11863dfc69984c1cd4bc039d4b02373",
+            "bytes": 17312,
+            "imports": [
+              "react",
+              "../api/scheduling",
+              "./WeeklyBoard.css"
+            ]
+          }
+        },
+        "available_integration_tests": [
+          {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/WeeklyBoard.test.tsx",
+            "sha256": "296150ff806a0a2d68dc8cbd1895dede91d0089620ce897a4e2fd7ff8027ed19",
+            "bytes": 7742,
+            "imports": [
+              "@testing-library/react",
+              "@testing-library/user-event",
+              "vitest",
+              "../api/scheduling",
+              "./WeeklyBoard"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "src/web/operador/src/pages/SchedulePublicationPanel.tsx",
+        "versions": {
+          "clubal_main": {
+            "repo": "clubal",
+            "ref": "35381b9dbe2f6ef865783f55416ad5ea9860b49a",
+            "path": "src/web/operador/src/pages/SchedulePublicationPanel.tsx",
+            "sha256": "9f7d9298f33dd20c397d52cefd5b5e638f934574d66c4ab43fb8345d24c25d50",
+            "bytes": 31513,
+            "imports": [
+              "react",
+              "../api/scheduling",
+              "./SchedulePublicationPanel.css"
+            ]
+          },
+          "base44": {
+            "repo": "clubal",
+            "ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+            "path": "src/web/operador/src/pages/SchedulePublicationPanel.tsx",
+            "sha256": "9f7d9298f33dd20c397d52cefd5b5e638f934574d66c4ab43fb8345d24c25d50",
+            "bytes": 31513,
+            "imports": [
+              "react",
+              "../api/scheduling",
+              "./SchedulePublicationPanel.css"
+            ]
+          },
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/SchedulePublicationPanel.tsx",
+            "sha256": "9f7d9298f33dd20c397d52cefd5b5e638f934574d66c4ab43fb8345d24c25d50",
+            "bytes": 31513,
+            "imports": [
+              "react",
+              "../api/scheduling",
+              "./SchedulePublicationPanel.css"
+            ]
+          }
+        },
+        "available_integration_tests": [
+          {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/SchedulePublicationPanel.test.tsx",
+            "sha256": "50bfa4c75b6135ebe25209520cb42a822de9281d4fa6ccc8ecae7918a15fe1ba",
+            "bytes": 10434,
+            "imports": [
+              "@testing-library/react",
+              "@testing-library/user-event",
+              "vitest",
+              "../api/scheduling",
+              "./SchedulePublicationPanel"
+            ]
+          }
+        ]
+      }
+    ],
+    "configuration": [
+      {
+        "path": "src/web/operador/src/pages/ConfigurationCenterPanels.tsx",
+        "versions": {
+          "clubal_main": {
+            "repo": "clubal",
+            "ref": "35381b9dbe2f6ef865783f55416ad5ea9860b49a",
+            "path": "src/web/operador/src/pages/ConfigurationCenterPanels.tsx",
+            "sha256": "b02bcbdbd9dfa9e79590ebd0c9bca5741ca533e404bc24c468c37b8e6cbe2bd5",
+            "bytes": 33253,
+            "imports": [
+              "react",
+              "../api/configurationCenter",
+              "../router/AppLink",
+              "./ConfigurationCenterPanels.css"
+            ]
+          },
+          "base44": {
+            "repo": "clubal",
+            "ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+            "path": "src/web/operador/src/pages/ConfigurationCenterPanels.tsx",
+            "sha256": "438dccd9b115bb22812d9504dbafe580d57670a638a91409041e779117d6b224",
+            "bytes": 34053,
+            "imports": [
+              "react",
+              "../api/configurationCenter",
+              "../router/AppLink",
+              "./ConfigurationCenterPanels.css"
+            ]
+          },
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/ConfigurationCenterPanels.tsx",
+            "sha256": "8ad3f066063801bd7f0dd1c5a7f0d691904a1bf268aabde1d44773d59bb86f71",
+            "bytes": 33784,
+            "imports": [
+              "../releases/useUpdateBlocker",
+              "react",
+              "../api/configurationCenter",
+              "../router/AppLink",
+              "./ConfigurationCenterPanels.css"
+            ]
+          }
+        },
+        "available_integration_tests": [
+          {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/ConfigurationCenterPanels.test.tsx",
+            "sha256": "892738ca3756cff875b657d6a32fb5971f8cac48a2b568daed89936fb60867e4",
+            "bytes": 12034,
+            "imports": [
+              "@testing-library/react",
+              "@testing-library/user-event",
+              "vitest",
+              "../api/configurationCenter",
+              "./ConfigurationCenterPanels",
+              "../releases/updateWorkRegistry"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "src/web/operador/src/pages/BrandingPanel.tsx",
+        "versions": {
+          "clubal_main": {
+            "repo": "clubal",
+            "ref": "35381b9dbe2f6ef865783f55416ad5ea9860b49a",
+            "path": "src/web/operador/src/pages/BrandingPanel.tsx",
+            "sha256": "25a98766fcbb7631d74a283756e31b6c44571c13b4faa27d18481fc95a635b3d",
+            "bytes": 33683,
+            "imports": [
+              "react",
+              "../api/institutionalBranding",
+              "./BrandingPanel.css"
+            ]
+          },
+          "base44": {
+            "repo": "clubal",
+            "ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+            "path": "src/web/operador/src/pages/BrandingPanel.tsx",
+            "sha256": "25a98766fcbb7631d74a283756e31b6c44571c13b4faa27d18481fc95a635b3d",
+            "bytes": 33683,
+            "imports": [
+              "react",
+              "../api/institutionalBranding",
+              "./BrandingPanel.css"
+            ]
+          },
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/BrandingPanel.tsx",
+            "sha256": "4752a43e034d38d0fec9e74e3088ef5653615f020b9d53b7f24d9a1ad7f21002",
+            "bytes": 34825,
+            "imports": [
+              "../releases/useUpdateBlocker",
+              "react",
+              "../api/institutionalBranding",
+              "./BrandingPanel.css"
+            ]
+          }
+        },
+        "available_integration_tests": [
+          {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/BrandingPanel.test.tsx",
+            "sha256": "ba82a233066661963c465ed6d0f443bb327a4f52fbc3d23a820ed744f0bce5bc",
+            "bytes": 13968,
+            "imports": [
+              "@testing-library/react",
+              "@testing-library/user-event",
+              "vitest",
+              "../api/institutionalBranding",
+              "./BrandingPanel",
+              "../releases/updateWorkRegistry"
+            ]
+          }
+        ]
+      }
+    ],
+    "vertical": [
+      {
+        "path": "src/web/operador/src/pages/CurrentMapPage.tsx",
+        "versions": {
+          "clubal_main": {
+            "repo": "clubal",
+            "ref": "35381b9dbe2f6ef865783f55416ad5ea9860b49a",
+            "path": "src/web/operador/src/pages/CurrentMapPage.tsx",
+            "sha256": "ab3b5502efd14817ddbc778cff6872a09f5a056d44ad81c389e97c53e37eb801",
+            "bytes": 20461,
+            "imports": [
+              "react",
+              "../api/socioeducational",
+              "../api/spatialLayout",
+              "../api/workspace",
+              "./MovementPlanningPanel",
+              "./MovementWorkflowPanel",
+              "./RestrictedOperationsPanel",
+              "./SpatialLayoutPanel",
+              "./SpatialLayoutProjection",
+              "./CurrentMapPage.css"
+            ]
+          },
+          "base44": {
+            "repo": "clubal",
+            "ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+            "path": "src/web/operador/src/pages/CurrentMapPage.tsx",
+            "sha256": "59214c04a8e1ca4d5bd720f371d09de642c3f5e433ef6a77793c2c77a218c501",
+            "bytes": 4469,
+            "imports": [
+              "react",
+              "../api/socioeducational",
+              "../api/spatialLayout",
+              "../api/workspace",
+              "./AlojamentosMap",
+              "./SpatialLayoutPage",
+              "./CurrentMapPage.css"
+            ]
+          },
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/CurrentMapPage.tsx",
+            "sha256": "f241598da5d87eac162df73925ec14763805411fcb4b865afa0526147689fdb5",
+            "bytes": 23150,
+            "imports": [
+              "react",
+              "../api/socioeducational",
+              "../api/spatialLayout",
+              "../api/workspace",
+              "./MovementPlanningPanel",
+              "./MovementWorkflowPanel",
+              "./RestrictedOperationsPanel",
+              "./SpatialLayoutPanel",
+              "./SpatialLayoutProjection",
+              "./CurrentMapPage.css"
+            ]
+          }
+        },
+        "available_integration_tests": [
+          {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/CurrentMapPage.test.tsx",
+            "sha256": "6aa9c8d98dd32f0b63e8a9c316609a4f6f4c4f3855d69a186bb61e67992ecca4",
+            "bytes": 13365,
+            "imports": [
+              "@testing-library/react",
+              "@testing-library/user-event",
+              "vitest",
+              "../api/spatialLayout",
+              "../api/socioeducational",
+              "../api/workspace",
+              "../test/spatialLayoutFixture",
+              "./CurrentMapPage"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "src/web/operador/src/pages/SpatialLayoutPanel.tsx",
+        "versions": {
+          "clubal_main": {
+            "repo": "clubal",
+            "ref": "35381b9dbe2f6ef865783f55416ad5ea9860b49a",
+            "path": "src/web/operador/src/pages/SpatialLayoutPanel.tsx",
+            "sha256": "5f5aed36309dfb718b97eb84117d555bc1fd2340597956a68740f26c0e07f238",
+            "bytes": 44096,
+            "imports": [
+              "react",
+              "../api/spatialLayout",
+              "./SpatialLayoutProjection",
+              "./SpatialLayoutPanel.css"
+            ]
+          },
+          "base44": {
+            "repo": "clubal",
+            "ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+            "path": "src/web/operador/src/pages/SpatialLayoutPanel.tsx",
+            "sha256": "5f5aed36309dfb718b97eb84117d555bc1fd2340597956a68740f26c0e07f238",
+            "bytes": 44096,
+            "imports": [
+              "react",
+              "../api/spatialLayout",
+              "./SpatialLayoutProjection",
+              "./SpatialLayoutPanel.css"
+            ]
+          },
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/SpatialLayoutPanel.tsx",
+            "sha256": "4a032cb4b161f1bd9b88043e1c6292207403abc878fcd72c0adc3016c5bc2dcb",
+            "bytes": 48276,
+            "imports": [
+              "../releases/useUpdateBlocker",
+              "react",
+              "../api/spatialLayout",
+              "./SpatialLayoutProjection",
+              "./SpatialLayoutPanel.css"
+            ]
+          }
+        },
+        "available_integration_tests": [
+          {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/SpatialLayoutPanel.test.tsx",
+            "sha256": "255f44c0f54c3aeabbf7960ec14eaa5a391f452e0dd92a665d50fd91adba206e",
+            "bytes": 13013,
+            "imports": [
+              "@testing-library/react",
+              "@testing-library/user-event",
+              "vitest",
+              "../api/spatialLayout",
+              "../test/spatialLayoutFixture",
+              "./SpatialLayoutPanel",
+              "../releases/updateWorkRegistry"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "src/web/operador/src/pages/SpatialLayoutProjection.tsx",
+        "versions": {
+          "clubal_main": {
+            "repo": "clubal",
+            "ref": "35381b9dbe2f6ef865783f55416ad5ea9860b49a",
+            "path": "src/web/operador/src/pages/SpatialLayoutProjection.tsx",
+            "sha256": "188a4c62b1fdcddcee84420d69ae939a5d6c8f62e426a09f12959b833284579a",
+            "bytes": 11635,
+            "imports": [
+              "react",
+              "react",
+              "../api/spatialLayout",
+              "./SpatialLayoutProjection.css"
+            ]
+          },
+          "base44": {
+            "repo": "clubal",
+            "ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+            "path": "src/web/operador/src/pages/SpatialLayoutProjection.tsx",
+            "sha256": "188a4c62b1fdcddcee84420d69ae939a5d6c8f62e426a09f12959b833284579a",
+            "bytes": 11635,
+            "imports": [
+              "react",
+              "react",
+              "../api/spatialLayout",
+              "./SpatialLayoutProjection.css"
+            ]
+          },
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/SpatialLayoutProjection.tsx",
+            "sha256": "6c21b1e576dd21c99014d8ae64f911bb18470e281c57a459047c021110577efa",
+            "bytes": 18217,
+            "imports": [
+              "react",
+              "react",
+              "../api/spatialLayout",
+              "./SpatialLayoutProjection.css"
+            ]
+          }
+        },
+        "available_integration_tests": [
+          {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/SpatialLayoutProjection.test.tsx",
+            "sha256": "b125335b0c5f81a65ab96a9a521db2c7d548155c10bb6968f4b6ab1e54091f5e",
+            "bytes": 10703,
+            "imports": [
+              "@testing-library/react",
+              "vitest",
+              "../api/spatialLayout",
+              "../test/spatialLayoutFixture",
+              "./SpatialLayoutProjection"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "src/web/operador/src/pages/MovementWorkflowPanel.tsx",
+        "versions": {
+          "clubal_main": {
+            "repo": "clubal",
+            "ref": "35381b9dbe2f6ef865783f55416ad5ea9860b49a",
+            "path": "src/web/operador/src/pages/MovementWorkflowPanel.tsx",
+            "sha256": "0f1c6d9456c6d6c0deb0e3e2ebdd5f3cdc2c6bafe82b01f0cb72ef8aa9ecdfaf",
+            "bytes": 32894,
+            "imports": [
+              "react",
+              "../api/socioeducational",
+              "../api/movementWorkflow",
+              "./MovementWorkflowPanel.css"
+            ]
+          },
+          "base44": {
+            "repo": "clubal",
+            "ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+            "path": "src/web/operador/src/pages/MovementWorkflowPanel.tsx",
+            "sha256": "0f1c6d9456c6d6c0deb0e3e2ebdd5f3cdc2c6bafe82b01f0cb72ef8aa9ecdfaf",
+            "bytes": 32894,
+            "imports": [
+              "react",
+              "../api/socioeducational",
+              "../api/movementWorkflow",
+              "./MovementWorkflowPanel.css"
+            ]
+          },
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/MovementWorkflowPanel.tsx",
+            "sha256": "500d321fbfe65dc9170bd3044bddb29945f8f07de14e2558e87545ebe45bf582",
+            "bytes": 34664,
+            "imports": [
+              "../releases/useUpdateBlocker",
+              "react",
+              "../api/socioeducational",
+              "../api/movementWorkflow",
+              "./MovementWorkflowPanel.css"
+            ]
+          }
+        },
+        "available_integration_tests": [
+          {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/MovementWorkflowPanel.test.tsx",
+            "sha256": "d5ff34526cd9981d34c3b047e402d840ce66449732ad014052c0d4af10373890",
+            "bytes": 12238,
+            "imports": [
+              "@testing-library/react",
+              "@testing-library/user-event",
+              "vitest",
+              "../api/socioeducational",
+              "../api/movementWorkflow",
+              "./MovementWorkflowPanel",
+              "../releases/updateWorkRegistry"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "src/web/operador/src/pages/RestrictedOperationsPanel.tsx",
+        "versions": {
+          "clubal_main": {
+            "repo": "clubal",
+            "ref": "35381b9dbe2f6ef865783f55416ad5ea9860b49a",
+            "path": "src/web/operador/src/pages/RestrictedOperationsPanel.tsx",
+            "sha256": "e0a4df705b70db9fe5f8e697b7da1ca14a4f0fc03e80ec87c1cdfad707448d2b",
+            "bytes": 32553,
+            "imports": [
+              "react",
+              "../api/socioeducational",
+              "../api/restrictedOperations",
+              "./RestrictedOperationsPanel.css"
+            ]
+          },
+          "base44": {
+            "repo": "clubal",
+            "ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+            "path": "src/web/operador/src/pages/RestrictedOperationsPanel.tsx",
+            "sha256": "e0a4df705b70db9fe5f8e697b7da1ca14a4f0fc03e80ec87c1cdfad707448d2b",
+            "bytes": 32553,
+            "imports": [
+              "react",
+              "../api/socioeducational",
+              "../api/restrictedOperations",
+              "./RestrictedOperationsPanel.css"
+            ]
+          },
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/RestrictedOperationsPanel.tsx",
+            "sha256": "3a569cd6d1471aae4800875428ccc3b38cf7e0c032655047b00a350573ab3a0c",
+            "bytes": 63875,
+            "imports": [
+              "react",
+              "../releases/useUpdateBlocker",
+              "../api/socioeducational",
+              "../api/restrictedOperations",
+              "./RestrictedOperationsPanel.css"
+            ]
+          }
+        },
+        "available_integration_tests": [
+          {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/RestrictedOperationsPanel.test.tsx",
+            "sha256": "e5137f2e157cb2e45f4265c10c5fa72e352ba352c7ccbe9e8994ce47e723ceab",
+            "bytes": 15998,
+            "imports": [
+              "@testing-library/react",
+              "@testing-library/user-event",
+              "vitest",
+              "../api/socioeducational",
+              "../api/restrictedOperations",
+              "./RestrictedOperationsPanel",
+              "../releases/updateWorkRegistry"
+            ]
+          }
+        ]
+      }
+    ],
+    "operations": [
+      {
+        "path": "src/web/operador/src/pages/DeviceCenterPage.tsx",
+        "versions": {
+          "clubal_main": {
+            "repo": "clubal",
+            "ref": "35381b9dbe2f6ef865783f55416ad5ea9860b49a",
+            "path": "src/web/operador/src/pages/DeviceCenterPage.tsx",
+            "sha256": "355698e4925b313aa083e843c2f00ba74c4df8038f961d87a387ff9314deebb6",
+            "bytes": 55391,
+            "imports": [
+              "react",
+              "../api/deviceCenter",
+              "../api/workspace",
+              "../devices/PairingCodeCapture",
+              "../devices/pairing",
+              "./DeviceCenterPage.css"
+            ]
+          },
+          "base44": {
+            "repo": "clubal",
+            "ref": "46370e599c021c52ee9734249b438f4a664ab33b",
+            "path": "src/web/operador/src/pages/DeviceCenterPage.tsx",
+            "sha256": "0a5031c5c8cf0b6028a5223f26f96c607e19a644d4745697ef5094f998befab6",
+            "bytes": 55344,
+            "imports": [
+              "react",
+              "../api/deviceCenter",
+              "../api/workspace",
+              "../devices/PairingCodeCapture",
+              "../devices/pairing",
+              "./DeviceCenterPage.css"
+            ]
+          },
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/DeviceCenterPage.tsx",
+            "sha256": "f59246eae422ed12f8443afd84c712455792327cda5e155f9086498b8806de55",
+            "bytes": 57008,
+            "imports": [
+              "../releases/useUpdateBlocker",
+              "react",
+              "../api/deviceCenter",
+              "../api/workspace",
+              "../devices/PairingCodeCapture",
+              "../devices/pairing",
+              "./DeviceCenterPage.css"
+            ]
+          }
+        },
+        "available_integration_tests": [
+          {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/pages/DeviceCenterPage.test.tsx",
+            "sha256": "74082abe48c42909d0b2d661244fbcd253c07164ba278bc5cf7e267b2af0b744",
+            "bytes": 11673,
+            "imports": [
+              "@testing-library/react",
+              "@testing-library/user-event",
+              "vitest",
+              "../api/deviceCenter",
+              "../api/workspace",
+              "./DeviceCenterPage",
+              "../releases/updateWorkRegistry"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "src/web/operador/src/support/SupportAssistancePanel.tsx",
+        "versions": {
+          "clubal_main": null,
+          "base44": null,
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/support/SupportAssistancePanel.tsx",
+            "sha256": "40d1b026edaf7716c03578429e2d556a1b859478bd8259f959af5ef25a87edf6",
+            "bytes": 18133,
+            "imports": [
+              "react",
+              "./supportClock",
+              "./supportContracts",
+              "./SupportTechnicalSummaryView",
+              "./SupportDeviceRegistryView",
+              "./SupportSchedulePreparation",
+              "./SupportScheduleStaging",
+              "./SupportScheduleReview",
+              "./useSupportAssistance",
+              "./supportContracts",
+              "./SupportHistoryPanel",
+              "./SupportAssistancePanel.css"
+            ]
+          }
+        },
+        "available_integration_tests": [
+          {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/support/SupportAssistancePanel.test.tsx",
+            "sha256": "a0d0e1fe366d99d6cccd8c1b689d874f24c6645921d2928016b99c880e574b3b",
+            "bytes": 17638,
+            "imports": [
+              "@testing-library/react",
+              "@testing-library/user-event",
+              "vitest",
+              "./SupportAssistancePanel",
+              "./TenantSupportAssistance",
+              "./supportApi",
+              "./supportContracts",
+              "./supportFixtures",
+              "../releases/updateWorkRegistry",
+              "../IdentityGate"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "src/web/operador/src/support/SupportHistoryPanel.tsx",
+        "versions": {
+          "clubal_main": null,
+          "base44": null,
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/support/SupportHistoryPanel.tsx",
+            "sha256": "016a85dccca5e57b51b6ad013ed8b9bafa79d9f51f9d437bc13af4d24997a643",
+            "bytes": 4091,
+            "imports": [
+              "react",
+              "./supportApi",
+              "./supportContracts",
+              "./useSupportAssistance",
+              "./supportClock"
+            ]
+          }
+        },
+        "available_integration_tests": [
+          {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/support/SupportHistoryPanel.test.tsx",
+            "sha256": "e13c1addebb13faa4176a8340aaa10057babf1d6f85379e925996fd414161f6a",
+            "bytes": 8943,
+            "imports": [
+              "@testing-library/react",
+              "vitest",
+              "./SupportAssistancePanel",
+              "./supportApi",
+              "./supportContracts",
+              "./supportFixtures"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "src/web/operador/src/support/useSupportAssistance.ts",
+        "versions": {
+          "clubal_main": null,
+          "base44": null,
+          "integration": {
+            "repo": "clubal",
+            "ref": "3380fa923bd6e3b05610642da0d283fb81514c7b",
+            "path": "src/web/operador/src/support/useSupportAssistance.ts",
+            "sha256": "67268c2bbbdffb240e06f3481584ad8523c776434b76fa8a5ab0b58b83b04b88",
+            "bytes": 15266,
+            "imports": [
+              "react",
+              "../releases/useUpdateBlocker",
+              "../releases/webReleaseFetch",
+              "./supportApi",
+              "./supportContracts",
+              "./supportClock",
+              "./supportNotices"
+            ]
+          }
+        },
+        "available_integration_tests": []
+      }
+    ]
+  },
+  "canonical_prior_ui": [
+    {
+      "repo": "canonical",
+      "ref": "d38de0ce5cfbf9f039e7280327d558bb0e230fce",
+      "path": "src/Wissian.Web/src/AccessFrame.tsx",
+      "sha256": "31d6831029344c14a7ff7eab595c59780609a7fecad4c4901e78d06335a7f19b",
+      "bytes": 1187,
+      "imports": [
+        "react",
+        "./Appearance"
+      ]
+    },
+    {
+      "repo": "canonical",
+      "ref": "d38de0ce5cfbf9f039e7280327d558bb0e230fce",
+      "path": "src/Wissian.Web/src/Appearance.tsx",
+      "sha256": "a3d09a9cffe130bc89f2271110e3af0bfdff70ab1bc31cf6d8c533a9a6c65c1f",
+      "bytes": 935,
+      "imports": [
+        "react"
+      ]
+    },
+    {
+      "repo": "canonical",
+      "ref": "d38de0ce5cfbf9f039e7280327d558bb0e230fce",
+      "path": "src/Wissian.Web/src/IdentityGate.tsx",
+      "sha256": "9f9688bc79802edd67c2e4426422b6c1e049d326478ad67603c331c7a65d221b",
+      "bytes": 10499,
+      "imports": [
+        "react",
+        "./AccessFrame",
+        "./AccountAccess",
+        "./api",
+        "./navigation"
+      ]
+    },
+    {
+      "repo": "canonical",
+      "ref": "9ffd1d4ddd6b4687d788be15056352a969fc1b7b",
+      "path": "src/Wissian.Web/src/modules/Counterparties.tsx",
+      "sha256": "2e2c26bd17de0533a3c2727f21d240d785eadd4369cba6da6c3c9db35736c6f8",
+      "bytes": 13811,
+      "imports": [
+        "react",
+        "../api",
+        "../IdentityGate",
+        "../App"
+      ]
+    }
+  ],
+  "destination_files": [
+    {
+      "repo": "app",
+      "ref": "1249ba403c3f50171ae60f36c2948490c79de39c",
+      "path": "src/components/wissian/WorkspaceAreas.tsx",
+      "sha256": "85c5ab2da397a1327079dc014969edf7e9389b29bbcfd0b9dcfc9ba48c96d65f",
+      "bytes": 2751,
+      "imports": [
+        "react",
+        "lucide-react",
+        "./LocaleProvider"
+      ]
+    },
+    {
+      "repo": "app",
+      "ref": "1249ba403c3f50171ae60f36c2948490c79de39c",
+      "path": "src/components/wissian/WorkspaceShell.tsx",
+      "sha256": "45139ab77f91ad12a161f786b9c517e7b66a3c3a3f236e14d9c6bc6deb7ccea1",
+      "bytes": 1974,
+      "imports": [
+        "react",
+        "@tanstack/react-router",
+        "./entry",
+        "./LocaleProvider",
+        "./PersonalPreferences"
+      ]
+    },
+    {
+      "repo": "app",
+      "ref": "1249ba403c3f50171ae60f36c2948490c79de39c",
+      "path": "src/components/wissian/PersonalPreferences.tsx",
+      "sha256": "827b58a0a222eb8ef3b965968291e6e3d641a1418136451b1bf3bc5efb5959ad",
+      "bytes": 4879,
+      "imports": [
+        "react",
+        "lucide-react",
+        "@/components/ui/dialog",
+        "./LocaleSelector",
+        "./LocaleProvider",
+        "@/components/ui/tabs",
+        "@/personalization/AppearanceProvider",
+        "@/personalization/preferences",
+        "@/personalization/palettes"
+      ]
+    },
+    {
+      "repo": "app",
+      "ref": "1249ba403c3f50171ae60f36c2948490c79de39c",
+      "path": "src/personalization/palettes.ts",
+      "sha256": "d96a2296c683e2aa5c77f7bab6de47da752fffecb79137119cd6e910d7ed38c6",
+      "bytes": 4411,
+      "imports": []
+    },
+    {
+      "repo": "app",
+      "ref": "1249ba403c3f50171ae60f36c2948490c79de39c",
+      "path": "src/personalization/preferences.ts",
+      "sha256": "201b649316c91c2c00b4fb09549c7855950846340f4a3519dc5b869cfa5c435e",
+      "bytes": 1153,
+      "imports": []
+    },
+    {
+      "repo": "app",
+      "ref": "1249ba403c3f50171ae60f36c2948490c79de39c",
+      "path": "src/personalization/AppearanceProvider.tsx",
+      "sha256": "e65a7f56b7315d3b5f8c3942b06a1c48d92810b976d581718403e07ab2ec0f37",
+      "bytes": 3320,
+      "imports": [
+        "react",
+        "./palettes",
+        "./preferences"
+      ]
+    },
+    {
+      "repo": "app",
+      "ref": "1249ba403c3f50171ae60f36c2948490c79de39c",
+      "path": "src/modules/documents/DocumentsPanel.tsx",
+      "sha256": "a03eb91f0bfb8913d7b792369b8cef9e05af6487b40fe166f3b23ca3c40196c8",
+      "bytes": 42457,
+      "imports": [
+        "react",
+        "@tanstack/react-query",
+        "@tanstack/react-start",
+        "@tanstack/react-router",
+        "@/components/wissian/LocaleProvider",
+        "lucide-react",
+        "@/core/command-result",
+        "@/locales",
+        "@/components/ui/alert-dialog",
+        "@/components/ui/button",
+        "@/components/ui/input",
+        "@/components/ui/badge",
+        "./upload-request",
+        "./attachment",
+        "./functions",
+        "./scan-request",
+        "./detail-refresh",
+        "./DocumentParts",
+        "./detail-slot",
+        "./contract"
+      ]
+    },
+    {
+      "repo": "app",
+      "ref": "1249ba403c3f50171ae60f36c2948490c79de39c",
+      "path": "src/modules/counterparties/CounterpartiesPanel.tsx",
+      "sha256": "0732a11cbd112ae070a0ebde3cc8d26f18403ebfbd1f340986a1127e947fb861",
+      "bytes": 22936,
+      "imports": [
+        "react",
+        "@tanstack/react-query",
+        "@tanstack/react-start",
+        "@tanstack/react-router",
+        "@/components/wissian/LocaleProvider",
+        "@/core/command-result",
+        "@/locales",
+        "@/components/ui/alert-dialog",
+        "./functions",
+        "./contract"
+      ]
+    },
+    {
+      "repo": "app",
+      "ref": "1249ba403c3f50171ae60f36c2948490c79de39c",
+      "path": "src/modules/finance/FinanceControlsPanel.tsx",
+      "sha256": "b46e87381c51ed0f9e10054599d0c581c9481d52111640eeb6fe52b0f3143fd2",
+      "bytes": 28973,
+      "imports": [
+        "react",
+        "@tanstack/react-query",
+        "@tanstack/react-start",
+        "@/components/wissian/LocaleProvider",
+        "@/components/wissian/AdministrativeFields",
+        "@/lib/use-frozen-command",
+        "@/lib/exact-money",
+        "@/locales",
+        "@/core/command-runner",
+        "./controls-functions",
+        "./controls-contract"
+      ]
+    },
+    {
+      "repo": "app",
+      "ref": "1249ba403c3f50171ae60f36c2948490c79de39c",
+      "path": "src/composition/monthly-close/MonthlyClosePanel.tsx",
+      "sha256": "62bdd49388b1cb4e4dedb90871fe4a8c3d62035001eaeb117fe90d90102f8274",
+      "bytes": 40383,
+      "imports": [
+        "react",
+        "@tanstack/react-query",
+        "@tanstack/react-start",
+        "@tanstack/react-router",
+        "zod",
+        "@/components/wissian/LocaleProvider",
+        "@/components/wissian/AdministrativeFields",
+        "@/components/ui/alert-dialog",
+        "@/locales",
+        "@/lib/exact-money",
+        "@/lib/command-deadline",
+        "@/modules/documents/functions",
+        "./access",
+        "./read-functions",
+        "./command-functions",
+        "./collect-request",
+        "./export-request",
+        "./workflow",
+        "./read-contract"
+      ]
+    }
+  ],
+  "verified_literal_palette_reuse": {
+    "method": "Static JSON-shaped data comparison; no source/UI test executed",
+    "source_catalog_count": 15,
+    "mapping": {
+      "clareza": "clarity",
+      "grafite": "graphite",
+      "noite_profunda": "night",
+      "brisa_nordica": "nordic"
+    },
+    "exact_role_color_equality": {
+      "clareza": true,
+      "grafite": true,
+      "noite_profunda": true,
+      "brisa_nordica": true
+    },
+    "exact_high_contrast_equality": true,
+    "remaining_source_theme_ids": [
+      "bruma_serena",
+      "aconchego_natural",
+      "estudio_natural",
+      "horizonte_operacional",
+      "pulso_civico",
+      "foco_sustentado",
+      "pausa_restauradora",
+      "energia_moderada",
+      "alegria_clara",
+      "paz_serena",
+      "floresta_pluvial"
+    ]
+  },
+  "source_package_dependencies": {
+    "base44": {
+      "@microsoft/signalr": "10.0.0",
+      "lucide-react": "^1.47.0",
+      "qrcode": "^1.5.4",
+      "react": "^19.2.7",
+      "react-dom": "^19.2.7"
+    },
+    "integration": {
+      "@microsoft/signalr": "10.0.0",
+      "qrcode": "^1.5.4",
+      "react": "^19.2.7",
+      "react-dom": "^19.2.7"
+    }
+  },
+  "license_review": {
+    "matching_license_paths": {
+      "base44": [],
+      "integration": []
+    },
+    "scope": "LICENSE/LICENCE text files in selected source trees",
+    "owner_source": "Gui-authorized private source reuse; source repository remains preserved",
+    "limits": "No blanket third-party asset/dependency licence clearance; preserve notices and review the actually extracted material. No template source or licence acquired by this review."
+  },
+  "application_reuse_records": [
+    "docs/reuso/DISPOSICAO.md",
+    "docs/reuse/M2_DOCUMENTS_CLUBAL.md",
+    "docs/reuse/PERSONALIZATION.md",
+    "docs/reuse/WORKSPACE_NAVIGATION.md",
+    "docs/reuse/M3_ADMINISTRATIVE_CYCLE.md",
+    "docs/reuse/M4_MONTHLY_CLOSE.md",
+    "docs/reuse/m4-source-characterization.json"
+  ],
+  "corrective_priority": [
+    "Port selected Base44 application frame/menu/navigation markup and CSS through current-runtime adapters",
+    "Preserve working modules/commands/data and integrate compatible source reports/history/draft fragments",
+    "Complete only demonstrated M4 functional gaps and scoped acceptance",
+    "Use source-backed agenda/configuration/vertical/support components in their approved later milestones"
+  ],
+  "limits": [
+    "This review did not execute a historical UI, legacy tests or new destination UI scenarios",
+    "Available test files are inventory, not PASS receipts",
+    "Current palette comparison is static source evidence, not UI equivalence",
+    "Financial keyword absence does not establish absence of reusable presentation or utilities",
+    "Current remote heads do not exhaust deleted branches or all private historical sources",
+    "The complete Base44 interface remains to be ported",
+    "No runtime, pending SQL, managed environment, customer data or production configuration changed",
+    "Interrupted independent review and M1–M8 customer gates remain unchanged",
+    "No paid builder prompt, template remix, purchase or new dependency"
+  ],
+  "preservation_before": {
+    "clubal": {
+      "head": "35381b9dbe2f6ef865783f55416ad5ea9860b49a",
+      "status": []
+    },
+    "canonical": {
+      "head": "fd09c435a50aba6458536c033e78e2652a151366",
+      "status": []
+    },
+    "app": {
+      "head": "1249ba403c3f50171ae60f36c2948490c79de39c",
+      "status": [
+        " M src/routeTree.gen.ts"
+      ]
+    }
+  }
+}

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "scope": "28_inherited_inventory_items_and_12_priority_capability_slices",
-  "notice": "Candidatos nao sao classificacao definitiva nem migracao executada.",
+  "notice": "Candidatos nao sao classificacao definitiva nem migracao executada. This is the preparation inventory, not current application runtime status. The 2026-10-12 source review and active app evidence hold scoped current findings; do not restart M0 or promote all rows.",
   "items": [
     {
       "id": "ABS-001",
@@ -423,7 +423,7 @@
       "proposed_action": "Caracterizar comportamento e dependencias; adaptar somente a capacidade util com testes no destino.",
       "decision": "PENDING_AUDIT",
       "phase": "M0",
-      "evidence_to_collect": "Caracterizacao M0: docs/mestre/evidencias/m0-primeira-fatia.json; absorcao no produto pendente. ref/hash; callers; schema; state; authorization; UI; tests; licence; comparison Base44/Codex",
+      "evidence_to_collect": "Caracterizacao M0: docs/mestre/evidencias/m0-primeira-fatia.json; absorcao no produto pendente. ref/hash; callers; schema; state; authorization; UI; tests; licence; comparison Base44/Codex; current source review: docs/mestre/evidencias/reuse-plan-review-2026-10-12.json; runtime/acceptance stays in active app scoped evidence",
       "acceptance": "Ficha concluida, fronteira provada e equivalencia escolhida demonstrada",
       "rollback": "Origem intacta; reverter fatia no destino com schema/compatibilidade definidos",
       "runtime_status": "NOT_RUN"
@@ -491,7 +491,7 @@
       "proposed_action": "Inventariar e comparar por ficha; preservar o que for escolhido com evidencia.",
       "decision": "PENDING_AUDIT",
       "phase": "M6",
-      "evidence_to_collect": "Caracterizacao M0: docs/mestre/evidencias/m0-primeira-fatia.json; absorcao no produto pendente. ref/hash; fluxo; dados; dependencias; permissao; UI; teste; aceite",
+      "evidence_to_collect": "Caracterizacao M0: docs/mestre/evidencias/m0-primeira-fatia.json; absorcao no produto pendente. ref/hash; fluxo; dados; dependencias; permissao; UI; teste; aceite; current source review: docs/mestre/evidencias/reuse-plan-review-2026-10-12.json; runtime/acceptance stays in active app scoped evidence",
       "acceptance": "Capacidade implementada e validada no destino, sem perder origem",
       "rollback": "Origem preservada e retorno da fatia documentado",
       "runtime_status": "NOT_RUN"
@@ -508,7 +508,7 @@
       "proposed_action": "Inventariar e comparar por ficha; preservar o que for escolhido com evidencia.",
       "decision": "PENDING_AUDIT",
       "phase": "M0",
-      "evidence_to_collect": "Caracterizacao M0: docs/mestre/evidencias/m0-primeira-fatia.json; absorcao no produto pendente. ref/hash; fluxo; dados; dependencias; permissao; UI; teste; aceite",
+      "evidence_to_collect": "Caracterizacao M0: docs/mestre/evidencias/m0-primeira-fatia.json; absorcao no produto pendente. ref/hash; fluxo; dados; dependencias; permissao; UI; teste; aceite; current source review: docs/mestre/evidencias/reuse-plan-review-2026-10-12.json; runtime/acceptance stays in active app scoped evidence",
       "acceptance": "Capacidade implementada e validada no destino, sem perder origem",
       "rollback": "Origem preservada e retorno da fatia documentado",
       "runtime_status": "NOT_RUN"
@@ -525,7 +525,7 @@
       "proposed_action": "Inventariar e comparar por ficha; preservar o que for escolhido com evidencia.",
       "decision": "PENDING_AUDIT",
       "phase": "M0",
-      "evidence_to_collect": "Caracterizacao M0: docs/mestre/evidencias/m0-primeira-fatia.json; absorcao no produto pendente. ref/hash; fluxo; dados; dependencias; permissao; UI; teste; aceite",
+      "evidence_to_collect": "Caracterizacao M0: docs/mestre/evidencias/m0-primeira-fatia.json; absorcao no produto pendente. ref/hash; fluxo; dados; dependencias; permissao; UI; teste; aceite; current source review: docs/mestre/evidencias/reuse-plan-review-2026-10-12.json; runtime/acceptance stays in active app scoped evidence",
       "acceptance": "Capacidade implementada e validada no destino, sem perder origem",
       "rollback": "Origem preservada e retorno da fatia documentado",
       "runtime_status": "NOT_RUN"
@@ -559,7 +559,7 @@
       "proposed_action": "Inventariar e comparar por ficha; preservar o que for escolhido com evidencia.",
       "decision": "PENDING_AUDIT",
       "phase": "M2",
-      "evidence_to_collect": "Caracterizacao M0: docs/mestre/evidencias/m0-primeira-fatia.json; absorcao no produto pendente. ref/hash; fluxo; dados; dependencias; permissao; UI; teste; aceite",
+      "evidence_to_collect": "Caracterizacao M0: docs/mestre/evidencias/m0-primeira-fatia.json; absorcao no produto pendente. ref/hash; fluxo; dados; dependencias; permissao; UI; teste; aceite; current source review: docs/mestre/evidencias/reuse-plan-review-2026-10-12.json; runtime/acceptance stays in active app scoped evidence",
       "acceptance": "Capacidade implementada e validada no destino, sem perder origem",
       "rollback": "Origem preservada e retorno da fatia documentado",
       "runtime_status": "NOT_RUN"
@@ -576,7 +576,7 @@
       "proposed_action": "Inventariar e comparar por ficha; preservar o que for escolhido com evidencia.",
       "decision": "PENDING_AUDIT",
       "phase": "M0",
-      "evidence_to_collect": "Caracterizacao M0: docs/mestre/evidencias/m0-primeira-fatia.json; absorcao no produto pendente. ref/hash; fluxo; dados; dependencias; permissao; UI; teste; aceite",
+      "evidence_to_collect": "Caracterizacao M0: docs/mestre/evidencias/m0-primeira-fatia.json; absorcao no produto pendente. ref/hash; fluxo; dados; dependencias; permissao; UI; teste; aceite; current source review: docs/mestre/evidencias/reuse-plan-review-2026-10-12.json; runtime/acceptance stays in active app scoped evidence",
       "acceptance": "Capacidade implementada e validada no destino, sem perder origem",
       "rollback": "Origem preservada e retorno da fatia documentado",
       "runtime_status": "NOT_RUN"
@@ -593,7 +593,7 @@
       "proposed_action": "Inventariar e comparar por ficha; preservar o que for escolhido com evidencia.",
       "decision": "PENDING_AUDIT",
       "phase": "M7",
-      "evidence_to_collect": "ref/hash; fluxo; dados; dependencias; permissao; UI; teste; aceite",
+      "evidence_to_collect": "ref/hash; fluxo; dados; dependencias; permissao; UI; teste; aceite; current source review: docs/mestre/evidencias/reuse-plan-review-2026-10-12.json; runtime/acceptance stays in active app scoped evidence",
       "acceptance": "Capacidade implementada e validada no destino, sem perder origem",
       "rollback": "Origem preservada e retorno da fatia documentado",
       "runtime_status": "NOT_RUN"
@@ -610,7 +610,7 @@
       "proposed_action": "Inventariar e comparar por ficha; preservar o que for escolhido com evidencia.",
       "decision": "PENDING_AUDIT",
       "phase": "M2",
-      "evidence_to_collect": "Caracterizacao M0: docs/mestre/evidencias/m0-primeira-fatia.json; absorcao no produto pendente. ref/hash; fluxo; dados; dependencias; permissao; UI; teste; aceite",
+      "evidence_to_collect": "Caracterizacao M0: docs/mestre/evidencias/m0-primeira-fatia.json; absorcao no produto pendente. ref/hash; fluxo; dados; dependencias; permissao; UI; teste; aceite; current source review: docs/mestre/evidencias/reuse-plan-review-2026-10-12.json; runtime/acceptance stays in active app scoped evidence",
       "acceptance": "Capacidade implementada e validada no destino, sem perder origem",
       "rollback": "Origem preservada e retorno da fatia documentado",
       "runtime_status": "NOT_RUN"
@@ -627,7 +627,7 @@
       "proposed_action": "Inventariar e comparar por ficha; preservar o que for escolhido com evidencia.",
       "decision": "PENDING_AUDIT",
       "phase": "M3",
-      "evidence_to_collect": "ref/hash; fluxo; dados; dependencias; permissao; UI; teste; aceite",
+      "evidence_to_collect": "ref/hash; fluxo; dados; dependencias; permissao; UI; teste; aceite; current source review: docs/mestre/evidencias/reuse-plan-review-2026-10-12.json; runtime/acceptance stays in active app scoped evidence",
       "acceptance": "Capacidade implementada e validada no destino, sem perder origem",
       "rollback": "Origem preservada e retorno da fatia documentado",
       "runtime_status": "NOT_RUN"
@@ -644,7 +644,7 @@
       "proposed_action": "Inventariar e comparar por ficha; preservar o que for escolhido com evidencia.",
       "decision": "PENDING_AUDIT",
       "phase": "M4",
-      "evidence_to_collect": "ref/hash; fluxo; dados; dependencias; permissao; UI; teste; aceite",
+      "evidence_to_collect": "ref/hash; fluxo; dados; dependencias; permissao; UI; teste; aceite; current source review: docs/mestre/evidencias/reuse-plan-review-2026-10-12.json; runtime/acceptance stays in active app scoped evidence",
       "acceptance": "Capacidade implementada e validada no destino, sem perder origem",
       "rollback": "Origem preservada e retorno da fatia documentado",
       "runtime_status": "NOT_RUN"
@@ -661,7 +661,7 @@
       "proposed_action": "Inventariar e comparar por ficha; preservar o que for escolhido com evidencia.",
       "decision": "PENDING_AUDIT",
       "phase": "M5",
-      "evidence_to_collect": "ref/hash; fluxo; dados; dependencias; permissao; UI; teste; aceite",
+      "evidence_to_collect": "ref/hash; fluxo; dados; dependencias; permissao; UI; teste; aceite; current source review: docs/mestre/evidencias/reuse-plan-review-2026-10-12.json; runtime/acceptance stays in active app scoped evidence",
       "acceptance": "Capacidade implementada e validada no destino, sem perder origem",
       "rollback": "Origem preservada e retorno da fatia documentado",
       "runtime_status": "NOT_RUN"
@@ -678,7 +678,7 @@
       "proposed_action": "Inventariar e comparar por ficha; preservar o que for escolhido com evidencia.",
       "decision": "PENDING_AUDIT",
       "phase": "M8",
-      "evidence_to_collect": "ref/hash; fluxo; dados; dependencias; permissao; UI; teste; aceite",
+      "evidence_to_collect": "ref/hash; fluxo; dados; dependencias; permissao; UI; teste; aceite; current source review: docs/mestre/evidencias/reuse-plan-review-2026-10-12.json; runtime/acceptance stays in active app scoped evidence",
       "acceptance": "Capacidade implementada e validada no destino, sem perder origem",
       "rollback": "Origem preservada e retorno da fatia documentado",
       "runtime_status": "NOT_RUN"
@@ -819,5 +819,6 @@
       "rollback": "Origem intacta; integração suspensa; fluxo nativo e histórico preservados",
       "runtime_status": "NOT_RUN"
     }
-  ]
+  ],
+  "current_source_review": "docs/mestre/evidencias/reuse-plan-review-2026-10-12.json"
 }
