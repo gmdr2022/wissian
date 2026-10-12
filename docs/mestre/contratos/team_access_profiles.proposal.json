@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "decision_date": "2026-10-12",
+  "owner_direction": "Gui: preserve modules separately, enable on demand, allocate employees to reusable teams and scoped access profiles, including temporary allocation",
+  "runtime_status": "NOT_IMPLEMENTED",
+  "grants_authority": false,
+  "purpose": "Practical organization/unit/team administration without per-employee module configuration or customer forks",
+  "entities": {
+    "access_profile": "Organization-owned, versioned explicit action permissions and supported resource scopes; separate from team membership and personal appearance",
+    "team": "Organization-owned work group, optionally limited to one validated unit, referencing approved profile revisions",
+    "team_assignment": "References an existing active organization membership; base or temporary; start/end instants, reason, version and actor",
+    "delegation": "Which units, profiles and actions a director may administer; does not grant unrestricted customer or platform access"
+  },
+  "workspace_projection": {
+    "organization": "Approved business modules/extensions shared by the customer's subscribed and operational scope",
+    "unit": "A verified resource scope and local operational context, never a customer fork",
+    "team": "Work allocation; categories such as department, shift or project are descriptive",
+    "profile": "Job function and allowed actions; distinguish attendance operator, reviewer and administrator even inside HR",
+    "employee": "Navigation, search and task views derive from currently effective authorized assignments; personal preferences never broaden authority",
+    "combination": "Combine approved action/resource-scope pairs from active assignments. Never union actions and scopes independently, which could spread one team's Finance permission to another unit. Domain restrictions and separation-of-duties rules still apply."
+  },
+  "organization_setup": [
+    "Select a validated business module bundle and compatible suggested extensions for the customer",
+    "Instantiate curated job-function profiles as organization-owned revisions; review before publishing",
+    "Create units and categorized teams referencing those approved profiles",
+    "Invite or allocate existing employees in a batch with a changed-access preview; invitations alone grant nothing",
+    "Use the same approved profile across teams rather than duplicate per-person settings",
+    "Removing one team assignment affects that allocation only; suspending organization membership ends all organization access while retaining historical attribution"
+  ],
+  "module_extension_defaults": {
+    "meaning": "Declared compatibility and suggested extensions for an installed module",
+    "authority": "No default list activates an extension, grants permissions or bypasses required dependencies",
+    "selection": "Organization administrators choose eligible, validated modules/extensions; unit directors remain within delegated options"
+  },
+  "effective_access": [
+    "current valid session",
+    "active organization membership",
+    "trusted installed and compatible module/extension",
+    "organization eligibility and operational activation",
+    "currently effective team/profile assignment and explicit action permission",
+    "resource belongs to the current organization and permitted unit/classification scope",
+    "domain transition and segregation-of-duties conditions hold"
+  ],
+  "administration_rules": [
+    "Organization owner controls profile publication and organization-level module activation",
+    "Unit director manages only delegated units, teams and approved profile revisions",
+    "A director cannot publish a more privileged profile, widen own scope or self-grant administration",
+    "Teams may share profiles; employees may have several explicit assignments",
+    "Categorization alone never grants authority; no arbitrary inherited group nesting in the first slice",
+    "Moving the base allocation atomically ends the previous base assignment and starts the new one; temporary overlays remain explicit",
+    "Temporary assignments require an expiry checked by server time on every protected operation; a cleanup job is not the enforcement mechanism",
+    "Preview changed access and affected employees before publishing profile changes or batch allocations",
+    "Protect the last organization administrator; elevated administration changes require an authorized second actor when policy requires it",
+    "Use current audited command/idempotency/version contracts for allocation, removal, movement and publication",
+    "Reauthorize pending work, downloads, exports and replay after team/profile changes; cached navigation or JWT labels are not current authority",
+    "Individual exceptions are uncommon, reasoned, time-bounded and visible in the audit"
+  ],
+  "resource_scope_limit": "A unit-scoped profile is offered for a module only after that module can enforce unit/resource scope in its actual API/database/file paths. An organization-only domain must not pretend to enforce units through a menu or frontend parameter.",
+  "compatibility": "Evolve the existing authoritative membership/permission resolver. Do not add an independent role engine, import ClubAL authentication or copy materialized grants per employee without an explicit migration/invalidations contract.",
+  "source_reuse": "Preserved Base44 PlatformAdminPage role/profile presentation and ConfigurationCenterPanels forms are candidates; legacy groups there group clients, not employee teams. Semantic adaptation remains necessary.",
+  "delivery": [
+    "Current contribution: inert source bank, administrative catalog and this proposal; no schema/grant change",
+    "First consuming slice: minimal identity/profile/team contracts plus a real M5 administrative consumer; preserve current M4 priority",
+    "Then verified unit delegation, temporary/batch moves and role-specific workspace projection",
+    "Extend to M6/M8 specialties only with validated module-specific scopes and permissions"
+  ],
+  "acceptance_cases": [
+    "One profile assigned to two teams updates the affected access coherently with explicit revision publication",
+    "HR-only employee cannot invoke Finance/Fleet operations by direct URL or API",
+    "Unit A director cannot administer Unit B or another organization",
+    "Multiple assignments combine only approved permissions within their own scopes",
+    "Temporary access expires while a tab and queued operation are still open",
+    "Moving an employee removes prior base access atomically; duplicate/lost-response retry adds no second assignment",
+    "Revoked membership/session denies access even with a retained group label",
+    "Missing module, disabled extension, ineligible organization or unsatisfied dependency still denies access",
+    "Read, edit, review, approve and export remain distinct; requester cannot approve own critical operation",
+    "Existing M1-M4 isolation, commands, audit, history and recovery continue passing after migration"
+  ]
+}

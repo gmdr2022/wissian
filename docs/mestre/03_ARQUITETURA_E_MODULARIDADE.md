@@ -61,6 +61,16 @@ O diagrama representa dependências/contratos, não serviços a criar. O Core n�
 
 Frota, estoque/produtos/QR, RH, ponto/jornada, jurídico, fiscal, faturamento e apoio contábil integram o catálogo de direção do pedido. Não há alegação de implementação no legado nem prioridade automática antes de E0–E3. Emissão oficial, folha, tributação e contabilidade formal exigem contratos próprios; registro administrativo não simula sua execução.
 
+## Team-based workspaces and extension recovery — Gui, 2026-10-12
+
+Preserve useful Base44 modules/extensions in a versioned, inert source bank, with provenance, companion styles/tests and current-runtime adapter boundaries. Recovering source does not install or activate a business capability. Integrate selected consumers as M4–M8 advance, keeping the selected interface, working modules and original source repositories. The app's `docs/reuse/extensions/base44/manifest.json` indexes exact recovery bytes; its administrative visual catalog is metadata only and is limited by the existing module-management permission.
+
+Separate an **access profile** (reusable, versioned action permissions and supported scopes) from a **team** (employees allocated to a work group). The organization approves profiles and available modules; a unit director allocates staff only within delegated units and approved profiles. One profile can serve several teams; changing its published revision requires an impact preview. Temporary allocation expires by server time; moving a base allocation ends its previous access atomically. Avoid per-employee module configuration, unrestricted group nesting and duplicated authorization engines.
+
+A module's default extension list means compatibility/suggestions, not activation or permission. Effective access still requires every existing artifact/eligibility/activation/session/membership/action/resource gate. Sector-specific workspaces project the same effective backend decision; HR, Finance, fleet and specialty menus do not grant access to each other's data. Directors do not receive universal platform/customer authority. Unit-scoped access is unavailable until each affected domain actually enforces unit/resource scope, beyond its organization boundary.
+
+The [practical proposal and acceptance cases](contratos/team_access_profiles.proposal.json) records allocation, expiry, batch movement, delegation, audit and compatibility. This is approved architecture direction, **not implemented group administration or a database migration**. Current M4 priority, pending review, consolidated migration and validated M1–M8 customer-release gates remain binding. Base44 platform groups group clients; existing profile/form presentation may be reused after semantic adaptation rather than imported as employee authority.
+
 ## Identidade técnica própria — regra permanente de 25/09/2026
 
 Por decisão expressa de Gui, o código do Core usa a identidade **Wissian**. A extração

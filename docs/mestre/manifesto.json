@@ -443,8 +443,8 @@
     },
     {
       "path": "docs/mestre/03_ARQUITETURA_E_MODULARIDADE.md",
-      "bytes": 20023,
-      "sha256": "2c8fb606a97fc8184b9c9c4607e2d598fa831965ed26284bcccf24773d253cec"
+      "bytes": 22376,
+      "sha256": "5211c926a562b058b49fe12032dadb92205ef1fbd5480007c5ad79bceb053da6"
     },
     {
       "path": "docs/mestre/04_ABSORCAO_CODEX_BASE44.md",
@@ -590,6 +590,11 @@
       "path": "docs/mestre/contratos/evento_auditoria.exemplo.json",
       "bytes": 618,
       "sha256": "b483556b297157be00db33b80de105d97b3f324a4e6da7affcf77ee3d8970405"
+    },
+    {
+      "path": "docs/mestre/contratos/team_access_profiles.proposal.json",
+      "bytes": 7050,
+      "sha256": "0f7dc4bc9fdaa83c61c77b50db39d8b31510401fd7088e359b92b078f59d3c94"
     },
     {
       "path": "docs/mestre/evidencias/m0-primeira-fatia.json",
